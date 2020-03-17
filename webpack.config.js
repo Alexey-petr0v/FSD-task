@@ -1,10 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const PATHS = {
     pages: path.resolve(__dirname, "pages"),
     dist: path.resolve(__dirname, "dist"),
+    desktop: path.resolve(__dirname, "desktop.blocks"),
 }
 
 module.exports = {
@@ -26,7 +28,19 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
         filename: '[name].css',
-    })
+    }),
+    new CopyWebpackPlugin([
+      {from: PATHS.desktop + '/**/*.svg', to:'img', flatten: true}
+    ]),
+    new CopyWebpackPlugin([
+      {from: PATHS.desktop + '/**/*.img', to:'img', flatten: true}
+    ]),
+    new CopyWebpackPlugin([
+      {from: PATHS.desktop + '/**/*.png', to:'img', flatten: true}
+    ]),
+    new CopyWebpackPlugin([
+      {from: PATHS.desktop + '/**/*.gif', to:'img', flatten: true}
+    ]),
   ],
   module: {
     rules: [
