@@ -30,16 +30,16 @@ module.exports = {
         filename: '[name].css',
     }),
     new CopyWebpackPlugin([
-      {from: PATHS.desktop + '/**/*.svg', to:'img', flatten: true}
+      {from: PATHS.desktop + '/**/*.svg', to:'images', flatten: true}
     ]),
     new CopyWebpackPlugin([
-      {from: PATHS.desktop + '/**/*.img', to:'img', flatten: true}
+      {from: PATHS.desktop + '/**/*.img', to:'images', flatten: true}
     ]),
     new CopyWebpackPlugin([
-      {from: PATHS.desktop + '/**/*.png', to:'img', flatten: true}
+      {from: PATHS.desktop + '/**/*.png', to:'images', flatten: true}
     ]),
     new CopyWebpackPlugin([
-      {from: PATHS.desktop + '/**/*.gif', to:'img', flatten: true}
+      {from: PATHS.desktop + '/**/*.gif', to:'images', flatten: true}
     ]),
   ],
   module: {
