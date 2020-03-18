@@ -1,1 +1,38 @@
-.colors
+- var object1 = {classColumn1: "color-1", classColumn2: "testtext", htmlColumn2: "text1"};
+- var object2 = {classColumn1: "color-2", classColumn2: "testtext", htmlColumn2: "text2"};
+- var object3 = {classColumn1: "color-3", classColumn2: "testtext", htmlColumn2: "text3"};
+- var object4 = {classColumn1: "color-4", classColumn2: "testtext", htmlColumn2: "text4"};
+- var object5 = {classColumn1: "color-5", classColumn2: "testtext", htmlColumn2: "text5"};
+- var object6 = {classColumn1: "color-6", classColumn2: "testtext", htmlColumn2: "text6"};
+- var object7 = {classColumn1: "color-7", classColumn2: "testtext", htmlColumn2: "text7"};
+
+ul.colors
+    include /list
+    +addList(object1,'colors')
+        p
+            b Dark Shade 100%
+        p #1F2041
+    +addList(object2,'colors')
+        p
+            b Dark Shade 75%
+        p #1F2041
+    +addList(object3,'colors')
+        p
+            b Dark Shade 50%
+        p #1F2041
+    +addList(object4,'colors')
+        p
+            b Dark Shade 25%
+        p #1F2041
+    +addList(object5,'colors')
+        p
+            b Dark Shade 5%
+        p #1F2041
+    +addList(object6,'colors')
+        p
+            b Purple
+        p #BC9CFF
+    +addList(object7,'colors')
+        p
+            b Green
+        p #6FCF97

@@ -1,0 +1,8 @@
+mixin addList(object, modificator)
+    if(modificator == 'colors')
+        li.list.list_colors.colors__column
+            .list__column-1
+                div(class="list__" + object.classColumn1)
+            .list__column-2
+                div(class="list__" + object.classColumn2)
+                    block

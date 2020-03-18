@@ -1,0 +1,13 @@
+.colors > * {
+    display: -webkit-flex; 
+    display: flex; 
+    flex-direction: row;
+}
+
+.colors__column {
+    margin-bottom: 20px;
+}
+
+.colors > ul{
+    list-style-type: none;
+}

@@ -1,5 +1,8 @@
 
 @import '../desktop.blocks/icon/icon.scss';
+@import '../desktop.blocks/header-light/header-light.scss';
+@import '../desktop.blocks/colors/colors.scss';
+@import '../desktop.blocks/list/list.scss';
 
 * {
     margin: 0;
@@ -8,4 +11,6 @@
 
 .wrapper {
     position: relative;
+    overflow: auto;
+    margin-left: 150px;
 }
