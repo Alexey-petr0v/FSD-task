@@ -1,2 +1,2 @@
 
-import '../desktop.blocks/icon/icon.scss'
+import './style.scss'
