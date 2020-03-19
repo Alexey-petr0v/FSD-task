@@ -1,0 +1,12 @@
+.colors-and-type {
+    display: -webkit-flex; 
+    display: flex; 
+    flex-direction: row;
+
+    overflow: auto;
+    justify-content: center;
+
+    &__column:first-child {
+        margin-right: 427px;
+    }
+}

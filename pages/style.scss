@@ -1,16 +1,16 @@
 
 @import '../desktop.blocks/icon/icon.scss';
 @import '../desktop.blocks/header-light/header-light.scss';
+@import '../desktop.blocks/colors-and-type/colors-and-type.scss';
+@import '../desktop.blocks/two-elem/two-elem.scss';
 @import '../desktop.blocks/colors/colors.scss';
-@import '../desktop.blocks/list/list.scss';
+@import '../desktop.blocks/type/type.scss';
 
 * {
     margin: 0;
     padding: 0;
 }
 
-.wrapper {
-    position: relative;
-    overflow: auto;
-    margin-left: 150px;
+p {
+    color: #1F2041;
 }

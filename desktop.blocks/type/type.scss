@@ -1,0 +1,107 @@
+.type {
+    list-style-type: none;
+    .type__column {
+        display: -webkit-flex; 
+        display: flex; 
+        flex-direction: row;
+        margin-bottom: 50px;
+        //&:first-child {
+        //    flex-direction: row-reverse;
+        //}
+        &.two-elem_type-1{
+            font-family: Quicksand;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 30px;
+            .two-elem__left {
+                margin-right: 30px;
+                p {
+                    text-align: right;
+                    color: rgba(31, 32, 65, 0.25);
+                }
+            }
+            .two-elem__right {
+                width: 336px;
+            }
+        }
+        &.two-elem_type-2{
+            font-family: Quicksand;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 19px;
+            line-height: 24px;
+            .two-elem__left {
+                margin-right: 30px;
+                p {
+                    text-align: right;
+                    color: rgba(31, 32, 65, 0.25);
+                }
+            }
+            .two-elem__right {
+                width: 282px;
+            }
+        }
+        &.two-elem_type-3{
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            text-transform: uppercase;
+            .two-elem__left {
+                margin-right: 30px;
+                p {
+                    text-align: right;
+                    color: rgba(31, 32, 65, 0.25);
+                }
+            }
+            .two-elem__right {
+                width: 186px;
+            }
+        }
+        &.two-elem_type-4{
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 24px;
+            .two-elem__left {
+                margin-right: 30px;
+                p {
+                    text-align: right;
+                    color: rgba(31, 32, 65, 0.25);
+                }
+            }
+            .two-elem__right {
+                p {
+                color: rgba(31, 32, 65, 0.75);
+                width: 301px;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+
+/*
+ДЛЯ тестов
+background: thistle;
+background: black;
+background: darkblue;
+background: yellow;
+background: olive;
+background: palevioletred;
+background: brown;
+background: cyan;
+.type{background: royalblue;}
+.type__column{background: thistle;}
+.two-elem {background: black;}
+.two-elem__left{background: forestgreen;}
+*/
