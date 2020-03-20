@@ -6,6 +6,12 @@
 @import '../desktop.blocks/colors/colors.scss';
 @import '../desktop.blocks/type/type.scss';
 
+@font-face { font-family: 'Quicksand Regular'; src: url("./fonts/quicksand-regular.ttf" );}
+@font-face { font-family: 'Quicksand Bold'; src: url("./fonts/quicksand-bold.ttf" );}
+@font-face { font-family: 'Montserrat Regular'; src: url("./fonts/montserrat-regular.ttf" );}
+@font-face { font-family: 'Montserrat Bold'; src: url("./fonts/montserrat-bold.ttf" );}
+
+
 * {
     margin: 0;
     padding: 0;

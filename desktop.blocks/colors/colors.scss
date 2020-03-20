@@ -1,0 +1,57 @@
+.colors {
+    list-style-colors: none;
+    .colors__column {
+        display: -webkit-flex; 
+        display: flex; 
+        flex-direction: row;
+        margin-bottom: 50px;
+        //&:first-child {
+        //    flex-direction: row-reverse;
+        //}
+        .two-elem__left {
+            min-width: 70px;
+            min-height: 70px;
+            max-width: 70px;
+            max-height: 70px;
+            border-radius: 6px;
+            margin-right: 30px;
+        }
+        .two-elem__right {
+            font-family: Quicksand Regular;
+            b {font-family: 'Quicksand Bold';}
+            font-style: normal;
+            font-size: 19px;
+            line-height: 29px;
+            align-items: center;
+        }
+
+        &.two-elem_colors-1{
+            .two-elem__left {background: #1F2041;}
+            .two-elem__right {}
+        }
+        &.two-elem_colors-2{
+            .two-elem__left {background: rgba(31, 32, 65, 0.75);}
+            .two-elem__right {}
+        }
+        &.two-elem_colors-3{
+            .two-elem__left {background: rgba(31, 32, 65, 0.50);}
+            .two-elem__right {}
+        }
+        &.two-elem_colors-4{
+            .two-elem__left {background: rgba(31, 32, 65, 0.25);}
+            .two-elem__right {}
+        }
+        &.two-elem_colors-5{
+            .two-elem__left {background: rgba(31, 32, 65, 0.05);}
+            .two-elem__right {}
+        }
+        &.two-elem_colors-6{
+            .two-elem__left {background: #BC9CFF;}
+            .two-elem__right {}
+        }
+        &.two-elem_colors-7{
+            .two-elem__left {background: #6FCF97;}
+            .two-elem__right {}
+        }
+    }
+}

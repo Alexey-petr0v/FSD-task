@@ -41,6 +41,9 @@ module.exports = {
     new CopyWebpackPlugin([
       {from: PATHS.desktop + '/**/*.gif', to:'images', flatten: true}
     ]),
+    new CopyWebpackPlugin([
+      {from: PATHS.pages + '/**/*.ttf', to:'fonts', flatten: true}
+    ]),
   ],
   module: {
     rules: [
@@ -82,7 +85,15 @@ module.exports = {
         options: {
             pretty: true
         }
-      }
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        use: [
+                 {
+                     loader: 'file-loader?name=/fonts/[name].[ext]'
+                 }
+             ]
+    }
     ]
   },
   devServer: {
