@@ -26,9 +26,10 @@
         &_color-7 {background: #6FCF97;}
     }
     &__column-right {
-        font-family: Quicksand Regular;
-        b {font-family: 'Quicksand Bold';}
+        font-family: 'Quicksand';
         font-style: normal;
+        font-weight: normal;
+        b {font-weight: bold;}
         font-size: 19px;
         line-height: 29px;
         align-items: center;
