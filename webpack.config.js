@@ -40,10 +40,7 @@ module.exports = {
     ]),
     new CopyWebpackPlugin([
       {from: PATHS.desktop + '/**/*.gif', to:'images', flatten: true}
-    ]),
-    new CopyWebpackPlugin([
-      {from: PATHS.pages + '/**/*.ttf', to:'fonts', flatten: true}
-    ]),
+    ])
   ],
   module: {
     rules: [
