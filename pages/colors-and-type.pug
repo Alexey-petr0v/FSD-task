@@ -1,8 +1,7 @@
-doctype
-html(lang='en')
-    head
-        meta(charset='utf-8')
-        title Colors & Type
-    body
-        include ../blocks/header-light/header-light
-        include ../blocks/colors-and-type/colors-and-type
+extends /layouts/ui-kit
+
+block title
+    title Colors & Type
+
+block content
+    include ../blocks/colors-and-type/colors-and-type
