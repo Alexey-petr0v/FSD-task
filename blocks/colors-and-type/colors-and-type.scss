@@ -2,11 +2,32 @@
     display: -webkit-flex; 
     display: flex; 
     flex-direction: row;
-
     overflow: auto;
-    justify-content: center;
+    justify-content: space-between;
+}
 
-    &__column:first-child {
-        margin-right: 427px;
+// Десктоп. Разрешение < 1991px
+@media (max-width: 1920px) {
+    .colors-and-type {
+        flex-direction: row;
+        font-size: 19px;
+    }
+}
+
+// Планшеты. Разрешение < 993px
+@media (max-width: 992px) {
+    .colors-and-type {
+        font-size: 18px;
+    }
+}
+
+// Смартфоны. Разрешение < 768px
+@media (max-width: 767px) {
+    .colors-and-type {
+        font-size: 17px;
+        flex-direction: column;
+        .colors-and-type__column {
+            margin-bottom: 20px;
+        }
     }
 }

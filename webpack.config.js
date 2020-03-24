@@ -6,7 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const PATHS = {
     pages: path.resolve(__dirname, "pages"),
     dist: path.resolve(__dirname, "dist"),
-    desktop: path.resolve(__dirname, "desktop.blocks"),
+    blocks: path.resolve(__dirname, "blocks"),
 }
 
 module.exports = {
@@ -30,16 +30,19 @@ module.exports = {
         filename: '[name].css',
     }),
     new CopyWebpackPlugin([
-      {from: PATHS.desktop + '/**/*.svg', to:'images', flatten: true}
+      {from: PATHS.blocks + '/blocks/**/*.svg', to:'images', flatten: true}
     ]),
     new CopyWebpackPlugin([
-      {from: PATHS.desktop + '/**/*.img', to:'images', flatten: true}
+      {from: PATHS.blocks + '/blocks/**/*.img', to:'images', flatten: true}
     ]),
     new CopyWebpackPlugin([
-      {from: PATHS.desktop + '/**/*.png', to:'images', flatten: true}
+      {from: PATHS.blocks + '/blocks/**/*.png', to:'images', flatten: true}
     ]),
     new CopyWebpackPlugin([
-      {from: PATHS.desktop + '/**/*.gif', to:'images', flatten: true}
+      {from: PATHS.blocks + '/blocks/**/*.gif', to:'images', flatten: true}
+    ]),
+    new CopyWebpackPlugin([
+      {from: PATHS.blocks + '/blocks/**/fonts/*', to:'fonts', flatten: true}
     ])
   ],
   module: {

@@ -9,69 +9,70 @@
         display: flex; 
         flex-direction: row;
     }
+
     &__column-left {
+        width: 37px;
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: normal;
         margin-right: 30px;
 
-        width: 37px;
-        p {text-align: right;color: rgba(31, 32, 65, 0.25);}
+        p {
+            text-align: right;
+            color: rgba(31, 32, 65, 0.25);
+        }
 
-        &_l-font-1 {
-            font-size: 24px;
-            line-height: 29px;
-        }
-        
-        &_l-font-2 {
-            font-size: 19px;
-            line-height: 23px;
-        }
-        
-        &_l-font-3 {
-            font-size: 12px;
-            line-height: 15px;
-        }
-        
-        &_l-font-4 {
-            font-size: 14px;
-            line-height: 24px;
-        }
+        &_l-font-1 {font-size: 24px; line-height: 29px;}
+        &_l-font-2 {font-size: 19px; line-height: 23px;}
+        &_l-font-3 {font-size: 12px; line-height: 15px;}
+        &_l-font-4 {font-size: 14px; line-height: 24px;}
     }
+
     &__column-right {
         &_r-font-1 {
             width: 336px;
+            min-height: 60px;
             font-family: 'Quicksand';
             font-style: normal;
             font-weight: bold;
             font-size: 24px;
             line-height: 30px;
+            p {vertical-align: top;}
         }
+
         &_r-font-2 {
             width: 282px;
+            min-height: 48px;
             font-family: 'Quicksand';
             font-style: normal;
             font-weight: bold;
             font-size: 19px;
             line-height: 24px;
+            p {vertical-align: top;}
         }
+
         &_r-font-3 {
             width: 186px;
+            min-height: 15px;
             font-family: 'Montserrat';
             font-style: normal;
             font-weight: bold;
             font-size: 12px;
             line-height: 15px;
             text-transform: uppercase;
+            p {vertical-align: top;}
         }
+
         &_r-font-4 {
             width: 301px;
+            min-height: 48px;
             font-family: 'Montserrat';
             font-style: normal;
             font-weight: normal;
             font-size: 14px;
             line-height: 24px;
             color: rgba(31, 32, 65, 0.75);
+            p {vertical-align: top;}
         }
     }
 }

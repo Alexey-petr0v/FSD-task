@@ -13,6 +13,52 @@
     padding: 0;
 }
 
+body {
+}
+
+.wrapper {
+    display: -webkit-flex; 
+    display: flex; 
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.main-container {
+    max-width: 1920px;
+    min-width: 320px;
+    margin: 0px auto;
+    padding-right: 41px;
+}
+
+.header-container {
+    max-width: 1920px;
+    min-width: 320px;
+}
+
 p {
     color: #1F2041;
+}
+
+// Десктоп. Разрешение < 1991px
+@media (max-width: 1920px) {
+    .main-container {
+        max-width: 1099px;
+    }
+}
+
+// Планшеты. Разрешение < 993px
+@media (max-width: 992px) {
+    .main-container {
+        max-width: 750px;
+    }
+}
+
+// Смартфоны. Разрешение < 768px
+@media (max-width: 767px) {
+    .main-container {
+        max-width: none;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-right: 0px;
+    }
 }
