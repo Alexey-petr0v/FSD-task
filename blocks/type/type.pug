@@ -6,6 +6,13 @@ mixin addColumnType(textColumn1, modColumn1, modColumn2)
     .type
         .type__elem
             .type__column-left(class='type__column-left_' + modColumn1)
-                p= textColumn1
+                if (textColumn1 == 'H1')
+                    h1= textColumn1
+                if (textColumn1 == 'H2')
+                    h2= textColumn1
+                if (textColumn1 == 'H3')
+                    h3= textColumn1
+                if (textColumn1 == 'Body')
+                    p= textColumn1
             +addColumnTypeRight(modColumn2)
                 block

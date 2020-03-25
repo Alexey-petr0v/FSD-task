@@ -28,20 +28,17 @@
     }
 
     &__column-right {
-        p {
+        h2 {
           font-family: 'Quicksand';
           font-style: normal;
           font-weight: normal;
           vertical-align: middle;
+          line-height: 29px;
+          b {
+            font-weight: bold;
+          }
         }
 
-        p b {
-          font-family: 'Quicksand';
-          font-style: normal;
-          font-weight: bold;
-        }
-        
-        line-height: 29px;
         align-items: center;
         margin-top: 7px;
     }

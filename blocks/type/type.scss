@@ -12,14 +12,14 @@
 
     &__column-left {
         width: 37px;
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: normal;
         margin-right: 30px;
 
-        p {
+        h1, h2, h3, p {
             text-align: right;
             color: rgba(31, 32, 65, 0.25);
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: normal;
         }
 
         &_l-font-1 {font-size: 24px; line-height: 29px;}
@@ -32,46 +32,24 @@
         &_r-font-1 {
             width: 336px;
             min-height: 60px;
-            font-family: 'Quicksand';
-            font-style: normal;
-            font-weight: bold;
-            font-size: 24px;
-            line-height: 30px;
-            p {vertical-align: top;}
+            h1 {vertical-align: top;}
         }
 
         &_r-font-2 {
             width: 282px;
             min-height: 48px;
-            font-family: 'Quicksand';
-            font-style: normal;
-            font-weight: bold;
-            font-size: 19px;
-            line-height: 24px;
-            p {vertical-align: top;}
+            h2 {vertical-align: top;}
         }
 
         &_r-font-3 {
             width: 186px;
             min-height: 15px;
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: bold;
-            font-size: 12px;
-            line-height: 15px;
-            text-transform: uppercase;
-            p {vertical-align: top;}
+            h3 {vertical-align: top;}
         }
 
         &_r-font-4 {
             width: 301px;
             min-height: 48px;
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: normal;
-            font-size: 14px;
-            line-height: 24px;
-            color: rgba(31, 32, 65, 0.75);
             p {vertical-align: top;}
         }
     }
