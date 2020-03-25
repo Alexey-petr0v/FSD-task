@@ -26,6 +26,10 @@ module.exports = {
         template: PATHS.pages + '/colors-and-type.pug',
         filename: 'colors-and-type.html'
     }),
+    new HtmlWebpackPlugin({
+        template: PATHS.pages + '/form-elements.pug',
+        filename: 'form-elements.html'
+    }),
     new MiniCssExtractPlugin({
         filename: '[name].css',
     }),

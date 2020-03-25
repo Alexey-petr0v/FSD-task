@@ -1,0 +1,35 @@
+.form-elements {
+    display: -webkit-flex; 
+    display: flex; 
+    flex-direction: row;
+    overflow: auto;
+    justify-content: space-between;
+}
+
+.form-elements__column1{
+    background: yellow;
+    width: 100px;
+}
+
+.form-elements__column2{
+    background: red;
+    width: 100px;
+}
+
+.form-elements__column3{
+    display: -webkit-flex; 
+    display: flex; 
+    flex-direction: column;
+    background: teal;
+    width: 100px;
+}
+
+.abc {
+    width: 30px;
+    height: 30px;
+    background: black;
+    &_end {
+        width: 700px;
+        align-self: flex-end;
+    }
+}
