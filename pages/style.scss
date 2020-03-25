@@ -1,12 +1,12 @@
 
-@import '../blocks/fonts/fonts.scss';
-@import '../blocks/icon/icon.scss';
-@import '../blocks/header-light/header-light.scss';
-@import '../blocks/colors-and-type/colors-and-type.scss';
-@import '../blocks/two-elem/two-elem.scss';
-@import '../blocks/colors/colors.scss';
-@import '../blocks/type/type.scss';
-@import '../blocks/form-elements/form-elements.scss';
+@import '../project.blocks/fonts/fonts.scss';
+@import '../project.blocks/icon/icon.scss';
+@import '../project.blocks/header-light/header-light.scss';
+@import '../project.blocks/colors-and-type/colors-and-type.scss';
+@import '../project.blocks/colors/colors.scss';
+@import '../project.blocks/type/type.scss';
+@import '../project.blocks/form-elements/form-elements.scss';
+@import '../library.blocks/field/field.scss';
 
 
 * {
