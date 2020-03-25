@@ -7,6 +7,7 @@
 @import '../project.blocks/type/type.scss';
 @import '../project.blocks/form-elements/form-elements.scss';
 @import '../library.blocks/field/field.scss';
+@import '../project.blocks/text-field/text-field.scss';
 
 
 * {
@@ -31,10 +32,6 @@
 .header-container {
     max-width: 1920px;
     min-width: 320px;
-}
-
-p {
-    color: #1F2041;
 }
 
 // Десктоп. Разрешение < 1991px

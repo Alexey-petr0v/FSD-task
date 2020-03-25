@@ -1,21 +1,22 @@
 include ../../library.blocks/field/field
 
 .form-elements
-    .form-elements__column1
+    //.form-elements__column_first
+    //.form-elements__column_second
+    //.form-elements__column_third
+    .form-elements__column_first
+        +addField('text-field', 'Email', 'Text Field')
+        +addField('dropdown', 'Сколько гостей', 'Dropdown')
+        +addField('masked-text-field', 'ДД.ММ.ГГГГ', 'masked text field')
+        +addField('text-field', 'Email', 'Text Field')
+        +addField('date-dropdown', 'ДД.ММ.ГГГГ', 'date dropdown')
+    .form-elements__column_second
         +addField('', '', '')
         +addField('', '', '')
         +addField('', '', '')
         +addField('', '', '')
         +addField('', '', '')
-        +addField('', '', '')
-        +addField('', '', '')
-    .form-elements__column2
-        +addField('', '', '')
-        +addField('', '', '')
-        +addField('', '', '')
-        +addField('', '', '')
-        +addField('', '', '')
-    .form-elements__column3
+    .form-elements__column_third
         +addField('', '', '')
         +addField('', '', '')
         +addField('', '', '')

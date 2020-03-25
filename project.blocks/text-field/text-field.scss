@@ -1,0 +1,9 @@
+@import '../library.blocks/field/field.scss';
+
+/* TEXT FIELD */
+.field__input_text-field {
+    &:hover,
+    &:focus {
+        border: 1px solid rgba(31, 32, 65, 0.5);
+    }
+}

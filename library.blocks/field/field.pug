@@ -1,3 +1,34 @@
-mixin addField(type, valume, title)
+//.field
+
+mixin addField(viewField, val, title)
     .field
-        .field-elem
+        if (viewField == 'text-field')
+            h3= title
+            input.field__input(class='field__input_text-field', type="text", placeholder=val)
+        if (viewField == 'dropdown')
+            h3= title
+            .field__input(class='field__input_dropdown')
+                p= val
+                img(src="./images/expand_more.svg" alt="expand more")
+            .field__input.field__input_dropdown-list
+                p тут будет 1 реализация черех JS
+        if (viewField == 'masked-text-field')
+            h3= title
+            .field__input(class='field__input_masked-text-field')
+                p= val
+            .field__input.field__input_date
+                p тут будет 2 реализация черех JS. Всплывающий список отсюда нужно будет убрать
+        if (viewField == 'date-dropdown')
+            .colums
+            .colums__column
+                h3= title
+                .field__input(class='field__input_date-dropdown')
+                    p= val
+                .field__input.field__input_date
+                    p тут будет 3 реализация черех JS. 
+            .colums__column
+                h3= title
+                .field__input(class='field__input_date-dropdown')
+                    p= val
+                .field__input.field__input_date
+                    p тут будет 3 реализация черех JS. 

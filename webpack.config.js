@@ -6,7 +6,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const PATHS = {
     pages: path.resolve(__dirname, "pages"),
     dist: path.resolve(__dirname, "dist"),
-    blocks: path.resolve(__dirname, "blocks"),
+    projBlocks: path.resolve(__dirname, "project.blocks"),
+    libBlocks: path.resolve(__dirname, "library.blocks"),
 }
 
 module.exports = {
@@ -34,19 +35,34 @@ module.exports = {
         filename: '[name].css',
     }),
     new CopyWebpackPlugin([
-      {from: PATHS.blocks + '/blocks/**/*.svg', to:'images', flatten: true}
+      {from: PATHS.projBlocks + '/**/*.svg', to:'images', flatten: true, ignore: ['*Bold.svg', '*Regular.svg']}
     ]),
     new CopyWebpackPlugin([
-      {from: PATHS.blocks + '/blocks/**/*.img', to:'images', flatten: true}
+      {from: PATHS.projBlocks + '/**/*.img', to:'images', flatten: true}
     ]),
     new CopyWebpackPlugin([
-      {from: PATHS.blocks + '/blocks/**/*.png', to:'images', flatten: true}
+      {from: PATHS.projBlocks + '/**/*.png', to:'images', flatten: true}
     ]),
     new CopyWebpackPlugin([
-      {from: PATHS.blocks + '/blocks/**/*.gif', to:'images', flatten: true}
+      {from: PATHS.projBlocks + '/**/*.gif', to:'images', flatten: true}
     ]),
     new CopyWebpackPlugin([
-      {from: PATHS.blocks + '/blocks/**/fonts/*', to:'fonts', flatten: true}
+      {from: PATHS.projBlocks + '/**/fonts/*', to:'fonts', flatten: true}
+    ]),
+    new CopyWebpackPlugin([
+      {from: PATHS.libBlocks + '/**/*.svg', to:'images', flatten: true, ignore: ['*Bold.svg', '*Regular.svg']}
+    ]),
+    new CopyWebpackPlugin([
+      {from: PATHS.libBlocks + '/**/*.img', to:'images', flatten: true}
+    ]),
+    new CopyWebpackPlugin([
+      {from: PATHS.libBlocks + '/**/*.png', to:'images', flatten: true}
+    ]),
+    new CopyWebpackPlugin([
+      {from: PATHS.libBlocks + '/**/*.gif', to:'images', flatten: true}
+    ]),
+    new CopyWebpackPlugin([
+      {from: PATHS.libBlocks + '/**/fonts/*', to:'fonts', flatten: true}
     ])
   ],
   module: {

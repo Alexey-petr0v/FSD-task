@@ -6,17 +6,17 @@
     justify-content: space-between;
 }
 
-.form-elements__column1{
+.form-elements__column_first {
     background: yellow;
-    width: 100px;
+    min-width: 320px;
 }
 
-.form-elements__column2{
+.form-elements__column_second {
     background: red;
     width: 100px;
 }
 
-.form-elements__column3{
+.form-elements__column_third {
     display: -webkit-flex; 
     display: flex; 
     flex-direction: column;
