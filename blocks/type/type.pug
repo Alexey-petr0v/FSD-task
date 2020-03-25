@@ -1,24 +1,11 @@
-.type
-    .type__elem
-        .type__column-left.type__column-left_l-font-1
-            p H1
-        .type__column-right.type__column-right_r-font-1
-            p
-                b This one is the sub-section or widget title
-    .type__elem
-        .type__column-left.type__column-left_l-font-2
-            p H2
-        .type__column-right.type__column-right_r-font-2
-            p
-                b Next one is the item title inside widgets
-    .type__elem
-        .type__column-left.type__column-left_l-font-3
-            p H3
-        .type__column-right.type__column-right_r-font-3
-            p
-                b This is a label or CTA text
-    .type__elem
-        .type__column-left.type__column-left_l-font-4
-            p Body
-        .type__column-right.type__column-right_r-font-4
-            p This is the body text which is used for most of the design, like paragraphs, lists, etc.
+mixin addColumnTypeRight(modColumn2)
+    .type__column-right(class='type__column-right_' + modColumn2)
+        block
+
+mixin addColumnType(textColumn1, modColumn1, modColumn2)
+    .type
+        .type__elem
+            .type__column-left(class='type__column-left_' + modColumn1)
+                p= textColumn1
+            +addColumnTypeRight(modColumn2)
+                block

@@ -1,43 +1,10 @@
-.colors
-    .colors__elem
-        .colors__column-left.colors__column-left_color-1
-        .colors__column-right
-            p
-                b Dark Shade  100%
-            p #1F2041
-    .colors__elem
-        .colors__column-left.colors__column-left_color-2
-        .colors__column-right
-            p
-                b Dark Shade 75%
-                p #1F2041
-    .colors__elem
-        .colors__column-left.colors__column-left_color-3
-        .colors__column-right
-            p
-                b Dark Shade 50%
-            p #1F2041
-    .colors__elem
-        .colors__column-left.colors__column-left_color-4
-        .colors__column-right
-            p
-                b Dark Shade 25%
-            p #1F2041
-    .colors__elem
-        .colors__column-left.colors__column-left_color-5
-        .colors__column-right
-            p
-                b Dark Shade 5%
-            p #1F2041
-    .colors__elem
-        .colors__column-left.colors__column-left_color-6
-        .colors__column-right
-            p
-                b Purple
-            p #BC9CFF
-    .colors__elem
-        .colors__column-left.colors__column-left_color-7
-        .colors__column-right
-            p
-                b Green
-            p #6FCF97
+mixin addColumnColorsRight
+    .colors__column-right
+        block
+
+mixin addColumnColors(mod)
+    .colors
+        .colors__elem
+            .colors__column-left(class='colors__column-left_' + mod)
+            +addColumnColorsRight
+                block
