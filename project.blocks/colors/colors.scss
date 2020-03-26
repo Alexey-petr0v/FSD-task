@@ -18,13 +18,14 @@
         border-radius: 6px;
         margin-right: 40px;
 
-        &_color-1 {background: #1F2041;}
-        &_color-2 {background: rgba(31, 32, 65, 0.75);}
-        &_color-3 {background: rgba(31, 32, 65, 0.50);}
-        &_color-4 {background: rgba(31, 32, 65, 0.25);}
-        &_color-5 {background: rgba(31, 32, 65, 0.05);}
-        &_color-6 {background: #BC9CFF;}
-        &_color-7 {background: #6FCF97;}
+        &_color {
+          &_1 {background: #1F2041;}
+          &_2 {background: rgba(31, 32, 65, 0.75);}
+          &_3 {background: rgba(31, 32, 65, 0.50);}
+          &_4 {background: rgba(31, 32, 65, 0.25);}
+          &_5 {background: rgba(31, 32, 65, 0.05);}
+          &_6 {background: #BC9CFF;}
+        }
     }
 
     &__column-right {
