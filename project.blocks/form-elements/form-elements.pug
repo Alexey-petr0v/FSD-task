@@ -1,25 +1,27 @@
-include ../../library.blocks/field/field
+include ../text-field/text-field
+include ../dropdown/dropdown
+include ../masked-text-field/masked-text-field
+include ../date-dropdown/date-dropdown
 
 .form-elements
-    //.form-elements__column_first
-    //.form-elements__column_second
-    //.form-elements__column_third
     .form-elements__column_first
-        +addField('text-field', 'Email', 'Text Field')
-        +addField('dropdown', 'Сколько гостей', 'Dropdown')
-        +addField('masked-text-field', 'ДД.ММ.ГГГГ', 'masked text field')
-        +addField('text-field', 'Email', 'Text Field')
-        +addField('date-dropdown', 'ДД.ММ.ГГГГ', 'date dropdown')
+        +addTextField('Email', 'Text Field')
+        +addDropdown('Сколько гостей', 'Dropdown')
+        +addMaskeTextField('ДД.ММ.ГГГГ', 'masked text field')
+        +addDateDropdown('ДД.ММ.ГГГГ', 'date dropdown')
     .form-elements__column_second
-        +addField('', '', '')
-        +addField('', '', '')
-        +addField('', '', '')
-        +addField('', '', '')
-        +addField('', '', '')
+        +addTextField('', '')
+        +addTextField('', '')
+        +addTextField('', '')
+        +addTextField('', '')
+        +addTextField('', '')
+        +addTextField('', '')
     .form-elements__column_third
-        +addField('', '', '')
-        +addField('', '', '')
-        +addField('', '', '')
-        +addField('', '', '')
-        +addField('', '', '')
+        +addTextField('', '')
+        +addTextField('', '')
+        +addTextField('', '')
+        +addTextField('', '')
+        +addTextField('', '')
+        +addTextField('', '')
+        +addTextField('', '')
         .abc.abc_end

@@ -1,0 +1,40 @@
+        /* MASKED TEXT FIELD */
+.field {
+    &__input {
+        &_masked-text-field {
+            margin: 0px;
+            padding: 0px;
+            display: -webkit-flex; 
+            display: flex; 
+            flex-direction: row;
+            justify-content: space-between;
+
+            p {
+                vertical-align: middle;
+                line-height: 42px;
+                padding-left: 15px;
+                color: rgba(31, 32, 65, 0.25);
+            }
+            img {
+                padding: 16px 15.5px 16px 15.5px;
+            }
+        }
+
+        &_date {
+            width: 130px;
+            height: 0px;
+            display: none;
+            position: absolute;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        &_date:hover,
+        &_masked-text-field:hover + &_date {
+            width: 320px;
+            height: 130px;
+            display: block;
+            position: absolute;
+        }
+    }
+}

@@ -1,5 +1,4 @@
-//extends ''
-
-if (viewField == 'text-field')
-    h3= title
-    input.field__input(class='field__input_text-field', type="text", placeholder=val)
+mixin addTextField(val, title)
+    .field
+        h3= title
+        input.field__input(class='field__input_text-field', type="text", placeholder=val)
