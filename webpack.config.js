@@ -1,7 +1,9 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const $ = require("jquery");
 
 const PATHS = {
     pages: path.resolve(__dirname, "pages"),
@@ -19,6 +21,11 @@ module.exports = {
     path: PATHS.dist,
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery/dist/jquery.min.js",
+      jQuery: "jquery/dist/jquery.min.js",
+      "window.jQuery": "jquery/dist/jquery.min.js"
+     }),
     new HtmlWebpackPlugin({
         template: PATHS.pages + '/index.pug',
         filename: 'index.html'

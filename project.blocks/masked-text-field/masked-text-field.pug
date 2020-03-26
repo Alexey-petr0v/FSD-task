@@ -1,7 +1,4 @@
 mixin addMaskeTextField(val, title)
     .field
         h3= title
-        .field__input(class='field__input_masked-text-field')
-            p= val
-        .field__input.field__input_date
-            p тут будет 2 реализация черех JS. Всплывающий список отсюда нужно будет убрать
+        input.input-date.field__input(class='field__input_masked-text-field', type="textt", placeholder=val)
