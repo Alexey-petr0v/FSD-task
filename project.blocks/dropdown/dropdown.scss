@@ -1,6 +1,16 @@
 /* DROPDOWN */
 .field {
     &__input {
+        
+            /* Запрет выделения текста */
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none;   /* Chrome/Safari/Opera */
+            -khtml-user-select: none;    /* Konqueror */
+            -moz-user-select: none;      /* Firefox */
+            -ms-user-select: none;       /* Internet Explorer/Edge */
+            user-select: none;           /* Non-prefixed version, currently
+                                            not supported by any browser */
+
         &_dropdown {
             margin: 0px;
             padding: 0px;
@@ -8,33 +18,83 @@
             display: flex; 
             flex-direction: row;
             justify-content: space-between;
+            border-bottom-left-radius: 1px!important;
+            border-bottom-right-radius: 1px!important;
+            cursor: pointer;
 
             p {
                 vertical-align: middle;
                 line-height: 42px;
-                padding-left: 15px;
             }
             img {
-                padding: 16px 15.5px 16px 15.5px;
+                padding: 17px 15px 17px 15px;
             }
         }
 
         &_dropdown-list {
+            padding-top: 6px;
             width: 130px;
-            height: 0px;
             display: none;
             position: absolute;
-            margin: 0px;
-            padding: 0px;
+            border-top: 0px!important;
+            border-top-left-radius: 1px!important;
+            border-top-right-radius: 1px!important;
         }
-        /*
-        &_dropdown-list:hover,
-        &_dropdown:hover + &_dropdown-list {
-            width: 320px;
-            height: 130px;
-            display: block;
-            position: absolute;
+    }
+    &__dropdown-item {
+        padding-bottom: 7px;
+        display: -webkit-flex; 
+        display: flex; 
+        flex-direction: row;
+        justify-content: space-between;
+
+        h3 {margin-top: 6px;}
+
+        .minusAndPlus {
+            display: -webkit-flex; 
+            display: flex; 
+            flex-direction: row;
+            justify-content: space-between;
+            width: 92px;
+            margin-right: 6px;
+
+            .circle {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                border: 1px solid rgba(31, 32, 65, 0.25);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                p {
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+                &_not-active {
+                    opacity: 50%;
+                }
+            }
         }
-        */
+    }
+    &__dropdown-buttons {
+        margin-top: 6px;
+        padding-bottom: 7px;
+        display: -webkit-flex; 
+        display: flex; 
+        flex-direction: row;
+        justify-content: space-between;
+
+        h3 {margin-top: 6px;margin-right: 6px;margin-bottom: 6px;}
+
+        .clear {
+            cursor: pointer;
+            color: rgba(31, 32, 65, 0.5);
+        }
+
+        .apply {
+            cursor: pointer;
+            color: #BC9CFF;
+        }
     }
 }

@@ -18,6 +18,8 @@
       </header>
       <main class="main">
         <div class="main-container">
+          <!--здесь нужен будет ещё один миксин-->
+          <!--для создания пунктов .field__dropdown-items-->
           <div class="form-elements">
             <div class="form-elements__column_first">
                         <div class="field">
@@ -29,8 +31,48 @@
                           <div class="field__input field__input_dropdown">
                             <p>Сколько гостей</p><img src="./images/expand_more.svg" alt="expand more">
                           </div>
-                          <div class="field__input field__input_dropdown-list">
-                            <p>тут будет 1 реализация черех JS</p>
+                          <div class="field__input field__input_dropdown-list" data-clickStatus="0">
+                            <input id="total-amount" type="hidden" data-array="Сколько гостей">
+                            <div class="field__dropdown-item amount1">
+                              <h3>спальни</h3>
+                              <div class="minusAndPlus">
+                                <div class="circle minus">
+                                  <p>-</p>
+                                </div>
+                                <h3>2</h3>
+                                <div class="circle plus">
+                                  <p>+</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="field__dropdown-item amount2">
+                              <h3>кровати</h3>
+                              <div class="minusAndPlus">
+                                <div class="circle minus">
+                                  <p>-</p>
+                                </div>
+                                <h3>0</h3>
+                                <div class="circle plus">
+                                  <p>+</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="field__dropdown-item amount3">
+                              <h3>ванные комнаты</h3>
+                              <div class="minusAndPlus">
+                                <div class="circle minus">
+                                  <p>-</p>
+                                </div>
+                                <h3>0</h3>
+                                <div class="circle plus">
+                                  <p>+</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="field__dropdown-buttons">
+                              <h3 class="clear">очистить</h3>
+                              <h3 class="apply">применить</h3>
+                            </div>
                           </div>
                         </div>
                         <div class="field">

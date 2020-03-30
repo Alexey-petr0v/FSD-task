@@ -1,8 +1,38 @@
+//здесь нужен будет ещё один миксин
+//для создания пунктов .field__dropdown-items
+
 mixin addDropdown(val, title)
     .field
         h3= title
         .field__input(class='field__input_dropdown')
             p= val
             img(src="./images/expand_more.svg" alt="expand more")
-        .field__input.field__input_dropdown-list(clickStatus = 0)
-            p тут будет 1 реализация черех JS
+        .field__input.field__input_dropdown-list(data-clickStatus = 0)
+            input(id='total-amount', type='hidden', data-array=val)
+            .field__dropdown-item.amount1
+                h3 спальни
+                .minusAndPlus
+                    .circle.minus
+                        p -
+                    h3 2
+                    .circle.plus
+                        p +
+            .field__dropdown-item.amount2
+                h3 кровати
+                .minusAndPlus
+                    .circle.minus
+                        p -
+                    h3 0
+                    .circle.plus
+                        p +
+            .field__dropdown-item.amount3
+                h3 ванные комнаты
+                .minusAndPlus
+                    .circle.minus
+                        p -
+                    h3 0
+                    .circle.plus
+                        p +
+            .field__dropdown-buttons
+                h3.clear очистить
+                h3.apply применить
