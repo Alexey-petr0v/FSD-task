@@ -1,38 +1,21 @@
-//здесь нужен будет ещё один миксин
-//для создания пунктов .field__dropdown-items
+mixin addItems(items)
+    - for (var x = 0; x < items.length; x++)
+        .field__dropdown-item(class="field__dropdown-item_amount" + x)
+            h3= items[x].title
+            .field__minusAndPlus
+                p.field__circle.field__minus -
+                h3= items[x].value
+                p.field__circle.field__plus +
 
-mixin addDropdown(val, title)
+mixin addDropdown(val, title, items)
     .field
         h3= title
         .field__input(class='field__input_dropdown')
             p= val
             img(src="./images/expand_more.svg" alt="expand more")
         .field__input.field__input_dropdown-list(data-clickStatus = 0)
-            input(id='total-amount', type='hidden', data-array=val)
-            .field__dropdown-item.amount1
-                h3 спальни
-                .minusAndPlus
-                    .circle.minus
-                        p -
-                    h3 2
-                    .circle.plus
-                        p +
-            .field__dropdown-item.amount2
-                h3 кровати
-                .minusAndPlus
-                    .circle.minus
-                        p -
-                    h3 0
-                    .circle.plus
-                        p +
-            .field__dropdown-item.amount3
-                h3 ванные комнаты
-                .minusAndPlus
-                    .circle.minus
-                        p -
-                    h3 0
-                    .circle.plus
-                        p +
+            input(id='total-amount', type='hidden', value=val)
+            +addItems(items)
             .field__dropdown-buttons
                 h3.clear очистить
                 h3.apply применить

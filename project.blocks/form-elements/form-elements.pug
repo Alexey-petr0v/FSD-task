@@ -3,10 +3,17 @@ include ../dropdown/dropdown
 include ../masked-text-field/masked-text-field
 include ../date-dropdown/date-dropdown
 
+-
+    var itemsDropdown = [
+        {title: "взрослые", value : "0"},
+        {title: "дети", value : "0"},
+        {title: "младенцы", value : "0"}
+    ]
+
 .form-elements
     .form-elements__column_first
         +addTextField('Email', 'Text Field')
-        +addDropdown('Сколько гостей', 'Dropdown')
+        +addDropdown('Сколько гостей', 'Dropdown', itemsDropdown)
         +addMaskeTextField('ДД.ММ.ГГГГ', 'masked text field')
         +addDateDropdown('ДД.ММ.ГГГГ', 'date dropdown')
     .form-elements__column_second

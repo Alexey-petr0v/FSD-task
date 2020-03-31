@@ -1,123 +1,115 @@
+/* -------------- Переменные блока dropdown -------------- */
+
 var dropdown = '.field__input_dropdown',
     dropdown_list = $('.field__input_dropdown-list'),
     dropdown_item = '.field__dropdown-item';
+    lenghtList = $(dropdown_item).length;
 
-var btnMinus1 = '.amount1 .minus',
-    btnPlus1 = '.amount1 div.plus',
-    amount1 = $('.amount1 .minusAndPlus h3'),
+// Генерация массива переменных на основе размера списка на странице
+var varItems = new Array(lenghtList);
+for (var i = 0; i < lenghtList; i++) {
+    varItems[i] = new Object ();
+    varItems[i].btnMinus = '.field__dropdown-item_amount' + i + ' .field__minus';
+    varItems[i].btnPlus = '.field__dropdown-item_amount' + i + ' .field__plus';
+    varItems[i].amount = '.field__dropdown-item_amount' + i + ' .field__minusAndPlus h3';
+}
+/* ------------------------------------------------------- */
 
-    btnMinus2 = '.amount2 div.minus',
-    btnPlus2 = '.amount2 div.plus',
-    amount2 = $('.amount2 .minusAndPlus h3'),
 
-    btnMinus3 = '.amount3 div.minus',
-    btnPlus3 = '.amount3 div.plus',
-    amount3 = $('.amount3 .minusAndPlus h3');
-    
+/* -------------- Реализация блока dropdown -------------- */
 
-/* ------- Отображение/скрытие всплывающего списка ------- */
+// ---- MAIN ---- //
 
+// Предварительный запуск изменения внежнего вида кнопок
+editButtons();
+
+// Обработчик нажатия dropdown
 $(dropdown).click (function view(){
-    var click = parseInt($(dropdown_list).attr("data-clickStatus")),
-        clickOn = 0,
-        clickOff = 0;
+    apply (varItems);
+    dropdown_list.slideToggle()
+});
 
-    if (click == 0){
-        clickOn = click;
-        clickOn++;
-        $(dropdown_list).attr("data-clickStatus", clickOn);
-        dropdown_list.slideToggle();
-    }
-    else if (click == 1){
-        clickOff = click;
-        clickOff--;
-        $(dropdown_list).attr("data-clickStatus", clickOff);
-        dropdown_list.slideToggle();
-    }
-    
-    $(dropdown + ' p').text("Список гостей");
+// Обработчики нажатия кнопок '-' и '+'
+$(varItems[0].btnMinus).click (function view(){ minus (varItems, 0) });
+$(varItems[1].btnMinus).click (function view(){ minus (varItems, 1) });
+$(varItems[2].btnMinus).click (function view(){ minus (varItems, 2) });
+$(varItems[0].btnPlus).click (function view(){ plus (varItems, 0) });
+$(varItems[1].btnPlus).click (function view(){ plus (varItems, 1) });
+$(varItems[2].btnPlus).click (function view(){ plus (varItems, 2) });
+
+// Обработчик кнопки 'применить'
+$('.apply').click (function view(){
+    apply (varItems);
+    dropdown_list.slideToggle();
+});
+
+// Обработчик кнопки 'отменить'
+$('.clear').click (function view(){
+    clear();
 });
 
 
-/* ------- Функционал всплывающего списка ------- */
+// ---- FUNCTIONS ---- //
 
-// Изначальный вид списка
-    // Отображение количества гостей
-    // и визуальной деактивации кнопок
-
-// Кнопки списков
-initButtons(amount1, btnMinus1);
-initButtons(amount2, btnMinus2);
-initButtons(amount3, btnMinus3);
-
+// Функции изменения внежнего вида кнопок
+function editButtons(){
+    for (var i = 0; i < lenghtList; i++) {
+        initButtons(varItems[i].amount, varItems[i].btnMinus);
+    }
+}
 function initButtons(amount, btnMinus) {
     var value = parseInt($(amount).text());
     if (value > 0) {
-        if ($(btnMinus).hasClass('circle_not-active')) {
-            $(btnMinus).removeClass('circle_not-active');
+        if ($(btnMinus).hasClass('field__circle_not-active')) {
+            $(btnMinus).removeClass('field__circle_not-active');
         }
     }
-    else if (value == 0){ $(btnMinus).addClass('circle_not-active') }
+    else if (value == 0){ $(btnMinus).addClass('field__circle_not-active') }
 }
 
-// Вид списка после кликов
-    // Отображение количества гостей
-    // и визуальной деактивации кнопок
-
-// Кнопки списков
-$(btnMinus1).click (function view(){ minus (amount1, amount2, amount3, btnMinus1) });
-$(btnPlus1).click (function view(){ plus (amount1, amount2, amount3, btnMinus1) });
-
-$(btnMinus2).click (function view(){ minus (amount2, amount1, amount3, btnMinus2) });
-$(btnPlus2).click (function view(){ plus (amount2, amount1, amount3, btnMinus2) });
-
-$(btnMinus3).click (function view(){ minus (amount3, amount1, amount2, btnMinus3) });
-$(btnPlus3).click (function view(){ plus (amount3, amount1, amount2, btnMinus3) });
-
 // Реализация кнопки '-'
-function minus (amount_current, amount_next2, amount_next3, btnMinus){
-    var value = parseInt($(amount_current).text());
+function minus (itemsObj, x) {
+    var value = parseInt($(itemsObj[x].amount).text());
 
     if (value > 1) {
-        $(amount_current).text(function() {return value - 1;});
-        if ($(btnMinus).hasClass('circle_not-active')) {
-            $(btnMinus).removeClass('circle_not-active');
-        }
+        $(itemsObj[x].amount).text(function() {return value - 1;});
+        editButtons();
     }
     else if (value == 1){
-        $(amount_current).text(function() {return value - 1;});
-        if (!$(btnMinus).hasClass("circle_not-active")) {
-            $(btnMinus).addClass('circle_not-active');
-        }
+        $(itemsObj[x].amount).text(function() {return value - 1;});
+        editButtons();
     }
-
-    totalAmount(parseInt($(amount_current).text()), parseInt($(amount_next2).text()), parseInt($(amount_next3).text()))
+    totalAmount(itemsObj);
 }
 
 // Реализация кнопки '+'
-function plus (amount_current, amount_next2, amount_next3, btnMinus){
-    var value = parseInt($(amount_current).text());
-    $(amount_current).text(function() {return value + 1;});
+function plus (itemsObj, x) {
+    var value = parseInt($(itemsObj[x].amount).text());
+    $(itemsObj[x].amount).text(function() {return value + 1;});
       
-    if ($(btnMinus).hasClass("circle_not-active")) {
-        $(btnMinus).removeClass('circle_not-active')
+    if ($(itemsObj[x].btnMinus).hasClass("field__circle_not-active")) {
+        $(itemsObj[x].btnMinus).removeClass('field__circle_not-active')
     }
-
-    totalAmount(parseInt($(amount_current).text()), parseInt($(amount_next2).text()), parseInt($(amount_next3).text()))
+    totalAmount(itemsObj);
 }
 
 // Функция вывода общей суммы гостей (число + слово)
-function totalAmount(sum1, sum2, sum3) {
+function totalAmount(itemsObject) {
+    var totalAmount = totalAmountNum(itemsObject);
     $(dropdown + ' p').text(function() {
-        var totalAmount = totalAmountNum(sum1, sum2, sum3),
-            allGuests = theGuests(totalAmount);
+        var allGuests = theGuests(totalAmount);
         return totalAmount + allGuests;
     })
 }
+
 // Функция подсчета общей суммы гостей (только число)
-function totalAmountNum(sum1, sum2, sum3) {
-        var totalAmount = sum1 + sum2 + sum3;
-        return totalAmount;
+function totalAmountNum(itemsObject) {
+    var totalAmount = 0, value = 0;
+    for (var i = 0; i < lenghtList; i++){
+        value = parseInt($(itemsObject[i].amount).text());
+        totalAmount += value
+    }
+    return totalAmount;
 }
 
 // Функция вывода слов: "гость", "гостя" и "гостей"
@@ -140,4 +132,39 @@ function theGuests(totalAmount) {
             break;
     }
     return text;
+}
+
+// Реализация кнопки 'применить'
+function apply (itemsObj) {
+    var out = new Array (2);
+        out[0] = totalAmountNum(itemsObj);
+        out[1] = outItems();
+    $("#total-amount").attr("value", out);
+    $(dropdown + ' p').text(totalAmount(itemsObj));
+    
+    // Поля массива out:
+        // 1 поле [общая сумма списка]
+        // 2 список с присваиваниями { [пункт1 [заголовок пункта1], [сумма пункта1]],  [пункт2 [заголовок пункта2], [сумма пункта2]] }
+
+    return out
+}
+function outItems() {
+    var outItems = new Array(lenghtList),
+        amountClass = '.field__dropdown-item_amount';
+    for (var i = 0; i < lenghtList; i++) {
+        outItems[i] = new Object ();
+        outItems[i].title = $(amountClass + i + ' > h3').text();
+        outItems[i].amount = $(varItems[i].amount).text();
+    }
+    return outItems
+}
+
+// Реализация кнопки 'отменить'
+function clear() {
+    for (var i = 0; i < lenghtList; i++) {
+        $(varItems[i].amount).text(0);
+    }
+    $("#total-amount").attr("value", '');
+    totalAmount(varItems);
+    editButtons();
 }
