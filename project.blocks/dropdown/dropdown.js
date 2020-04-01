@@ -38,13 +38,13 @@ $(varItems[1].btnPlus).click (function view(){ plus (varItems, 1) });
 $(varItems[2].btnPlus).click (function view(){ plus (varItems, 2) });
 
 // Обработчик кнопки 'применить'
-$('.apply').click (function view(){
+$('.field__apply').click (function view(){
     apply (varItems);
     dropdown_list.slideToggle();
 });
 
 // Обработчик кнопки 'отменить'
-$('.clear').click (function view(){
+$('.field__clear').click (function view(){
     clear();
 });
 
@@ -99,7 +99,7 @@ function totalAmount(itemsObject) {
     $(dropdown + ' p').text(function() {
         var allGuests = theGuests(totalAmount);
         return totalAmount + allGuests;
-    })
+    });
 }
 
 // Функция подсчета общей суммы гостей (только число)
@@ -108,6 +108,12 @@ function totalAmountNum(itemsObject) {
     for (var i = 0; i < lenghtList; i++){
         value = parseInt($(itemsObject[i].amount).text());
         totalAmount += value
+    }
+    if (totalAmount == 0) {
+        $(".field__clear").text("");
+    }
+    else {
+        $(".field__clear").text("отменить");
     }
     return totalAmount;
 }
