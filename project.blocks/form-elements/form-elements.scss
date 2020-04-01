@@ -5,6 +5,19 @@
     overflow: auto;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    &__element {
+        &_1 {
+            margin-bottom: 104.44px
+        }
+        &_2 {
+            margin-bottom: 22.56px
+        }
+        &_3 {
+            margin-bottom: 40px
+        }
+        
+    }
 }
 
 .form-elements__column_first {

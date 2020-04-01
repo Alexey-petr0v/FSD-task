@@ -7,16 +7,15 @@ mixin addItems(items)
                 h3= items[x].value
                 p.field__circle.field__plus +
 
-mixin addDropdown(val, title, items, classMod)
+mixin addDropdown(inputName, val, title, items, classMod)
     .field
         h3= title
         .field__input.field__input_dropdown(class=classMod)
             p= val
             img(src="./images/expand_more.svg" alt="expand more")
         .field__input.field__input_dropdown-list(class=classMod data-clickStatus = 0)
-            input(id='total-amount', type='hidden', value=val)
+            input(name=inputName, id='total-amount', type='hidden', value=val)
             +addItems(items)
             .field__dropdown-buttons
                 h3.clear очистить
                 h3.apply применить
-        p.description.description--special 12345

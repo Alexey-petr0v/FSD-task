@@ -12,10 +12,14 @@ include ../date-dropdown/date-dropdown
 
 .form-elements
     .form-elements__column_first
-        +addTextField('Email', 'Text Field')
-        +addDropdown('Сколько гостей', 'Dropdown', itemsDropdown, 'field__input_small')
-        +addMaskeTextField('ДД.ММ.ГГГГ', 'masked text field')
-        +addDateDropdown('ДД.ММ.ГГГГ', 'date dropdown')
+        .form-elements__element_1
+            +addTextField('Email', 'Text Field')
+        .form-elements__element_2
+            +addDropdown('the-guests', 'Сколько гостей', 'Dropdown', itemsDropdown)
+        .form-elements__element_3
+            +addMaskeTextField('ДД.ММ.ГГГГ', 'masked text field')
+        .form-elements__element_4
+            +addDateDropdown('ДД.ММ.ГГГГ', 'date dropdown')
     .form-elements__column_second
         +addTextField('', '')
         +addTextField('', '')

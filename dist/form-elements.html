@@ -20,73 +20,81 @@
         <div class="main-container">
           <div class="form-elements">
             <div class="form-elements__column_first">
-                        <div class="field">
-                          <h3>Text Field</h3>
-                          <input class="field__input field__input_text-field" type="text" placeholder="Email">
-                        </div>
-                        <div class="field">
-                          <h3>Dropdown</h3>
-                          <div class="field__input field__input_dropdownundefined">
-                            <p>Сколько гостей</p><img src="./images/expand_more.svg" alt="expand more">
+              <div class="form-elements__element_1">
+                          <div class="field">
+                            <h3>Text Field</h3>
+                            <input class="field__input field__input_text-field" type="text" placeholder="Email">
                           </div>
-                          <div class="field__input field__input_dropdown-list" data-clickStatus="0">
-                            <input id="total-amount" type="hidden" value="Сколько гостей">
-                                      <div class="field__dropdown-item field__dropdown-item_amount0">
-                                        <h3>взрослые</h3>
-                                        <div class="field__minusAndPlus">
-                                          <p class="field__circle field__minus">-</p>
-                                          <h3>0</h3>
-                                          <p class="field__circle field__plus">+</p>
-                                        </div>
-                                      </div>
-                                      <div class="field__dropdown-item field__dropdown-item_amount1">
-                                        <h3>дети</h3>
-                                        <div class="field__minusAndPlus">
-                                          <p class="field__circle field__minus">-</p>
-                                          <h3>0</h3>
-                                          <p class="field__circle field__plus">+</p>
-                                        </div>
-                                      </div>
-                                      <div class="field__dropdown-item field__dropdown-item_amount2">
-                                        <h3>младенцы</h3>
-                                        <div class="field__minusAndPlus">
-                                          <p class="field__circle field__minus">-</p>
-                                          <h3>0</h3>
-                                          <p class="field__circle field__plus">+</p>
-                                        </div>
-                                      </div>
-                            <div class="field__dropdown-buttons">
-                              <h3 class="clear">очистить</h3>
-                              <h3 class="apply">применить</h3>
+              </div>
+              <div class="form-elements__element_2">
+                          <div class="field">
+                            <h3>Dropdown</h3>
+                            <div class="field__input field__input_dropdown">
+                              <p>Сколько гостей</p><img src="./images/expand_more.svg" alt="expand more">
                             </div>
-                          </div>
-                        </div>
-                        <div class="field">
-                          <h3>masked text field</h3>
-                          <input class="input-date field__input field__input_masked-text-field" type="textt" placeholder="ДД.ММ.ГГГГ">
-                        </div>
-                        <div class="field">
-                          <div class="field__columns">
-                            <div class="field__column">
-                              <h3>date dropdown</h3>
-                              <div class="field__input field__input_date-dropdown">
-                                <p>ДД.ММ.ГГГГ</p>
-                              </div>
-                              <div class="field__input field__input_date">
-                                <p>тут будет 3 реализация черех JS. </p>
-                              </div>
-                            </div>
-                            <div class="field__column">
-                              <h3>date dropdown</h3>
-                              <div class="field__input field__input_date-dropdown">
-                                <p>ДД.ММ.ГГГГ</p>
-                              </div>
-                              <div class="field__input field__input_date">
-                                <p>тут будет 3 реализация черех JS. </p>
+                            <div class="field__input field__input_dropdown-list" data-clickStatus="0">
+                              <input name="the-guests" id="total-amount" type="hidden" value="Сколько гостей">
+                                        <div class="field__dropdown-item field__dropdown-item_amount0">
+                                          <h3>взрослые</h3>
+                                          <div class="field__minusAndPlus">
+                                            <p class="field__circle field__minus">-</p>
+                                            <h3>0</h3>
+                                            <p class="field__circle field__plus">+</p>
+                                          </div>
+                                        </div>
+                                        <div class="field__dropdown-item field__dropdown-item_amount1">
+                                          <h3>дети</h3>
+                                          <div class="field__minusAndPlus">
+                                            <p class="field__circle field__minus">-</p>
+                                            <h3>0</h3>
+                                            <p class="field__circle field__plus">+</p>
+                                          </div>
+                                        </div>
+                                        <div class="field__dropdown-item field__dropdown-item_amount2">
+                                          <h3>младенцы</h3>
+                                          <div class="field__minusAndPlus">
+                                            <p class="field__circle field__minus">-</p>
+                                            <h3>0</h3>
+                                            <p class="field__circle field__plus">+</p>
+                                          </div>
+                                        </div>
+                              <div class="field__dropdown-buttons">
+                                <h3 class="clear">очистить</h3>
+                                <h3 class="apply">применить</h3>
                               </div>
                             </div>
                           </div>
-                        </div>
+              </div>
+              <div class="form-elements__element_3">
+                          <div class="field">
+                            <h3>masked text field</h3>
+                            <input class="input-date field__input field__input_masked-text-field" type="textt" placeholder="ДД.ММ.ГГГГ">
+                          </div>
+              </div>
+              <div class="form-elements__element_4">
+                          <div class="field">
+                            <div class="field__columns">
+                              <div class="field__column">
+                                <h3>date dropdown</h3>
+                                <div class="field__input field__input_date-dropdown">
+                                  <p>ДД.ММ.ГГГГ</p>
+                                </div>
+                                <div class="field__input field__input_date">
+                                  <p>тут будет 3 реализация черех JS. </p>
+                                </div>
+                              </div>
+                              <div class="field__column">
+                                <h3>date dropdown</h3>
+                                <div class="field__input field__input_date-dropdown">
+                                  <p>ДД.ММ.ГГГГ</p>
+                                </div>
+                                <div class="field__input field__input_date">
+                                  <p>тут будет 3 реализация черех JS. </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+              </div>
             </div>
             <div class="form-elements__column_second">
                         <div class="field">
