@@ -10,12 +10,14 @@ mixin addItems(items)
 mixin addDropdown(inputName, val, title, items, classMod)
     .field
         h3= title
-        .field__input.field__input_dropdown(class=classMod)
-            p= val
-            img(src="./images/expand_more.svg" alt="expand more")
-        .field__input.field__input_dropdown-list(class=classMod data-clickStatus = 0)
-            input(name=inputName, id='total-amount', type='hidden', value=val)
-            +addItems(items)
-            .field__dropdown-buttons
-                h3.field__clear очистить
-                h3.field__apply применить
+        .field__input.field__input_top
+            .field__input_dropdown(class=classMod)
+                p= val
+                img(src="./images/expand_more.svg" alt="expand more")
+        .field__input.field__input_bottom
+            .field__input_dropdown-list(class=classMod data-clickStatus = 0)
+                input(name=inputName, id='total-amount', type='hidden', value=val)
+                +addItems(items)
+                .field__dropdown-buttons
+                    h3.field__clear очистить
+                    h3.field__apply применить

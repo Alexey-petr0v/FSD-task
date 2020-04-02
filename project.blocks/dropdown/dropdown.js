@@ -1,7 +1,9 @@
+/* !!!!!!!!!!!!!!!!!!!!!! Старый dropdown !!!!!!!!!!!!!!!!!!!!! */
+
 /* -------------- Переменные блока dropdown -------------- */
 
-var dropdown = '.field__input_dropdown',
-    dropdown_list = $('.field__input_dropdown-list'),
+var dropdown_top = '.field__input_top',
+    dropdown_bottom = $('.field__input_bottom'),
     dropdown_item = '.field__dropdown-item';
     lenghtList = $(dropdown_item).length;
 
@@ -13,6 +15,7 @@ for (var i = 0; i < lenghtList; i++) {
     varItems[i].btnPlus = '.field__dropdown-item_amount' + i + ' .field__plus';
     varItems[i].amount = '.field__dropdown-item_amount' + i + ' .field__minusAndPlus h3';
 }
+
 /* ------------------------------------------------------- */
 
 
@@ -24,9 +27,9 @@ for (var i = 0; i < lenghtList; i++) {
 editButtons();
 
 // Обработчик нажатия dropdown
-$(dropdown).click (function view(){
+$(dropdown_top).click (function view(){
     apply (varItems);
-    dropdown_list.slideToggle()
+    dropdown_bottom.slideToggle()
 });
 
 // Обработчики нажатия кнопок '-' и '+'
@@ -40,7 +43,7 @@ $(varItems[2].btnPlus).click (function view(){ plus (varItems, 2) });
 // Обработчик кнопки 'применить'
 $('.field__apply').click (function view(){
     apply (varItems);
-    dropdown_list.slideToggle();
+    dropdown_bottom.slideToggle();
 });
 
 // Обработчик кнопки 'отменить'
@@ -96,7 +99,7 @@ function plus (itemsObj, x) {
 // Функция вывода общей суммы гостей (число + слово)
 function totalAmount(itemsObject) {
     var totalAmount = totalAmountNum(itemsObject);
-    $(dropdown + ' p').text(function() {
+    $(dropdown_top + ' p').text(function() {
         var allGuests = theGuests(totalAmount);
         return totalAmount + allGuests;
     });
@@ -146,7 +149,7 @@ function apply (itemsObj) {
         out[0] = totalAmountNum(itemsObj);
         out[1] = outItems();
     $("#total-amount").attr("value", out);
-    $(dropdown + ' p').text(totalAmount(itemsObj));
+    $(dropdown_top + ' p').text(totalAmount(itemsObj));
     
     // Поля массива out:
         // 1 поле [общая сумма списка]
@@ -174,3 +177,4 @@ function clear() {
     totalAmount(varItems);
     editButtons();
 }
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
