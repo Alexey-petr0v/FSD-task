@@ -4,7 +4,7 @@ include ../masked-text-field/masked-text-field
 include ../date-dropdown/date-dropdown
 
 -
-    var itemsDropdown = [
+    var listCounter = [
         {title: "взрослые", value : "0"},
         {title: "дети", value : "0"},
         {title: "младенцы", value : "0"}
@@ -15,7 +15,7 @@ include ../date-dropdown/date-dropdown
         .form-elements__element_1
             +addTextField('Email', 'Text Field')
         .form-elements__element_2
-            +addDropdown('the-guests', 'Сколько гостей', 'Dropdown', itemsDropdown)
+            +addDropdown('Dropdown', '', {list: true}, listCounter)
         .form-elements__element_3
             +addMaskeTextField('ДД.ММ.ГГГГ', 'masked text field')
         .form-elements__element_4

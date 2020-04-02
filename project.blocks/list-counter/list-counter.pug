@@ -1,0 +1,21 @@
+mixin addItems(items)
+    - for (var x = 0; x < items.length; x++)
+        .list-counter__item(class="list-counter__item_amount" + x)
+            h3= items[x].title
+            .list-counter__minusAndPlus
+                p.list-counter__circle.list-counter__minus -
+                h3= items[x].value
+                p.list-counter__circle.list-counter__plus +
+
+mixin addListCounterTop
+    .list-counter__top
+        p= 'Сколько гостей'
+        img(src="./images/expand_more.svg" alt="expand more")
+
+mixin addListCounterBottom(items)
+    .list-counter__bottom
+        input(name='list-counter', id='total-amount', type='hidden', value=val)
+        +addItems(items)
+        .list-counter__buttons
+            h3.list-counter__clear очистить
+            h3.list-counter__apply применить

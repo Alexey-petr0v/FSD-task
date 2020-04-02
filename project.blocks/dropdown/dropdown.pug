@@ -1,23 +1,12 @@
-mixin addItems(items)
-    - for (var x = 0; x < items.length; x++)
-        .field__dropdown-item(class="field__dropdown-item_amount" + x)
-            h3= items[x].title
-            .field__minusAndPlus
-                p.field__circle.field__minus -
-                h3= items[x].value
-                p.field__circle.field__plus +
+include ../../library.blocks/field/field
+include ../list-counter/list-counter
 
-mixin addDropdown(inputName, val, title, items, classMod)
-    .field
-        h3= title
-        .field__input.field__input_top
-            .field__input_dropdown(class=classMod)
-                p= val
-                img(src="./images/expand_more.svg" alt="expand more")
-        .field__input.field__input_bottom
-            .field__input_dropdown-list(class=classMod data-clickStatus = 0)
-                input(name=inputName, id='total-amount', type='hidden', value=val)
-                +addItems(items)
-                .field__dropdown-buttons
-                    h3.field__clear очистить
-                    h3.field__apply применить
+mixin addDropdown(title, fieldMod, dropdownType, additionalContent)
+    +addField(title, fieldMod)
+        .dropdown
+            .dropdown__top
+                if dropdownType.list
+                    +addListCounterTop
+            .dropdown__bottom
+                if dropdownType.list
+                    +addListCounterBottom(additionalContent)

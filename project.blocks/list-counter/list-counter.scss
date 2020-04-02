@@ -1,0 +1,68 @@
+/* list-counter */
+
+.list-counter {
+    &__buttons {
+        margin-top: 6px;
+        padding-bottom: 7px;
+        display: -webkit-flex; 
+        display: flex; 
+        flex-direction: row;
+        justify-content: space-between;
+    
+        h3 {margin-top: 6px;margin-right: 6px;margin-bottom: 6px;}
+    
+        .list-counter__clear {
+            cursor: pointer;
+            color: rgba(31, 32, 65, 0.5);
+        }
+    
+        .list-counter__apply {
+            cursor: pointer;
+            color: #BC9CFF;
+        }
+    }
+    
+    &__item {
+        padding-bottom: 7px;
+        display: -webkit-flex; 
+        display: flex; 
+        flex-direction: row;
+        justify-content: space-between;
+    
+        h3 {margin-top: 6px;}
+    
+        .list-counter__minusAndPlus {
+            display: -webkit-flex; 
+            display: flex; 
+            flex-direction: row;
+            justify-content: space-between;
+            width: 92px;
+            margin-right: 6px;
+    
+            .list-counter__circle {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                border: 1px solid rgba(31, 32, 65, 0.25);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                p {
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+                &_not-active {
+                    opacity: 50%;
+                }
+            }
+        }
+    }
+
+    &__top {
+        display: -webkit-flex; 
+        display: flex; 
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

@@ -1,4 +1,5 @@
-mixin addField(viewField, val, title)
-    .field
+mixin addField(title, classMod)
+    .field(class=classMod)
         h3= title
-        input.field__input
+        .field__input
+            block
