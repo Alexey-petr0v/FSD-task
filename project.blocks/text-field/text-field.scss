@@ -1,13 +1,18 @@
-@import '../library.blocks/field/field.scss';
-
 /* TEXT FIELD */
-.field {
-    &__input {
-        &_text-field {
-            &:hover,
-            &:focus {
-                border: 1px solid rgba(31, 32, 65, 0.5);
-            }
+.text-field {
+    .text-field__elem {
+        padding-left: 14px;
+        min-width: 318px;
+        min-height: 42px;
+        display: block;
+        width: inherit;
+        background: #FFFFFF;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        border-radius: 4px;
+        outline:none;
+        &:hover,
+        &:focus {
+            border: 1px solid rgba(31, 32, 65, 0.5);
         }
     }
 }

@@ -1,6 +1,5 @@
 .field {
     & h3{margin-bottom: 5px;}
-    width: 320px;
     
     &_small {
         width: 266px;
@@ -9,9 +8,7 @@
     &__input {
         &:first-child{}
         min-height: 42px;
-        background: #FFFFFF;
         box-sizing: border-box;
-        border-radius: 4px;
         outline:none;
 
         &::-webkit-input-placeholder {

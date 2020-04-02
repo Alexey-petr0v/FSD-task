@@ -1,6 +1,5 @@
 include ../text-field/text-field
 include ../dropdown/dropdown
-include ../masked-text-field/masked-text-field
 include ../date-dropdown/date-dropdown
 
 -
@@ -13,11 +12,11 @@ include ../date-dropdown/date-dropdown
 .form-elements
     .form-elements__column_first
         .form-elements__element_1
-            +addTextField('Email', 'Text Field')
+            +addTextField('Text Field')
         .form-elements__element_2
             +addDropdown('Dropdown', '', {list: true}, listCounter)
         .form-elements__element_3
-            +addMaskeTextField('ДД.ММ.ГГГГ', 'masked text field')
+            +addTextField('Text Field', '', 'text-field__elem_masked')
         .form-elements__element_4
             +addDateDropdown('ДД.ММ.ГГГГ', 'date dropdown')
     .form-elements__column_second

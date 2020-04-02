@@ -1,4 +1,5 @@
-mixin addTextField(val, title)
-    .field
-        h3= title
-        input.field__input(class='field__input_text-field', type="text", placeholder=val)
+mixin addTextField(title, fieldMod, textFieldMod)
+    +addField(title, fieldMod)
+        .text-field
+            input.text-field__elem(class=textFieldMod, type="text", placeholder="Email")
+                
