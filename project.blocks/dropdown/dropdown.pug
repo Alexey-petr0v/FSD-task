@@ -7,6 +7,10 @@ mixin addDropdown(title, fieldMod, dropdownType, additionalContent)
             .dropdown__top
                 if dropdownType.list
                     +addListCounterTop
+                if dropdownType.date
+                    +addDateTop
             .dropdown__bottom
                 if dropdownType.list
                     +addListCounterBottom(additionalContent)
+                if dropdownType.date
+                    +addDateBottom

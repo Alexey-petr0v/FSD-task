@@ -4,8 +4,7 @@
 
 var listCounter_top = '.list-counter__top',
     listCounter_item = '.list-counter__item',
-    lenghtList = $(listCounter_item).length,
-    closeParentClass = '.dropdown__bottom';
+    lenghtList = $(listCounter_item).length;
 
 // Генерация массива переменных на основе размера списка на странице
 var varItems = new Array(lenghtList);
@@ -42,7 +41,6 @@ $(varItems[2].btnPlus).click (function view(){ plus (varItems, 2) });
 // Обработчик кнопки 'применить'
 $('.list-counter__apply').click (function view(){
     apply (varItems);
-    $(closeParentClass).slideToggle()
 });
 
 // Обработчик кнопки 'отменить'

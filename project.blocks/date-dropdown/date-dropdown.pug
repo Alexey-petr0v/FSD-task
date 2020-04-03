@@ -1,15 +1,10 @@
-mixin addDateDropdown(val, title)
-    .field
-        .field__columns
-            .field__column
-                h3= title
-                .field__input(class='field__input_date-dropdown')
-                    p= val
-                .field__input.field__input_date
-                    p тут будет 3 реализация черех JS. 
-            .field__column
-                h3= title
-                .field__input(class='field__input_date-dropdown')
-                    p= val
-                .field__input.field__input_date
-                    p тут будет 3 реализация черех JS. 
+mixin addDateTop
+    .date__top
+        p 123
+
+mixin addDateBottom(items)
+    .date__bottom
+        p 456
+        .date__buttons
+            h3.date__clear очистить
+            h3.date__apply(id="apply") применить

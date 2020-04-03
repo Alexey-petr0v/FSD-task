@@ -18,7 +18,7 @@ include ../date-dropdown/date-dropdown
         .form-elements__element_3
             +addTextField('Text Field', '', 'text-field__elem_masked')
         .form-elements__element_4
-            +addDateDropdown('ДД.ММ.ГГГГ', 'date dropdown')
+            +addDropdown('Dropdown', '', {date: true}, listCounter)
     .form-elements__column_second
         +addTextField('', '')
         +addTextField('', '')
