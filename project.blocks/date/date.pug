@@ -1,6 +1,11 @@
 mixin addDateTop
     .date__top
-        p 123
+        .date__small-top
+            p= 'ДД.ММ.ГГГГ'
+            img(src="./images/expand_more.svg" alt="expand more")
+        .date__small-top
+            p= 'ДД.ММ.ГГГГ'
+            img(src="./images/expand_more.svg" alt="expand more")
 
 mixin addDateBottom(items)
     .date__bottom
