@@ -1,3 +1,21 @@
+-
+    var week = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
+
+mixin addDate
+    .date__cal
+        .date__arrow-left
+        .date__title
+            p Название месяца
+        .date__arrow-right
+        - var n = 0;
+        while n < 7
+            .date__day-week(id='day-of-the-week' + n)= week[n]
+            - var n = n + 1;
+        - var n = 1;
+        while n < 37
+            .date__number(id='date-number' + n)
+            - var n = n + 1;
+
 mixin addDateTop
     .date__top
         .date__small-top
@@ -7,9 +25,10 @@ mixin addDateTop
             p= 'ДД.ММ.ГГГГ'
             img(src="./images/expand_more.svg" alt="expand more")
 
-mixin addDateBottom(items)
+mixin addDateBottom
     .date__bottom
-        p 456
+        input(name='date', id='date', type='hidden', value=val)
+        +addDate
         .date__buttons
             h3.date__clear очистить
             h3.date__apply(id="apply") применить
