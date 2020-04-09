@@ -9,11 +9,7 @@ mixin addDate
         .date__arrow-right
         - var n = 0;
         while n < 7
-            .date__day-week(id='day-of-the-week' + n)= week[n]
-            - var n = n + 1;
-        - var n = 1;
-        while n < 37
-            .date__number(id='date-number' + n)
+            .date__day-week(id='day-week-' + n)= week[n]
             - var n = n + 1;
 
 mixin addDateTop

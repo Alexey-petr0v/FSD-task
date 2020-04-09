@@ -70,10 +70,19 @@
         background: indigo;
         cursor: pointer;
     }
+    
 
     &__cal {
         width: 306px;
-        background: red;
+        background: white;
+        display: -webkit-flex; 
+        display: flex; 
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &__day-of-the-week {
+        background: white;
         display: -webkit-flex; 
         display: flex; 
         flex-direction: row;
@@ -81,19 +90,36 @@
     }
 
     &__day-week {
-        width: 37.88px;
-        height: 38px;
-        border: 1px solid black;
+        width: 39.88px;
+        height: 40px;
         background: lightblue;
     }
 
     &__number {
-        width: 37.88px;
-        height: 38px;
-        border: 1px solid black;
-        background: yellow;
+        border-radius: 50%;
+        width: 39.88px;
+        height: 40px;
+        cursor: pointer;
+        z-index: 2;
         &_current {
             background: green;
+        }
+        &_checked {
+            background: purple;
+        }
+    }
+    &__from-and-to {
+        z-index: 1;
+        width: 39.88px;
+        height: 40px;
+        background: rgba(31, 32, 65, 0.5);
+        position: absolute;
+        &_first {
+            width: 19.94px;
+            margin-left: 19.94px;
+        }
+        &_last {
+            width: 19.94px;
         }
     }
 

@@ -1,132 +1,150 @@
 
- startCal();
 
- // Обработчик кнопки 'стрелка влево'
+var toggle_month = 0, //0 - текущий месяц
+    check_status = false; //флаг: выбраны ли обе даты
+
+startCal(toggle_month);
+
+// Обработчик кнопки 'стрелка влево'
 $('.date__arrow-left').click (function view(){
-    startCal();
+   toggle_month -= 1;
+   startCal(toggle_month);
 });
 
 // Обработчик кнопки 'стрелка вправо'
 $('.date__arrow-right').click (function view(){
-   startCal();
+   toggle_month += 1;
+   startCal(toggle_month);
 });
- 
- 
- function startCal() {
+
+// Обработчик нажатия на даты
+$('.date__number').click (function view(){
+    // Если совершено < 2 нажатий
+    if ($(".date__number_checked").length < 2) {
+        $(this).toggleClass("date__number_checked");
+    } else {
+            $(this).removeClass("date__number_checked");
+    }
+    // Если совершены 2 нажатия
+    if (($(".date__number_checked").length == 2)&&(!check_status)) {
+        check_status = true;
+
+        // one - выделение более ранней даты
+        var one = $($(".date__number_checked").eq(0)).index();
+        // two - выделение более поздней даты
+        var two = $($(".date__number_checked").eq(1)).index();
+        console.log(two);
+
+        // Вывод выделения
+        for (var m = one; m <= two; m++){
+            var position = $($($(".date__number").eq(m))).position();
+            $( ".date__day-of-the-week" ).append( "<div class='date__from-and-to' style='left:"+(position.left)+"px;top:"+position.top+"px'></div>" );
+        }
+        // Вывод корректировка выделения в начале и в конце
+        $($(".date__from-and-to").eq(0)).addClass("date__from-and-to_first");
+        $($(".date__from-and-to").eq(-1)).addClass("date__from-and-to_last");
+    }
+
+    else {
+        check_status = false;
+        $(".date__from-and-to").remove();
+    }
+});
+
+
+
+function startCal(toggle_month) {
+    
+    $(".date__number").remove();
 
     // Текущий день месяца
     let date = new Date();
     date.setHours(0, 0, 0, 0);
     console.log('Сегодняшняя дата:' + date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear());
-    
+
     // Первый день месяца
     let first_date = new Date();
     first_date.setHours(0, 0, 0, 0);
+    first_date.setMonth(first_date.getMonth() + toggle_month);
     first_date.setDate(1);
     console.log('Первый день месяца:' + first_date.getDate() + '.' + (first_date.getMonth() + 1) + '.' + first_date.getFullYear());
-    
+
     // Последний день месяца
     let last_date = new Date();
     last_date.setHours(0, 0, 0, 0);
+    last_date.setMonth(last_date.getMonth() + toggle_month);
     last_date.setMonth(last_date.getMonth() + 1);
     last_date.setDate(0);
     console.log('Последний день месяца:' + last_date.getDate() + '.' + (last_date.getMonth() + 1) + '.' + last_date.getFullYear());
-    
-    // Тестовый вывод даты пред месяца
-    /*
-    let prev_month_date = new Date();
-    prev_month_date.setDate(0);
-    console.log('Тест даты пред месяца:' + prev_month_date.getDate() + '.' + (prev_month_date.getMonth() + 1) + '.' + prev_month_date.getFullYear());
-    */
-    console.log('День недели текущий:' + date.getDay());
-    console.log('День недели первого дня месяца:' + first_date.getDay());
-    
-    
-    
-    // Цикл: от 0 до дня недели первого дня месяца
-    /*
-    for (i = 0; i < first_date.getDay(); i++){
-        $($(".date__number").eq(i)).text(i);
-    }
-    */
-    
+
+
     let prev_month_date = new Date();
     prev_month_date.setHours(0, 0, 0, 0);
+    prev_month_date.setMonth(prev_month_date.getMonth() + toggle_month);
     prev_month_date.setDate(0);
     let prev_date = prev_month_date.getDate();
-    prev_date -= first_date.getDay();
-    console.log('Тест даты пред месяца:' + prev_month_date.getDate() + '.' + (prev_month_date.getMonth() + 1) + '.' + prev_month_date.getFullYear());
-    
-    for (i = 0; i < first_date.getDay(); i++){
-        prev_date++;
-        $($(".date__number").eq(i)).text(prev_date);
-    }
-    
-    var i = first_date.getDay();
-    var date_month = 1;
-    // Цикл: от первого дня месяца до последнего .length
-    
-    while (prev_month_date.getTime() < last_date.getTime()) {
-        prev_month_date.setDate(prev_month_date.getDate()+1);
-        $($(".date__number").eq(i)).text(date_month);
-        // Выделение текущей даты
-        if (prev_month_date.getTime() == date.getTime()){
-            $($(".date__number").eq(i)).addClass( "date__number_current" );
+
+
+    $( ".date__cal" ).append( "<div class='date__day-of-the-week'></div>" );
+
+    // Печать чисел прошлого месяца (черв числ теку мес != 1)
+    if (first_date.getDay() !== 0) {
+        prev_date = prev_date - first_date.getDay();
+        for (var y = 0; y < first_date.getDay(); y++){
+            prev_date++;
+            $( ".date__day-of-the-week" ).append( "<div class='date__number'>" + prev_date + "</div>" );
         }
-        date_month++;
-        i++;
+    }
+    else {
+        prev_date = prev_date - 7;
+        for (var y = 0; y < 7; y++){
+            prev_date++;
+            $( ".date__day-of-the-week" ).append( "<div class='date__number'>" + prev_date + "</div>" );
+        }
+
     }
 
+    // Печать всех чисел данного месяца
+    for (var y = 1; y <= last_date.getDate(); y++) {
+        if ((y == date.getDate())&&(toggle_month == 0)){
+            $( ".date__day-of-the-week" ).append( "<div class='date__number date__number_current'>"+y+"</div>" );
+        } else {
+            $( ".date__day-of-the-week" ).append( "<div class='date__number'>"+y+"</div>" );
+        }
+    }
+
+    // Печать чисел следующего месяца
+    var next_date = 1;
+    for (var y = last_date.getDay(); y < 7; y++){
+        $(".date__day-of-the-week").append( "<div class='date__number'>" + next_date + "</div>" );
+        next_date++;
+    }
+
+    // Сокрытие первого элемента. Т.к. подсчет нужен с пн, а не с вс
     if ( $(".date__number").length != 35 ) {
-        //$($(".date__number").eq(0)).detach();
-        $($(".date__number").eq(0)).// ЗДЕСЬ ЗАКОНЧИЛ надо дисплей попробовать
-        $(".date__number").eq(4).text('00');
-     }
-    
-    for (var x = i; x < $(".date__number").length; x++) {
-        console.log(1);
-        prev_month_date.setDate(prev_month_date.getDate()+1);
-        $($(".date__number").eq(x)).text(prev_month_date.getDate());
+        if (first_date.getDate() != $($(".date__number").eq(0)).text()){
+            $($(".date__number").eq(0)).attr("style", "display: none");
+        }
     }
-    
-    
-    // Удаление 1 элемента. Т.к. подсчет нужен с пн, а не с вс
-    
 
-    
-         
-    
-    
-    /*
-    console.log(prev_date);
-    console.log(first_date.getTime());
-    console.log(date.getTime());
-    console.log(last_date.getTime());
-    */
-    /* --- ОСНОВНЫЕ ШАГИ --- */
-    // ! Вывод дат предыдущего месяца
-    // ! Вывод дат этого месяца до текущей даты
-    // ! Вывод текущей даты
-    // ! Вывод дат этого месяца после текущей даты и до последней даты
-    // ! Вывод дат следующего месяца
-    
-    
-    /* --- ВСЕ ШАГИ --- */
-    // Определить текущую дату
-    // Определить первую дату
-    // Определить последнюю дату
-    // Условие: если день недели первой даты не == 1, то
-    //      цикл от 1 до 
-    // ! Вывод дат предыдущего месяца
-    // ! Вывод дат этого месяца до текущей даты
-    // ! Вывод текущей даты
-    // ! Вывод дат этого месяца после текущей даты и до последней даты
-    // ! Вывод дат следующего месяца
-    
-    // Цикл: от 0 по 4 (5 недель месяца)
-    //      Цикл от 0 по 6 (7 дней недели)
-    // подумать на выводом от воскресенья
-     
- }
+    // Вывод названий месяцев
+    var title_month;
+    switch(first_date.getMonth()){
+        case 0: title_month = "Январь"; break;
+        case 1: title_month = "Февраль"; break;
+        case 2: title_month = "Март"; break;
+        case 3: title_month = "Апрель"; break;
+        case 4: title_month = "Май"; break;
+        case 5: title_month = "Июнь"; break;
+        case 6: title_month = "Июль"; break;
+        case 7: title_month = "Август"; break;
+        case 8: title_month = "Сентябрь"; break;
+        case 9: title_month = "Октябрь"; break;
+        case 10: title_month = "Ноябрь"; break;
+        case 11: title_month = "Декабрь"; break;                   
+    }
 
- 
+    $(".date__title p").text(title_month);
+
+}
+
