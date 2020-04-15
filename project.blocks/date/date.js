@@ -1,135 +1,158 @@
 
+var quantity_week_minus = 0,
+    quantity_week_plus = 0,
+    current = 0;
 
-var toggle_month = 0, //0 - текущий месяц
-    check_status = false; //флаг: выбраны ли обе даты
+// Первый день месяца
+let first_date = new Date();
+first_date.setHours(0, 0, 0, 0); //Установка часов, минут, сеунд и миллисекунд
+first_date.setDate(1); // 1 - первое число месяца
+first_date_full = first_date.getDate() + '.' + first_date.getMonth() + '.' + first_date.getFullYear(); // Дата в формате: 11.1.2003
 
-startCal(toggle_month);
+// Последний день месяца
+let last_date = new Date();
+last_date.setHours(0, 0, 0, 0);
+last_date.setMonth(last_date.getMonth() + 1); // Переключить месяц на следующий
+last_date.setDate(0); // 1 - первое число предыдущего месяца
+last_date_full = last_date.getDate() + '.' + last_date.getMonth() + '.' + last_date.getFullYear();
+
+// Первый день след месяца
+let first_next_date = new Date();
+first_next_date.setHours(0, 0, 0, 0);
+first_next_date.setMonth(last_date.getMonth() + 1);
+first_next_date.setDate(1);
+first_next_date_full = first_next_date.getDate() + '.' + first_next_date.getMonth() + '.' + first_next_date.getFullYear();
+
+// Первый день предыд месяца
+let first_prev_date = new Date();
+first_prev_date.setHours(0, 0, 0, 0);
+first_prev_date.setMonth(last_date.getMonth() - 1);
+first_prev_date.setDate(1);
+first_prev_date_full = first_prev_date.getDate() + '.' + first_prev_date.getMonth() + '.' + first_prev_date.getFullYear();
+console.log("first_prev_date_full: "+first_prev_date_full);
+// Динамическая дата итерации
+let counter_date = new Date();
+counter_date.setHours(0, 0, 0, 0);
+
+// Вычисление первого дня первой недели (+1, тк неделя стартует с вск, а нужно с пн)
+var subtractor = first_date.getDay(); // Вычитатель
+counter_date.setDate(first_date.getDate());
+counter_date.setDate(counter_date.getDate() - subtractor + 1); 
+
+// Вывод недель текущего месяца
+var last_ID = -1, week, first_ID = 0;
+while (week != "firstnext") { // Пока не будет найдено первое число след месяца
+    last_ID++; // Увеличть ID недели на 1
+    var week = addWeek(last_ID,"right",first_prev_date_full,first_next_date_full); // Добавить новую неделю
+}
+
+// Первичная установка названия месяца в заголовок
+addTitleMonth(first_date.getMonth());
+
+// Функция вывода недель
+function addWeek(ID,button,firstprevdatefull,firstnextdatefull) {
+    var result = "none";
+    var current_date;
+    // Вывод недели
+        if (button == "left") {
+            $(".date__cal").prepend("<div class='date__week' id='"+ID+"'></div>");
+        }
+        else {
+            $(".date__cal").append("<div class='date__week' id='"+ID+"'></div>");
+        }
+    // Вывод дней недели
+    for (var i = 0; i < 7; i++) {
+        // Сравнение текущей даты итерации и последней даты на совпадение
+        current_date = counter_date.getDate() + '.' + counter_date.getMonth() + '.' + counter_date.getFullYear();
+        //console.log("current_date: "+current_date);
+        //console.log("firstprevdatefull: "+firstprevdatefull);
+        if (current_date == firstprevdatefull) {
+            result = "firstprev";
+            console.log("prev!");
+            //console.log(current_date);
+        }
+        else if (current_date == firstnextdatefull) { result = "firstnext" }
+        // Вывод числа
+        // Прибавка к след числу
+        if (button == "left") {
+            $("#"+ID).prepend("<div data-date='"+counter_date.getDate()+"' class='date__number'><p>" + counter_date.getDate() + "</p></div>");
+            counter_date.setDate(counter_date.getDate()-1);
+        }
+        else {
+            $("#"+ID).append("<div data-date='"+counter_date.getDate()+"' class='date__number'><p>" + counter_date.getDate() + "</p></div>");
+            counter_date.setDate(counter_date.getDate()+1);
+        }
+    }
+    //console.log(ID);
+    return result;
+}
 
 // Обработчик кнопки 'стрелка влево'
 $('.date__arrow-left').click (function view(){
-   toggle_month -= 1;
-   startCal(toggle_month);
+    
+    counter_date.setMonth(counter_date.getMonth()-1);
+    counter_date.setDate(-2);
+
+    // Скрытие всех недель по ID
+    /*
+    for (var ID = first_ID; ID <= last_ID; ID++ ) {
+        $("#"+ID).css("display","none");
+    }*/
+    /*
+    // Если в последней неделе присутствует число 1, то вновь отобразить неделю
+    for (var i = 0; i < 7; i++){
+        if ($("#"+last_ID).children().eq(i).attr("data-date") == '1') {
+            $("#"+last_ID).css("display","flex");
+        }
+    }*/
+    // Установка названия месяца в заголовок
+    //console.log(first_prev_date_full);
+    addTitleMonth(first_prev_date.getMonth());
+    // Переключить месяц на следующий
+    first_prev_date_full = first_prev_date.getDate() + '.' + first_prev_date.getMonth() + '.' + first_prev_date.getFullYear();
+    // Пока не будет найдено первое число след месяца
+    first_ID--;
+    
+    console.log(first_prev_date_full);
+    while (week != "firstprev") {
+        //console.log(week);
+        var week = addWeek(first_ID,"left",first_prev_date_full,first_next_date_full); // Добавить новую неделю
+        first_ID--; // Уменьшить ID недели на 1
+        //console.log(week)
+    }
 });
+
+
 
 // Обработчик кнопки 'стрелка вправо'
 $('.date__arrow-right').click (function view(){
-   toggle_month += 1;
-   startCal(toggle_month);
-});
-
-// Обработчик нажатия на даты
-$('.date__number').click (function view(){
-    // Если совершено < 2 нажатий
-    if ($(".date__number_checked").length < 2) {
-        $(this).toggleClass("date__number_checked");
-    } else {
-            $(this).removeClass("date__number_checked");
+    // Скрытие всех недель по ID
+    for (var ID = first_ID; ID <= last_ID; ID++ ) {
+        $("#"+ID).css("display","none");
     }
-    // Если совершены 2 нажатия
-    if (($(".date__number_checked").length == 2)&&(!check_status)) {
-        check_status = true;
-
-        // one - выделение более ранней даты
-        var one = $($(".date__number_checked").eq(0)).index();
-        // two - выделение более поздней даты
-        var two = $($(".date__number_checked").eq(1)).index();
-        console.log(two);
-
-        // Вывод выделения
-        for (var m = one; m <= two; m++){
-            var position = $($($(".date__number").eq(m))).position();
-            $( ".date__day-of-the-week" ).append( "<div class='date__from-and-to' style='left:"+(position.left)+"px;top:"+position.top+"px'></div>" );
+    // Если в последней неделе присутствует число 1, то вновь отобразить неделю
+    for (var i = 0; i < 7; i++){
+        if ($("#"+last_ID).children().eq(i).attr("data-date") == '1') {
+            $("#"+last_ID).css("display","flex");
         }
-        // Вывод корректировка выделения в начале и в конце
-        $($(".date__from-and-to").eq(0)).addClass("date__from-and-to_first");
-        $($(".date__from-and-to").eq(-1)).addClass("date__from-and-to_last");
     }
-
-    else {
-        check_status = false;
-        $(".date__from-and-to").remove();
+    // Установка названия месяца в заголовок
+    addTitleMonth(first_next_date.getMonth());
+    // Переключить месяц на следующий
+    first_next_date.setMonth(first_next_date.getMonth() + 1);
+    first_next_date_full = first_next_date.getDate() + '.' + first_next_date.getMonth() + '.' + first_next_date.getFullYear();
+    // Пока не будет найдено первое число след месяца
+    while (week != "firstnext") {
+        last_ID++; // Увеличть ID недели на 1
+        var week = addWeek(last_ID,"right",first_prev_date_full,first_next_date_full); // Добавить новую неделю
     }
 });
 
 
-
-function startCal(toggle_month) {
-    
-    $(".date__number").remove();
-
-    // Текущий день месяца
-    let date = new Date();
-    date.setHours(0, 0, 0, 0);
-    console.log('Сегодняшняя дата:' + date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear());
-
-    // Первый день месяца
-    let first_date = new Date();
-    first_date.setHours(0, 0, 0, 0);
-    first_date.setMonth(first_date.getMonth() + toggle_month);
-    first_date.setDate(1);
-    console.log('Первый день месяца:' + first_date.getDate() + '.' + (first_date.getMonth() + 1) + '.' + first_date.getFullYear());
-
-    // Последний день месяца
-    let last_date = new Date();
-    last_date.setHours(0, 0, 0, 0);
-    last_date.setMonth(last_date.getMonth() + toggle_month);
-    last_date.setMonth(last_date.getMonth() + 1);
-    last_date.setDate(0);
-    console.log('Последний день месяца:' + last_date.getDate() + '.' + (last_date.getMonth() + 1) + '.' + last_date.getFullYear());
-
-
-    let prev_month_date = new Date();
-    prev_month_date.setHours(0, 0, 0, 0);
-    prev_month_date.setMonth(prev_month_date.getMonth() + toggle_month);
-    prev_month_date.setDate(0);
-    let prev_date = prev_month_date.getDate();
-
-
-    $( ".date__cal" ).append( "<div class='date__day-of-the-week'></div>" );
-
-    // Печать чисел прошлого месяца (черв числ теку мес != 1)
-    if (first_date.getDay() !== 0) {
-        prev_date = prev_date - first_date.getDay();
-        for (var y = 0; y < first_date.getDay(); y++){
-            prev_date++;
-            $( ".date__day-of-the-week" ).append( "<div class='date__number'>" + prev_date + "</div>" );
-        }
-    }
-    else {
-        prev_date = prev_date - 7;
-        for (var y = 0; y < 7; y++){
-            prev_date++;
-            $( ".date__day-of-the-week" ).append( "<div class='date__number'>" + prev_date + "</div>" );
-        }
-
-    }
-
-    // Печать всех чисел данного месяца
-    for (var y = 1; y <= last_date.getDate(); y++) {
-        if ((y == date.getDate())&&(toggle_month == 0)){
-            $( ".date__day-of-the-week" ).append( "<div class='date__number date__number_current'>"+y+"</div>" );
-        } else {
-            $( ".date__day-of-the-week" ).append( "<div class='date__number'>"+y+"</div>" );
-        }
-    }
-
-    // Печать чисел следующего месяца
-    var next_date = 1;
-    for (var y = last_date.getDay(); y < 7; y++){
-        $(".date__day-of-the-week").append( "<div class='date__number'>" + next_date + "</div>" );
-        next_date++;
-    }
-
-    // Сокрытие первого элемента. Т.к. подсчет нужен с пн, а не с вс
-    if ( $(".date__number").length != 35 ) {
-        if (first_date.getDate() != $($(".date__number").eq(0)).text()){
-            $($(".date__number").eq(0)).attr("style", "display: none");
-        }
-    }
-
-    // Вывод названий месяцев
+// Функция вывода названий месяцев
+function addTitleMonth(number_month) {
     var title_month;
-    switch(first_date.getMonth()){
+    switch(number_month){
         case 0: title_month = "Январь"; break;
         case 1: title_month = "Февраль"; break;
         case 2: title_month = "Март"; break;
@@ -143,8 +166,5 @@ function startCal(toggle_month) {
         case 10: title_month = "Ноябрь"; break;
         case 11: title_month = "Декабрь"; break;                   
     }
-
     $(".date__title p").text(title_month);
-
 }
-

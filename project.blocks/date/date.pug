@@ -13,18 +13,20 @@ mixin addDate
             - var n = n + 1;
 
 mixin addDateTop
-    .date__top
-        .date__small-top
-            p= 'ДД.ММ.ГГГГ'
-            img(src="./images/expand_more.svg" alt="expand more")
-        .date__small-top
-            p= 'ДД.ММ.ГГГГ'
-            img(src="./images/expand_more.svg" alt="expand more")
+    .date
+        .date__top
+            .date__small-top
+                p= 'ДД.ММ.ГГГГ'
+                img(src="./images/expand_more.svg" alt="expand more")
+            .date__small-top
+                p= 'ДД.ММ.ГГГГ'
+                img(src="./images/expand_more.svg" alt="expand more")
 
 mixin addDateBottom
-    .date__bottom
-        input(name='date', id='date', type='hidden', value=val)
-        +addDate
-        .date__buttons
-            h3.date__clear очистить
-            h3.date__apply(id="apply") применить
+    .date
+        .date__bottom
+            input(name='date', id='date', type='hidden', value=val)
+            +addDate
+            .date__buttons
+                h3.date__clear очистить
+                h3.date__apply(id="apply") применить

@@ -1,12 +1,6 @@
 /* DATE */
 
 .date {
-    &_filter {
-        &__top {
-
-        }
-    }
-
     &__top {
         display: -webkit-flex; 
         display: flex; 
@@ -87,6 +81,7 @@
         display: flex; 
         flex-direction: row;
         flex-wrap: wrap;
+        outline: 1px solid royalblue;
     }
 
     &__day-week {
@@ -95,17 +90,43 @@
         background: lightblue;
     }
 
+    &__week {
+        background: white;
+        display: -webkit-flex; 
+        display: flex; 
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
     &__number {
-        border-radius: 50%;
+        p {
+            text-align: center;
+        }
         width: 39.88px;
         height: 40px;
         cursor: pointer;
         z-index: 2;
-        &_current {
+        &_current p {
+            line-height: 40px;
+            border-radius: 50%;
             background: green;
         }
-        &_checked {
+        &_checked p {
+            line-height: 40px;
+            border-radius: 50%;
             background: purple;
+        }
+        &_from-and-to {
+            background-image: none;
+            background:#a3e5a3;
+            &_first {
+                background: none;
+                background-image: linear-gradient(to left, #a3e5a3 50%, transparent 10%);
+            }
+            &_last {
+                background: none;
+                background-image: linear-gradient(to right, #a3e5a3 50%, transparent 10%);
+            }
         }
     }
     &__from-and-to {
@@ -113,14 +134,6 @@
         width: 39.88px;
         height: 40px;
         background: rgba(31, 32, 65, 0.5);
-        position: absolute;
-        &_first {
-            width: 19.94px;
-            margin-left: 19.94px;
-        }
-        &_last {
-            width: 19.94px;
-        }
     }
 
 
