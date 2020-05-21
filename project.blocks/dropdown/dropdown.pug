@@ -7,7 +7,7 @@ mixin addDropdown(title, fieldMod, dropdownType, additionalContent)
         .dropdown
             .dropdown__top
                 if dropdownType.list
-                    +addListCounterTop
+                    +addListCounterTop("expand_more.svg")
                 if dropdownType.date
                     +addDateTop
             .dropdown__bottom

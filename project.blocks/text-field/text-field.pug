@@ -3,5 +3,5 @@ include ../../library.blocks/field/field
 mixin addTextField(title, fieldMod, textFieldMod)
     +addField(title, fieldMod)
         .text-field
-            input.text-field__elem(class=textFieldMod, type="text", placeholder="Email")
+            input.text-field__elem(class='text-field__elem_'+textFieldMod, type="text", placeholder="Email")
                 

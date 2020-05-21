@@ -7,10 +7,10 @@ mixin addItems(items)
                 h3= items[x].value
                 p.list-counter__circle.list-counter__plus +
 
-mixin addListCounterTop
+mixin addListCounterTop(name_image)
     .list-counter__top
         p= 'Сколько гостей'
-        img(src="./images/expand_more.svg" alt="expand more")
+        img(src="./images/"+name_image, alt="expand more")
 
 mixin addListCounterBottom(items)
     .list-counter__bottom
