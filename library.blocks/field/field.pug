@@ -1,5 +1,6 @@
 mixin addField(title, classMod)
-    .field(class=classMod)
-        h3= title
-        .field__input
-            block
+    .field
+        .field__elem(class="field__elem_"+classMod)
+            h3= title
+            .field__input
+                block

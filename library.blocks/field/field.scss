@@ -1,31 +1,38 @@
 .field {
-    & h3{margin-bottom: 5px;}
-    
-    &_small {
-        width: 266px;
-    }
-    
-    &__input {
-        &:first-child{}
-        min-height: 42px;
-        box-sizing: border-box;
-        outline:none;
 
-        &::-webkit-input-placeholder {
-            color: rgba(31, 32, 65, 0.25);
-        } 
-        &::-moz-placeholder {
-            color: rgba(31, 32, 65, 0.25);
-        }
-    }
-    &__columns {
-        display: -webkit-flex; 
-        display: flex; 
-        flex-direction: row;
-    }
-    &__column {
-        margin-right: 20px;
-        &:last-child{margin-right: 0px;}
-    }
+}
 
+.field .field__elem {
+    max-width: 320px;
+    min-height: 44px;
+
+}
+
+.field__elem h3{margin-bottom: 5px;}
+
+.field__elem.field__elem_small {
+    max-width: 266px;
+}
+
+.field__input {
+    &:first-child{}
+    min-width: inherit;
+    box-sizing: border-box;
+    outline:none;
+
+    &::-webkit-input-placeholder {
+        color: rgba(31, 32, 65, 0.25);
+    } 
+    &::-moz-placeholder {
+        color: rgba(31, 32, 65, 0.25);
+    }
+}
+.field__columns {
+    display: -webkit-flex; 
+    display: flex; 
+    flex-direction: row;
+}
+.field__column {
+    margin-right: 20px;
+    &:last-child{margin-right: 0px;}
 }
