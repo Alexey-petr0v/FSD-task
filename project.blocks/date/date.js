@@ -41,16 +41,16 @@ prev_first_date.setHours(0, 0, 0, 0);
 prev_first_date.setDate(1);
 prev_first_date.setMonth(current_last_date.getMonth());
 var prev_first_date_full = prev_first_date.getDate() + '.' + prev_first_date.getMonth() + '.' + prev_first_date.getFullYear();
-console.log("prev_first_date_full: "+prev_first_date_full);
+//console.log("prev_first_date_full: "+prev_first_date_full);
 
 
 // Текущий месяц: понедельник
 let current_monday_date = addCurrentMonday (current_first_date); // Динамическая дата итерации
-console.log("current_monday_date: "+current_monday_date.getDate() + '.' + current_monday_date.getMonth() + '.' + current_monday_date.getFullYear());
+//console.log("current_monday_date: "+current_monday_date.getDate() + '.' + current_monday_date.getMonth() + '.' + current_monday_date.getFullYear());
 
 // Предыдущий месяц: воскресенье
 let current_sunday_date = addCurrentSunday (current_first_date); // Динамическая дата итерации
-console.log("current_monday_date: "+current_sunday_date.getDate() + '.' + current_sunday_date.getMonth() + '.' + current_sunday_date.getFullYear());
+//console.log("current_monday_date: "+current_sunday_date.getDate() + '.' + current_sunday_date.getMonth() + '.' + current_sunday_date.getFullYear());
 
 
 var veryfirst_ID = 0,          // Переменная для ID самой дальней недели prev
@@ -69,7 +69,7 @@ last_ID = latest_ID;
 
 // Первичная установка названия месяца в заголовок
 addTitleMonth(current_first_date.getMonth());
-
+/*
 console.log("-----START-----");
 console.log("veryfirst_ID "+veryfirst_ID);
 console.log("latest_ID "+latest_ID);
@@ -82,7 +82,7 @@ console.log("next_first_date.getMonth() "+next_first_date.getMonth());
 console.log("next_first_date.getDate() "+next_first_date.getDate());
 console.log("next_first_date_full "+next_first_date_full);
 console.log("---------------");
-
+*/
 
 
 // -------------------------------------------------------------------------------- Функция добавления недель -------------------------------------------------------------------------------- //
@@ -120,7 +120,7 @@ function addWeek(ID,button,firstprevdatefull,firstnextdatefull) {
             current_iter_date = current_monday_date.getDate() + '.' + current_monday_date.getMonth() + '.' + current_monday_date.getFullYear();
             if (current_iter_date == firstprevdatefull) {
                 result = "firstprev";
-                console.log("prev!");
+                //console.log("prev!");
             }
             else if (current_iter_date == firstnextdatefull) { result = "firstnext" }
 
@@ -146,14 +146,14 @@ function viewWeek(ID,button,firstprevdatefull,firstnextdatefull) {
             current_iter_date = current_monday_date.getDate() + '.' + current_monday_date.getMonth() + '.' + current_monday_date.getFullYear();
             if (current_iter_date == firstprevdatefull) {
                 result = "firstprev";
-                console.log("prev!");
+                //console.log("prev!");
             }
             else if (current_iter_date == firstnextdatefull) {
                 result = "firstnext";
-                console.log("next!");
+                //console.log("next!");
             }
             else {
-                console.log("L");
+                //console.log("L");
             }
 
             $("#"+ID).css("display","flex");
@@ -164,14 +164,14 @@ function viewWeek(ID,button,firstprevdatefull,firstnextdatefull) {
             current_iter_date = current_monday_date.getDate() + '.' + current_monday_date.getMonth() + '.' + current_monday_date.getFullYear();
             if (current_iter_date == firstprevdatefull) {
                 result = "firstprev";
-                console.log("prev!");
+                //console.log("prev!");
             }
             else if (current_iter_date == firstnextdatefull) {
                 result = "firstnext";
-                console.log("next!");
+                //console.log("next!");
             }
             else {
-                console.log("R");
+                //console.log("R");
             }
 
             $("#"+ID).css("display","flex");
@@ -186,19 +186,19 @@ function viewWeek(ID,button,firstprevdatefull,firstnextdatefull) {
 var first_click = true;
 // -------------------------------------------------------------------------------- Обработчик кнопки 'стрелка влево' -------------------------------------------------------------------------------- //
 $('.date__arrow-left').click (function view(){
-    console.log("CLICK_LEFT");
+    //console.log("CLICK_LEFT");
 
     // Скрытие всех недель по ID
     for (var ID = veryfirst_ID; ID <= latest_ID; ID++ ) {
         $("#"+ID).css("display","none");
     }
 
-    console.log("STEP1: "+$("#"+(first_ID-1)).eq(0).attr("id"));
-    console.log("first_ID: "+first_ID);
+    //console.log("STEP1: "+$("#"+(first_ID-1)).eq(0).attr("id"));
+    //console.log("first_ID: "+first_ID);
     // ---------- ВЫВОД И ДОБАВЛЕНИЕ НЕДЕЛИ ---------- //
     if ($("#"+(first_ID-1)).eq(0).attr("id") != undefined) { // Если неделя уже создана
     // -- Вывод недели
-        console.log("STEP2: NO")
+        //console.log("STEP2: NO")
 
         // Установка названия месяца в заголовок
         current_first_date.setMonth(current_first_date.getMonth() - 1);
@@ -216,11 +216,11 @@ $('.date__arrow-left').click (function view(){
             first_ID--;
             last_ID--; // Увеличть ID недели на 1
             week = viewWeek(first_ID,"left",prev_first_date_full,next_first_date_full); // Добавить новую неделю
-            console.log(1);
+            //console.log(1);
         }
 
     } else {
-        console.log("STEP2: YES");
+        //console.log("STEP2: YES");
         // -- Добавление недели
             // Если в последней неделе присутствует число 1, то вновь отобразить неделю
         for (var i = 0; i < 7; i++){
@@ -246,7 +246,7 @@ $('.date__arrow-left').click (function view(){
         while (week != "firstprev") {
             last_ID--;
             first_ID--; // Уменьшить ID недели на 1
-            console.log("first_ID-left: "+first_ID);
+            //console.log("first_ID-left: "+first_ID);
             week = addWeek(first_ID,"left",prev_first_date_full,next_first_date_full); // Добавить новую неделю
         }
         if (first_ID < veryfirst_ID) {
@@ -257,7 +257,7 @@ $('.date__arrow-left').click (function view(){
 
 
     
-    
+    /*
     console.log("-----LEFT-----");
     console.log("veryfirst_ID "+veryfirst_ID);
     console.log("latest_ID "+latest_ID);
@@ -270,6 +270,7 @@ $('.date__arrow-left').click (function view(){
     console.log("next_first_date.getDate() "+next_first_date.getDate());
     console.log("next_first_date_full "+next_first_date_full);
     console.log("--------------");
+    */
 });
 
 // -------------------------------------------------------------------------------- Обработчик кнопки 'стрелка вправо' -------------------------------------------------------------------------------- //
@@ -321,7 +322,7 @@ $('.date__arrow-right').click (function view(){
         while (week != "firstnext") {
             first_ID++;
             last_ID++; // Увеличть ID недели на 1
-            console.log("first_ID-right: "+first_ID);
+            //console.log("first_ID-right: "+first_ID);
             week = addWeek(last_ID,"right",prev_first_date_full,next_first_date_full); // Добавить новую неделю
         }
         if (last_ID > latest_ID) {
@@ -329,7 +330,7 @@ $('.date__arrow-right').click (function view(){
         }
     }
 
-
+    /*
     console.log("-----RIGHT-----");
     console.log("veryfirst_ID "+veryfirst_ID);
     console.log("latest_ID "+latest_ID);
@@ -342,6 +343,7 @@ $('.date__arrow-right').click (function view(){
     console.log("next_first_date.getDate() "+next_first_date.getDate());
     console.log("next_first_date_full "+next_first_date_full);
     console.log("--------------");
+    */
 });
 
 

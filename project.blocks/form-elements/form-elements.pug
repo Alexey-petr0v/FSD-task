@@ -14,15 +14,16 @@ include ../date/date
         .form-elements__element_1
             +addTextField('Text Field')
         .form-elements__element_2
-            +addDropdown('Dropdown', '', {list: true}, listCounter)
+            +addDropdown('Dropdown', 0, {list: true}, listCounter)
         .form-elements__element_3
-            +addTextField('Text Field', '', 'text-field__elem_masked')
+            +addTextField('Text Field', 0, 'text-field__elem_masked')
         .form-elements__element_4
-            +addDropdown('Dropdown', '', {date: true}, listCounter)
+            +addDropdown('Dropdown', 0, {date: true}, listCounter)
         .form-elements__element_5
-            +addDropdown('filter date dropdown', '', {date: true}, listCounter)
+            +addDropdown('filter date dropdown', 0, {date: true}, listCounter)
         .form-elements__element_6
             +addTextField('subscription text field', 'small', 'arrow-left')
+
     .form-elements__column_second
         +addTextField('', '')
         +addTextField('', '')

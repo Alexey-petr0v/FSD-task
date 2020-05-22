@@ -1,5 +1,5 @@
 // Обработчик нажатия dropdown
-var dropdown = '.dropdown',
+let dropdown = '.dropdown',
     dropdown_top = '.dropdown__top',
     dropdown_bottom = '.dropdown__bottom',
     numberOfClasses = 0,
@@ -11,14 +11,14 @@ $(dropdown).map(function sumOfClasses() {
     });
 
 // Массив идентификатов всех элементов с классами dropdown__top, dropdown__bottom
-var uniqueIDTop = new Array(numberOfClasses),
+let uniqueIDTop = new Array(numberOfClasses),
     uniqueIDBottom = new Array(numberOfClasses),
     pathToButtonID = new Array(numberOfClasses);
 
 // Установка случайных ID всем классам dropdown__top
-var iteration = 0;
+let iteration = 0;
 $(dropdown_top).map(function() {
-    uniqueIDTop[iteration] = randomString(12);
+    uniqueIDTop[iteration] = randomString(1);
     $(this).attr('id', uniqueIDTop[iteration]);
     iteration = iteration + 1;
 });
@@ -26,14 +26,14 @@ $(dropdown_top).map(function() {
 // Установка случайных ID всем классам dropdown__bottom
 iteration = 0;
 $(dropdown_bottom).map(function() {
-    uniqueIDBottom[iteration] = randomString(12);
+    uniqueIDBottom[iteration] = randomString(1);
     $(this).attr('id', uniqueIDBottom[iteration]);
     iteration = iteration + 1;
 });
 
 // Случайная генерация ID
 function randomString(i) {
-    var rnd = '';
+    let rnd = '';
     while (rnd.length < i) 
         rnd += Math.random().toString(36).substring(2);
     return rnd.substring(0, i);
@@ -41,7 +41,7 @@ function randomString(i) {
 
 // Генерация обработчиков всех кликабельных элементов блока dropdown
 for (x = 0; x < numberOfClasses; x++) {
-    var topID = '#' + uniqueIDTop[x],
+    let topID = '#' + uniqueIDTop[x],
         bottomID = '#' + uniqueIDBottom[x];
     pathToButtonID[x] = bottomID + ' ' + subBlockButtonID; // Селектор (путь) кнопки дочернего класса
 

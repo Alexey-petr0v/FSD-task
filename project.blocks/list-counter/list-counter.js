@@ -31,12 +31,14 @@ $(listCounter_top).click (function view(){
 });
 
 // Обработчики нажатия кнопок '-' и '+'
-$(varItems[0].btnMinus).click (function view(){ minus (varItems, 0) });
-$(varItems[1].btnMinus).click (function view(){ minus (varItems, 1) });
-$(varItems[2].btnMinus).click (function view(){ minus (varItems, 2) });
-$(varItems[0].btnPlus).click (function view(){ plus (varItems, 0) });
-$(varItems[1].btnPlus).click (function view(){ plus (varItems, 1) });
-$(varItems[2].btnPlus).click (function view(){ plus (varItems, 2) });
+for (x = 0; x < lenghtList; x++) {
+    $(varItems[x].btnMinus).click ({ item : varItems[x], items : varItems}, function(e){
+        minus (e.data.item, e.data.items)
+    });
+    $(varItems[x].btnPlus).click ({ item : varItems[x], items : varItems}, function(e){
+        plus (e.data.item, e.data.items)
+    });
+}
 
 // Обработчик кнопки 'применить'
 $('.list-counter__apply').click (function view(){
@@ -68,34 +70,34 @@ function initButtons(amount, btnMinus) {
 }
 
 // Реализация кнопки '-'
-function minus (itemsObj, x) {
-    var value = parseInt($(itemsObj[x].amount).text());
+function minus (itemObj, itemsObj) {
+    var value = parseInt($(itemObj.amount).text());
 
     if (value > 1) {
-        $(itemsObj[x].amount).text(function() {return value - 1;});
+        $(itemObj.amount).text(function() {return value - 1;});
         editButtons();
     }
     else if (value == 1){
-        $(itemsObj[x].amount).text(function() {return value - 1;});
+        $(itemObj.amount).text(function() {return value - 1;});
         editButtons();
     }
     totalAmount(itemsObj);
 }
 
 // Реализация кнопки '+'
-function plus (itemsObj, x) {
-    var value = parseInt($(itemsObj[x].amount).text());
-    $(itemsObj[x].amount).text(function() {return value + 1;});
+function plus (itemObj, itemsObj) {
+    var value = parseInt($(itemObj.amount).text());
+    $(itemObj.amount).text(function() {return value + 1;});
       
-    if ($(itemsObj[x].btnMinus).hasClass("list-counter__circle_not-active")) {
-        $(itemsObj[x].btnMinus).removeClass('list-counter__circle_not-active')
+    if ($(itemObj.btnMinus).hasClass("list-counter__circle_not-active")) {
+        $(itemObj.btnMinus).removeClass('list-counter__circle_not-active')
     }
     totalAmount(itemsObj);
 }
 
 // Функция вывода общей суммы гостей (число + слово)
-function totalAmount(itemsObject) {
-    var totalAmount = totalAmountNum(itemsObject);
+function totalAmount(itemsObj) {
+    var totalAmount = totalAmountNum(itemsObj);
     $(listCounter_top + ' p').text(function() {
         var allGuests = theGuests(totalAmount);
         return totalAmount + allGuests;
@@ -103,10 +105,10 @@ function totalAmount(itemsObject) {
 }
 
 // Функция подсчета общей суммы гостей (только число)
-function totalAmountNum(itemsObject) {
+function totalAmountNum(itemsObj) {
     var totalAmount = 0, value = 0;
     for (var i = 0; i < lenghtList; i++){
-        value = parseInt($(itemsObject[i].amount).text());
+        value = parseInt($(itemsObj[i].amount).text());
         totalAmount += value
     }
     if (totalAmount == 0) {
