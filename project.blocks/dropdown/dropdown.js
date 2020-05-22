@@ -5,6 +5,8 @@ let dropdown = '.dropdown',
     numberOfClasses = 0,
     subBlockButtonID = "#apply"; // ID кнопки вложенного блока для вызова slideToggle при нажатии на неё
 
+    let radnom_set = new Set();
+
 // Функция подсчета количества элементов с классом dropdown на странице
 $(dropdown).map(function sumOfClasses() {
     numberOfClasses++
@@ -18,7 +20,7 @@ let uniqueIDTop = new Array(numberOfClasses),
 // Установка случайных ID всем классам dropdown__top
 let iteration = 0;
 $(dropdown_top).map(function() {
-    uniqueIDTop[iteration] = randomString(1);
+    uniqueIDTop[iteration] = generateRandomString(12, radnom_set);
     $(this).attr('id', uniqueIDTop[iteration]);
     iteration = iteration + 1;
 });
@@ -26,11 +28,20 @@ $(dropdown_top).map(function() {
 // Установка случайных ID всем классам dropdown__bottom
 iteration = 0;
 $(dropdown_bottom).map(function() {
-    uniqueIDBottom[iteration] = randomString(1);
+    uniqueIDBottom[iteration] = generateRandomString(12, radnom_set);
     $(this).attr('id', uniqueIDBottom[iteration]);
     iteration = iteration + 1;
 });
 
+
+function generateRandomString(i, set_r) {
+    let string_r;
+    do {
+        string_r = randomString(i)
+    } while (set_r.has(string_r))
+    set_r.add(string_r);
+    return string_r
+}
 // Случайная генерация ID
 function randomString(i) {
     let rnd = '';
