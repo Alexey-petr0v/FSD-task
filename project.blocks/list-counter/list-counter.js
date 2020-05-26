@@ -1,3 +1,6 @@
+import {getID} from '../../pages/scripts/generate_ID.js'
+let radnom_set = new Set();
+
 /* !!!!!!!!!!!!!!!!!!!!!! Старый list-counter !!!!!!!!!!!!!!!!!!!!! */
 
 /* -------------- Переменные блока list-counter -------------- */
@@ -7,13 +10,47 @@ var listCounter_top = '.list-counter__top',
     lenghtList = $(listCounter_item).length;
 
 // Генерация массива переменных на основе размера списка на странице
+var list_ID = new Array(lenghtList);
+for (var i = 0; i <= lenghtList; i++) {
+    list_ID[i] = getID(12, radnom_set);
+}
+
+
+// Добавление пронумерованных классов к list-counter__item
+let iter_item_a = 1;
+$(listCounter_item).map(function(){
+    $(this).addClass("list-counter__item_amount" + iter_item_a);
+    $(this).attr("id", "NODROP_"+list_ID[iter_item_a-1]);
+    iter_item_a++
+});
+
+// Добавление пронумерованных классов к list-counter_top
+let iter_top = 1;
+$(".list-counter__top").map(function(){
+    $(this).attr("id", "NODROP_"+list_ID[iter_top-1]);
+    $(this).attr("data-number", iter_top);
+    //$(this).attr("id", "3");
+    iter_top++
+});
+
+// Добавление пронумерованных классов к list-counter__apply
+let iter_apply = 1;
+$(".list-counter__apply").map(function(){
+    $(this).parent().attr("id", "NODROP_"+list_ID[iter_apply-1]);
+    iter_apply++
+});
+
+
+console.log("lenghtList: "+lenghtList);
+// Генерация массива переменных на основе размера списка на странице
 var varItems = new Array(lenghtList);
-for (var i = 0; i < lenghtList; i++) {
+for (var i = 0; i <= lenghtList; i++) {
     varItems[i] = new Object ();
     varItems[i].btnMinus = '.list-counter__item_amount' + i + ' .list-counter__minus';
     varItems[i].btnPlus = '.list-counter__item_amount' + i + ' .list-counter__plus';
     varItems[i].amount = '.list-counter__item_amount' + i + ' .list-counter__minusAndPlus h3';
 }
+console.log("varItems.length: "+varItems.length);
 
 /* ------------------------------------------------------- */
 
@@ -25,27 +62,39 @@ for (var i = 0; i < lenghtList; i++) {
 // Предварительный запуск изменения внежнего вида кнопок
 editButtons();
 
-// Обработчик нажатия list-counter
-$(listCounter_top).click (function view(){
-    apply (varItems);
+// Обработчики нажатия list-counter
+$('.list-counter__top').click ({items : varItems}, function(e){
+    apply (e.data.items, $(this))
 });
 
 // Обработчики нажатия кнопок '-' и '+'
-for (x = 0; x < lenghtList; x++) {
+/*
+for (let x = 1; x <= lenghtList; x++) {
     $(varItems[x].btnMinus).click ({ item : varItems[x], items : varItems}, function(e){
-        minus (e.data.item, e.data.items)
+        minus (e.data.item, e.data.items, x)
     });
     $(varItems[x].btnPlus).click ({ item : varItems[x], items : varItems}, function(e){
-        plus (e.data.item, e.data.items)
+        plus (e.data.item, e.data.items, x)
     });
 }
+*/
 
-// Обработчик кнопки 'применить'
-$('.list-counter__apply').click (function view(){
-    apply (varItems);
+$(".list-counter__minus").click ({ items : varItems}, function(e){
+    minus ($(this), e.data.items)
 });
 
-// Обработчик кнопки 'отменить'
+$(".list-counter__plus").click ({ items : varItems}, function(e){
+    plus ($(this), e.data.items)
+});
+
+
+// Обработчики нажатия кнопок 'применить'
+$('.list-counter__apply').click ({items : varItems}, function(e){
+    let ID = $(this).parent().attr("id");
+    apply (e.data.items, $('.list-counter__top[id="'+ID+'"]'));
+});
+
+// Обработчик нажатия кнопки 'отменить'
 $('.list-counter__clear').click (function view(){
     clear();
 });
@@ -55,7 +104,7 @@ $('.list-counter__clear').click (function view(){
 
 // Функции изменения внежнего вида кнопок
 function editButtons(){
-    for (var i = 0; i < lenghtList; i++) {
+    for (var i = 0; i <= lenghtList; i++) {
         initButtons(varItems[i].amount, varItems[i].btnMinus);
     }
 }
@@ -70,44 +119,51 @@ function initButtons(amount, btnMinus) {
 }
 
 // Реализация кнопки '-'
-function minus (itemObj, itemsObj) {
-    var value = parseInt($(itemObj.amount).text());
+function minus (This, itemsObj) {
+    var value = parseInt($(This).text());
 
     if (value > 1) {
-        $(itemObj.amount).text(function() {return value - 1;});
+        $(This).text(function() {return value - 1;});
         editButtons();
     }
     else if (value == 1){
-        $(itemObj.amount).text(function() {return value - 1;});
+        $(This).text(function() {return value - 1;});
         editButtons();
     }
-    totalAmount(itemsObj);
+    let ID = $(This).attr("id"),
+        number = $(This).attr("data-number");
+    totalAmount(itemsObj, ID, number);
 }
 
 // Реализация кнопки '+'
-function plus (itemObj, itemsObj) {
-    var value = parseInt($(itemObj.amount).text());
-    $(itemObj.amount).text(function() {return value + 1;});
+function plus (This, itemsObj) {
+    var value = parseInt($(This).text());
+    $(This).text(function() {return value + 1;});
       
-    if ($(itemObj.btnMinus).hasClass("list-counter__circle_not-active")) {
-        $(itemObj.btnMinus).removeClass('list-counter__circle_not-active')
+    if ($(This).hasClass("list-counter__circle_not-active")) {
+        $(This).removeClass('list-counter__circle_not-active')
     }
-    totalAmount(itemsObj);
+    let ID = $(This).parent().parent().attr("id"),
+        number = $('.list-counter__top[id="'+ID+'"]').attr("data-number");
+    totalAmount(itemsObj, ID, number);
 }
 
 // Функция вывода общей суммы гостей (число + слово)
-function totalAmount(itemsObj) {
-    var totalAmount = totalAmountNum(itemsObj);
-    $(listCounter_top + ' p').text(function() {
+function totalAmount(itemsObj, ID, number) {
+    console.log("ID: "+ID);
+    console.log("number: "+number);
+    var totalAmount = totalAmountNum(itemsObj, number);
+    $('#'+ID+' > p').text(function() {
         var allGuests = theGuests(totalAmount);
         return totalAmount + allGuests;
     });
 }
 
 // Функция подсчета общей суммы гостей (только число)
-function totalAmountNum(itemsObj) {
+function totalAmountNum(itemsObj, number) {
     var totalAmount = 0, value = 0;
-    for (var i = 0; i < lenghtList; i++){
+    let end = 3*number, start = end-2;
+    for (var i = start; i <= end; i++){
         value = parseInt($(itemsObj[i].amount).text());
         totalAmount += value
     }
@@ -143,7 +199,7 @@ function theGuests(totalAmount) {
 }
 
 // Реализация кнопки 'применить'
-function apply (itemsObj) {
+function apply (itemsObj, This) {
     var out = new Array (2);
         out[0] = totalAmountNum(itemsObj);
         out[1] = outItems();
@@ -153,7 +209,11 @@ function apply (itemsObj) {
     else {
         $("#total-amount").attr("value", out);
     }
-    $(listCounter_top + ' p').text(totalAmount(itemsObj));
+    let ID = $(This).attr("id"),
+        number = $(This).attr("data-number");
+        console.log("ID: "+ID);
+        console.log("number: "+number);
+    $('#'+ID+' > p').text(totalAmount(itemsObj, ID, number));
     
     // Поля массива out:
         // 1 поле [общая сумма списка]
@@ -164,7 +224,7 @@ function apply (itemsObj) {
 function outItems() {
     var outItems = new Array(lenghtList),
         amountClass = '.list-counter__item_amount';
-    for (var i = 0; i < lenghtList; i++) {
+    for (var i = 0; i <= lenghtList; i++) {
         outItems[i] = new Object ();
         outItems[i].title = $(amountClass + i + ' > h3').text();
         outItems[i].amount = $(varItems[i].amount).text();
@@ -174,7 +234,7 @@ function outItems() {
 
 // Реализация кнопки 'отменить'
 function clear() {
-    for (var i = 0; i < lenghtList; i++) {
+    for (var i = 0; i <= lenghtList; i++) {
         $(varItems[i].amount).text(0);
     }
     $("#total-amount").attr("value", '');

@@ -1,6 +1,6 @@
 mixin addItems(items)
     - for (var x = 0; x < items.length; x++)
-        .list-counter__item(class="list-counter__item_amount" + x)
+        .list-counter__item
             h3= items[x].title
             .list-counter__minusAndPlus
                 p.list-counter__circle.list-counter__minus -
