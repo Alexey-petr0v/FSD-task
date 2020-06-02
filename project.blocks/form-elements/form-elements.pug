@@ -3,10 +3,16 @@ include ../dropdown/dropdown
 include ../date/date
 
 -
-    var listCounter = [
+    var listCounter1 = [
         {title: "взрослые", value : "0"},
         {title: "дети", value : "0"},
         {title: "младенцы", value : "0"}
+    ]
+
+-
+    var listCounter2 = [
+        {title: "взрослые", value : "0"},
+        {title: "дети", value : "0"}
     ]
 
 .form-elements
@@ -14,19 +20,19 @@ include ../date/date
         .form-elements__element_1
             +addTextField('Text Field')
         .form-elements__element_2
-            +addDropdown('Dropdown', 0, {list: true}, listCounter)
+            +addDropdown('Dropdown', 0, {list: true}, listCounter1)
         .form-elements__element_3
             +addTextField('Text Field', 0, 'text-field__elem_masked')
         .form-elements__element_4
-            +addDropdown('Dropdown', 0, {date: true}, listCounter)
+            +addDropdown('Dropdown', 0, {date: true}, listCounter1)
         .form-elements__element_5
-            +addDropdown('filter date dropdown', 0, {date: true}, listCounter)
+            +addDropdown('filter date dropdown', 0, {date: true}, listCounter1)
         .form-elements__element_6
             +addTextField('subscription text field', 'small', 'arrow-left')
         .form-elements__element_7
-            +addDropdown('Dropdown', 0, {list: true}, listCounter)
+            +addDropdown('Dropdown', 0, {list: true}, listCounter2)
         .form-elements__element_8
-            +addDropdown('Dropdown', 0, {list: true}, listCounter)
+            +addDropdown('Dropdown', 0, {list: true}, listCounter2)
 
     .form-elements__column_second
         +addTextField('', '')
