@@ -4,8 +4,8 @@ mixin addCheckbox(items)
             .checkbox__item
                 label
                     if items[x].value
-                        input(class="checkbox__input", type="checkbox", checked)
+                        input(name=items[x].name, class="checkbox__input", type="checkbox", checked)
                         span= items[x].title
                     else
-                        input(class="checkbox__input", type="checkbox")
+                        input(name=items[x].name, class="checkbox__input", type="checkbox")
                         span= items[x].title
