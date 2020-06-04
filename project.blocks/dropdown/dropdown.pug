@@ -1,17 +1,22 @@
 include ../../library.blocks/field/field
 include ../list-counter/list-counter
 include ../date/date
+include ../checkbox/checkbox
 
-mixin addDropdown(title, fieldMod, dropdownType, additionalContent)
+mixin addDropdown(title, dropdownMod, fieldMod, dropdownType, additionalContent, check_status)
     +addField(title, fieldMod)
-        .dropdown
+        .dropdown(class=dropdownMod)
             .dropdown__top
                 if dropdownType.list
-                    +addListCounterTop("expand_more.svg")
+                    +addListCounterTop
                 if dropdownType.date
                     +addDateTop
+                if dropdownType.checkbox
+                    h3= 'expandable checkbox list'
             .dropdown__bottom
                 if dropdownType.list
                     +addListCounterBottom(additionalContent)
                 if dropdownType.date
                     +addDateBottom
+                if dropdownType.checkbox
+                    +addCheckbox(additionalContent)

@@ -50,3 +50,20 @@ for (let x = 0; x < numberOfClasses; x++) {
         $(e.data.bottom).slideToggle()
     });
 }
+
+// Установка визуальной стрелки на поле dropdown__top
+$(".dropdown__top").map(function(){
+    $(this).css('background', 'url("/images/expand_more.svg") calc(100% - 13px) 50% no-repeat #ffffff')
+});
+
+// Смена визуальной стрелки на стрелку вверх/вниз
+$(".dropdown_no-border").children(".dropdown__top").click(function(){
+    let height_bottom_px = $(this).parent(".dropdown_no-border").children(".dropdown__bottom").css("height"),
+        height_bottom = height_bottom_px.replace(/[\p\x]/g, '');
+    if (height_bottom > 1) {
+        $(this).css('background', 'url("/images/expand_more.svg") calc(100% - 13px) 50% no-repeat #ffffff')
+    }
+    else {
+        $(this).css('background', 'url("/images/to_close.svg") calc(100% - 13px) 50% no-repeat #ffffff')
+    }
+});

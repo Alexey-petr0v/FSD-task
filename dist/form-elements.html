@@ -17,7 +17,9 @@
         </div>
       </header>
       <main class="main">
-        <div class="main-container">
+        <div class="main-container"><div class="test3">
+<div class="contentus">Content</div>
+</div>
           <div class="form-elements">
             <div class="form-elements__column_first">
               <div class="form-elements__element_1">
@@ -40,7 +42,7 @@
                                           <div class="dropdown">
                                             <div class="dropdown__top">
                                                         <div class="list-counter__top">
-                                                          <p>Сколько гостей</p><img src="./images/expand_more.svg" alt="expand more">
+                                                          <p>Сколько гостей</p>
                                                         </div>
                                             </div>
                                             <div class="dropdown__bottom">
@@ -84,7 +86,7 @@
               <div class="form-elements__element_3">
                                     <div class="field">
                                       <div class="field__elem">
-                                        <h3>Text Field</h3>
+                                        <h3>masked text field</h3>
                                         <div class="field__input">
                                           <div class="text-field">
                                             <input class="text-field__elem" type="text" placeholder="Email">
@@ -96,7 +98,7 @@
               <div class="form-elements__element_4">
                                     <div class="field">
                                       <div class="field__elem">
-                                        <h3>Dropdown</h3>
+                                        <h3>date Dropdown</h3>
                                         <div class="field__input">
                                           <div class="dropdown">
                                             <div class="dropdown__top">
@@ -209,14 +211,14 @@
                                           <div class="dropdown">
                                             <div class="dropdown__top">
                                                         <div class="list-counter__top">
-                                                          <p>Сколько гостей</p><img src="./images/expand_more.svg" alt="expand more">
+                                                          <p>Сколько гостей</p>
                                                         </div>
                                             </div>
                                             <div class="dropdown__bottom">
                                                         <div class="list-counter__bottom">
                                                           <input name="list-counter" id="total-amount" type="hidden">
                                                                     <div class="list-counter__item">
-                                                                      <h3>взрослые</h3>
+                                                                      <h3>спальни</h3>
                                                                       <div class="list-counter__minusAndPlus">
                                                                         <p class="list-counter__circle list-counter__minus">-</p>
                                                                         <h3>0</h3>
@@ -224,7 +226,15 @@
                                                                       </div>
                                                                     </div>
                                                                     <div class="list-counter__item">
-                                                                      <h3>дети</h3>
+                                                                      <h3>кровати</h3>
+                                                                      <div class="list-counter__minusAndPlus">
+                                                                        <p class="list-counter__circle list-counter__minus">-</p>
+                                                                        <h3>0</h3>
+                                                                        <p class="list-counter__circle list-counter__plus">+</p>
+                                                                      </div>
+                                                                    </div>
+                                                                    <div class="list-counter__item">
+                                                                      <h3>ванные комнаты</h3>
                                                                       <div class="list-counter__minusAndPlus">
                                                                         <p class="list-counter__circle list-counter__minus">-</p>
                                                                         <h3>0</h3>
@@ -245,36 +255,43 @@
               <div class="form-elements__element_8">
                                     <div class="field">
                                       <div class="field__elem">
-                                        <h3>Dropdown</h3>
+                                        <h3></h3>
                                         <div class="field__input">
-                                          <div class="dropdown">
+                                          <div class="dropdown dropdown_no-border">
                                             <div class="dropdown__top">
-                                                        <div class="list-counter__top">
-                                                          <p>Сколько гостей</p><img src="./images/expand_more.svg" alt="expand more">
-                                                        </div>
+                                              <h3>expandable checkbox list</h3>
                                             </div>
                                             <div class="dropdown__bottom">
-                                                        <div class="list-counter__bottom">
-                                                          <input name="list-counter" id="total-amount" type="hidden">
-                                                                    <div class="list-counter__item">
-                                                                      <h3>взрослые</h3>
-                                                                      <div class="list-counter__minusAndPlus">
-                                                                        <p class="list-counter__circle list-counter__minus">-</p>
-                                                                        <h3>0</h3>
-                                                                        <p class="list-counter__circle list-counter__plus">+</p>
-                                                                      </div>
-                                                                    </div>
-                                                                    <div class="list-counter__item">
-                                                                      <h3>дети</h3>
-                                                                      <div class="list-counter__minusAndPlus">
-                                                                        <p class="list-counter__circle list-counter__minus">-</p>
-                                                                        <h3>0</h3>
-                                                                        <p class="list-counter__circle list-counter__plus">+</p>
-                                                                      </div>
-                                                                    </div>
-                                                          <div class="list-counter__buttons">
-                                                            <h3 class="list-counter__clear">очистить</h3>
-                                                            <h3 class="list-counter__apply" id="apply">применить</h3>
+                                                        <div class="checkbox">
+                                                          <div class="checkbox__item">
+                                                            <label>
+                                                              <input class="checkbox__input" type="checkbox"><span>Завтрак</span>
+                                                            </label>
+                                                          </div>
+                                                          <div class="checkbox__item">
+                                                            <label>
+                                                              <input class="checkbox__input" type="checkbox" checked><span>Письменный стол</span>
+                                                            </label>
+                                                          </div>
+                                                          <div class="checkbox__item">
+                                                            <label>
+                                                              <input class="checkbox__input" type="checkbox" checked><span>Стул для кормления</span>
+                                                            </label>
+                                                          </div>
+                                                          <div class="checkbox__item">
+                                                            <label>
+                                                              <input class="checkbox__input" type="checkbox" checked><span>Кроватка</span>
+                                                            </label>
+                                                          </div>
+                                                          <div class="checkbox__item">
+                                                            <label>
+                                                              <input class="checkbox__input" type="checkbox"><span>Телевизор</span>
+                                                            </label>
+                                                          </div>
+                                                          <div class="checkbox__item">
+                                                            <label>
+                                                              <input class="checkbox__input" type="checkbox"><span>Шампунь</span>
+                                                            </label>
                                                           </div>
                                                         </div>
                                             </div>

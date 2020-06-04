@@ -1,0 +1,11 @@
+mixin addCheckbox(items)
+    .checkbox
+        - for (var x = 0; x < items.length; x++)
+            .checkbox__item
+                label
+                    if items[x].value
+                        input(class="checkbox__input", type="checkbox", checked)
+                        span= items[x].title
+                    else
+                        input(class="checkbox__input", type="checkbox")
+                        span= items[x].title
