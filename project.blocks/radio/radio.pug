@@ -1,0 +1,11 @@
+mixin addRadio(items)
+    .radio
+        - for (var x = 0; x < items.length; x++)
+            .radio__item
+                label
+                    if items[x].toggle
+                        input(name=items[x].name, value=items[x].value, class="radio__input", type="radio", checked)
+                        span= items[x].title
+                    else
+                        input(name=items[x].name, value=items[x].value, class="radio__input", type="radio")
+                        span= items[x].title

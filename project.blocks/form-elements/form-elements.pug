@@ -1,23 +1,26 @@
 include ../text-field/text-field
 include ../dropdown/dropdown
 include ../date/date
+include ../two-elements/two-elements
+include ../checkbox/checkbox
+include ../radio/radio
 
 -
-    var listCounter = [
+    var list_counter = [
         {title: "взрослые", value : "0"},
         {title: "дети", value : "0"},
         {title: "младенцы", value : "0"}
     ]
 
 -
-    var listDate = [
+    var list_date = [
         {title: "спальни", value : "0"},
         {title: "кровати", value : "0"},
         {title: "ванные комнаты", value : "0"}
     ]
 
 -
-    var listCheckbox = [
+    var expandable_checkbox_list = [
         {title: "Завтрак", name: "zavtrak", value : false},
         {title: "Письменный стол", name: "pismenniy_stol", value : true},
         {title: "Стул для кормления", name: "stul_dlya_kormleniya", value : true},
@@ -26,12 +29,32 @@ include ../date/date
         {title: "Шампунь", name: "shampun", value : false}
     ]
 
+-
+    var advantages = [
+        {image: "./images/insert_emoticon.svg", title: "Комфорт", text: "Шумопоглощающие стены"},
+        {image: "./images/location_city.svg", title: "Удобство", text: "Окно в каждой из спален"}
+    ]
+
+-
+    var checkbox_buttons = [
+        {title: "Можно курить", name: "mozhno_kurit", value : false},
+        {title: "Можно с питомцами", name: "mozhno_s_pitomcami", value : true},
+        {title: "Можно пригласить гостей (до 10 человек)", name: "mozhno_priglasit_gostej", value : true}
+    ]
+
+-
+    var radio_buttons = [
+        {title: "Мужчина", name: "pol", value: "muzhchina", toggle : true},
+        {title: "Женщина", name: "pol", value: "zhenshina", toggle : false}
+    ]
+
+
 .form-elements
     .form-elements__column_first
         .form-elements__element_1
             +addTextField('Text Field')
         .form-elements__element_2
-            +addDropdown('Dropdown', '', 0, {list: true}, listCounter)
+            +addDropdown('Dropdown', '', 0, {list: true}, list_counter)
         .form-elements__element_3
             +addTextField('masked text field', 0, 'text-field__elem_masked')
         .form-elements__element_4
@@ -41,11 +64,21 @@ include ../date/date
         .form-elements__element_6
             +addTextField('subscription text field', 'small', 'arrow-left')
         .form-elements__element_7
-            +addDropdown('Dropdown', '', 0, {list: true}, listDate)
+            +addDropdown('Dropdown', '', 0, {list: true}, list_date)
         .form-elements__element_8
-            +addDropdown('', 'dropdown_no-border', 0, {checkbox: true}, listCheckbox)
+            +addDropdown('expandable checkbox list', 'dropdown_no-border', 0, {checkbox: true}, expandable_checkbox_list)
+        .form-elements__element_9
+            +addTwoElements({image_and_text: true}, {image_and_text : true}, advantages)
 
     .form-elements__column_second
+        .form-elements__element_10
+            h3 CHECKBOX BUTTONS
+            +addCheckbox(checkbox_buttons)
+        .form-elements__element_11
+            h3 RADIO BUTTONS
+            +addRadio(radio_buttons)
+
+
         +addTextField('', '')
         +addTextField('', '')
         +addTextField('', '')

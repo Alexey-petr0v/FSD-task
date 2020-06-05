@@ -1,0 +1,11 @@
+.two-elements__element {
+    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+    width: 280px;
+    padding-bottom: 17px;
+    margin-bottom: 23px;
+}
+
+.two-elements__left, .two-elements__right {
+    display: inline-block
+}
+
