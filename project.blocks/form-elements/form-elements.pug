@@ -44,10 +44,15 @@ include ../radio/radio
 
 -
     var radio_buttons = [
-        {title: "Мужчина", name: "pol", value: "muzhchina", toggle : true},
-        {title: "Женщина", name: "pol", value: "zhenshina", toggle : false}
+        {title: "Мужчина", name: "pol", value: "muzhchina", toggle: true},
+        {title: "Женщина", name: "pol", value: "zhenshina", toggle: false}
     ]
 
+-
+    var toggle_buttons = [
+        {title: "Получать спецпредложения", name: "poluchat_specpredlozheniya", value : false, toggle: true},
+        {title: "Получать спецпредложения", name: "poluchat_specpredlozheniya", value : true, toggle: true}
+    ]
 
 .form-elements
     .form-elements__column_first
@@ -77,6 +82,9 @@ include ../radio/radio
         .form-elements__element_11
             h3 RADIO BUTTONS
             +addRadio(radio_buttons)
+        .form-elements__element_12
+            h3 TOGGLE
+            +addCheckbox(toggle_buttons)
 
 
         +addTextField('', '')

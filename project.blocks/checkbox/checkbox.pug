@@ -1,7 +1,11 @@
 mixin addCheckbox(items)
     .checkbox
         - for (var x = 0; x < items.length; x++)
-            .checkbox__item
+            if items[x].toggle
+                - var mod = "checkbox__item_toggle"
+            else
+                - var mod = ""
+            .checkbox__item(class=mod)
                 label
                     if items[x].value
                         input(name=items[x].name, class="checkbox__input", type="checkbox", checked)
