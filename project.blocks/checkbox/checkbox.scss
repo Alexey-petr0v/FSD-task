@@ -19,6 +19,12 @@
             width: 16px;
             height: 16px;
         }
+        &::after {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+        }
         &:checked {
             background: url("/images/check.svg") 3px 2px no-repeat;
             border: 1px solid #BC9CFF;
@@ -71,6 +77,53 @@
             background: white;
             &::before {
                 background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            }
+        }
+    }
+
+    .checkbox__item_like {
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        border-radius: 20px;
+        width: 38px;
+        display: inline-block;
+    }
+
+    .checkbox__item.checkbox__item_like input {
+        border-radius: 20px;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        width: 38px;
+        color: rgba(31, 32, 65, 0.25);
+        background: white;
+
+        &::before {
+            padding-left: 0px;
+            border-radius: 10px;
+            width: 10px;
+            height: 10px;
+            margin: 3px;
+            background: 0.5px 1px url("/images/favorite_border.svg") no-repeat;
+        }
+        &::after {
+            content: "1";
+            margin-top: 2px;
+            font-size: 10px;
+            line-height: 12px;
+            vertical-align: top;
+        }
+        &:checked {
+            background: white;
+            color: #BC9CFF;
+            margin-left: 1px;
+            margin-top: 1px;
+            border: 0px;
+            width: 36px;
+            height: 16px;
+            &::before {
+                background: 0.5px 1px url("/images/favorite.svg") no-repeat;
+            }
+            &::after {
+                content: "2";
+                vertical-align: top;
             }
         }
     }

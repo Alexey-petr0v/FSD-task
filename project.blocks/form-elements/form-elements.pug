@@ -54,6 +54,12 @@ include ../radio/radio
         {title: "Получать спецпредложения", name: "poluchat_specpredlozheniya", value : true, toggle: true}
     ]
 
+-
+    var like_buttons = [
+        {name: "like_1", value : false, like: true},
+        {name: "like_2", value : true, like: true}
+    ]
+
 .form-elements
     .form-elements__column_first
         .form-elements__element_1
@@ -85,6 +91,9 @@ include ../radio/radio
         .form-elements__element_12
             h3 TOGGLE
             +addCheckbox(toggle_buttons)
+        .form-elements__element_12
+            h3 LIKE BUTTON
+            +addCheckbox(like_buttons)
 
 
         +addTextField('', '')
