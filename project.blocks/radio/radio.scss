@@ -1,5 +1,13 @@
 @supports(-webkit-appearance: none) or (-moz-appearance: none) {
-    .radio { display: flex; }
+    .radio {
+        display: flex;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
 
     .radio label, .radio__input { cursor: pointer }
 
