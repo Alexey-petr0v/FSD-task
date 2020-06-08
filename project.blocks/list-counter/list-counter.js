@@ -58,8 +58,15 @@ $(".list-counter__apply").map(function(){
 editButtons();
 
 // Обработчики нажатия list-counter
+let flag_top_selector = false;
 $(top_selector).click (function(e){
-    apply ($(this))
+    if (flag_top_selector) {
+        apply ($(this));
+        flag_top_selector = true
+    }
+    else {
+        flag_top_selector = false
+    }
 });
 
 // Обработчики нажатия кнопок '-' и '+'
