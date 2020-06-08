@@ -1,11 +1,17 @@
-mixin addRadio(items)
+mixin addRadio(items, num_elem)
     .radio
         - for (var x = 0; x < items.length; x++)
-            .radio__item
-                label
-                    if items[x].toggle
-                        input(name=items[x].name, value=items[x].value, class="radio__input", type="radio", checked)
+            if items[x].rate
+                - var mod = "radio__input_rate"
+            else
+                - var mod = ""
+            if items[x].toggle
+                input(id="radio-"+num_elem+"-"+x, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio", checked)
+                if items[x].title
+                    label(for="radio-"+num_elem+"-"+x)
                         span= items[x].title
-                    else
-                        input(name=items[x].name, value=items[x].value, class="radio__input", type="radio")
+            else
+                input(id="radio-"+num_elem+"-"+x, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio")
+                if items[x].title
+                    label(for="radio-"+num_elem+"-"+x)
                         span= items[x].title

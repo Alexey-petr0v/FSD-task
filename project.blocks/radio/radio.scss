@@ -1,19 +1,24 @@
 @supports(-webkit-appearance: none) or (-moz-appearance: none) {
-    .radio__item input {
+    .radio { display: flex; }
+
+    .radio label, .radio__input { cursor: pointer }
+
+    .radio label {
+        margin-right: 20px;
+    }
+
+    .radio__input {
         -webkit-appearance: none;
         -moz-appearance: none;
         height: 18px;
         outline: none;
-        display: inline-block;
         margin-left: 0;
         margin-top: 0;
         margin-bottom: 0;
         margin-right: 10px;
         border: 1px solid rgba(31, 32, 65, 0.25);
         border-radius: 50%;
-        cursor: pointer;
         vertical-align: middle;
-
         &::before {
             content: '';
             border-radius: 50%;
@@ -32,28 +37,28 @@
             }
         }
     }
-    .radio__item {
-        padding: 0px;
-        margin-bottom: 10px;
-        display: inline-block;
-        margin-right: 20px;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-    
-    .radio__item label {
-        cursor: pointer;
-        padding: 0px;
-        margin: 0px;
-        display: block;
-    }
-    
-    .radio__item span {
+
+    .radio span {
         vertical-align: top;
         color: rgba(31, 32, 65, 0.5);
     }
+
+    .radio__input_rate {
+        border-radius: 0px;
+        border: 0px;
+        width: 20px;
+        height: 20px;
+        background: url("/images/star_border.svg") no-repeat;
+        &::before { background: none }
+        &:checked {
+            background: url("/images/star.svg") no-repeat;
+            border: 0px;
+            &::before { background: none; border: 0px }
+        }
+    }
+
+    .radio__input_rate:first-child { background: url("/images/star.svg") no-repeat }
+    .radio__input_rate{ background: url("/images/star.svg") no-repeat }
+    .radio__input_rate:checked{ background: url("/images/star.svg") no-repeat }
+    .radio__input_rate:checked ~ input{ background: url("/images/star_border.svg") no-repeat }
 }
