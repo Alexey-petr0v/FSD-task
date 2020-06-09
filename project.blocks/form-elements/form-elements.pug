@@ -95,24 +95,26 @@ include ../radio/radio
         .form-elements__element_7
             +addDropdown('Dropdown', '', 0, {list: true}, list_date)
         .form-elements__element_8
-            +addDropdown('expandable checkbox list', 'dropdown_no-border', 0, {checkbox: true}, expandable_checkbox_list)
+            +addDropdown('Dropdown', '', 0, {list: true}, list_date)
         .form-elements__element_9
+            +addDropdown('expandable checkbox list', 'dropdown_no-border', 0, {checkbox: true}, expandable_checkbox_list)
+        .form-elements__element_10
             +addTwoElements({image_and_text: true}, {image_and_text : true}, advantages)
 
     .form-elements__column_second
-        .form-elements__element_10
+        .form-elements__element_11
             h3 CHECKBOX BUTTONS
             +addCheckbox(checkbox_buttons)
-        .form-elements__element_11
+        .form-elements__element_12
             h3 RADIO BUTTONS
             +addRadio(radio_buttons, 1)
-        .form-elements__element_12
+        .form-elements__element_13
             h3 TOGGLE
             +addCheckbox(toggle_buttons)
-        .form-elements__element_13
+        .form-elements__element_14
             h3 LIKE BUTTON
             +addCheckbox(like_buttons)
-        .form-elements__element_14
+        .form-elements__element_15
             h3 RATE BUTTONS
             .form-elements__td
                 +addRadio(rate_buttons_1, 2)

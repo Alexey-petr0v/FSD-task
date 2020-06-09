@@ -6,17 +6,21 @@ include ../checkbox/checkbox
 mixin addDropdown(title, dropdownMod, fieldMod, dropdownType, additionalContent, check_status)
     +addField(title, fieldMod)
         .dropdown(class=dropdownMod)
-            .dropdown__top
-                if dropdownType.list
-                    +addListCounterTop
-                if dropdownType.date
-                    +addDateTop
-                if dropdownType.checkbox
-                    h3= 'expandable checkbox list'
-            .dropdown__bottom
-                if dropdownType.list
-                    +addListCounterBottom(additionalContent)
-                if dropdownType.date
-                    +addDateBottom
-                if dropdownType.checkbox
-                    +addCheckbox(additionalContent)
+            if dropdownType.list
+                .list-counter
+                    .dropdown__top
+                        +addListCounterTop
+                    .dropdown__bottom
+                        +addListCounterBottom(additionalContent)
+            else if dropdownType.date
+                .date
+                    .dropdown__top
+                        +addDateTop
+                    .dropdown__bottom
+                        +addDateBottom
+            else if dropdownType.checkbox
+                .checkbox
+                    .dropdown__top
+                        h3= 'expandable checkbox list'
+                    .dropdown__bottom
+                        +addCheckbox(additionalContent)

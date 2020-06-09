@@ -58,15 +58,14 @@ $(".list-counter__apply").map(function(){
 editButtons();
 
 // Обработчики нажатия list-counter
-let flag_top_selector = false;
 $(top_selector).click (function(e){
-    if (flag_top_selector) {
-        apply ($(this));
-        flag_top_selector = true
+    if(!$(this).hasClass("active")){
+        $(this).addClass("active");
+        return "add class active"
     }
-    else {
-        flag_top_selector = false
-    }
+    $(this).removeClass("active");
+    apply ($(this));
+    return "remove class active"
 });
 
 // Обработчики нажатия кнопок '-' и '+'
@@ -79,8 +78,14 @@ $(".list-counter__plus").click (function(e){
 
 // Обработчики нажатия кнопок 'применить'
 $('.list-counter__apply').click (function(e){
-    let ID = $(this).parent().attr("id");
-    apply ($(top_selector+'[id="'+ID+'"]'))
+    let top = $(this).parents(".list-counter").find(".list-counter__top");
+    if(!$(top).hasClass("active")){
+        $(top).addClass("active");
+        return "add class active"
+    }
+    $(top).removeClass("active");
+    apply ($(this));
+    return "remove class active"
 });
 
 // Обработчик нажатия кнопки 'отменить'
@@ -173,8 +178,6 @@ function totalAmountNum(ID, clear) {
     return totalAmount
 }
 
-
-
 // Функция вывода слов: "гость", "гостя" и "гостей"
 function theGuests(totalAmount) {
     let text, lastDigits = totalAmount - (Math.trunc((totalAmount/100)) * 100);
@@ -212,7 +215,6 @@ function apply (This) {
     //  2) список с присваиваниями { [пункт1 [заголовок пункта1], [сумма пункта1]],  [пункт2 [заголовок пункта2], [сумма пункта2]] }
     return out
 }
-
 function outItems(bottom) {
     let outItems = new Array(length_items), i = 0;
     $($(bottom).children(item_selector)).map(function(){
