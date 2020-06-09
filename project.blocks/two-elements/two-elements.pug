@@ -1,17 +1,23 @@
-mixin addTwoElements(leftType, rightType, items)
+include ../checkbox/checkbox
+
+mixin addTwoElements(leftType, rightType, items, additionalContent)
     .two-elements
         - for (var x = 0; x < items.length; x++)
-            .two-elements__element
+            if items[x].line
+                - var elem_mod = "two-elements__element_line"
+            else
+                - var elem_mod = ""
+            .two-elements__element(class=elem_mod)
                 .two-elements__left
                     if leftType.image_and_text
                         +addImage(items[x].image)
                     if leftType.but_and_text
-                        p вызов миксина с кнопкой
+                        +addCheckbox(additionalContent)
                 .two-elements__right
                     if rightType.image_and_text
                         +addTitleAndText(items[x].title, items[x].text)
                     if rightType.but_and_text
-                        p вызов миксина с текстом
+                        +addText(items[x].text)
 
 mixin addImage(image)
     img(src=image)
@@ -20,3 +26,6 @@ mixin addTitleAndText(title, text)
     p
         b= title
     p= text
+
+mixin addText(text)
+    span= text

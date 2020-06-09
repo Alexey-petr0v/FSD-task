@@ -31,8 +31,8 @@ include ../radio/radio
 
 -
     var advantages = [
-        {image: "./images/insert_emoticon.svg", title: "Комфорт", text: "Шумопоглощающие стены"},
-        {image: "./images/location_city.svg", title: "Удобство", text: "Окно в каждой из спален"}
+        {image: "./images/insert_emoticon.svg", title: "Комфорт", text: "Шумопоглощающие стены", line: true},
+        {image: "./images/location_city.svg", title: "Удобство", text: "Окно в каждой из спален", line: true}
     ]
 
 -
@@ -78,6 +78,27 @@ include ../radio/radio
         {name: "rate_2", value: "5", toggle: true, rate: true}
     ]
 
+-
+    var rich_checkbox_buttons = [
+        {title: "Широкий коридор", text: "Ширина коридоров в номере не менее 91 см.", name: "shirokij_koridor", value : false},
+        {title: "Помощник для инвалидов", text: "На 1 этаже вас встретит специалист и проводит до номера.", name: "pomoshchnik_dlya_invalidov", value : false}
+    ]
+
+-
+    var like_button = [
+        {name: "like_3", value : true, like: true}
+    ]
+
+-
+    var otziv_part1 = [
+        {image: "./images/image.png", title: "Мурад Сарафанов", text: "5 дней назад"}
+    ]
+
+-
+    var otziv_part2 = [
+        {text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."}
+    ]
+
 .form-elements
     .form-elements__column_first
         .form-elements__element_1
@@ -120,15 +141,14 @@ include ../radio/radio
                 +addRadio(rate_buttons_1, 2)
             .form-elements__td
                 +addRadio(rate_buttons_2, 3)
-
-
-        +addTextField('', '')
-        +addTextField('', '')
-        +addTextField('', '')
-        +addTextField('', '')
-        +addTextField('', '')
-        +addTextField('', '')
-        +addTextField('', '1111111111111111111 111111111111111111 11111111111111111111111111 111111111111 111 1111111111 111 1111111111111  1111111')
+        .form-elements__element_16
+            +addDropdown('Dropdown', '', 0, {list: true}, list_counter)
+        .form-elements__element_17
+            h3 RICH CHECKBOX BUTTONS
+            +addCheckbox(rich_checkbox_buttons)
+        .form-elements__element_18
+            +addTwoElements({image_and_text: true}, {image_and_text : true}, otziv_part1)
+            +addTwoElements({but_and_text: true}, {but_and_text : true}, otziv_part2, like_button)
     .form-elements__column_third
         +addTextField('', '')
         +addTextField('', '')

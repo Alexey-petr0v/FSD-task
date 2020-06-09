@@ -128,3 +128,15 @@
     }
 }
 
+.checkbox__rich {
+    display: inline-block;
+    max-width: 223px;
+}
+.checkbox__rich p > span {
+    font-size: 12px;
+    line-height: 14px;
+}
+.checkbox__rich p > b > span {
+    font-size: 14px;
+    line-height: 18px;
+}

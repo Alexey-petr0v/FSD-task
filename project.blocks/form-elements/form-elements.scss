@@ -31,7 +31,6 @@
     /* пример будущего расположения */
     &> div:last-child {
         position: absolute;
-        background: black;
         max-width: 711px;
         /**/
         &.field .field__input{
