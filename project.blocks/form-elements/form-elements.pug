@@ -4,6 +4,7 @@ include ../date/date
 include ../two-elements/two-elements
 include ../checkbox/checkbox
 include ../radio/radio
+include ../range-slider/range-slider
 
 -
     var list_counter = [
@@ -150,6 +151,9 @@ include ../radio/radio
             +addTwoElements({image_and_text: true}, {image_and_text : true}, otziv_part1)
             +addTwoElements({but_and_text: true}, {but_and_text : true}, otziv_part2, like_button)
     .form-elements__column_third
+        .form-elements__element_19
+            h3 RANGE SLIDER
+            +addRangeSlider
         +addTextField('', '')
         +addTextField('', '')
         +addTextField('', '')
