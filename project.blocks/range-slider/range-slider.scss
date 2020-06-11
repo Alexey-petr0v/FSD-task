@@ -1,12 +1,26 @@
 #target {
+    display: flex;
     border: 1px solid rgba(31, 32, 65, 0.25);
     border-radius: 3px;
     width: 266px;
     height: 6px;
+    flex-direction: row-reverse;
 }
 #content {
     background: red;
     width: 88px;
     height: 6px;
-    margin-left: 82px;
+}
+#limit_1, #limit_2 {
+    background: blue;
+    width: 6px;
+    height: 6px;
+}
+#limit_1 {
+}
+#limit_2 {
+}
+
+#limit_1, #limit_2, #content {
+    //display: inline-block;
 }
