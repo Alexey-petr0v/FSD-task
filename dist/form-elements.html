@@ -551,20 +551,19 @@
                                 <h3>RANGE SLIDER</h3>
                               </div>
                               <div class="range-slider__title-column">
-                                <h3 class="range-slider__values"><span id='range-slider-value1'>5 000</span>₽ - <span id='range-slider-value2'>10 000</span>₽</h3>
+                                <h3 class="range-slider__values"><span id='range-slider-output1'>5 000</span>₽ - <span id='range-slider-output2'>10 000</span>₽</h3>
                               </div>
                             </div>
-                            <div id="target">
-                              <div id="mydiv1">
-                                <div id="mydiv1header"></div>
+                            <div class="range-slider__slider" id="target">
+                              <input name="range-slider" data-output1="5 000" data-output2="10 000" value="{output1: &quot;5 000&quot;, output2: &quot;10 000&quot;}" type="hidden">
+                              <div class="range-slider__limit range-slider__limit_left mydiv1">
+                                <div class="mydiv1header"></div>
                               </div>
-                              <div id="content"></div>
-                              <div id="mydiv2">
-                                <div id="mydiv2header"></div>
+                              <div class="range-slider__accent" id="content"></div>
+                              <div class="range-slider__limit range-slider__limit_right mydiv2">
+                                <div class="mydiv2header"></div>
                               </div>
                             </div>
-                            <div id="other">Trigger the handler</div>
-                            <div id="log"></div>
                           </div>
               </div>
                                   <div class="field">
