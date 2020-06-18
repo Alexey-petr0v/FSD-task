@@ -5,6 +5,7 @@ include ../two-elements/two-elements
 include ../checkbox/checkbox
 include ../radio/radio
 include ../range-slider/range-slider
+include ../button/button
 
 -
     var list_counter = [
@@ -153,6 +154,24 @@ include ../range-slider/range-slider
     .form-elements__column_third
         .form-elements__element_19
             +addRangeSlider
+        .form-elements__element_20
+            h3 BUTTONS
+            .form-elements__td
+                +addButton("CLICK ME", "id-but", "button__elem_opaque-background", "button__content_padding", "button__text_white")
+            .form-elements__td
+                +addButton("CLICK ME", "id-but", "button__elem_transparent-background", "button__content_padding", "button__text_white")
+        .form-elements__element_21
+            .form-elements__td
+                +addButton("CLICK ME", "id-but", "button__elem_opaque-border", "button__content_padding")
+            .form-elements__td
+                +addButton("CLICK ME", "id-but", "button__elem_transparent-border", "button__content_padding")
+        .form-elements__element_22
+            .form-elements__td
+                +addButton("CLICK ME", "id-but")
+            .form-elements__td
+                +addButton("CLICK ME", "id-but", "", "", "button__text_grey")
+        .form-elements__element_23
+                +addButton("перейти к оплате", "id-but", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white")
         +addTextField('', '')
         +addTextField('', '')
         +addTextField('', '')

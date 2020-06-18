@@ -1,0 +1,50 @@
+.button {
+    display: flex;
+
+    &__elem {
+        border-radius: 22px;
+        &_opaque-background {
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            &.button__text {color: #FFFFFF}
+        }
+        &_transparent-background {
+            background: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
+            &.button__text {color: #FFFFFF}
+        }
+        &_opaque-border {
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            .button__content {
+                padding: 12px 18px 13px;
+                margin: 2px;
+                background: white;
+            }
+        }
+        &_transparent-border {
+            background: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
+            .button__content {
+                padding: 12px 18px 13px;
+                margin: 2px;
+                background: white;
+            }
+        }
+        &_big {
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            .button__content {background: 286px 12px url("/images/arrow_forward_white.svg") no-repeat;
+            }
+            .button__text {width: 280px}
+        }
+    }
+
+    &__content {
+        text-decoration: none;
+        cursor: pointer;
+        &_padding {padding: 14px 20px 15px; border-radius: 22px}
+    }
+
+    &__text {
+        text-align: center;
+        color: #BC9CFF;
+        &_grey {color: rgba(31, 32, 65, 0.5)}
+        &_white {color: #FFFFFF}
+    }
+}
