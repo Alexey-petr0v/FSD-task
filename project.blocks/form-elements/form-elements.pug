@@ -6,6 +6,7 @@ include ../checkbox/checkbox
 include ../radio/radio
 include ../range-slider/range-slider
 include ../button/button
+include ../paginator/paginator
 
 -
     var list_counter = [
@@ -172,6 +173,9 @@ include ../button/button
                 +addButton("CLICK ME", "id-but", "", "", "button__text_grey")
         .form-elements__element_23
                 +addButton("перейти к оплате", "id-but", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white")
+        .form-elements__element_24
+            h3 pagination
+            +addPaginator
         +addTextField('', '')
         +addTextField('', '')
         +addTextField('', '')

@@ -1,0 +1,36 @@
+
+.paginator__elem { 
+    width: 241px;
+}
+.paginator__items {
+    display: flex;
+}
+.paginator__item { 
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.paginator__item:first-child { 
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+    color: #FFFFFF;
+}
+
+.paginator__item:last-child { 
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    border-radius: 22px;
+}
+
+.paginator__item:last-child p { 
+    width: 100%;
+    height: 100%;
+    background: 50% 50% url("/images/arrow_forward_white.svg") no-repeat;
+}
+
+.paginator__text p {
+    text-align: center;
+}
