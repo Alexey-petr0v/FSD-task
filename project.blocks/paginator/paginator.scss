@@ -1,11 +1,28 @@
 
-.paginator__elem { 
-    width: 241px;
+#paginator-next {
+    cursor: pointer;
 }
+
 .paginator__items {
     display: flex;
+    width: 321px;
 }
-.paginator__item { 
+
+.paginator__elem { 
+    width: 241px;
+    /* Запрет выделения текста */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;
+    user-select: none;
+}
+.paginator__numbers {
+    display: flex;
+}
+.paginator__number { 
+    cursor: pointer;
     text-align: center;
     width: 40px;
     height: 40px;
@@ -14,21 +31,35 @@
     align-items: center;
 }
 
-.paginator__item:first-child { 
+.paginator__number_checked { 
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     border-radius: 22px;
     color: #FFFFFF;
 }
 
-.paginator__item:last-child { 
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-    border-radius: 22px;
+.paginator__number_invisible {
+    display: none
 }
 
-.paginator__item:last-child p { 
+.paginator__button { 
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    border-radius: 22px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.paginator__button p { 
     width: 100%;
     height: 100%;
     background: 50% 50% url("/images/arrow_forward_white.svg") no-repeat;
+}
+
+.paginator__button_left p { 
+    background: 50% 50% url("/images/arrow_forward_white_left.svg") no-repeat;
 }
 
 .paginator__text p {
