@@ -1,6 +1,6 @@
 // --------------- Пагинатор ---------------
 
-class Paginator {
+export default class Paginator {
     constructor(id, amount, id_but_next) {
         this.id = id;
         this.amount = amount;
@@ -8,14 +8,13 @@ class Paginator {
         this.id_but_next = id_but_next;
         this.addDataPage()
     }
-    addDataPage() { $(id).attr("data-pages", this.data_page) }
+    addDataPage() { $(this.id).attr("data-pages", this.data_page) }
     addNumbers() {
         for (let i = 1; i <= this.amount; i++) {
             $(".paginator__numbers").append("<div class='paginator__number'>"+i+"</div>");
         }
         if (this.amount > 5) {
                 $(".paginator__number:not(.paginator__number_invisible)").eq(-2).text("...");
-                console.log("this.amount: "+this.amount)
             for (let i = 1; i < this.amount-4; i++) {
                 $(".paginator__number:not(.paginator__number_invisible)").eq(-3).addClass("paginator__number_invisible");
             }
@@ -80,24 +79,3 @@ class Paginator {
 // -----------------------------------------
 
 
-// ------ Страница Search room/Filter ------
-
-// --- Импорт шаблона карточки номера
-let pug = require("../hotel-card/hotel-card.pug");
-
-// --- Формирование карточек номеров в массиве
-let elements = new Array(25);
-for (let i = 0; i < elements.length; i++){
-    let name = 'Timothy'+i, number = i;
-    elements[i] = pug({name:name,number:number});
-}
-
-// --- Переменные с интервалом первичного вывода элементов (пагинатор)
-let id = "#element_24",
-    amount_pages = 30,
-    paginator = new Paginator(id, amount_pages, "#paginator-next");
-
-paginator.addNumbers();
-paginator.addButtons();
-
-// -----------------------------------------
