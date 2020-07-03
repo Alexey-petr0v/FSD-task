@@ -3,24 +3,35 @@ include ../list-counter/list-counter
 include ../date/date
 include ../checkbox/checkbox
 
-mixin addDropdown(title, dropdownMod, fieldMod, dropdownType, additionalContent, check_status)
-    +addField(title, fieldMod)
-        .dropdown(class=dropdownMod)
+mixin addDropdown(title, attrib, dropdownType, additionalContent, check_status)
+            - var dropdown_mod = ""
+            if attrib.dropdown_elem_small
+                - var dropdown_mod = dropdown_mod + attrib.dropdown_elem_small + " "
             if dropdownType.list
-                .list-counter
-                    .dropdown__top
-                        +addListCounterTop
-                    .dropdown__bottom
-                        +addListCounterBottom(additionalContent)
+                +addField(title, fieldMod)
+                    .dropdown
+                        .dropdown__elem(class=dropdown_mod)
+                            .list-counter(data-type_units=attrib.type_units)
+                                .dropdown__top
+                                    +addListCounterTop
+                                .dropdown__bottom
+                                    +addListCounterBottom(additionalContent)
             else if dropdownType.date
-                .date
-                    .dropdown__top
-                        +addDateTop
-                    .dropdown__bottom
-                        +addDateBottom
+                +addField(title, fieldMod)
+                    .dropdown
+                        .dropdown__elem(class=dropdown_mod)
+                            .date
+                                .dropdown__top
+                                    +addDateTop
+                                .dropdown__bottom
+                                    +addDateBottom
             else if dropdownType.checkbox
-                .checkbox
-                    .dropdown__top
-                        h3= 'expandable checkbox list'
-                    .dropdown__bottom
-                        +addCheckbox(additionalContent)
+                if attrib.dropdown_no_border
+                    - var dropdown_mod = dropdown_mod + attrib.dropdown_no_border + " "
+                .dropdown
+                    .dropdown__elem(class=dropdown_mod)
+                        .checkbox
+                            .dropdown__top
+                                h3= title
+                            .dropdown__bottom
+                                +addCheckbox(additionalContent)

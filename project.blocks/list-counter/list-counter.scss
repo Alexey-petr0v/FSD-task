@@ -1,6 +1,13 @@
 /* list-counter */
 
 .list-counter {
+    /* Запрет выделения текста */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;
+    user-select: none;
     &__buttons {
         margin-top: 6px;
         padding-bottom: 7px;
@@ -14,6 +21,7 @@
         .list-counter__clear {
             cursor: pointer;
             color: rgba(31, 32, 65, 0.5);
+            visibility: hidden;
         }
     
         .list-counter__apply {
@@ -32,6 +40,7 @@
         h3 {margin-top: 6px;}
     
         .list-counter__minusAndPlus {
+
             display: -webkit-flex; 
             display: flex; 
             flex-direction: row;
@@ -65,5 +74,9 @@
         flex-direction: row;
         justify-content: space-between;
         padding-left: 14px;
+        &_small {width: 252px}
+    }
+    &__bottom {
+        &_small {width: 234px}
     }
 }

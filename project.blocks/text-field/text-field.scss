@@ -2,7 +2,8 @@
 .text-field {
 }
 .text-field__elem {
-    min-width: calc(100% - 2px);
+    padding-left: 14px;
+    min-width: calc(100% - 2px - 14px);
     min-height: 42px;
     background: #ffffff;
     border: 1px solid rgba(31, 32, 65, 0.25);
@@ -11,8 +12,58 @@
     &:hover,
     &:focus {
         border: 1px solid rgba(31, 32, 65, 0.5);
+        &::-webkit-input-placeholder{
+            color: rgba(31, 32, 65, 0.75);
+        }
+        &::-moz-placeholder{
+            color: rgba(31, 32, 65, 0.75);
+        }
+        &:-ms-input-placeholder {
+            color: rgba(31, 32, 65, 0.75);
+        }
+        &::-ms-input-placeholder {
+            color: rgba(31, 32, 65, 0.75);
+        }
+        &::placeholder {
+            color: rgba(31, 32, 65, 0.75);
+        }
     }
     &_arrow-left {
         background: url("/images/arrow_forward.svg") calc(100% - 13px) 50% no-repeat #ffffff;
+    }
+    &::-webkit-input-placeholder{
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        color: rgba(31, 32, 65, 0.25);
+    }
+    &::-moz-placeholder{
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        color: rgba(31, 32, 65, 0.25);
+    }
+    &:-ms-input-placeholder {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        color: rgba(31, 32, 65, 0.25);
+    }
+    &::-ms-input-placeholder {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        color: rgba(31, 32, 65, 0.25);
+    }
+    &::placeholder {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        color: rgba(31, 32, 65, 0.25);
     }
 }

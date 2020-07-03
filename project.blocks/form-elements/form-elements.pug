@@ -7,16 +7,24 @@ include ../radio/radio
 include ../range-slider/range-slider
 include ../button/button
 include ../paginator/paginator
+include ../bullet-list/bullet-list
 
 -
-    var list_counter = [
+    var attributes = [
+        {type_units: "together"},
+        {dropdown_elem_small: "dropdown__elem_small", type_units: "separately"},
+        {dropdown_elem_small: "dropdown__elem_small", dropdown_no_border: "dropdown_no-border"}
+    ]
+
+-
+    var list_people = [
         {title: "взрослые", value : "0"},
         {title: "дети", value : "0"},
         {title: "младенцы", value : "0"}
     ]
 
 -
-    var list_date = [
+    var list_furniture = [
         {title: "спальни", value : "0"},
         {title: "кровати", value : "0"},
         {title: "ванные комнаты", value : "0"}
@@ -42,7 +50,7 @@ include ../paginator/paginator
     var checkbox_buttons = [
         {title: "Можно курить", name: "mozhno_kurit", value : false},
         {title: "Можно с питомцами", name: "mozhno_s_pitomcami", value : true},
-        {title: "Можно пригласить гостей (до 10 человек)", name: "mozhno_priglasit_gostej", value : true}
+        {title: "Можно пригласить гостей (до 10 человек)", name: "mozhno_priglasit_gostej", value : true}
     ]
 
 -
@@ -53,8 +61,8 @@ include ../paginator/paginator
 
 -
     var toggle_buttons = [
-        {title: "Получать спецпредложения", name: "poluchat_specpredlozheniya", value : false, toggle: true},
-        {title: "Получать спецпредложения", name: "poluchat_specpredlozheniya", value : true, toggle: true}
+        {title: "Получать спецпредложения", name: "poluchat_specpredlozheniya", value : true, toggle: true},
+        {title: "Получать спецпредложения", name: "poluchat_specpredlozheniya", value : false, toggle: true}
     ]
 
 -
@@ -102,84 +110,93 @@ include ../paginator/paginator
         {text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."}
     ]
 
-.form-elements
-    .form-elements__column_first
-        .form-elements__element_1
-            +addTextField('Text Field')
-        .form-elements__element_2
-            +addDropdown('Dropdown', '', 0, {list: true}, list_counter)
-        .form-elements__element_3
-            +addTextField('masked text field', 0, 'text-field__elem_masked')
-        .form-elements__element_4
-            +addDropdown('date Dropdown', '', 0, {date: true})
-        .form-elements__element_5
-            +addDropdown('filter date dropdown', '', 0, {date: true})
-        .form-elements__element_6
-            +addTextField('subscription text field', 'small', 'arrow-left')
-        .form-elements__element_7
-            +addDropdown('Dropdown', '', 0, {list: true}, list_date)
-        .form-elements__element_8
-            +addDropdown('Dropdown', '', 0, {list: true}, list_date)
-        .form-elements__element_9
-            +addDropdown('expandable checkbox list', 'dropdown_no-border', 0, {checkbox: true}, expandable_checkbox_list)
-        .form-elements__element_10
-            +addTwoElements({image_and_text: true}, {image_and_text : true}, advantages)
+-
+    var bullet_list = [
+        {text: "Нельзя с питомцами"},
+        {text: "Без вечеринок и мероприятий"},
+        {text: "Время прибытия — после 13:00, а выезд до 12:00"}
+    ]
 
-    .form-elements__column_second
-        .form-elements__element_11
-            h3 CHECKBOX BUTTONS
-            +addCheckbox(checkbox_buttons)
-        .form-elements__element_12
-            h3 RADIO BUTTONS
-            +addRadio(radio_buttons, 1)
-        .form-elements__element_13
-            h3 TOGGLE
-            +addCheckbox(toggle_buttons)
-        .form-elements__element_14
-            h3 LIKE BUTTON
-            +addCheckbox(like_buttons)
-        .form-elements__element_15
-            h3 RATE BUTTONS
-            .form-elements__td
-                +addRadio(rate_buttons_1, 2)
-            .form-elements__td
-                +addRadio(rate_buttons_2, 3)
-        .form-elements__element_16
-            +addDropdown('Dropdown', '', 0, {list: true}, list_counter)
-        .form-elements__element_17
-            h3 RICH CHECKBOX BUTTONS
-            +addCheckbox(rich_checkbox_buttons)
-        .form-elements__element_18
-            +addTwoElements({image_and_text: true}, {image_and_text : true}, otziv_part1)
-            +addTwoElements({but_and_text: true}, {but_and_text : true}, otziv_part2, like_button)
-    .form-elements__column_third
-        .form-elements__element_19
-            +addRangeSlider
-        .form-elements__element_20
-            h3 BUTTONS
-            .form-elements__td
-                +addButton("CLICK ME", "id-but", "button__elem_opaque-background", "button__content_padding", "button__text_white")
-            .form-elements__td
-                +addButton("CLICK ME", "id-but", "button__elem_transparent-background", "button__content_padding", "button__text_white")
-        .form-elements__element_21
-            .form-elements__td
-                +addButton("CLICK ME", "id-but", "button__elem_opaque-border", "button__content_padding")
-            .form-elements__td
-                +addButton("CLICK ME", "id-but", "button__elem_transparent-border", "button__content_padding")
-        .form-elements__element_22
-            .form-elements__td
-                +addButton("CLICK ME", "id-but")
-            .form-elements__td
-                +addButton("CLICK ME", "id-but", "", "", "button__text_grey")
-        .form-elements__element_23
-                +addButton("перейти к оплате", "id-but", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white")
-        .form-elements__element_24(id="element_24")
-        .form-elements__element_25
-            h3 pagination
-            +addPaginator
-        +addTextField('', '')
-        +addTextField('', '')
-        +addTextField('', '')
-        +addTextField('', '')
-        +addTextField('', '')
-        +addTextField('', '')
+.form-elements
+    .form-elements__columns
+        .form-elements__column_first
+            .form-elements__element_1
+                +addTextField('Text Field')
+            .form-elements__element_2
+                +addDropdown('Dropdown', attributes[0], {list: true}, list_people)
+            .form-elements__element_3
+                +addTextField('masked text field', 'text-field__elem_masked')
+            .form-elements__element_4
+                +addDropdown('date Dropdown', '', {date: true})
+            .form-elements__element_5
+                +addDropdown('filter date dropdown', '', {date: true})
+            .form-elements__element_6
+                +addTextField('subscription text field', 'small', 'arrow-left')
+            .form-elements__element_7
+                +addDropdown('Dropdown', attributes[1], {list: true}, list_furniture)
+            .form-elements__element_8
+                +addDropdown('Dropdown12', attributes[1], {list: true}, list_furniture)
+            .form-elements__element_9
+                +addDropdown('expandable checkbox list', attributes[2], {checkbox: true}, expandable_checkbox_list)
+            .form-elements__element_10
+                +addDropdown('expandable checkbox list', attributes[2], {checkbox: true}, expandable_checkbox_list)
+            .form-elements__element_11
+                +addTwoElements({image_and_text: true}, {image_and_text : true}, advantages)
+
+        .form-elements__column_second
+            .form-elements__element_12
+                h3 CHECKBOX BUTTONS
+                +addCheckbox(checkbox_buttons)
+            .form-elements__element_13
+                h3 RADIO BUTTONS
+                +addRadio(radio_buttons, 1)
+            .form-elements__element_14
+                h3 TOGGLE
+                +addCheckbox(toggle_buttons)
+            .form-elements__element_15
+                h3 LIKE BUTTON
+                +addCheckbox(like_buttons)
+            .form-elements__element_16
+                h3 RATE BUTTON
+                .form-elements__td
+                    +addRadio(rate_buttons_1, 2)
+                .form-elements__td
+                    +addRadio(rate_buttons_2, 3)
+            .form-elements__element_17
+                +addDropdown('Dropdown', attributes[0], {list: true}, list_people)
+            .form-elements__element_18
+                h3 RICH CHECKBOX BUTTONS
+                +addCheckbox(rich_checkbox_buttons)
+            .form-elements__element_19
+                +addTwoElements({image_and_text: true}, {image_and_text : true}, otziv_part1)
+                +addTwoElements({but_and_text: true}, {but_and_text : true}, otziv_part2, like_button)
+        .form-elements__column_third
+            .form-elements__element_20
+                +addRangeSlider
+            .form-elements__element_21
+                h3 BUTTONS
+                .form-elements__td
+                    +addButton("CLICK ME", "id-but", "button__elem_opaque-background", "button__content_padding", "button__text_white")
+                .form-elements__td
+                    +addButton("CLICK ME", "id-but", "button__elem_transparent-background", "button__content_padding", "button__text_white")
+            .form-elements__element_22
+                .form-elements__td.form-elements__td_no-indent
+                    +addButton("CLICK ME", "id-but", "button__elem_opaque-border", "button__content_padding")
+                .form-elements__td.form-elements__td_no-indent
+                    +addButton("CLICK ME", "id-but", "button__elem_transparent-border", "button__content_padding")
+            .form-elements__element_23
+                .form-elements__td
+                    +addButton("CLICK ME", "id-but")
+                .form-elements__td
+                    +addButton("CLICK ME", "id-but", "", "", "button__text_grey")
+            .form-elements__element_24
+                    +addButton("перейти к оплате", "id-but", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white")
+            .form-elements__element_25(id="element_24")
+            .form-elements__element_26
+                h3 pagination
+                +addPaginator
+            .form-elements__element_27
+                +addDropdown('Dropdown', attributes[0], {list: true}, list_people)
+            .form-elements__element_28
+                h3 BULLET LIST
+                +addBulletList(bullet_list)

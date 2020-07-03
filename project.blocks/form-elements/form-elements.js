@@ -1,22 +1,38 @@
-// ------ Страница Search room/Filter ------
+// ------ Страница Form Elements ------
 
 import Paginator from '../paginator/paginator.js'
-// --- Импорт шаблона карточки номера
-let pug = require("../hotel-card/hotel-card.pug");
-
-// --- Формирование карточек номеров в массиве
-let elements = new Array(25);
-for (let i = 0; i < elements.length; i++){
-    let name = 'Timothy'+i, number = i;
-    elements[i] = pug({name:name,number:number});
-}
 
 // --- Переменные с интервалом первичного вывода элементов (пагинатор)
 let id = "#element_24",
-    amount_pages = 30,
+    amount_pages = 15,
     paginator = new Paginator(id, amount_pages, "#paginator-next");
 
 paginator.addNumbers();
 paginator.addButtons();
+
+
+$( ".text-field__elem" ).eq(0).trigger( "focus" );
+
+$( ".list-counter__top" ).eq(1).trigger( "click" );
+$( ".list-counter__bottom" ).eq(1).find(".list-counter__plus").eq(0).trigger( "click" );
+$( ".list-counter__bottom" ).eq(1).find(".list-counter__plus").eq(0).trigger( "click" );
+$( ".list-counter__bottom" ).eq(1).find(".list-counter__plus").eq(1).trigger( "click" );
+$( ".list-counter__bottom" ).eq(1).find(".list-counter__plus").eq(1).trigger( "click" );
+$( ".list-counter__top" ).eq(1).trigger( "click" );
+
+$( ".list-counter__top" ).eq(2).trigger( "click" );
+$( ".list-counter__bottom" ).eq(2).find(".list-counter__plus").eq(0).trigger( "click" );
+$( ".list-counter__bottom" ).eq(2).find(".list-counter__plus").eq(0).trigger( "click" );
+$( ".list-counter__bottom" ).eq(2).find(".list-counter__plus").eq(1).trigger( "click" );
+$( ".list-counter__bottom" ).eq(2).find(".list-counter__plus").eq(1).trigger( "click" );
+
+$( ".dropdown__top" ).eq(6).trigger( "click" );
+
+$( ".list-counter__top" ).eq(3).trigger( "click" );
+
+$( ".list-counter__top" ).eq(4).trigger( "click" );
+$( ".list-counter__bottom" ).eq(4).find(".list-counter__plus").eq(0).trigger( "click" );
+$( ".list-counter__bottom" ).eq(4).find(".list-counter__plus").eq(0).trigger( "click" );
+$( ".list-counter__bottom" ).eq(4).find(".list-counter__plus").eq(1).trigger( "click" );
 
 // -----------------------------------------

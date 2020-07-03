@@ -2,10 +2,10 @@
     display: flex;
     vertical-align: top;
     padding-bottom: 0px;
-    margin-bottom: 12px;
+    margin-bottom: 5px;
     &_line {
         border-bottom: 1px solid rgba(31, 32, 65, 0.1);
-        padding-bottom: 17px;
+        padding-bottom: 10px;
         margin-bottom: 23px;
         width: 280px;
     }
@@ -18,5 +18,10 @@
     min-width: 48px;
     margin-right: 10px;
     text-align: center;
+    vertical-align: top;
+    img {
+        width: 48px;
+        height: 48px;
+    }
 }
 

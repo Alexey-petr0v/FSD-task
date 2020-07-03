@@ -17,6 +17,7 @@
 @import '../project.blocks/button/button.scss';
 @import '../project.blocks/paginator/paginator.scss';
 @import '../project.blocks/hotel-card/hotel-card.scss';
+@import '../project.blocks/bullet-list/bullet-list.scss';
 
 
 * {
@@ -46,7 +47,7 @@
 // Десктоп. Разрешение < 1991px
 @media (max-width: 1920px) {
     .main-container {
-        max-width: 1099px;
+        max-width: 1200px;
     }
 }
 

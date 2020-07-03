@@ -5,7 +5,7 @@ let radnom_set = new Set();
 
 /* -------------- Переменные блока list-counter -------------- */
 
-let top_class = 'list-counter__top',
+let block_class = '.list-counter',
     top_selector = '.list-counter__top',
     item_selector = '.list-counter__item',
     length_items = $(item_selector).length, // Количество элементов с классом .list-counter__item на всей странице
@@ -25,26 +25,12 @@ $(item_selector).map(function(){
     iter_item_a++
 });
 
-// Добавление пронумерованных классов к list-counter_top
-let iter_top = 1;
-$(top_selector).map(function(){
-    $(this).attr("id", "NODROP_"+list_ID[iter_top-1]);
-    iter_top++
-});
-
-// Добавление пронумерованных классов к list-counter__bottom
-let iter_bottom = 1;
-$(".list-counter__bottom").map(function(){
-    $(this).attr("id", "NODROP_"+list_ID[iter_bottom-1]);
-    length_lists[iter_bottom-1] = $(this).children(".list-counter__item").length;
-    iter_bottom++
-});
-
-// Добавление пронумерованных классов к list-counter__apply
-let iter_apply = 1;
-$(".list-counter__apply").map(function(){
-    $(this).parent().attr("id", "NODROP_"+list_ID[iter_apply-1]);
-    iter_apply++
+// Добавление ID к list-counter
+let iter_block = 1;
+$(block_class).map(function(){
+    $(this).attr("id", "NODROP_"+list_ID[iter_block-1]);
+    length_lists[iter_block-1] = $(this).find(".list-counter__item").length;
+    iter_block++
 });
 
 /* ------------------------------------------------------- */
@@ -129,6 +115,7 @@ function plus (This) {
     let h3 = $(This).parent().children("h3"),
         value = parseInt($(h3).text());
     $(h3).text(function() {return value + 1});
+        value = parseInt($(h3).text());
     editButtons();
     if ($(This).children(".list-counter__minus").hasClass("list-counter__circle_not-active")) {
         $(This).children(".list-counter__minus").removeClass('list-counter__circle_not-active')
@@ -138,89 +125,106 @@ function plus (This) {
 
 // Функция вывода общей суммы гостей (число + слово)
 function totalAmount(This) {
-    let bottom = searchBottom(This),
-        ID = $(bottom).attr("id"),
-        clear = bottom.find(".list-counter__clear");
-    let totalAmount = totalAmountNum(ID, clear);
-    $(top_selector+'[id="'+ID+'"] > p').text(function() {
-        let allGuests = theGuests(totalAmount);
-        return totalAmount + allGuests;
-    });
+    let block = searchBlock(This),
+        ID = $(block).attr("id"),
+        clear = block.find(".list-counter__clear");
+
+    if ($(block).data("type_units") == "together") {
+        let totalAmount = totalAmountNum(ID, clear);
+        $('.list-counter[id="'+ID+'"] .list-counter__top > p').text(function() {
+            let units = generateUnits(totalAmount, "the-guests");
+            return totalAmount + units;
+        })
+    }
+    else if ($(block).data("type_units") == "separately"){
+        $('.list-counter[id="'+ID+'"] .list-counter__top > p').text(function() {
+            let value_1 = $(block).find(".list-counter__item").eq(0).find(".list-counter__minusAndPlus").children("h3").text();
+            let value_2 = $(block).find(".list-counter__item").eq(1).find(".list-counter__minusAndPlus").children("h3").text();
+
+            let units_1 = generateUnits(value_1, "bedrooms");
+            let units_2 = generateUnits(value_2, "the-beds");
+            return value_1 + units_1 + ", "+value_2 + units_2+"...";
+        })
+    }
 }
 
-// Функция поиска элемента с классом list-counter__bottom
-function searchBottom(That){
-    let Object = $(That),
-        Class = $(Object).attr("class");
-    while (Class != "list-counter__bottom"){
-        if (Class == top_class) {
-            let ID = $(Object).attr("id");
-            Object = $(".list-counter__bottom[id='"+ID+"']");
-            return Object
-        }
-        Object = $(Object).parent();
-        Class = $(Object).attr("class")
-    }
-    return Object
+// Функция поиска элемента с классом list-counter
+function searchBlock(That){
+    return $(That).parents(".list-counter")
 }
 
 // Функция подсчета общей суммы гостей (только число)
 function totalAmountNum(ID, clear) {
     let totalAmount = 0, value = 0;
 
-    let adfg = $("#"+ID+".list-counter__bottom").find(".list-counter__minusAndPlus").children("h3");
+    let adfg = $(".list-counter[id='"+ID+"']").find(".list-counter__minusAndPlus").children("h3");
     $(adfg).map(function(){
         value = parseInt($(this).text());
         totalAmount += value
     });
-    if (totalAmount == 0) {$(clear).text("")}
-    else {$(clear).text("очистить")}
+    
+    visibleClearButton(totalAmount, clear)
     return totalAmount
 }
 
 // Функция вывода слов: "гость", "гостя" и "гостей"
-function theGuests(totalAmount) {
-    let text, lastDigits = totalAmount - (Math.trunc((totalAmount/100)) * 100);
+function generateUnits(totalAmount, name_units) {
+    let variant_1, variant_2, variant_3;
+    if (name_units == "the-guests") {
+        variant_1 = " гость"; variant_2 = " гостя"; variant_3 = " гостей";
+    }
+    else if (name_units == "bedrooms"){
+        variant_1 = " спальня"; variant_2 = " спальни"; variant_3 = " спален";
+    }
+    else {
+        variant_1 = " кровать"; variant_2 = " кровати"; variant_3 = " кроватей";
+    }
+
+    let units, lastDigits = totalAmount - (Math.trunc((totalAmount/100)) * 100);
     switch (lastDigits){
         case 1: case 21: case 31: case 41: case 51: case 61: case 71: case 81: case 91:
-            text = " гость";
+            units = variant_1;
             break;
         case 2: case 22: case 32: case 42: case 52: case 62: case 72: case 82: case 92:
         case 3: case 23: case 33: case 43: case 53: case 63: case 73: case 83: case 93:
         case 4: case 24: case 34: case 44: case 54: case 64: case 74: case 84: case 94:
-            text = " гостя";
+            units = variant_2;
             break;
         default:
-            text = " гостей";
+            units = variant_3;
             break;
     }
-    return text
+    return units
 }
 
 // Реализация кнопки 'применить'
 function apply (This) {
-    let bottom = searchBottom(This),
-        ID = $(bottom).attr("id"),
-        clear = bottom.find(".list-counter__clear");
+    let block = searchBlock(This),
+        ID = $(block).attr("id"),
+        clear = block.find(".list-counter__clear");
+
+    let h3 = $(block).find(".list-counter__item").eq(0).find(".list-counter__minusAndPlus").children("h3");
+
     let out = new Array (2);
         out[0] = totalAmountNum(ID, clear);
-        out[1] = outItems(bottom);
+        out[1] = outItems(block);
     if (out[0] == 0) {$('#'+ID+" #total-amount").attr("value", '')}
     else {
         $('#'+ID+" #total-amount").attr("value", out.toString());
     }
-    totalAmount(This);
+    console.log(out)
+    totalAmount(This)
     // Поля массива out:
     //  1) поле [общая сумма списка]
     //  2) список с присваиваниями { [пункт1 [заголовок пункта1], [сумма пункта1]],  [пункт2 [заголовок пункта2], [сумма пункта2]] }
     return out
 }
-function outItems(bottom) {
+function outItems(block) {
     let outItems = new Array(length_items), i = 0;
-    $($(bottom).children(item_selector)).map(function(){
+    $($(block).find(item_selector)).map(function(){
         outItems[i] = new Object ();
         outItems[i].title = $(this).children("h3").text();
-        outItems[i].amount = $(this).children(".list-counter__minusAndPlus").children("h3").text();
+        outItems[i].amount = $(this).find(".list-counter__minusAndPlus").children("h3").text();
         i++
     });
     return outItems
@@ -228,11 +232,21 @@ function outItems(bottom) {
 
 // Реализация кнопки 'отменить'
 function clear(This) {
-    let bottom = searchBottom(This);
-        $(bottom).find(".list-counter__minusAndPlus").find("h3").text(0);
+    let block = searchBlock(This);
+        $(block).find(".list-counter__minusAndPlus").find("h3").text(0);
     $("#total-amount").attr("value", '');
-    totalAmount(This);
+
+    let h3 = $(block).find(".list-counter__item").eq(0).find(".list-counter__minusAndPlus").children("h3"),
+        value = parseInt($(h3).text());
+
+    totalAmount(This)
     editButtons()
+}
+
+// Функция вывода кнопки "очистить"
+function visibleClearButton(totalAmount, clear) {
+    if (totalAmount == 0) {$(clear).css("visibility", "hidden")}
+    else {$(clear).css("visibility", "visible")}
 }
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */

@@ -9,6 +9,8 @@
     &__bottom {
         border: 0px;
         padding-left: 0px;
+        padding-right: 14px;
+        position: static;
     }
 }
 
@@ -21,6 +23,26 @@
     -ms-user-select: none;
     user-select: none;
     
+    &__elem {
+        .dropdown__top {
+            width: 318px;
+        }
+        .dropdown__bottom {
+            width: 304px;
+        }
+        &_small {
+            .list-counter__buttons {
+                display: none;
+            }
+            .dropdown__top {
+                width: 262px;
+            }
+            .dropdown__bottom {
+                width: 248px;
+            }
+        }
+    }
+
     &__top {
         margin: 0px;
         padding: 0px;
@@ -40,6 +62,7 @@
     }
 
     &__bottom {
+        position: absolute;
         background: #FFFFFF;
         padding-left: 14px;
         padding-top: 6px;

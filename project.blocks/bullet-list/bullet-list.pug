@@ -1,0 +1,7 @@
+mixin addBulletList(items)
+    .bullet-list
+        .bullet-list__items
+            - for(var x = 0; x < items.length; x++)
+                .bullet-list__item
+                    .bullet-list__circle
+                    .bullet-list__text= items[x].text
