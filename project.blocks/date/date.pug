@@ -1,30 +1,13 @@
--
-    var week = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
-
-mixin addDate
-    .date__cal
-        .date__arrow-left
-        .date__title
-            p Название месяца
-        .date__arrow-right
-        - var n = 0;
-        while n < 7
-            .date__day-week(id='day-week-' + n)= week[n]
-            - var n = n + 1;
-
 mixin addDateTop
     .date__top
-        .date__small-top
-            p= 'ДД.ММ.ГГГГ'
-            img(src="./images/expand_more.svg" alt="expand more")
-        .date__small-top
-            p= 'ДД.ММ.ГГГГ'
-            img(src="./images/expand_more.svg" alt="expand more")
-
+        p= 'ДД.ММ.ГГГГ'
+        img(src="./images/expand_more.svg" alt="expand more")
 mixin addDateBottom
     .date__bottom
-        input(name='date', id='date', type='hidden', value=val)
-        +addDate
-        .date__buttons
-            h3.date__clear очистить
-            h3.date__apply(id="apply") применить
+        .date__paginator
+            .date__button(id="date-but-prev")
+                p
+            .date__of-the-month
+            .date__button(id="date-but-next")
+                p
+        .date__cal(id="element_200")

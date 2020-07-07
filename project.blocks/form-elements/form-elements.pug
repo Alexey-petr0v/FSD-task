@@ -11,9 +11,14 @@ include ../bullet-list/bullet-list
 
 -
     var attributes = [
-        {type_units: "together"},
-        {dropdown_elem_small: "dropdown__elem_small", type_units: "separately"},
-        {dropdown_elem_small: "dropdown__elem_small", dropdown_no_border: "dropdown_no-border"}
+        {name: "list-1", type_units: "together"},
+        {name: "date-1"},
+        {name: "date-2"},
+        {name: "list-2", dropdown_elem_small: "dropdown__elem_small", type_units: "separately"},
+        {name: "list-3", dropdown_elem_small: "dropdown__elem_small", type_units: "separately"},
+        {dropdown_elem_small: "dropdown__elem_small", dropdown_no_border: "dropdown_no-border"},
+        {name: "list-4", type_units: "together"},
+        {name: "list-5", type_units: "together"}
     ]
 
 -
@@ -127,19 +132,20 @@ include ../bullet-list/bullet-list
             .form-elements__element_3
                 +addTextField('masked text field', 'text-field__elem_masked')
             .form-elements__element_4
-                +addDropdown('date Dropdown', '', {date: true})
+                +addDropdown('date Dropdown', attributes[1], {date: true})
             .form-elements__element_5
-                +addDropdown('filter date dropdown', '', {date: true})
+                +addDropdown('filter date dropdown', attributes[5], {checkbox: true}, expandable_checkbox_list)
+                //+addDropdown('filter date dropdown', attributes[2], {date: true})
             .form-elements__element_6
                 +addTextField('subscription text field', 'small', 'arrow-left')
             .form-elements__element_7
-                +addDropdown('Dropdown', attributes[1], {list: true}, list_furniture)
+                +addDropdown('Dropdown', attributes[3], {list: true}, list_furniture)
             .form-elements__element_8
-                +addDropdown('Dropdown12', attributes[1], {list: true}, list_furniture)
+                +addDropdown('Dropdown', attributes[4], {list: true}, list_furniture)
             .form-elements__element_9
-                +addDropdown('expandable checkbox list', attributes[2], {checkbox: true}, expandable_checkbox_list)
+                +addDropdown('expandable checkbox list', attributes[5], {checkbox: true}, expandable_checkbox_list)
             .form-elements__element_10
-                +addDropdown('expandable checkbox list', attributes[2], {checkbox: true}, expandable_checkbox_list)
+                +addDropdown('expandable checkbox list', attributes[5], {checkbox: true}, expandable_checkbox_list)
             .form-elements__element_11
                 +addTwoElements({image_and_text: true}, {image_and_text : true}, advantages)
 
@@ -163,7 +169,7 @@ include ../bullet-list/bullet-list
                 .form-elements__td
                     +addRadio(rate_buttons_2, 3)
             .form-elements__element_17
-                +addDropdown('Dropdown', attributes[0], {list: true}, list_people)
+                +addDropdown('Dropdown', attributes[6], {list: true}, list_people)
             .form-elements__element_18
                 h3 RICH CHECKBOX BUTTONS
                 +addCheckbox(rich_checkbox_buttons)
@@ -173,30 +179,32 @@ include ../bullet-list/bullet-list
         .form-elements__column_third
             .form-elements__element_20
                 +addRangeSlider
+            .form-elements__element_20
+                +addRangeSlider
             .form-elements__element_21
                 h3 BUTTONS
                 .form-elements__td
-                    +addButton("CLICK ME", "id-but", "button__elem_opaque-background", "button__content_padding", "button__text_white")
+                    +addButton("CLICK ME", "id-but-1", "button__elem_opaque-background", "button__content_padding", "button__text_white")
                 .form-elements__td
-                    +addButton("CLICK ME", "id-but", "button__elem_transparent-background", "button__content_padding", "button__text_white")
+                    +addButton("CLICK ME", "id-but-2", "button__elem_transparent-background", "button__content_padding", "button__text_white")
             .form-elements__element_22
                 .form-elements__td.form-elements__td_no-indent
-                    +addButton("CLICK ME", "id-but", "button__elem_opaque-border", "button__content_padding")
+                    +addButton("CLICK ME", "id-but-3", "button__elem_opaque-border", "button__content_padding")
                 .form-elements__td.form-elements__td_no-indent
-                    +addButton("CLICK ME", "id-but", "button__elem_transparent-border", "button__content_padding")
+                    +addButton("CLICK ME", "id-but-4", "button__elem_transparent-border", "button__content_padding")
             .form-elements__element_23
                 .form-elements__td
-                    +addButton("CLICK ME", "id-but")
+                    +addButton("CLICK ME", "id-but-5")
                 .form-elements__td
-                    +addButton("CLICK ME", "id-but", "", "", "button__text_grey")
+                    +addButton("CLICK ME", "id-but-6", "", "", "button__text_grey")
             .form-elements__element_24
-                    +addButton("перейти к оплате", "id-but", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white")
+                    +addButton("перейти к оплате", "id-but-7", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white")
             .form-elements__element_25(id="element_24")
             .form-elements__element_26
                 h3 pagination
                 +addPaginator
             .form-elements__element_27
-                +addDropdown('Dropdown', attributes[0], {list: true}, list_people)
+                +addDropdown('Dropdown', attributes[7], {list: true}, list_people)
             .form-elements__element_28
                 h3 BULLET LIST
                 +addBulletList(bullet_list)

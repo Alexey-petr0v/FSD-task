@@ -40,7 +40,7 @@
                                           <div class="field__input">
                                             <div class="dropdown">
                                               <div class="dropdown__elem">
-                                                <div class="list-counter">
+                                                <div class="list-counter" data-type_units="together">
                                                   <div class="dropdown__top">
                                                               <div class="list-counter__top">
                                                                 <p>Сколько гостей</p>
@@ -48,7 +48,7 @@
                                                   </div>
                                                   <div class="dropdown__bottom">
                                                               <div class="list-counter__bottom">
-                                                                <input name="list-counter" id="total-amount" type="hidden">
+                                                                <input name="list-1" type="hidden">
                                                                           <div class="list-counter__item">
                                                                             <h3>взрослые</h3>
                                                                             <div class="list-counter__minusAndPlus">
@@ -74,8 +74,20 @@
                                                                             </div>
                                                                           </div>
                                                                 <div class="list-counter__buttons">
-                                                                  <h3 class="list-counter__clear">очистить</h3>
-                                                                  <h3 class="list-counter__apply" id="apply">применить</h3>
+                                                                            <div class="button">
+                                                                              <div class="button__elem">
+                                                                                <div class="button__content list-counter__clear" id="id-but-list-1">
+                                                                                  <h3 class="button__text button__text_grey">очистить</h3>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                            <div class="button">
+                                                                              <div class="button__elem">
+                                                                                <div class="button__content list-counter__apply" id="id-but-list-2">
+                                                                                  <h3 class="button__text">применить</h3>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
                                                                 </div>
                                                               </div>
                                                   </div>
@@ -108,35 +120,21 @@
                                                 <div class="date">
                                                   <div class="dropdown__top">
                                                               <div class="date__top">
-                                                                <div class="date__small-top">
-                                                                  <p>ДД.ММ.ГГГГ</p><img src="./images/expand_more.svg" alt="expand more">
-                                                                </div>
-                                                                <div class="date__small-top">
-                                                                  <p>ДД.ММ.ГГГГ</p><img src="./images/expand_more.svg" alt="expand more">
-                                                                </div>
+                                                                <p>ДД.ММ.ГГГГ</p><img src="./images/expand_more.svg" alt="expand more">
                                                               </div>
                                                   </div>
                                                   <div class="dropdown__bottom">
                                                               <div class="date__bottom">
-                                                                <input name="date" id="date" type="hidden">
-                                                                          <div class="date__cal">
-                                                                            <div class="date__arrow-left"></div>
-                                                                            <div class="date__title">
-                                                                              <p>Название месяца</p>
-                                                                            </div>
-                                                                            <div class="date__arrow-right"></div>
-                                                                            <div class="date__day-week" id="day-week-0">Пн</div>
-                                                                            <div class="date__day-week" id="day-week-1">Вт</div>
-                                                                            <div class="date__day-week" id="day-week-2">Ср</div>
-                                                                            <div class="date__day-week" id="day-week-3">Чт</div>
-                                                                            <div class="date__day-week" id="day-week-4">Пт</div>
-                                                                            <div class="date__day-week" id="day-week-5">Сб</div>
-                                                                            <div class="date__day-week" id="day-week-6">Вс</div>
-                                                                          </div>
-                                                                <div class="date__buttons">
-                                                                  <h3 class="date__clear">очистить</h3>
-                                                                  <h3 class="date__apply" id="apply">применить</h3>
+                                                                <div class="date__paginator">
+                                                                  <div class="date__button" id="date-but-prev">
+                                                                    <p></p>
+                                                                  </div>
+                                                                  <div class="date__of-the-month"></div>
+                                                                  <div class="date__button" id="date-but-next">
+                                                                    <p></p>
+                                                                  </div>
                                                                 </div>
+                                                                <div class="date__cal" id="element_200"></div>
                                                               </div>
                                                   </div>
                                                 </div>
@@ -147,52 +145,48 @@
                                       </div>
                 </div>
                 <div class="form-elements__element_5">
-                                      <div class="field">
-                                        <div class="field__elem">
-                                          <h3>filter date dropdown</h3>
-                                          <div class="field__input">
-                                            <div class="dropdown">
-                                              <div class="dropdown__elem">
-                                                <div class="date">
-                                                  <div class="dropdown__top">
-                                                              <div class="date__top">
-                                                                <div class="date__small-top">
-                                                                  <p>ДД.ММ.ГГГГ</p><img src="./images/expand_more.svg" alt="expand more">
-                                                                </div>
-                                                                <div class="date__small-top">
-                                                                  <p>ДД.ММ.ГГГГ</p><img src="./images/expand_more.svg" alt="expand more">
-                                                                </div>
-                                                              </div>
-                                                  </div>
-                                                  <div class="dropdown__bottom">
-                                                              <div class="date__bottom">
-                                                                <input name="date" id="date" type="hidden">
-                                                                          <div class="date__cal">
-                                                                            <div class="date__arrow-left"></div>
-                                                                            <div class="date__title">
-                                                                              <p>Название месяца</p>
-                                                                            </div>
-                                                                            <div class="date__arrow-right"></div>
-                                                                            <div class="date__day-week" id="day-week-0">Пн</div>
-                                                                            <div class="date__day-week" id="day-week-1">Вт</div>
-                                                                            <div class="date__day-week" id="day-week-2">Ср</div>
-                                                                            <div class="date__day-week" id="day-week-3">Чт</div>
-                                                                            <div class="date__day-week" id="day-week-4">Пт</div>
-                                                                            <div class="date__day-week" id="day-week-5">Сб</div>
-                                                                            <div class="date__day-week" id="day-week-6">Вс</div>
-                                                                          </div>
-                                                                <div class="date__buttons">
-                                                                  <h3 class="date__clear">очистить</h3>
-                                                                  <h3 class="date__apply" id="apply">применить</h3>
-                                                                </div>
-                                                              </div>
-                                                  </div>
-                                                </div>
+                            <div class="dropdown">
+                              <div class="dropdown__elem dropdown__elem_small dropdown_no-border ">
+                                <div class="checkbox">
+                                  <div class="dropdown__top">
+                                    <h3>filter date dropdown</h3>
+                                  </div>
+                                  <div class="dropdown__bottom">
+                                              <div class="checkbox__item">
+                                                <label>
+                                                  <input class="checkbox__input" name="zavtrak" type="checkbox"><span>Завтрак</span>
+                                                </label>
                                               </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
+                                              <div class="checkbox__item">
+                                                <label>
+                                                  <input class="checkbox__input" name="pismenniy_stol" type="checkbox" checked><span>Письменный стол</span>
+                                                </label>
+                                              </div>
+                                              <div class="checkbox__item">
+                                                <label>
+                                                  <input class="checkbox__input" name="stul_dlya_kormleniya" type="checkbox" checked><span>Стул для кормления</span>
+                                                </label>
+                                              </div>
+                                              <div class="checkbox__item">
+                                                <label>
+                                                  <input class="checkbox__input" name="krovatka" type="checkbox" checked><span>Кроватка</span>
+                                                </label>
+                                              </div>
+                                              <div class="checkbox__item">
+                                                <label>
+                                                  <input class="checkbox__input" name="televizor" type="checkbox"><span>Телевизор</span>
+                                                </label>
+                                              </div>
+                                              <div class="checkbox__item">
+                                                <label>
+                                                  <input class="checkbox__input" name="shampun" type="checkbox"><span>Шампунь</span>
+                                                </label>
+                                              </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                  <!--+addDropdown('filter date dropdown', attributes[2], {date: true})-->
                 </div>
                 <div class="form-elements__element_6">
                                       <div class="field">
@@ -213,7 +207,7 @@
                                           <div class="field__input">
                                             <div class="dropdown">
                                               <div class="dropdown__elem dropdown__elem_small ">
-                                                <div class="list-counter">
+                                                <div class="list-counter" data-type_units="separately">
                                                   <div class="dropdown__top">
                                                               <div class="list-counter__top">
                                                                 <p>Сколько гостей</p>
@@ -221,7 +215,7 @@
                                                   </div>
                                                   <div class="dropdown__bottom">
                                                               <div class="list-counter__bottom">
-                                                                <input name="list-counter" id="total-amount" type="hidden">
+                                                                <input name="list-2" type="hidden">
                                                                           <div class="list-counter__item">
                                                                             <h3>спальни</h3>
                                                                             <div class="list-counter__minusAndPlus">
@@ -247,8 +241,20 @@
                                                                             </div>
                                                                           </div>
                                                                 <div class="list-counter__buttons">
-                                                                  <h3 class="list-counter__clear">очистить</h3>
-                                                                  <h3 class="list-counter__apply" id="apply">применить</h3>
+                                                                            <div class="button">
+                                                                              <div class="button__elem">
+                                                                                <div class="button__content list-counter__clear" id="id-but-list-1">
+                                                                                  <h3 class="button__text button__text_grey">очистить</h3>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                            <div class="button">
+                                                                              <div class="button__elem">
+                                                                                <div class="button__content list-counter__apply" id="id-but-list-2">
+                                                                                  <h3 class="button__text">применить</h3>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
                                                                 </div>
                                                               </div>
                                                   </div>
@@ -262,11 +268,11 @@
                 <div class="form-elements__element_8">
                                       <div class="field">
                                         <div class="field__elem">
-                                          <h3>Dropdown12</h3>
+                                          <h3>Dropdown</h3>
                                           <div class="field__input">
                                             <div class="dropdown">
                                               <div class="dropdown__elem dropdown__elem_small ">
-                                                <div class="list-counter">
+                                                <div class="list-counter" data-type_units="separately">
                                                   <div class="dropdown__top">
                                                               <div class="list-counter__top">
                                                                 <p>Сколько гостей</p>
@@ -274,7 +280,7 @@
                                                   </div>
                                                   <div class="dropdown__bottom">
                                                               <div class="list-counter__bottom">
-                                                                <input name="list-counter" id="total-amount" type="hidden">
+                                                                <input name="list-3" type="hidden">
                                                                           <div class="list-counter__item">
                                                                             <h3>спальни</h3>
                                                                             <div class="list-counter__minusAndPlus">
@@ -300,8 +306,20 @@
                                                                             </div>
                                                                           </div>
                                                                 <div class="list-counter__buttons">
-                                                                  <h3 class="list-counter__clear">очистить</h3>
-                                                                  <h3 class="list-counter__apply" id="apply">применить</h3>
+                                                                            <div class="button">
+                                                                              <div class="button__elem">
+                                                                                <div class="button__content list-counter__clear" id="id-but-list-1">
+                                                                                  <h3 class="button__text button__text_grey">очистить</h3>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                            <div class="button">
+                                                                              <div class="button__elem">
+                                                                                <div class="button__content list-counter__apply" id="id-but-list-2">
+                                                                                  <h3 class="button__text">применить</h3>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
                                                                 </div>
                                                               </div>
                                                   </div>
@@ -501,7 +519,7 @@
                                           <div class="field__input">
                                             <div class="dropdown">
                                               <div class="dropdown__elem">
-                                                <div class="list-counter">
+                                                <div class="list-counter" data-type_units="together">
                                                   <div class="dropdown__top">
                                                               <div class="list-counter__top">
                                                                 <p>Сколько гостей</p>
@@ -509,7 +527,7 @@
                                                   </div>
                                                   <div class="dropdown__bottom">
                                                               <div class="list-counter__bottom">
-                                                                <input name="list-counter" id="total-amount" type="hidden">
+                                                                <input name="list-4" type="hidden">
                                                                           <div class="list-counter__item">
                                                                             <h3>взрослые</h3>
                                                                             <div class="list-counter__minusAndPlus">
@@ -535,8 +553,20 @@
                                                                             </div>
                                                                           </div>
                                                                 <div class="list-counter__buttons">
-                                                                  <h3 class="list-counter__clear">очистить</h3>
-                                                                  <h3 class="list-counter__apply" id="apply">применить</h3>
+                                                                            <div class="button">
+                                                                              <div class="button__elem">
+                                                                                <div class="button__content list-counter__clear" id="id-but-list-1">
+                                                                                  <h3 class="button__text button__text_grey">очистить</h3>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                            <div class="button">
+                                                                              <div class="button__elem">
+                                                                                <div class="button__content list-counter__apply" id="id-but-list-2">
+                                                                                  <h3 class="button__text">применить</h3>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
                                                                 </div>
                                                               </div>
                                                   </div>
@@ -602,15 +632,37 @@
                                   <h3>RANGE SLIDER</h3>
                                 </div>
                                 <div class="range-slider__title-column">
-                                  <h3 class="range-slider__values"><span id='range-slider-output1'>5 000</span>₽ - <span id='range-slider-output2'>10 000</span>₽</h3>
+                                  <h3 class="range-slider__values"><span class='range-slider__output_1'>5 000</span>₽ - <span class='range-slider__output_2'>10 000</span>₽</h3>
                                 </div>
                               </div>
-                              <div class="range-slider__slider" id="target">
+                              <div class="range-slider__slider">
                                 <input name="range-slider" data-output1="5 000" data-output2="10 000" value="{output1: &quot;5 000&quot;, output2: &quot;10 000&quot;}" type="hidden">
                                 <div class="range-slider__limit range-slider__limit_left mydiv1">
                                   <div class="mydiv1header"></div>
                                 </div>
-                                <div class="range-slider__accent" id="content"></div>
+                                <div class="range-slider__accent"></div>
+                                <div class="range-slider__limit range-slider__limit_right mydiv2">
+                                  <div class="mydiv2header"></div>
+                                </div>
+                              </div>
+                            </div>
+                </div>
+                <div class="form-elements__element_20">
+                            <div class="range-slider">
+                              <div class="range-slider__title">
+                                <div class="range-slider__title-column">
+                                  <h3>RANGE SLIDER</h3>
+                                </div>
+                                <div class="range-slider__title-column">
+                                  <h3 class="range-slider__values"><span class='range-slider__output_1'>5 000</span>₽ - <span class='range-slider__output_2'>10 000</span>₽</h3>
+                                </div>
+                              </div>
+                              <div class="range-slider__slider">
+                                <input name="range-slider" data-output1="5 000" data-output2="10 000" value="{output1: &quot;5 000&quot;, output2: &quot;10 000&quot;}" type="hidden">
+                                <div class="range-slider__limit range-slider__limit_left mydiv1">
+                                  <div class="mydiv1header"></div>
+                                </div>
+                                <div class="range-slider__accent"></div>
                                 <div class="range-slider__limit range-slider__limit_right mydiv2">
                                   <div class="mydiv2header"></div>
                                 </div>
@@ -622,7 +674,7 @@
                   <div class="form-elements__td">
                               <div class="button">
                                 <div class="button__elem button__elem_opaque-background">
-                                  <div class="button__content button__content_padding" id="id-but">
+                                  <div class="button__content button__content_padding" id="id-but-1">
                                     <h3 class="button__text button__text_white">CLICK ME</h3>
                                   </div>
                                 </div>
@@ -631,7 +683,7 @@
                   <div class="form-elements__td">
                               <div class="button">
                                 <div class="button__elem button__elem_transparent-background">
-                                  <div class="button__content button__content_padding" id="id-but">
+                                  <div class="button__content button__content_padding" id="id-but-2">
                                     <h3 class="button__text button__text_white">CLICK ME</h3>
                                   </div>
                                 </div>
@@ -642,7 +694,7 @@
                   <div class="form-elements__td form-elements__td_no-indent">
                               <div class="button">
                                 <div class="button__elem button__elem_opaque-border">
-                                  <div class="button__content button__content_padding" id="id-but">
+                                  <div class="button__content button__content_padding" id="id-but-3">
                                     <h3 class="button__text">CLICK ME</h3>
                                   </div>
                                 </div>
@@ -651,7 +703,7 @@
                   <div class="form-elements__td form-elements__td_no-indent">
                               <div class="button">
                                 <div class="button__elem button__elem_transparent-border">
-                                  <div class="button__content button__content_padding" id="id-but">
+                                  <div class="button__content button__content_padding" id="id-but-4">
                                     <h3 class="button__text">CLICK ME</h3>
                                   </div>
                                 </div>
@@ -662,7 +714,7 @@
                   <div class="form-elements__td">
                               <div class="button">
                                 <div class="button__elem">
-                                  <div class="button__content" id="id-but">
+                                  <div class="button__content" id="id-but-5">
                                     <h3 class="button__text">CLICK ME</h3>
                                   </div>
                                 </div>
@@ -671,7 +723,7 @@
                   <div class="form-elements__td">
                               <div class="button">
                                 <div class="button__elem">
-                                  <div class="button__content" id="id-but">
+                                  <div class="button__content" id="id-but-6">
                                     <h3 class="button__text button__text_grey">CLICK ME</h3>
                                   </div>
                                 </div>
@@ -681,7 +733,7 @@
                 <div class="form-elements__element_24">
                             <div class="button">
                               <div class="button__elem button__elem_opaque-background button__elem_big">
-                                <div class="button__content button__content_padding" id="id-but">
+                                <div class="button__content button__content_padding" id="id-but-7">
                                   <h3 class="button__text button__text_white">перейти к оплате</h3>
                                 </div>
                               </div>
@@ -691,7 +743,7 @@
                 <div class="form-elements__element_26">
                   <h3>pagination</h3>
                             <div class="paginator">
-                              <div class="paginator__elem" id="paginator-elem">
+                              <div class="paginator__elem">
                                 <div class="paginator__items">
                                   <div class="paginator__numbers"></div>
                                   <div class="paginator__button" id="paginator-next">
@@ -711,7 +763,7 @@
                                           <div class="field__input">
                                             <div class="dropdown">
                                               <div class="dropdown__elem">
-                                                <div class="list-counter">
+                                                <div class="list-counter" data-type_units="together">
                                                   <div class="dropdown__top">
                                                               <div class="list-counter__top">
                                                                 <p>Сколько гостей</p>
@@ -719,7 +771,7 @@
                                                   </div>
                                                   <div class="dropdown__bottom">
                                                               <div class="list-counter__bottom">
-                                                                <input name="list-counter" id="total-amount" type="hidden">
+                                                                <input name="list-5" type="hidden">
                                                                           <div class="list-counter__item">
                                                                             <h3>взрослые</h3>
                                                                             <div class="list-counter__minusAndPlus">
@@ -745,8 +797,20 @@
                                                                             </div>
                                                                           </div>
                                                                 <div class="list-counter__buttons">
-                                                                  <h3 class="list-counter__clear">очистить</h3>
-                                                                  <h3 class="list-counter__apply" id="apply">применить</h3>
+                                                                            <div class="button">
+                                                                              <div class="button__elem">
+                                                                                <div class="button__content list-counter__clear" id="id-but-list-1">
+                                                                                  <h3 class="button__text button__text_grey">очистить</h3>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                            <div class="button">
+                                                                              <div class="button__elem">
+                                                                                <div class="button__content list-counter__apply" id="id-but-list-2">
+                                                                                  <h3 class="button__text">применить</h3>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
                                                                 </div>
                                                               </div>
                                                   </div>

@@ -1,3 +1,5 @@
+include ../button/button
+
 mixin addItems(items)
     - for (var x = 0; x < items.length; x++)
         .list-counter__item
@@ -11,10 +13,10 @@ mixin addListCounterTop
     .list-counter__top
         p= 'Сколько гостей'
 
-mixin addListCounterBottom(items)
+mixin addListCounterBottom(items, name)
     .list-counter__bottom
-        input(name='list-counter', id='total-amount', type='hidden', value=val)
+        input(name=name, type='hidden', value=val)
         +addItems(items)
         .list-counter__buttons
-            h3.list-counter__clear очистить
-            h3.list-counter__apply применить
+            +addButton("очистить", "id-but-list-1", "", "list-counter__clear", "button__text_grey")
+            +addButton("применить", "id-but-list-2", "", "list-counter__apply", "")

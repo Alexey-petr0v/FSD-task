@@ -15,7 +15,7 @@ mixin addDropdown(title, attrib, dropdownType, additionalContent, check_status)
                                 .dropdown__top
                                     +addListCounterTop
                                 .dropdown__bottom
-                                    +addListCounterBottom(additionalContent)
+                                    +addListCounterBottom(additionalContent, attrib.name)
             else if dropdownType.date
                 +addField(title, fieldMod)
                     .dropdown

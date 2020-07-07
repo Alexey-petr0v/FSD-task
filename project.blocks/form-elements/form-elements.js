@@ -7,9 +7,6 @@ let id = "#element_24",
     amount_pages = 15,
     paginator = new Paginator(id, amount_pages, "#paginator-next");
 
-paginator.addNumbers();
-paginator.addButtons();
-
 
 $( ".text-field__elem" ).eq(0).trigger( "focus" );
 

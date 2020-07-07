@@ -1,8 +1,3 @@
-
-#paginator-next {
-    cursor: pointer;
-}
-
 .paginator__items {
     display: flex;
     width: 321px;
@@ -51,6 +46,7 @@
     justify-content: center;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .paginator__button p { 

@@ -9,10 +9,10 @@ $('.range-slider').map(function sumOfClasses() {
   });
 
 
-// Массив идентификатов всех элементов с классами dropdown__top, dropdown__bottom
+// Массив идентификатов всех элементов с классами range-slider
 let uniqueIDTop = new Array(numberOfClasses);
 
-// Установка случайных ID всем классам dropdown__top
+// Установка случайных ID всем классам range-slider
 let iteration = 0;
 $('.range-slider').map(function() {
   uniqueIDTop[iteration] = getID(12, radnom_set);
@@ -33,16 +33,6 @@ $('.range-slider').map(function() {
 
   iteration = iteration + 1;
 });
-
-
-
-// 1. ОК Сгенерировать ID для каждого range-slider
-// 2. ОК Создать ID для limit_left и ID для limit_right:
-//    ID range-slider + '_left' / ID + '_right'
-// 3. Установить эти ID в js ниже
-// 4. Организовать добавление этих ID в HTML
-// 5. Исправить SCSS
-
 
 function dragElement(elmnt) {
   let parent_id = $("#"+elmnt.id).parent().parent().attr("id");
@@ -137,8 +127,8 @@ function dragElement(elmnt) {
           });
           mydiv_id_flag = false
         }
-        let output1 = $("#"+parent_id).find("#range-slider-output1");
-        let output2 = $("#"+parent_id).find("#range-slider-output2");
+        let output1 = $("#"+parent_id).find(".range-slider__output_1");
+        let output2 = $("#"+parent_id).find(".range-slider__output_2");
         let input = $("#"+parent_id).find("input");
         if      (margin_left_elmnt > 242) {setValues(input, mydiv_id_flag, output1, output2, "20 000")}
         else if (margin_left_elmnt > 234) {setValues(input, mydiv_id_flag, output1, output2, "19 000")}

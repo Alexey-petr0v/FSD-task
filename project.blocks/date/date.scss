@@ -1,4 +1,71 @@
-/* DATE */
+.date__items {
+}
+
+.date__paginator { 
+    /* Запрет выделения текста */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;
+    user-select: none;
+    display: flex;
+    width: 321px;
+    margin-bottom: 8px;
+}
+.date__of-the-month {
+    display: flex;
+}
+.date__month { 
+    cursor: pointer;
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.date__month_checked { 
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+    color: #FFFFFF;
+}
+
+.date__month_invisible {
+    display: none
+}
+
+.date__button { 
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    border-radius: 22px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.date__button p { 
+    width: 100%;
+    height: 100%;
+    background: 50% 50% url("/images/arrow_forward_white.svg") no-repeat;
+}
+
+.date__button_left p { 
+    background: 50% 50% url("/images/arrow_forward_white_left.svg") no-repeat;
+}
+
+.date__text p {
+    text-align: center;
+}
+
+
+
+
+
 
 .date {
     &__top {
@@ -10,196 +77,56 @@
         margin: 0px;
         padding: 0px;
     }
-
-    &__small-top {
-        display: -webkit-flex; 
-        display: flex; 
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-
-        width: 136px;
-        margin: 0px;
-        padding: 0px;
-        padding-left: 14px;
-        cursor: pointer;
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
-        border: 1px solid rgba(31, 32, 65, 0.25);
-
-        p {
-            vertical-align: middle;
-            line-height: 42px;
-        }
-        img {
-            padding: 17px 15px 17px 15px;
-        }
-    }
-
-    &__small-top, &__bottom {
-        /* Запрет выделения текста */
-        -webkit-touch-callout: none; /* iOS Safari */
-        -webkit-user-select: none;   /* Chrome/Safari/Opera */
-        -khtml-user-select: none;    /* Konqueror */
-        -moz-user-select: none;      /* Firefox */
-        -ms-user-select: none;
-        user-select: none;
-    }
-
-    &__arrow-left {
-        width: 39.88px;
-        height: 40px;
-        background: indianred;
-        cursor: pointer;
-    }
-
-    &__title {
-        width: 199.4px;
-        height: 40px;
-    }
-
-    &__arrow-right {
-        width: 39.88px;
-        height: 40px;
-        background: indigo;
-        cursor: pointer;
-    }
-    
-
     &__cal {
-        width: 306px;
-        background: white;
         display: -webkit-flex; 
         display: flex; 
-        flex-direction: row;
         flex-wrap: wrap;
     }
-
-    &__day-of-the-week {
-        background: white;
-        display: -webkit-flex; 
-        display: flex; 
-        flex-direction: row;
-        flex-wrap: wrap;
-        outline: 1px solid royalblue;
-    }
-
-    &__day-week {
-        width: 39.88px;
-        height: 40px;
-        background: lightblue;
-    }
-
-    &__week {
-        background: white;
-        display: -webkit-flex; 
-        display: flex; 
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    &__number {
-        p {
-            text-align: center;
-        }
-        width: 39.88px;
-        height: 40px;
+    &__cell {
         visibility:visible;
         cursor: pointer;
         z-index: 2;
-        &_current p {
-            line-height: 40px;
-            border-radius: 50%;
-            background: green;
+        // &:nth-child(1){
+        //     background: black!important
+        // }
+        &_accent {
+            background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
         }
-        &_checked p {
-            line-height: 40px;
-            border-radius: 50%;
-            background: purple;
+        &_accent-first {
+            background: linear-gradient(90deg, transparent 20px, rgba(188, 156, 255, 0.25) 20px, rgba(139, 164, 249, 0.25) 40px);
         }
-        &_from-and-to {
-            background-image: none;
-            background:#a3e5a3;
-            &_first {
-                background: none;
-                background-image: linear-gradient(to left, #a3e5a3 50%, transparent 10%);
-            }
-            &_last {
-                background: none;
-                background-image: linear-gradient(to right, #a3e5a3 50%, transparent 10%);
-            }
+        &_accent-last {
+            background: linear-gradient(-90deg, transparent 20px, rgba(188, 156, 255, 0.25) 20px, rgba(139, 164, 249, 0.25) 40px);
         }
     }
-    &__from-and-to {
-        z-index: 1;
+    &__number {
+        border-radius: 50%;
         width: 39.88px;
         height: 40px;
-        background: rgba(31, 32, 65, 0.5);
-    }
-
-
-    
-    &__buttons {
-        margin-top: 6px;
-        padding-bottom: 7px;
         display: -webkit-flex; 
         display: flex; 
-        flex-direction: row;
-        justify-content: space-between;
-    
-        h3 {margin-top: 6px;margin-right: 6px;margin-bottom: 6px;}
-    
-        .date__clear {
-            cursor: pointer;
-            color: rgba(31, 32, 65, 0.5);
+        align-items: center;
+        justify-content: center;
+        &_current {
+            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
         }
-    
-        .date__apply {
-            cursor: pointer;
-            color: #BC9CFF;
-        }
-    }
-
-}
-
-/*
-.field {
-    &__input {
-        &_date-dropdown {
-            width: 150px;
-            margin: 0px;
-            padding: 0px;
-            display: -webkit-flex; 
-            display: flex; 
-            flex-direction: row;
-            justify-content: space-between;
-
-            p {
-                vertical-align: middle;
-                line-height: 42px;
-                padding-left: 15px;
-            }
-            img {
-                padding: 16px 15.5px 16px 15.5px;
-            }
+        &_checked {
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
         }
 
-        &_date {
-            width: 130px;
-            height: 0px;
-            display: none;
-            position: absolute;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        &_date:hover,
-        &_date-dropdown:hover + &_date {
-            width: 320px;
-            height: 130px;
-            display: block;
-            position: absolute;
-        }
     }
 }
-*/
+
+
+
+.abc {
+    width: 300px;
+    height: 300px;
+    background: blue;
+}
+.def {
+    width: 100px;
+    height: 100px;
+    background: red;
+    border-radius: 50%;
+}

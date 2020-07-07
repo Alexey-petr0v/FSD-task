@@ -7,6 +7,8 @@ export default class Paginator {
         this.data_page = 0;
         this.id_but_next = id_but_next;
         this.addDataPage()
+        this.addNumbers();
+        this.addButtons();
     }
     addDataPage() { $(this.id).attr("data-pages", this.data_page) }
     addNumbers() {
@@ -29,9 +31,13 @@ export default class Paginator {
             }
         })
         $('.paginator__number').click({that: this}, function (e) {
-            let number = parseInt($(this).text());
-            e.data.that.data_page = number-1;
-            e.data.that.editPaginator(e.data.that, number)
+            let number_text = $(this).text();
+            if (number_text != "...") {
+                let number = parseInt(number_text);
+                e.data.that.data_page = number-1;
+                e.data.that.editPaginator(e.data.that, number)
+            }
+            else {}
         })
     }
     editPaginator(that, number) {
