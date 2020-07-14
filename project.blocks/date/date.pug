@@ -4,10 +4,17 @@ mixin addDateTop
         img(src="./images/expand_more.svg" alt="expand more")
 mixin addDateBottom
     .date__bottom
+        input(name='date', data-output1='', data-output2='', value='{"full_date_1": "2000-0-1", "full_date_2": "2000-0-3"}', type='hidden')
+        h2 123456
         .date__paginator
-            .date__button(id="date-but-prev")
+            .date__button.date__button_left(id="date-but-prev")
                 p
             .date__of-the-month
-            .date__button(id="date-but-next")
+            .date__button.date__button_right(id="date-but-next")
                 p
+        .date__days
+            - var days = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
+            - for (var i = 0; i < days.length; i++)
+                .date__day
+                    p= days[i]
         .date__cal(id="element_200")

@@ -9,11 +9,22 @@ class Date_cal {
         // Сегодняшний день
         this.current_now_date = new Date();
         this.current_now_date.setHours(0, 0, 0, 0);
+        this.first_date;
+        this.second_date;
+        this.first_click_flag = true
+        this.amount_checked_elements = 2
 
-        // Выделение по умолчанию
-        this.checked_first = {date: 19, month: this.current_now_date.getMonth(), year: this.current_now_date.getFullYear()};
-        this.checked_last = {date: 23, month: this.current_now_date.getMonth(), year: this.current_now_date.getFullYear()};
-        
+        // Выделение по умолчанию        
+        this.first_year = this.current_now_date.getFullYear()
+        this.first_month = this.current_now_date.getMonth()
+        this.first_date = 19
+        this.last_year = this.current_now_date.getFullYear()
+        this.last_month = this.current_now_date.getMonth()
+        this.last_date = 23
+        let full_date_1 = this.first_year+"-"+this.first_month+"-"+this.first_date
+        let full_date_2 = this.last_year+"-"+this.last_month+"-"+this.last_date
+        $(".date__bottom input").attr('value', '{"full_date_1": "'+full_date_1+'", "full_date_2": "'+full_date_2+'"}')
+
         // Первый день текущего месяца
         this.current_first_date = new Date();
         this.current_first_date.setDate(1);
@@ -28,7 +39,7 @@ class Date_cal {
 
         this.addMonth(iter_date)
 
-        $(".date__month").eq(14).trigger( "click" );
+        // $(".date__month").eq(14).trigger( "click" );
     }
     addButtons() {
         $('#date-but-next').click({that: this}, function(e){
@@ -60,28 +71,137 @@ class Date_cal {
             }
             else {}
         })
-        $("body").on("click", '.date__number:not(.date__number_checked)', function(e){
-            if ($(".date__number_checked").length != 2) {
-                $(this).addClass("date__number_checked")
+        // Add check
+        $("body").on("click", '.date__number:not(.date__number_checked)', {that: this}, function(e){
+            $(this).addClass("date__number_checked")
+            console.log("CLICK")
+            if (e.data.that.amount_checked_elements != 2) {
+                e.data.that.amount_checked_elements++
+
+                let val = $(".date__bottom input").val()
+                let dates = $.parseJSON(val)
+                let full_date_1 = dates.full_date_1;
+                let full_date_2 = dates.full_date_2;
+
+                let date_3 = $(this).parent().data("date")
+                let month_3 = $(this).parent().data("month")
+                let year_3 = $(this).parent().data("year")
+                let full_date_3 = year_3+"-"+month_3+"-"+date_3
+
+                let checked_0 = $(this).parent()
+                if (e.data.that.amount_checked_elements == 1){
+                    e.data.that.first_year = $(checked_0).data('year')
+                    e.data.that.first_month = $(checked_0).data('month')
+                    e.data.that.first_date = $(checked_0).data('date')
+                    e.data.that.last_year = $(checked_0).data('year')
+                    e.data.that.last_month = $(checked_0).data('month')
+                    e.data.that.last_date = $(checked_0).data('date')
+                }
+                else if (e.data.that.amount_checked_elements == 2){
+                    console.log("TWO")
+                    let more_flag = false
+                    // Сравнение что больше: checked или first
+                    if ($(checked_0).data('year') > e.data.that.first_year){
+                        more_flag = true
+                        console.log("YEAR")
+                    }
+                    else if (($(checked_0).data('year') == e.data.that.first_year)&&
+                            ($(checked_0).data('month') > e.data.that.first_month)){
+                        more_flag = true
+                        console.log("MONTH")
+                    }
+                    else if (($(checked_0).data('year') == e.data.that.first_year)&&
+                            ($(checked_0).data('month') == e.data.that.first_month)&&
+                            ($(checked_0).data('date') > e.data.that.first_date)){
+                        more_flag = true
+                        console.log("DATE")
+                    }
+                    // Если checked > first
+                    if (more_flag) {
+                        e.data.that.last_year = $(checked_0).data('year')
+                        e.data.that.last_month = $(checked_0).data('month')
+                        e.data.that.last_date = $(checked_0).data('date')
+                    }
+                    else {
+                        e.data.that.last_year = e.data.that.first_year
+                        e.data.that.last_month = e.data.that.first_month
+                        e.data.that.last_date = e.data.that.first_date
+                        e.data.that.first_year = $(checked_0).data('year')
+                        e.data.that.first_month = $(checked_0).data('month')
+                        e.data.that.first_date = $(checked_0).data('date')
+                    }
+                }
+                full_date_1 = e.data.that.first_year+"-"+e.data.that.first_month+"-"+e.data.that.first_date
+                full_date_2 = e.data.that.last_year+"-"+e.data.that.last_month+"-"+e.data.that.last_date
+                $(".date__bottom input").attr('value', '{"full_date_1": "'+full_date_1+'", "full_date_2": "'+full_date_2+'"}')
             }
-            if ($(".date__number_checked").length == 2){
-                $(".date__number_checked").parent().addClass("date__cell_accent") 
+
+            if (e.data.that.amount_checked_elements == 2){
+                if ((($(this).parent().data("date") == e.data.that.first_date)&&
+                ($(this).parent().data("month") == e.data.that.first_month)&&
+                ($(this).parent().data("year") == e.data.that.first_year))||
+                (($(this).parent().data("date") == e.data.that.last_date)&&
+                ($(this).parent().data("month") == e.data.that.last_month)&&
+                ($(this).parent().data("year") == e.data.that.last_year))) {
+                    $(this).addClass("date__number_checked")
+                    console.log("added")
+                }
                 $(".date__number_checked:eq(0)").parent().addClass("date__cell_accent-first")  
                 $(".date__number_checked:eq(1)").parent().addClass("date__cell_accent-last") 
                 $(".date__number_checked:eq(0)").parent().nextAll(".date__cell:not(.date__cell_accent)").addClass("date__cell_accent") 
                 $(".date__number_checked:eq(1)").parent().nextAll(".date__cell_accent").removeClass("date__cell_accent") 
             }
+            console.log(e.data.that.amount_checked_elements)
+            // console.log("full_date_1: "+full_date_1)
+            // console.log("full_date_2: "+full_date_2)
         })
-        $("body").on("click", '.date__number_checked', function(e){
-            $(this).removeClass("date__number_checked")
-            if ($(".date__number_checked").length != 2){
+        // Remove check
+        $("body").on("click", '.date__number_checked', { that: this }, function(e){
+            if (e.data.that.amount_checked_elements != 0) {
+                e.data.that.amount_checked_elements--
+                $(this).removeClass("date__number_checked")
                 $(".date__cell_accent").removeClass("date__cell_accent")
                 $(".date__cell_accent-first").removeClass("date__cell_accent-first")
                 $(".date__cell_accent-last").removeClass("date__cell_accent-last")
+                // console.log(3)
+                if (e.data.that.amount_checked_elements == 0) {
+                    e.data.that.first_year = "2000"
+                    e.data.that.first_month = "0"
+                    e.data.that.first_date = "1"
+                    e.data.that.last_year = "2000"
+                    e.data.that.last_month = "0"
+                    e.data.that.last_date = "3"
+                }
+                else if (e.data.that.amount_checked_elements == 1) {
+                    let checked_0 = $(this).parent()
+                    // Если нажатый checked == первому числу
+                    if (($(checked_0).data('date') == e.data.that.first_date)&&
+                    ($(checked_0).data('month') == e.data.that.first_month)&&
+                    ($(checked_0).data('year') == e.data.that.first_year)){
+                        e.data.that.first_year = e.data.that.last_year
+                        e.data.that.first_month = e.data.that.last_month
+                        e.data.that.first_date = e.data.that.last_date
+                    }
+                    // Если нажатый checked == второму числу
+                    else if (($(checked_0).data('date') == e.data.that.last_date)&&
+                    ($(checked_0).data('month') == e.data.that.last_month)&&
+                    ($(checked_0).data('year') == e.data.that.last_year)) {
+                        e.data.that.last_year = e.data.that.first_year
+                        e.data.that.last_month = e.data.that.first_month
+                        e.data.that.last_date = e.data.that.first_date
+                    }
+                }
+                let full_date_1 = e.data.that.first_year+"-"+e.data.that.first_month+"-"+e.data.that.first_date
+                let full_date_2 = e.data.that.last_year+"-"+e.data.that.last_month+"-"+e.data.that.last_date
+                $(".date__bottom input").attr('value', '{"full_date_1": "'+full_date_1+'", "full_date_2": "'+full_date_2+'"}')
             }
+            console.log(e.data.that.amount_checked_elements)
+            // console.log("full_date_1: "+full_date_1)
+            // console.log("full_date_2: "+full_date_2)
         })
     }
     addMonth(iter_date){
+        this.first_click_flag = true
 
         let name_month;
         switch(iter_date.getMonth()) {
@@ -98,11 +218,10 @@ class Date_cal {
             case 10: name_month = "Ноябрь"; break
             case 11: name_month = "Декабрь"; break
         }
-        $(".date__of-the-month").append("<div class='date__month'>"+name_month+"</div>");
+        $(".date__of-the-month").append("<div class='date__month'><h2>"+name_month+"</h2></div>");
 
         
         let current = "";
-        let checked = "";
         // Печать последних дат предыдущего года
         if (iter_date.getDay() != 1) {
             let prev_iter_date = new Date();
@@ -129,13 +248,20 @@ class Date_cal {
                     current = ""
                 }
                 // Проверка: первое ли выделение (вторая проверка)
-                if (((prev_iter_date.getDate() == this.checked_first.date)&&
-                (prev_iter_date.getMonth() == this.checked_first.month)&&
-                (prev_iter_date.getFullYear() == this.checked_first.year))||
-                ((prev_iter_date.getDate() == this.checked_last.date)&&
-                (prev_iter_date.getMonth() == this.checked_last.month)&&
-                (prev_iter_date.getFullYear() == this.checked_last.year))) {
-                    $(".date__number:eq(-1)").trigger("click")
+                let cell_class = '.date__cell[data-date="'+prev_iter_date.getDate()+'"][data-month="'+prev_iter_date.getMonth()+'"][data-year="'+prev_iter_date.getFullYear()+'"]';
+                if ((prev_iter_date.getDate() == this.first_date)&&
+                (prev_iter_date.getMonth() == this.first_month)&&
+                (prev_iter_date.getFullYear() == this.first_year)) {
+                    $(cell_class).addClass("date__cell_accent-first")
+                    $(cell_class).nextAll(".date__cell:not(.date__cell_accent)").addClass("date__cell_accent") 
+                    $(cell_class).children().addClass("date__number_checked")
+                }
+                else if ((prev_iter_date.getDate() == this.last_date)&&
+                (prev_iter_date.getMonth() == this.last_month)&&
+                (prev_iter_date.getFullYear() == this.last_year)) {
+                    $(cell_class).addClass("date__cell_accent-first")
+                    $(cell_class).nextAll(".date__cell_accent").removeClass("date__cell_accent") 
+                    $(cell_class).children().addClass("date__number_checked")
                 }
             }
         }
@@ -156,15 +282,24 @@ class Date_cal {
             if (iter_date.getTime() == this.current_now_date.getTime()) {
                 current = ""
             }
-            // Проверка: первое ли выделение (вторая проверка)
-            if (((iter_date.getDate() == this.checked_first.date)&&
-            (iter_date.getMonth() == this.checked_first.month)&&
-            (iter_date.getFullYear() == this.checked_first.year))||
-            ((iter_date.getDate() == this.checked_last.date)&&
-            (iter_date.getMonth() == this.checked_last.month)&&
-            (iter_date.getFullYear() == this.checked_last.year))) {
-                $(".date__number:eq(-1)").trigger("click")
+
+            if ((iter_date.getDate() == this.first_date)&&
+            (iter_date.getMonth() == this.first_month)&&
+            (iter_date.getFullYear() == this.first_year)) {
+                let cell_class = '.date__cell[data-date="'+iter_date.getDate()+'"][data-month="'+iter_date.getMonth()+'"][data-year="'+iter_date.getFullYear()+'"]';
+                $(cell_class).addClass("date__cell_accent-first")
+                $(cell_class).nextAll(".date__cell:not(.date__cell_accent)").addClass("date__cell_accent") 
+                $(cell_class).children().addClass("date__number_checked")
             }
+            else if ((iter_date.getDate() == this.last_date)&&
+            (iter_date.getMonth() == this.last_month)&&
+            (iter_date.getFullYear() == this.last_year)) {
+                let cell_class = '.date__cell[data-date="'+iter_date.getDate()+'"][data-month="'+iter_date.getMonth()+'"][data-year="'+iter_date.getFullYear()+'"]';
+                $(cell_class).addClass("date__cell_accent-last")
+                $(cell_class).nextAll(".date__cell_accent").removeClass("date__cell_accent") 
+                $(cell_class).children().addClass("date__number_checked")
+            }
+
             iter_date.setDate(iter_date.getDate()+1)
         }
 
@@ -183,13 +318,21 @@ class Date_cal {
                     current = ""
                 }
                 // Проверка: первое ли выделение (вторая проверка)
-                if (((iter_date.getDate() == this.checked_first.date)&&
-                (iter_date.getMonth() == this.checked_first.month)&&
-                (iter_date.getFullYear() == this.checked_first.year))||
-                ((iter_date.getDate() == this.checked_last.date)&&
-                (iter_date.getMonth() == this.checked_last.month)&&
-                (iter_date.getFullYear() == this.checked_last.year))) {
-                    $(".date__number:eq(-1)").trigger("click")
+                if ((iter_date.getDate() == this.first_date)&&
+                (iter_date.getMonth() == this.first_month)&&
+                (iter_date.getFullYear() == this.first_year)) {
+                    let cell_class = '.date__cell[data-date="'+iter_date.getDate()+'"][data-month="'+iter_date.getMonth()+'"][data-year="'+iter_date.getFullYear()+'"]';
+                    $(cell_class).addClass("date__cell_accent-first")
+                    $(cell_class).nextAll(".date__cell:not(.date__cell_accent)").addClass("date__cell_accent") 
+                    $(cell_class).children().addClass("date__number_checked")
+                }
+                else if ((iter_date.getDate() == this.last_date)&&
+                (iter_date.getMonth() == this.last_month)&&
+                (iter_date.getFullYear() == this.last_year)) {
+                    let cell_class = '.date__cell[data-date="'+iter_date.getDate()+'"][data-month="'+iter_date.getMonth()+'"][data-year="'+iter_date.getFullYear()+'"]';
+                    $(cell_class).addClass("date__cell_accent-last")
+                    $(cell_class).nextAll(".date__cell_accent").removeClass("date__cell_accent") 
+                    $(cell_class).children().addClass("date__number_checked")
                 }
                 iter_date.setDate(iter_date.getDate()+1)
             }
@@ -206,16 +349,33 @@ class Date_cal {
                 current = ""
             }
             // Проверка: первое ли выделение (вторая проверка)
-            if (((iter_date.getDate() == this.checked_first.date)&&
-            (iter_date.getMonth() == this.checked_first.month)&&
-            (iter_date.getFullYear() == this.checked_first.year))||
-            ((iter_date.getDate() == this.checked_last.date)&&
-            (iter_date.getMonth() == this.checked_last.month)&&
-            (iter_date.getFullYear() == this.checked_last.year))) {
-                $(".date__number:eq(-1)").trigger("click")
+            if ((iter_date.getDate() == this.first_date)&&
+            (iter_date.getMonth() == this.first_month)&&
+            (iter_date.getFullYear() == this.first_year)) {
+                let cell_class = '.date__cell[data-date="'+iter_date.getDate()+'"][data-month="'+iter_date.getMonth()+'"][data-year="'+iter_date.getFullYear()+'"]';
+                $(cell_class).addClass("date__cell_accent-first")
+                $(cell_class).nextAll(".date__cell:not(.date__cell_accent)").addClass("date__cell_accent") 
+                $(cell_class).children().addClass("date__number_checked")
+            }
+            else if ((iter_date.getDate() == this.last_date)&&
+            (iter_date.getMonth() == this.last_month)&&
+            (iter_date.getFullYear() == this.last_year)) {
+                let cell_class = '.date__cell[data-date="'+iter_date.getDate()+'"][data-month="'+iter_date.getMonth()+'"][data-year="'+iter_date.getFullYear()+'"]';
+                $(cell_class).addClass("date__cell_accent-last")
+                $(cell_class).nextAll(".date__cell_accent").removeClass("date__cell_accent") 
+                $(cell_class).children().addClass("date__number_checked")
             }
             iter_date.setDate(iter_date.getDate()+1);
         }
+        console.log("{ addMonth")
+        console.log(this.first_year)
+        console.log(this.first_month)
+        console.log(this.first_date)
+        console.log(this.last_year)
+        console.log(this.last_month)
+        console.log(this.last_date)
+        console.log(this.amount_checked_elements)
+        console.log("}")
     }
     removeMonth() {
         $(".date__cell").remove()

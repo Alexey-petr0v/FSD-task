@@ -37,8 +37,6 @@
 }
 
 .date__button { 
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-    border-radius: 22px;
     text-align: center;
     width: 40px;
     height: 40px;
@@ -51,11 +49,14 @@
 .date__button p { 
     width: 100%;
     height: 100%;
-    background: 50% 50% url("/images/arrow_forward_white.svg") no-repeat;
 }
 
 .date__button_left p { 
-    background: 50% 50% url("/images/arrow_forward_white_left.svg") no-repeat;
+    background: 50% 50% url("/images/arrow_back.svg") no-repeat;
+}
+
+.date__button_right p { 
+    background: 50% 50% url("/images/arrow_forward.svg") no-repeat;
 }
 
 .date__text p {
@@ -81,6 +82,21 @@
         display: -webkit-flex; 
         display: flex; 
         flex-wrap: wrap;
+    }
+    &__days {
+        display: -webkit-flex; 
+        display: flex; 
+        flex-wrap: wrap;
+        font-weight: bold;
+        color: #BC9CFF;
+    }
+    &__day {
+        width: 39.88px;
+        height: 40px;
+        display: -webkit-flex; 
+        display: flex; 
+        align-items: center;
+        justify-content: center;
     }
     &__cell {
         visibility:visible;
@@ -109,9 +125,13 @@
         justify-content: center;
         &_current {
             background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+            font-weight: bold;
+            color: #FFFFFF;
         }
         &_checked {
             background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            font-weight: bold;
+            color: #FFFFFF;
         }
 
     }
