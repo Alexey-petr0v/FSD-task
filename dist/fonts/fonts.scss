@@ -33,6 +33,15 @@ $PATH: '../project.blocks/fonts/';
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'Open Sans';
+	src: url($PATH + 'OpenSans-Bold.eot');
+	src: local('☺'), url($PATH + 'OpenSans-Bold.woff') format('woff'), url($PATH + 'OpenSans-Bold.ttf') format('truetype'), url($PATH + 'OpenSans-Bold.svg') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+
 
 
 body {
@@ -54,7 +63,7 @@ h3 {
 }
 
 h2 {
-    font-family: 'Quicksand';
+    font-family: 'Open Sans';
     font-style: normal;
     font-weight: bold;
     font-size: 19px;
@@ -62,7 +71,7 @@ h2 {
 }
 
 h1 {
-    font-family: 'Quicksand';
+    font-family: 'Open Sans';
     font-style: normal;
     font-weight: bold;
     font-size: 24px;

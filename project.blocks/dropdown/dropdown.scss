@@ -1,19 +1,5 @@
 /* DROPDOWN */
 
-.dropdown_no-border .dropdown {
-    border: 0px;
-    &__top {
-        border: 0px;
-        p {font-weight: bold;}
-    }
-    &__bottom {
-        border: 0px;
-        padding-left: 0px;
-        padding-right: 14px;
-        position: static;
-    }
-}
-
 .dropdown {
     /* Запрет выделения текста */
     -webkit-touch-callout: none; /* iOS Safari */
@@ -41,11 +27,28 @@
                 width: 248px;
             }
         }
+        &_small-top {
+            .dropdown__top {
+                width: 262px;
+            }
+        }
+        &_no-border {
+            .dropdown__top {
+                border: 0px;
+            }
+            .dropdown__bottom {
+                border: 0px;
+                padding-left: 0px;
+                position: static;
+            }
+        }
     }
 
     &__top {
         margin: 0px;
         padding: 0px;
+        display: -webkit-flex; 
+        display: flex; 
 
         cursor: pointer;
         border-top-left-radius: 4px;

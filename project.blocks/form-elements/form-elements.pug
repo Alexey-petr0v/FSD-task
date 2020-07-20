@@ -12,11 +12,11 @@ include ../bullet-list/bullet-list
 -
     var attributes = [
         {name: "list-1", type_units: "together"},
-        {name: "date-1"},
-        {name: "date-2"},
+        {name: "date-1", date_two_fields: "date_two-fields", dropdown_elem_no_border: "dropdown__elem_no-border"},
+        {name: "date-2", dropdown_elem_small: "dropdown__elem_small-top", dropdown_elem_no_border: "dropdown__elem_no-border"},
         {name: "list-2", dropdown_elem_small: "dropdown__elem_small", type_units: "separately"},
         {name: "list-3", dropdown_elem_small: "dropdown__elem_small", type_units: "separately"},
-        {dropdown_elem_small: "dropdown__elem_small", dropdown_no_border: "dropdown_no-border"},
+        {dropdown_elem_small: "dropdown__elem_small", dropdown_elem_no_border: "dropdown__elem_no-border"},
         {name: "list-4", type_units: "together"},
         {name: "list-5", type_units: "together"}
     ]
@@ -134,8 +134,7 @@ include ../bullet-list/bullet-list
             .form-elements__element_4
                 +addDropdown('date Dropdown', attributes[1], {date: true})
             .form-elements__element_5
-                +addDropdown('filter date dropdown', attributes[5], {checkbox: true}, expandable_checkbox_list)
-                //+addDropdown('filter date dropdown', attributes[2], {date: true})
+                +addDropdown('filter date dropdown', attributes[2], {date: true})
             .form-elements__element_6
                 +addTextField('subscription text field', 'small', 'arrow-left')
             .form-elements__element_7
@@ -177,8 +176,6 @@ include ../bullet-list/bullet-list
                 +addTwoElements({image_and_text: true}, {image_and_text : true}, otziv_part1)
                 +addTwoElements({but_and_text: true}, {but_and_text : true}, otziv_part2, like_button)
         .form-elements__column_third
-            .form-elements__element_20
-                +addRangeSlider
             .form-elements__element_20
                 +addRangeSlider
             .form-elements__element_21

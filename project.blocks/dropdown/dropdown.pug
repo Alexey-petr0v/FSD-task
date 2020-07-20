@@ -4,32 +4,37 @@ include ../date/date
 include ../checkbox/checkbox
 
 mixin addDropdown(title, attrib, dropdownType, additionalContent, check_status)
-            - var dropdown_mod = ""
+            - var dropdown_elem_mod = ""
             if attrib.dropdown_elem_small
-                - var dropdown_mod = dropdown_mod + attrib.dropdown_elem_small + " "
+                - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_small + " "
             if dropdownType.list
                 +addField(title, fieldMod)
                     .dropdown
-                        .dropdown__elem(class=dropdown_mod)
+                        .dropdown__elem(class=dropdown_elem_mod)
                             .list-counter(data-type_units=attrib.type_units)
                                 .dropdown__top
                                     +addListCounterTop
                                 .dropdown__bottom
                                     +addListCounterBottom(additionalContent, attrib.name)
             else if dropdownType.date
+                if attrib.dropdown_elem_no_border
+                    - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_no_border + " "
+                if attrib.date_two_fields
+                    - var date_mod = attrib.date_two_fields + " "
+                    - var two_top_flag = true
                 +addField(title, fieldMod)
                     .dropdown
-                        .dropdown__elem(class=dropdown_mod)
-                            .date
+                        .dropdown__elem(class=dropdown_elem_mod)
+                            .date(class=date_mod)
                                 .dropdown__top
-                                    +addDateTop
+                                    +addDateTop(two_top_flag)
                                 .dropdown__bottom
                                     +addDateBottom
             else if dropdownType.checkbox
-                if attrib.dropdown_no_border
-                    - var dropdown_mod = dropdown_mod + attrib.dropdown_no_border + " "
+                if attrib.dropdown_elem_no_border
+                    - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_no_border + " "
                 .dropdown
-                    .dropdown__elem(class=dropdown_mod)
+                    .dropdown__elem(class=dropdown_elem_mod)
                         .checkbox
                             .dropdown__top
                                 h3= title

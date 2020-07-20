@@ -6,7 +6,7 @@ let dropdown = '.dropdown',
     dropdown_bottom = '.dropdown__bottom',
     dropdown_mod = '.dropdown_no-border',
     numberOfClasses = 0,
-    subBlockButtonID = ".list-counter__apply"; // ID кнопки вложенного блока для вызова slideToggle при нажатии на неё
+    subBlockButtonID = ".dropdown__apply"; // ID кнопки вложенного блока для вызова slideToggle при нажатии на неё
 
 // Функция подсчета количества элементов с классом dropdown на странице
 $(dropdown).map(function sumOfClasses() { numberOfClasses++ });
@@ -47,8 +47,8 @@ $(dropdown_top).map(function(){
 });
 
 // Смена визуальной стрелки на стрелку вверх/вниз
-$(dropdown_mod).children(dropdown_top).click(function(){
-    let height_bottom_px = $(this).parent(dropdown_mod).children(dropdown_bottom).css("height"),
+$(dropdown_mod).find(dropdown_top).click(function(){
+    let height_bottom_px = $(this).parents(dropdown_mod).find(dropdown_bottom).css("height"),
         height_bottom = height_bottom_px.replace(/[\p\x]/g, '');
     if (height_bottom > 1) {
         $(this).css('background', 'url("/images/expand_more.svg") calc(100% - 13px) 50% no-repeat #ffffff')

@@ -1,11 +1,19 @@
-mixin addDateTop
-    .date__top
-        p= 'ДД.ММ.ГГГГ'
-        img(src="./images/expand_more.svg" alt="expand more")
+include ../button/button
+
+mixin addDateTop(two_top_flag)
+    if (two_top_flag == true)
+        .date__two-tops
+            .date__two-top
+                p= 'ДД.ММ.ГГГГ'
+            .date__two-top
+                p= 'ДД.ММ.ГГГГ'
+    else
+        .date__top
+            p= 'ДД.ММ.ГГГГ'
 mixin addDateBottom
     .date__bottom
-        input(name='date', data-output1='', data-output2='', value='{"full_date_1": "2000-0-1", "full_date_2": "2000-0-3"}', type='hidden')
-        h2 123456
+        .date__buffer-value(data-value="")
+        input(name='date', value='{"full_date_1": "2000-0-1", "full_date_2": "2000-0-3"}', type='hidden')
         .date__paginator
             .date__button.date__button_left(id="date-but-prev")
                 p
@@ -18,3 +26,6 @@ mixin addDateBottom
                 .date__day
                     p= days[i]
         .date__cal(id="element_200")
+        .date__buttons
+            +addButton("очистить", "id-but-date-1", "", "date__clear", "button__text_grey")
+            +addButton("применить", "id-but-date-2", "", "date__apply dropdown__apply", "")

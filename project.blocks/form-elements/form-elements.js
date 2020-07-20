@@ -23,7 +23,9 @@ $( ".list-counter__bottom" ).eq(2).find(".list-counter__plus").eq(0).trigger( "c
 $( ".list-counter__bottom" ).eq(2).find(".list-counter__plus").eq(1).trigger( "click" );
 $( ".list-counter__bottom" ).eq(2).find(".list-counter__plus").eq(1).trigger( "click" );
 
-$( ".dropdown__top" ).eq(6).trigger( "click" );
+
+$('.dropdown__elem_no-border .dropdown__top').eq(1).trigger( "click" );
+$('.dropdown__elem_no-border .dropdown__top').eq(1).css('background', 'url("/images/to_close.svg") calc(100% - 13px) 50% no-repeat #ffffff');
 
 $( ".list-counter__top" ).eq(3).trigger( "click" );
 

@@ -1,41 +1,36 @@
-// --------------- Пагинатор ---------------
+import {getID} from '../../pages/scripts/generate_ID.js'
+let radnom_set = new Set();
+
+// --------------- Date ---------------
 
 class Date_cal {
-    constructor(id, amount) {
-        this.id = id;
-        this.amount = amount;
-        this.data_cal = 0;
-        this.addButtons();
-        // Сегодняшний день
-        this.current_now_date = new Date();
-        this.current_now_date.setHours(0, 0, 0, 0);
-        this.first_date;
-        this.second_date;
-        this.first_click_flag = true
-        this.amount_checked_elements = 2
+    constructor(id) {
+        this.id = "#" + id + " "; // id блока
+        this.addButtons(); // Активация кнопок
+        this.current_now_date = new Date();         // Сегодняшний
+        this.current_now_date.setHours(0, 0, 0, 0); // день
+        this.amount_checked_elements = 2 // Количество выделенных дат
+                                         // (по умолчанию: 19 и 23 числа текущего месяца)
+        this.first_year = this.current_now_date.getFullYear() // Первый выделенный год
+        this.first_month = this.current_now_date.getMonth() // Первый выделенный месяц
+        this.first_date = 19 // Первое выделенное число
+        this.last_year = this.current_now_date.getFullYear() // Последний выделенный год
+        this.last_month = this.current_now_date.getMonth() // Последний выделенный месяц
+        this.last_date = 23 // Последний выделенное число
+        this.full_date_first = this.first_year+"-"+this.first_month+"-"+this.first_date // Первая дата в полном виде
+        this.full_date_last = this.last_year+"-"+this.last_month+"-"+this.last_date // Последняя дата в полном виде
+        // Первичная установка значений в инпут и буффер значений
+        $(this.id+".date__buffer-value").attr('data-value', '{"full_date_first": "'+this.full_date_first+'", "full_date_last": "'+this.full_date_last+'"}')
+        $(this.id+".dropdown__bottom input").attr('value', '{"full_date_first": "'+this.full_date_first+'", "full_date_last": "'+this.full_date_last+'"}')
 
-        // Выделение по умолчанию        
-        this.first_year = this.current_now_date.getFullYear()
-        this.first_month = this.current_now_date.getMonth()
-        this.first_date = 19
-        this.last_year = this.current_now_date.getFullYear()
-        this.last_month = this.current_now_date.getMonth()
-        this.last_date = 23
-        let full_date_1 = this.first_year+"-"+this.first_month+"-"+this.first_date
-        let full_date_2 = this.last_year+"-"+this.last_month+"-"+this.last_date
-        $(".date__bottom input").attr('value', '{"full_date_1": "'+full_date_1+'", "full_date_2": "'+full_date_2+'"}')
-
-        this.next_accent_flag = false
-        this.prev_accent_flag = false
         this.first_here_flag = true
         this.last_here_flag = true
         this.accent_next_flag = false
         this.accent_prev_flag = false
 
-        // Первый день текущего месяца
-        this.current_first_date = new Date();
-        this.current_first_date.setDate(1);
-        this.current_first_date.setHours(0, 0, 0, 0);
+        this.current_first_date = new Date();           // Первый день
+        this.current_first_date.setDate(1);             // текущего
+        this.current_first_date.setHours(0, 0, 0, 0);   // месяца
 
         let iter_date = new Date();
         iter_date.setHours(0, 0, 0, 0);
@@ -43,13 +38,10 @@ class Date_cal {
         iter_date.setMonth(this.current_first_date.getMonth());
         iter_date.setFullYear(this.current_first_date.getFullYear());
 
-
         this.addMonth(iter_date)
-
-        // $(".date__month").eq(14).trigger( "click" );
     }
     addButtons() {
-        $('#date-but-next').click({that: this}, function(e){
+        $(this.id+'#date-but-next').click({that: this}, function(e){
             e.data.that.current_first_date.setMonth(e.data.that.current_first_date.getMonth()+1);
             let iter_date = new Date();
             iter_date.setHours(0, 0, 0, 0);
@@ -59,15 +51,10 @@ class Date_cal {
             e.data.that.removeMonth();
             e.data.that.addMonth(iter_date)
 
-            e.data.that.first_here_flag = $(".date__cell[data-date='"+e.data.that.first_date+"'][data-month='"+e.data.that.first_month+"'][data-year='"+e.data.that.first_year+"']").hasClass('date__cell')
+            e.data.that.first_here_flag = $(e.data.that.id+".date__cell[data-date='"+e.data.that.first_date+"'][data-month='"+e.data.that.first_month+"'][data-year='"+e.data.that.first_year+"']").hasClass('date__cell')
             // Узнать есть ли на странице второй check (флаг last_here_flag)
-            e.data.that.last_here_flag = $(".date__cell[data-date='"+e.data.that.last_date+"'][data-month='"+e.data.that.last_month+"'][data-year='"+e.data.that.last_year+"']").hasClass('date__cell')
+            e.data.that.last_here_flag = $(e.data.that.id+".date__cell[data-date='"+e.data.that.last_date+"'][data-month='"+e.data.that.last_month+"'][data-year='"+e.data.that.last_year+"']").hasClass('date__cell')
 
-            console.log("--------------------")
-            console.log("first_here_flag: "+e.data.that.first_here_flag)
-            console.log("last_here_flag: "+e.data.that.last_here_flag)
-            console.log("[1] accent_next_flag: "+e.data.that.accent_next_flag)
-            console.log("[1] accent_prev_flag: "+e.data.that.accent_prev_flag)
             if ((e.data.that.first_here_flag)&&
                 (!e.data.that.last_here_flag)) {
                 e.data.that.accent_next_flag = true
@@ -81,19 +68,24 @@ class Date_cal {
             else if ((!e.data.that.first_here_flag)&&
                      (!e.data.that.last_here_flag)&&
                      (e.data.that.accent_next_flag)) {
-                $(".date__cell").addClass("date__cell_accent")
+                $(e.data.that.id+".date__cell").addClass("date__cell_accent")
             }
             else if ((e.data.that.first_here_flag)&&
                      (e.data.that.last_here_flag)) {
                 e.data.that.accent_next_flag = false
                 e.data.that.accent_prev_flag = false
             }
-            console.log("[2] accent_next_flag: "+e.data.that.accent_next_flag)
-            console.log("[2] accent_prev_flag: "+e.data.that.accent_prev_flag)
-            console.log("--------------------")
+            else if ((!e.data.that.first_here_flag)&&
+                    (!e.data.that.last_here_flag)) {
+                if ((!e.data.that.accent_next_flag)&&
+                    (e.data.that.accent_prev_flag)){
+                        e.data.that.accent_next_flag = false
+                        e.data.that.accent_prev_flag = false
+                    }
+            }
         })
 
-        $('#date-but-prev').click({that: this}, function(e){
+        $(this.id+'#date-but-prev').click({that: this}, function(e){
             e.data.that.current_first_date.setMonth(e.data.that.current_first_date.getMonth()-1);
             let iter_date = new Date();
             iter_date.setHours(0, 0, 0, 0);
@@ -103,15 +95,10 @@ class Date_cal {
             e.data.that.removeMonth();
             e.data.that.addMonth(iter_date)
 
-            e.data.that.first_here_flag = $(".date__cell[data-date='"+e.data.that.first_date+"'][data-month='"+e.data.that.first_month+"'][data-year='"+e.data.that.first_year+"']").hasClass('date__cell')
+            e.data.that.first_here_flag = $(e.data.that.id+".date__cell[data-date='"+e.data.that.first_date+"'][data-month='"+e.data.that.first_month+"'][data-year='"+e.data.that.first_year+"']").hasClass('date__cell')
             // Узнать есть ли на странице второй check (флаг last_here_flag)
-            e.data.that.last_here_flag = $(".date__cell[data-date='"+e.data.that.last_date+"'][data-month='"+e.data.that.last_month+"'][data-year='"+e.data.that.last_year+"']").hasClass('date__cell')
+            e.data.that.last_here_flag = $(e.data.that.id+".date__cell[data-date='"+e.data.that.last_date+"'][data-month='"+e.data.that.last_month+"'][data-year='"+e.data.that.last_year+"']").hasClass('date__cell')
 
-            console.log("--------------------")
-            console.log("first_here_flag: "+e.data.that.first_here_flag)
-            console.log("last_here_flag: "+e.data.that.last_here_flag)
-            console.log("[1] accent_next_flag: "+e.data.that.accent_next_flag)
-            console.log("[1] accent_prev_flag: "+e.data.that.accent_prev_flag)
             if ((!e.data.that.first_here_flag)&&
                 (e.data.that.last_here_flag)) {
                 e.data.that.accent_next_flag = false
@@ -125,37 +112,33 @@ class Date_cal {
             else if ((!e.data.that.first_here_flag)&&
                      (!e.data.that.last_here_flag)&&
                      (e.data.that.accent_prev_flag)) {
-                $(".date__cell").addClass("date__cell_accent")
+                $(e.data.that.id+".date__cell").addClass("date__cell_accent")
             }
             else if ((e.data.that.first_here_flag)&&
                      (e.data.that.last_here_flag)) {
                 e.data.that.accent_next_flag = false
                 e.data.that.accent_prev_flag = false
             }
-            console.log("[2] accent_next_flag: "+e.data.that.accent_next_flag)
-            console.log("[2] accent_prev_flag: "+e.data.that.accent_prev_flag)
-            console.log("--------------------")
-        })
-
-        $('.date__month').click({that: this}, function (e) {
-            let num_week_text = $(this).text();
-            if (num_week_text != "...") {
-                let num_week = parseInt(num_week_text);
-                e.data.that.data_cal = num_week-1;
-                e.data.that.editdate(e.data.that, num_week)
+            else if ((!e.data.that.first_here_flag)&&
+                    (!e.data.that.last_here_flag)) {
+                if ((e.data.that.accent_next_flag)&&
+                    (!e.data.that.accent_prev_flag)){
+                        e.data.that.accent_next_flag = false
+                        e.data.that.accent_prev_flag = false
+                    }
             }
-            else {}
         })
         // Add check
-        $("body").on("click", '.date__number:not(.date__number_checked)', {that: this}, function(e){
+        $("body").on("click", this.id+'.date__number:not(.date__number_checked)', {that: this}, function(e){
+            $(e.data.that.id+".date__clear").css("visibility", "visible")
             if (e.data.that.amount_checked_elements != 2) {
                 $(this).addClass("date__number_checked")
                 e.data.that.amount_checked_elements++
 
-                let val = $(".date__bottom input").val()
+                let val = $(e.data.that.id+".date__buffer-value").attr("data-value")
                 let dates = $.parseJSON(val)
-                let full_date_1 = dates.full_date_1;
-                let full_date_2 = dates.full_date_2;
+                e.data.that.full_date_first = dates.full_date_first;
+                e.data.that.full_date_last = dates.full_date_last;
 
                 let date_3 = $(this).parent().data("date")
                 let month_3 = $(this).parent().data("month")
@@ -201,44 +184,48 @@ class Date_cal {
                         e.data.that.first_date = $(checked_0).data('date')
                     }
                 }
-                full_date_1 = e.data.that.first_year+"-"+e.data.that.first_month+"-"+e.data.that.first_date
-                full_date_2 = e.data.that.last_year+"-"+e.data.that.last_month+"-"+e.data.that.last_date
-                $(".date__bottom input").attr('value', '{"full_date_1": "'+full_date_1+'", "full_date_2": "'+full_date_2+'"}')
+                e.data.that.full_date_first = e.data.that.first_year+"-"+e.data.that.first_month+"-"+e.data.that.first_date
+                e.data.that.full_date_last = e.data.that.last_year+"-"+e.data.that.last_month+"-"+e.data.that.last_date
+                $(e.data.that.id+".date__buffer-value").attr('data-value', '{"full_date_first": "'+e.data.that.full_date_first+'", "full_date_last": "'+e.data.that.full_date_last+'"}')
             }
 
             if (e.data.that.amount_checked_elements == 2){
                 // Узнать есть ли на странице первый check (флаг first_here_flag)
-                e.data.that.first_here_flag = $(".date__cell[data-date='"+e.data.that.first_date+"'][data-month='"+e.data.that.first_month+"'][data-year='"+e.data.that.first_year+"']").hasClass('date__cell')
+                e.data.that.first_here_flag = $(e.data.that.id+".date__cell[data-date='"+e.data.that.first_date+"'][data-month='"+e.data.that.first_month+"'][data-year='"+e.data.that.first_year+"']").hasClass('date__cell')
                 // Узнать есть ли на странице второй check (флаг last_here_flag)
-                e.data.that.last_here_flag = $(".date__cell[data-date='"+e.data.that.last_date+"'][data-month='"+e.data.that.last_month+"'][data-year='"+e.data.that.last_year+"']").hasClass('date__cell')
+                e.data.that.last_here_flag = $(e.data.that.id+".date__cell[data-date='"+e.data.that.last_date+"'][data-month='"+e.data.that.last_month+"'][data-year='"+e.data.that.last_year+"']").hasClass('date__cell')
 
                 if ((e.data.that.first_here_flag)&&(e.data.that.last_here_flag)) {
-                    $(".date__number_checked:eq(0)").parent().addClass("date__cell_accent") 
-                    $(".date__number_checked:eq(0)").parent().nextAll(".date__cell:not(.date__cell_accent)").addClass("date__cell_accent") 
-                    $(".date__number_checked:eq(1)").parent().nextAll(".date__cell_accent").removeClass("date__cell_accent") 
-                    $(".date__number_checked:eq(0)").parent().addClass("date__cell_accent-first")  
-                    $(".date__number_checked:eq(1)").parent().addClass("date__cell_accent-last") 
+                    $(e.data.that.id+".date__number_checked:eq(0)").parent().addClass("date__cell_accent") 
+                    $(e.data.that.id+".date__number_checked:eq(0)").parent().nextAll(e.data.that.id+".date__cell:not(.date__cell_accent)").addClass("date__cell_accent") 
+                    $(e.data.that.id+".date__number_checked:eq(1)").parent().nextAll(e.data.that.id+".date__cell_accent").removeClass("date__cell_accent") 
+                    $(e.data.that.id+".date__number_checked:eq(0)").parent().addClass("date__cell_accent-first")  
+                    $(e.data.that.id+".date__number_checked:eq(1)").parent().addClass("date__cell_accent-last") 
                 }
                 else if (e.data.that.first_here_flag) {
-                    $(".date__number_checked").parent().addClass("date__cell_accent-first")  
-                    $(".date__number_checked").parent().nextAll(".date__cell").addClass("date__cell_accent")
+                    $(e.data.that.id+".date__number_checked").parent().addClass("date__cell_accent-first")  
+                    $(e.data.that.id+".date__number_checked").parent().nextAll(e.data.that.id+".date__cell").addClass("date__cell_accent")
+                    e.data.that.accent_next_flag = true
+                    e.data.that.accent_prev_flag = false
                 }
                 else if (e.data.that.last_here_flag) {
-                    $(".date__cell:eq(0)").addClass("date__cell_accent") 
-                    $(".date__cell:eq(0)").nextAll(".date__cell:not(.date__cell_accent)").addClass("date__cell_accent") 
-                    $(".date__number_checked").parent().nextAll(".date__cell_accent").removeClass("date__cell_accent") 
-                    $(".date__number_checked").parent().addClass("date__cell_accent-last") 
+                    $(e.data.that.id+".date__cell:eq(0)").addClass("date__cell_accent") 
+                    $(e.data.that.id+".date__cell:eq(0)").nextAll(e.data.that.id+".date__cell:not(.date__cell_accent)").addClass("date__cell_accent") 
+                    $(e.data.that.id+".date__number_checked").parent().nextAll(e.data.that.id+".date__cell_accent").removeClass("date__cell_accent") 
+                    $(e.data.that.id+".date__number_checked").parent().addClass("date__cell_accent-last") 
+                    e.data.that.accent_next_flag = false
+                    e.data.that.accent_prev_flag = true
                 }
             }
         })
         // Remove check
-        $("body").on("click", '.date__number_checked', { that: this }, function(e){
+        $("body").on("click", this.id+'.date__number_checked', { that: this }, function(e){
             if (e.data.that.amount_checked_elements != 0) {
                 e.data.that.amount_checked_elements--
                 $(this).removeClass("date__number_checked")
-                $(".date__cell_accent").removeClass("date__cell_accent")
-                $(".date__cell_accent-first").removeClass("date__cell_accent-first")
-                $(".date__cell_accent-last").removeClass("date__cell_accent-last")
+                $(e.data.that.id+".date__cell_accent").removeClass("date__cell_accent")
+                $(e.data.that.id+".date__cell_accent-first").removeClass("date__cell_accent-first")
+                $(e.data.that.id+".date__cell_accent-last").removeClass("date__cell_accent-last")
                 if (e.data.that.amount_checked_elements == 0) {
                     e.data.that.first_year = "2000"
                     e.data.that.first_month = "0"
@@ -246,6 +233,7 @@ class Date_cal {
                     e.data.that.last_year = "2000"
                     e.data.that.last_month = "0"
                     e.data.that.last_date = "3"
+                    $(e.data.that.id+".date__clear").css("visibility", "hidden")
                 }
                 else if (e.data.that.amount_checked_elements == 1) {
                     let checked_0 = $(this).parent()
@@ -266,18 +254,95 @@ class Date_cal {
                         e.data.that.last_date = e.data.that.first_date
                     }
                 }
-                let full_date_1 = e.data.that.first_year+"-"+e.data.that.first_month+"-"+e.data.that.first_date
-                let full_date_2 = e.data.that.last_year+"-"+e.data.that.last_month+"-"+e.data.that.last_date
-                $(".date__bottom input").attr('value', '{"full_date_1": "'+full_date_1+'", "full_date_2": "'+full_date_2+'"}')
+                e.data.that.full_date_first = e.data.that.first_year+"-"+e.data.that.first_month+"-"+e.data.that.first_date
+                e.data.that.full_date_last = e.data.that.last_year+"-"+e.data.that.last_month+"-"+e.data.that.last_date
+                $(e.data.that.id+".date__buffer-value").attr('data-value', '{"full_date_first": "'+e.data.that.full_date_first+'", "full_date_last": "'+e.data.that.full_date_last+'"}')
+                e.data.that.accent_next_flag = false
+                e.data.that.accent_prev_flag = false
+            }
+        })
+
+        // Clear check
+        $("body").on("click", this.id+'.date__clear', { that: this }, function(e) {
+            $(e.data.that.id+".date__number_checked").removeClass("date__number_checked");
+            $(e.data.that.id+".date__cell_accent").removeClass("date__cell_accent");
+            $(e.data.that.id+".date__cell_accent-first").removeClass("date__cell_accent-first");
+            $(e.data.that.id+".date__cell_accent-last").removeClass("date__cell_accent-last");
+            e.data.that.amount_checked_elements = 0;
+            e.data.that.first_year = "2000";
+            e.data.that.first_month = "0";
+            e.data.that.first_date = "1";
+            e.data.that.last_year = "2000";
+            e.data.that.last_month = "0";
+            e.data.that.last_date = "3";
+            e.data.that.full_date_first = e.data.that.first_year+"-"+e.data.that.first_month+"-"+e.data.that.first_date
+            e.data.that.full_date_last = e.data.that.last_year+"-"+e.data.that.last_month+"-"+e.data.that.last_date
+            $(e.data.that.id+".date__buffer-value").attr('data-value', '{"full_date_first": "'+e.data.that.full_date_first+'", "full_date_last": "'+e.data.that.full_date_last+'"}')
+            $(e.data.that.id+".date__bottom input").attr('value', '{"full_date_first": "'+e.data.that.full_date_first+'", "full_date_last": "'+e.data.that.full_date_last+'"}')
+            e.data.that.accent_next_flag = false
+            e.data.that.accent_prev_flag = false
+            $(e.data.that.id+".date__clear").css("visibility", "hidden");
+        })
+        
+        // Apply check
+        $("body").on("click", this.id+'.date__apply', { that: this }, function(e) {
+            e.data.that.full_date_first = e.data.that.first_year+"-"+e.data.that.first_month+"-"+e.data.that.first_date
+            e.data.that.full_date_last = e.data.that.last_year+"-"+e.data.that.last_month+"-"+e.data.that.last_date
+            if ((e.data.that.full_date_first != "2000-0-1")&&
+                (e.data.that.full_date_last != "2000-0-3")) {
+                $(e.data.that.id+".date__bottom input").attr('value', '{"full_date_first": "'+e.data.that.full_date_first+'", "full_date_last": "'+e.data.that.full_date_last+'"}')
+                let first_name_month = e.data.that.createNameMonth(e.data.that.first_month, true),
+                    second_name_month = e.data.that.createNameMonth(e.data.that.last_month, true);
+                e.data.that.full_date_first = e.data.that.first_date + " " + first_name_month
+                e.data.that.full_date_last = e.data.that.last_date + " " + second_name_month
+                if ($(e.data.that.id).hasClass("date_two-fields")) {
+                    if (e.data.that.full_date_first == e.data.that.full_date_last) {
+                        let first_date = e.data.that.first_date;
+                        let first_month = e.data.that.first_month+1;
+                        let first_year = e.data.that.first_year;
+                        if (first_date < 10) {first_date = "0"+first_date}
+                        if (first_month < 10) {first_month = "0"+first_month}
+                        $(e.data.that.id+".date__two-top p").text(first_date+"."+first_month+"."+first_year)
+                    }
+                    else {
+                        let first_date = e.data.that.first_date;
+                        let first_month = e.data.that.first_month+1;
+                        let first_year = e.data.that.first_year;
+                        let last_date = e.data.that.last_date;
+                        let last_month = e.data.that.last_month+1;
+                        let last_year = e.data.that.last_year;
+                        if (first_date < 10) {first_date = "0"+first_date}
+                        if (first_month < 10) {first_month = "0"+first_month}
+                        if (last_date < 10) {last_date = "0"+last_date}
+                        if (last_month < 10) {last_month = "0"+last_month}
+                        $(e.data.that.id+".date__two-top p").eq(0).text(first_date+"."+first_month+"."+first_year)
+                        $(e.data.that.id+".date__two-top p").eq(1).text(last_date+"."+last_month+"."+last_year)
+                    }
+                }
+                else {
+                    if (e.data.that.full_date_first == e.data.that.full_date_last) {
+                        $(e.data.that.id+".date__top p").text(e.data.that.full_date_first)
+                    }
+                    else {
+                        $(e.data.that.id+".date__top p").text(e.data.that.full_date_first + " - " + e.data.that.full_date_last)
+                    }
+                }
+            }
+            else {
+                alert("Дата не выбрана")
+                if ($(e.data.that.id).hasClass("date_two-fields")) {
+                    $(e.data.that.id+".date__two-top p").text('ДД.ММ.ГГГГ')
+                }
+                else {
+                    $(e.data.that.id+".date__top p").text('ДД.ММ.ГГГГ')
+                }
             }
         })
     }
-    addMonth(iter_date){
-        this.first_click_flag = true
-        let cell_class;
 
-        let name_month;
-        switch(iter_date.getMonth()) {
+    createNameMonth(numMonth, small_flag) {
+        let name_month = "month";
+        switch(numMonth) {
             case 0: name_month = "Январь"; break
             case 1: name_month = "Февраль"; break
             case 2: name_month = "Март"; break
@@ -291,9 +356,18 @@ class Date_cal {
             case 10: name_month = "Ноябрь"; break
             case 11: name_month = "Декабрь"; break
         }
-        $(".date__of-the-month").append("<div class='date__month'><h2>"+name_month+"</h2></div>");
+        if (small_flag) {
+            if (numMonth == 4) {
+                name_month = "мая"
+            }
+            else {
+                name_month = name_month.substring(0,3).toLowerCase()
+            }
+        }
+        return name_month
+    }
 
-        
+    addMonth(iter_date){
         let current = "";
         // Печать последних дат предыдущего года
         if (iter_date.getDay() != 1) {
@@ -311,7 +385,7 @@ class Date_cal {
                 if (prev_iter_date.getTime() == this.current_now_date.getTime()) {
                     current = " date__number_current"
                 }
-                $(".date__cal").prepend("<div data-date='"+prev_iter_date.getDate()+"' data-month='"+prev_iter_date.getMonth()+"' data-year='"+prev_iter_date.getFullYear()+"' class='date__cell'><div class='date__number"+current+"'><p>"+(prev_iter_date.getDate())+"</p></div></div>");
+                $(this.id+".date__cal").prepend("<div data-date='"+prev_iter_date.getDate()+"' data-month='"+prev_iter_date.getMonth()+"' data-year='"+prev_iter_date.getFullYear()+"' class='date__cell'><div class='date__number"+current+"'><p>"+(prev_iter_date.getDate())+"</p></div></div>");
                 // Проверка: сегодняшняя ли дата (вторая проверка)
                 if (prev_iter_date.getTime() == this.current_now_date.getTime()) {
                     current = ""
@@ -319,6 +393,8 @@ class Date_cal {
             }
         }
 
+        let name_month = this.createNameMonth(iter_date.getMonth())
+        $(this.id+".date__of-the-month").append("<div class='date__month'><h2>"+name_month+ " " + iter_date.getFullYear() + "</h2></div>");
 
         // Печать всех дат этого года
         let next_month = iter_date.getMonth()+1
@@ -331,7 +407,7 @@ class Date_cal {
             if (iter_date.getTime() == this.current_now_date.getTime()) {
                 current = " date__number_current"
             }
-            $(".date__cal").append("<div data-date='"+iter_date.getDate()+"' data-month='"+iter_date.getMonth()+"' data-year='"+iter_date.getFullYear()+"' class='date__cell'><div class='date__number"+current+"'><p>"+(iter_date.getDate())+"</p></div></div>");
+            $(this.id+".date__cal").append("<div data-date='"+iter_date.getDate()+"' data-month='"+iter_date.getMonth()+"' data-year='"+iter_date.getFullYear()+"' class='date__cell'><div class='date__number"+current+"'><p>"+(iter_date.getDate())+"</p></div></div>");
             // Проверка: сегодняшняя ли дата (вторая проверка)
             if (iter_date.getTime() == this.current_now_date.getTime()) {
                 current = ""
@@ -346,7 +422,7 @@ class Date_cal {
                 if (iter_date.getTime() == this.current_now_date.getTime()) {
                     current = " date__number_current"
                 }
-                $(".date__cal").append("<div data-date='"+iter_date.getDate()+"' data-month='"+iter_date.getMonth()+"' data-year='"+iter_date.getFullYear()+"' class='date__cell'><div class='date__number"+current+"'><p>"+(iter_date.getDate())+"</p></div></div>");
+                $(this.id+".date__cal").append("<div data-date='"+iter_date.getDate()+"' data-month='"+iter_date.getMonth()+"' data-year='"+iter_date.getFullYear()+"' class='date__cell'><div class='date__number"+current+"'><p>"+(iter_date.getDate())+"</p></div></div>");
                 // Проверка: сегодняшняя ли дата (вторая проверка)
                 if (iter_date.getTime() == this.current_now_date.getTime()) {
                     current = ""
@@ -359,7 +435,7 @@ class Date_cal {
             if (iter_date.getTime() == this.current_now_date.getTime()) {
                 current = " date__number_current"
             }
-            $(".date__cal").append("<div data-date='"+iter_date.getDate()+"' data-month='"+iter_date.getMonth()+"'  data-year='"+iter_date.getFullYear()+"' class='date__cell'><div class='date__number"+current+"'><p>"+(iter_date.getDate())+"</p></div></div>");
+            $(this.id+".date__cal").append("<div data-date='"+iter_date.getDate()+"' data-month='"+iter_date.getMonth()+"'  data-year='"+iter_date.getFullYear()+"' class='date__cell'><div class='date__number"+current+"'><p>"+(iter_date.getDate())+"</p></div></div>");
             // Проверка: сегодняшняя ли дата (вторая проверка)
             if (iter_date.getTime() == this.current_now_date.getTime()) {
                 current = ""
@@ -369,66 +445,51 @@ class Date_cal {
 
 
         // Узнать есть ли на странице первый check (флаг first_here_flag)
-        this.first_here_flag = $(".date__cell[data-date='"+this.first_date+"'][data-month='"+this.first_month+"'][data-year='"+this.first_year+"']").hasClass('date__cell')
+        this.first_here_flag = $(this.id+".date__cell[data-date='"+this.first_date+"'][data-month='"+this.first_month+"'][data-year='"+this.first_year+"']").hasClass('date__cell')
         // Узнать есть ли на странице второй check (флаг last_here_flag)
-        this.last_here_flag = $(".date__cell[data-date='"+this.last_date+"'][data-month='"+this.last_month+"'][data-year='"+this.last_year+"']").hasClass('date__cell')
+        this.last_here_flag = $(this.id+".date__cell[data-date='"+this.last_date+"'][data-month='"+this.last_month+"'][data-year='"+this.last_year+"']").hasClass('date__cell')
 
         if ((this.first_here_flag)&&(this.last_here_flag)&&(this.amount_checked_elements == 2)) {
-            $(".date__cell[data-date='"+this.first_date+"'][data-month='"+this.first_month+"'][data-year='"+this.first_year+"']").children().addClass("date__number_checked")
-            $(".date__cell[data-date='"+this.last_date+"'][data-month='"+this.last_month+"'][data-year='"+this.last_year+"']").children().addClass("date__number_checked")
-            $(".date__number_checked:eq(0)").parent().addClass("date__cell_accent") 
-            $(".date__number_checked:eq(0)").parent().nextAll(".date__cell:not(.date__cell_accent)").addClass("date__cell_accent") 
-            $(".date__number_checked:eq(1)").parent().nextAll(".date__cell_accent").removeClass("date__cell_accent") 
-            $(".date__number_checked:eq(0)").parent().addClass("date__cell_accent-first")  
-            $(".date__number_checked:eq(1)").parent().addClass("date__cell_accent-last") 
+            $(this.id+".date__cell[data-date='"+this.first_date+"'][data-month='"+this.first_month+"'][data-year='"+this.first_year+"']").children().addClass("date__number_checked")
+            $(this.id+".date__cell[data-date='"+this.last_date+"'][data-month='"+this.last_month+"'][data-year='"+this.last_year+"']").children().addClass("date__number_checked")
+            $(this.id+".date__number_checked:eq(0)").parent().addClass("date__cell_accent") 
+            $(this.id+".date__number_checked:eq(0)").parent().nextAll(this.id+".date__cell:not(.date__cell_accent)").addClass("date__cell_accent") 
+            $(this.id+".date__number_checked:eq(1)").parent().nextAll(this.id+".date__cell_accent").removeClass("date__cell_accent") 
+            $(this.id+".date__number_checked:eq(0)").parent().addClass("date__cell_accent-first")  
+            $(this.id+".date__number_checked:eq(1)").parent().addClass("date__cell_accent-last") 
         }
         else if (this.first_here_flag) {
-            $(".date__cell[data-date='"+this.first_date+"'][data-month='"+this.first_month+"'][data-year='"+this.first_year+"']").children().addClass("date__number_checked")
+            $(this.id+".date__cell[data-date='"+this.first_date+"'][data-month='"+this.first_month+"'][data-year='"+this.first_year+"']").children().addClass("date__number_checked")
             if (this.amount_checked_elements == 2) {
-                $(".date__number_checked").parent().addClass("date__cell_accent-first")  
-                $(".date__number_checked").parent().nextAll(".date__cell").addClass("date__cell_accent")
+                $(this.id+".date__number_checked").parent().addClass("date__cell_accent-first")  
+                $(this.id+".date__number_checked").parent().nextAll(this.id+".date__cell").addClass("date__cell_accent")
             }
         }
         else if (this.last_here_flag) {
-            $(".date__cell[data-date='"+this.last_date+"'][data-month='"+this.last_month+"'][data-year='"+this.last_year+"']").children().addClass("date__number_checked")
-            $(".date__cell:eq(0)").addClass("date__cell_accent") 
+            $(this.id+".date__cell[data-date='"+this.last_date+"'][data-month='"+this.last_month+"'][data-year='"+this.last_year+"']").children().addClass("date__number_checked")
+            $(this.id+".date__cell:eq(0)").addClass("date__cell_accent") 
             if (this.amount_checked_elements == 2) {
-                $(".date__cell:eq(0)").nextAll(".date__cell:not(.date__cell_accent)").addClass("date__cell_accent") 
-                $(".date__number_checked").parent().nextAll(".date__cell_accent").removeClass("date__cell_accent") 
-                $(".date__number_checked").parent().addClass("date__cell_accent-last")
+                $(this.id+".date__cell:eq(0)").nextAll(this.id+".date__cell:not(.date__cell_accent)").addClass("date__cell_accent") 
+                $(this.id+".date__number_checked").parent().nextAll(this.id+".date__cell_accent").removeClass("date__cell_accent") 
+                $(this.id+".date__number_checked").parent().addClass("date__cell_accent-last")
             }
         }
-        else if ((!this.first_here_flag)&&(!this.last_here_flag)){
-            // $(".date__cell").addClass("date__cell_accent") 
-        }
-        // Сделать спец флаги:
-        // 1) для отметки, что месяц весь веделен: all_accent
-        // 2) для отметки, что сейчас выведен 1 checked: first_here_flag
-        // 3) для отметки, что сейчас выведен 2 checked: last_here_flag
-
     }
     removeMonth() {
-        $(".date__cell").remove()
-        $(".date__month").remove()
+        $(this.id+".date__cell").remove()
+        $(this.id+".date__month").remove()
     }
 }
 
-let id2 = "#element_200",
-    amount_pages2 = 11,
-    date = new Date_cal(id2, amount_pages2);
-
-
-
-// let observer = new MutationObserver(mutationRecords => {
-//     console.log(mutationRecords);
-// });
-  
-// // наблюдать за всем, кроме атрибутов
-// observer.observe(element_200, {
-//     attributes: true,
-//     characterDataOldValue: true
-// });
-
+// Создание объектов Date_cal и установка случайных ID всем классам date
+let i = 0;
+let date = new Array($('.date').length)
+$('.date').map(function() {
+    let id = getID(12, radnom_set);
+    $(this).attr('id', id);
+    date[i] = new Date_cal(id);
+    i = i + 1;
+});
   
 // -----------------------------------------
 

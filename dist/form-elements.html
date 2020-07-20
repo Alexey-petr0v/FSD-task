@@ -83,7 +83,7 @@
                                                                             </div>
                                                                             <div class="button">
                                                                               <div class="button__elem">
-                                                                                <div class="button__content list-counter__apply" id="id-but-list-2">
+                                                                                <div class="button__content list-counter__apply dropdown__apply" id="id-but-list-2">
                                                                                   <h3 class="button__text">применить</h3>
                                                                                 </div>
                                                                               </div>
@@ -116,17 +116,22 @@
                                           <h3>date Dropdown</h3>
                                           <div class="field__input">
                                             <div class="dropdown">
-                                              <div class="dropdown__elem">
-                                                <div class="date">
+                                              <div class="dropdown__elem dropdown__elem_no-border ">
+                                                <div class="date date_two-fields ">
                                                   <div class="dropdown__top">
-                                                              <div class="date__top">
-                                                                <p>ДД.ММ.ГГГГ</p><img src="./images/expand_more.svg" alt="expand more">
+                                                              <div class="date__two-tops">
+                                                                <div class="date__two-top">
+                                                                  <p>ДД.ММ.ГГГГ</p>
+                                                                </div>
+                                                                <div class="date__two-top">
+                                                                  <p>ДД.ММ.ГГГГ</p>
+                                                                </div>
                                                               </div>
                                                   </div>
                                                   <div class="dropdown__bottom">
                                                               <div class="date__bottom">
-                                                                <input name="date" data-output1="" data-output2="" value="{&quot;full_date_1&quot;: &quot;2000-0-1&quot;, &quot;full_date_2&quot;: &quot;2000-0-3&quot;}" type="hidden">
-                                                                <h2>123456</h2>
+                                                                <div class="date__buffer-value" data-value=""></div>
+                                                                <input name="date" value="{&quot;full_date_1&quot;: &quot;2000-0-1&quot;, &quot;full_date_2&quot;: &quot;2000-0-3&quot;}" type="hidden">
                                                                 <div class="date__paginator">
                                                                   <div class="date__button date__button_left" id="date-but-prev">
                                                                     <p></p>
@@ -160,6 +165,22 @@
                                                                   </div>
                                                                 </div>
                                                                 <div class="date__cal" id="element_200"></div>
+                                                                <div class="date__buttons">
+                                                                            <div class="button">
+                                                                              <div class="button__elem">
+                                                                                <div class="button__content date__clear" id="id-but-date-1">
+                                                                                  <h3 class="button__text button__text_grey">очистить</h3>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                            <div class="button">
+                                                                              <div class="button__elem">
+                                                                                <div class="button__content date__apply dropdown__apply" id="id-but-date-2">
+                                                                                  <h3 class="button__text">применить</h3>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                </div>
                                                               </div>
                                                   </div>
                                                 </div>
@@ -170,48 +191,79 @@
                                       </div>
                 </div>
                 <div class="form-elements__element_5">
-                            <div class="dropdown">
-                              <div class="dropdown__elem dropdown__elem_small dropdown_no-border ">
-                                <div class="checkbox">
-                                  <div class="dropdown__top">
-                                    <h3>filter date dropdown</h3>
-                                  </div>
-                                  <div class="dropdown__bottom">
-                                              <div class="checkbox__item">
-                                                <label>
-                                                  <input class="checkbox__input" name="zavtrak" type="checkbox"><span>Завтрак</span>
-                                                </label>
+                                      <div class="field">
+                                        <div class="field__elem">
+                                          <h3>filter date dropdown</h3>
+                                          <div class="field__input">
+                                            <div class="dropdown">
+                                              <div class="dropdown__elem dropdown__elem_small-top dropdown__elem_no-border ">
+                                                <div class="date">
+                                                  <div class="dropdown__top">
+                                                              <div class="date__top">
+                                                                <p>ДД.ММ.ГГГГ</p>
+                                                              </div>
+                                                  </div>
+                                                  <div class="dropdown__bottom">
+                                                              <div class="date__bottom">
+                                                                <div class="date__buffer-value" data-value=""></div>
+                                                                <input name="date" value="{&quot;full_date_1&quot;: &quot;2000-0-1&quot;, &quot;full_date_2&quot;: &quot;2000-0-3&quot;}" type="hidden">
+                                                                <div class="date__paginator">
+                                                                  <div class="date__button date__button_left" id="date-but-prev">
+                                                                    <p></p>
+                                                                  </div>
+                                                                  <div class="date__of-the-month"></div>
+                                                                  <div class="date__button date__button_right" id="date-but-next">
+                                                                    <p></p>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="date__days">
+                                                                  <div class="date__day">
+                                                                    <p>Пн</p>
+                                                                  </div>
+                                                                  <div class="date__day">
+                                                                    <p>Вт</p>
+                                                                  </div>
+                                                                  <div class="date__day">
+                                                                    <p>Ср</p>
+                                                                  </div>
+                                                                  <div class="date__day">
+                                                                    <p>Чт</p>
+                                                                  </div>
+                                                                  <div class="date__day">
+                                                                    <p>Пт</p>
+                                                                  </div>
+                                                                  <div class="date__day">
+                                                                    <p>Сб</p>
+                                                                  </div>
+                                                                  <div class="date__day">
+                                                                    <p>Вс</p>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="date__cal" id="element_200"></div>
+                                                                <div class="date__buttons">
+                                                                            <div class="button">
+                                                                              <div class="button__elem">
+                                                                                <div class="button__content date__clear" id="id-but-date-1">
+                                                                                  <h3 class="button__text button__text_grey">очистить</h3>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                            <div class="button">
+                                                                              <div class="button__elem">
+                                                                                <div class="button__content date__apply dropdown__apply" id="id-but-date-2">
+                                                                                  <h3 class="button__text">применить</h3>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                </div>
+                                                              </div>
+                                                  </div>
+                                                </div>
                                               </div>
-                                              <div class="checkbox__item">
-                                                <label>
-                                                  <input class="checkbox__input" name="pismenniy_stol" type="checkbox" checked><span>Письменный стол</span>
-                                                </label>
-                                              </div>
-                                              <div class="checkbox__item">
-                                                <label>
-                                                  <input class="checkbox__input" name="stul_dlya_kormleniya" type="checkbox" checked><span>Стул для кормления</span>
-                                                </label>
-                                              </div>
-                                              <div class="checkbox__item">
-                                                <label>
-                                                  <input class="checkbox__input" name="krovatka" type="checkbox" checked><span>Кроватка</span>
-                                                </label>
-                                              </div>
-                                              <div class="checkbox__item">
-                                                <label>
-                                                  <input class="checkbox__input" name="televizor" type="checkbox"><span>Телевизор</span>
-                                                </label>
-                                              </div>
-                                              <div class="checkbox__item">
-                                                <label>
-                                                  <input class="checkbox__input" name="shampun" type="checkbox"><span>Шампунь</span>
-                                                </label>
-                                              </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                  <!--+addDropdown('filter date dropdown', attributes[2], {date: true})-->
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
                 </div>
                 <div class="form-elements__element_6">
                                       <div class="field">
@@ -275,7 +327,7 @@
                                                                             </div>
                                                                             <div class="button">
                                                                               <div class="button__elem">
-                                                                                <div class="button__content list-counter__apply" id="id-but-list-2">
+                                                                                <div class="button__content list-counter__apply dropdown__apply" id="id-but-list-2">
                                                                                   <h3 class="button__text">применить</h3>
                                                                                 </div>
                                                                               </div>
@@ -340,7 +392,7 @@
                                                                             </div>
                                                                             <div class="button">
                                                                               <div class="button__elem">
-                                                                                <div class="button__content list-counter__apply" id="id-but-list-2">
+                                                                                <div class="button__content list-counter__apply dropdown__apply" id="id-but-list-2">
                                                                                   <h3 class="button__text">применить</h3>
                                                                                 </div>
                                                                               </div>
@@ -357,7 +409,7 @@
                 </div>
                 <div class="form-elements__element_9">
                             <div class="dropdown">
-                              <div class="dropdown__elem dropdown__elem_small dropdown_no-border ">
+                              <div class="dropdown__elem dropdown__elem_small dropdown__elem_no-border ">
                                 <div class="checkbox">
                                   <div class="dropdown__top">
                                     <h3>expandable checkbox list</h3>
@@ -400,7 +452,7 @@
                 </div>
                 <div class="form-elements__element_10">
                             <div class="dropdown">
-                              <div class="dropdown__elem dropdown__elem_small dropdown_no-border ">
+                              <div class="dropdown__elem dropdown__elem_small dropdown__elem_no-border ">
                                 <div class="checkbox">
                                   <div class="dropdown__top">
                                     <h3>expandable checkbox list</h3>
@@ -587,7 +639,7 @@
                                                                             </div>
                                                                             <div class="button">
                                                                               <div class="button__elem">
-                                                                                <div class="button__content list-counter__apply" id="id-but-list-2">
+                                                                                <div class="button__content list-counter__apply dropdown__apply" id="id-but-list-2">
                                                                                   <h3 class="button__text">применить</h3>
                                                                                 </div>
                                                                               </div>
@@ -650,28 +702,6 @@
                 </div>
               </div>
               <div class="form-elements__column_third">
-                <div class="form-elements__element_20">
-                            <div class="range-slider">
-                              <div class="range-slider__title">
-                                <div class="range-slider__title-column">
-                                  <h3>RANGE SLIDER</h3>
-                                </div>
-                                <div class="range-slider__title-column">
-                                  <h3 class="range-slider__values"><span class='range-slider__output_1'>5 000</span>₽ - <span class='range-slider__output_2'>10 000</span>₽</h3>
-                                </div>
-                              </div>
-                              <div class="range-slider__slider">
-                                <input name="range-slider" data-output1="5 000" data-output2="10 000" value="{output1: &quot;5 000&quot;, output2: &quot;10 000&quot;}" type="hidden">
-                                <div class="range-slider__limit range-slider__limit_left mydiv1">
-                                  <div class="mydiv1header"></div>
-                                </div>
-                                <div class="range-slider__accent"></div>
-                                <div class="range-slider__limit range-slider__limit_right mydiv2">
-                                  <div class="mydiv2header"></div>
-                                </div>
-                              </div>
-                            </div>
-                </div>
                 <div class="form-elements__element_20">
                             <div class="range-slider">
                               <div class="range-slider__title">
@@ -831,7 +861,7 @@
                                                                             </div>
                                                                             <div class="button">
                                                                               <div class="button__elem">
-                                                                                <div class="button__content list-counter__apply" id="id-but-list-2">
+                                                                                <div class="button__content list-counter__apply dropdown__apply" id="id-but-list-2">
                                                                                   <h3 class="button__text">применить</h3>
                                                                                 </div>
                                                                               </div>

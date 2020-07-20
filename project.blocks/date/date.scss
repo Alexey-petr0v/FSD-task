@@ -15,11 +15,11 @@
 }
 .date__of-the-month {
     display: flex;
+    color: #1F2041;
 }
 .date__month { 
-    cursor: pointer;
     text-align: center;
-    width: 200px;
+    width: 215px;
     height: 40px;
     justify-content: center;
     display: flex;
@@ -69,19 +69,70 @@
 
 
 .date {
+    &__buttons {
+        margin-top: 6px;
+        padding-bottom: 7px;
+        padding-right: 13px;
+        display: -webkit-flex; 
+        display: flex; 
+        flex-direction: row;
+        justify-content: space-between;
+    
+        h3 {margin-top: 6px;margin-right: 6px;margin-bottom: 6px;}
+    }
+
     &__top {
         display: -webkit-flex; 
         display: flex; 
         flex-direction: row;
         justify-content: space-between;
-        background: #FFFFFF;
         margin: 0px;
-        padding: 0px;
+        padding-left: 14px;
+        width: 262px;
     }
+    
+    &__two-tops {
+        display: -webkit-flex; 
+        display: flex; 
+        flex-direction: row;
+        width: 320px;
+    }
+
+    &__two-top {
+        width: 150px;
+        padding-left: 14px;
+        margin-right: 20px;
+        &:last-child{margin-right: 0px;}
+    }
+
+    &__bottom {
+        padding-top: 11px;
+        padding-bottom: 6px;
+        padding-left: 12px;
+        width: 306px;
+        background: white;
+    }
+
+    &__top, &__bottom, &__two-top {
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        border-radius: 4px;
+    }
+
+    &__days, &__cal, &__buttons {
+        padding-left: 8px;
+
+    }
+
     &__cal {
         display: -webkit-flex; 
         display: flex; 
         flex-wrap: wrap;
+        padding-left: 10px;
+        padding-bottom: 8px;
+    }
+    &__cal, &__days {
+        font-size: 12px;
+        line-height: 15px;
     }
     &__days {
         display: -webkit-flex; 
@@ -89,6 +140,7 @@
         flex-wrap: wrap;
         font-weight: bold;
         color: #BC9CFF;
+        padding-top: 14px;
     }
     &__day {
         width: 39.88px;
@@ -135,18 +187,4 @@
         }
 
     }
-}
-
-
-
-.abc {
-    width: 300px;
-    height: 300px;
-    background: blue;
-}
-.def {
-    width: 100px;
-    height: 100px;
-    background: red;
-    border-radius: 50%;
 }
