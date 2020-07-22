@@ -3,10 +3,14 @@ include ../../library.blocks/field/field
 mixin addTextField(title, fieldMod, textFieldMod)
     +addField(title, fieldMod)
         .text-field
+            if textFieldMod == "text-field__elem_masked"
+                - var placeholder = "ДД.ММ.ГГГГ"
+            else
+                - var placeholder = "Email"
             case fieldMod
                 when NULL
-                    input.text-field__elem(type="text", placeholder="Email")
+                    input.text-field__elem(class=textFieldMod, type="text", placeholder=placeholder)
                 when 0
-                    input.text-field__elem(type="text", placeholder="Email")
+                    input.text-field__elem(class=textFieldMod, type="text", placeholder=placeholder)
                 default
-                    input.text-field__elem(class='text-field__elem_'+textFieldMod, type="text", placeholder="Email")
+                    input.text-field__elem(class=textFieldMod, type="text", placeholder=placeholder)

@@ -22,10 +22,17 @@ mixin addDropdown(title, attrib, dropdownType, additionalContent, check_status)
                 if attrib.date_two_fields
                     - var date_mod = attrib.date_two_fields + " "
                     - var two_top_flag = true
-                +addField(title, fieldMod)
+                +addField('', fieldMod)
                     .dropdown
                         .dropdown__elem(class=dropdown_elem_mod)
                             .date(class=date_mod)
+                                if two_top_flag
+                                    div(style="display: -webkit-flex; display: flex")
+                                        h3(style="width:164px;margin-right: 20px;")= "date Dropdown"
+                                        h3(style="width:164px")= "date Dropdown"
+                                else
+                                    div(style="display: -webkit-flex; display: flex")
+                                        h3(style="width:164px;margin-right: 20px;")= "filter date dropdown"
                                 .dropdown__top
                                     +addDateTop(two_top_flag)
                                 .dropdown__bottom
