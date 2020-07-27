@@ -38,6 +38,10 @@ module.exports = {
         template: PATHS.pages + '/form-elements.pug',
         filename: 'form-elements.html'
     }),
+    new HtmlWebpackPlugin({
+        template: PATHS.pages + '/cards.pug',
+        filename: 'cards.html'
+    }),
     new MiniCssExtractPlugin({
         filename: '[name].css',
     }),

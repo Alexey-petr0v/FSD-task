@@ -9,7 +9,9 @@ let id = "#element_24",
 
 // Text Field
 $( ".text-field__elem" ).eq(1).attr( "id", "text-filled" );
-document.getElementById('text-filled').value = "This is pretty awesome"
+if (document.getElementById('text-filled')){
+    document.getElementById('text-filled').value = "This is pretty awesome"
+}
 $( ".text-field__elem" ).eq(1).trigger( "focus" );
 
 // dropdown

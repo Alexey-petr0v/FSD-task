@@ -77,13 +77,11 @@
 }
 
 .form-elements__column_first {
-    background: yellow;
     min-width: 320px;
     margin-right: 126px;
 }
 
 .form-elements__column_second {
-    background: #e7e7e7;
     min-width: 320px;
     margin-right: 72px;
     /* пример будущего расположения */
@@ -99,6 +97,5 @@
     display: -webkit-flex; 
     display: flex; 
     flex-direction: column;
-    background: white;
     min-width: 320px;
 }

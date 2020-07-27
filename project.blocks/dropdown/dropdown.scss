@@ -9,6 +9,16 @@
     -ms-user-select: none;
     user-select: none;
     
+    &__title {
+        display: -webkit-flex;
+        display: flex;
+        h3 {
+            width:164px;
+            margin-right: 20px;
+            &:last-child {margin-right: 0px}
+        }
+    }
+
     &__elem {
         .dropdown__top {
             width: 318px;
@@ -39,7 +49,12 @@
             .dropdown__bottom {
                 border: 0px;
                 padding-left: 0px;
+            }
+        }
+        &_no-absolute {
+            .dropdown__bottom {
                 position: static;
+                box-shadow: none;
             }
         }
     }

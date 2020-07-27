@@ -1,15 +1,16 @@
 include ../button/button
 
-mixin addDateTop(two_top_flag)
-    if (two_top_flag == true)
-        .date__two-tops
-            .date__two-top
-                p= 'ДД.ММ.ГГГГ'
-            .date__two-top
-                p= 'ДД.ММ.ГГГГ'
-    else
-        .date__top
-            p= 'ДДММ - ДДММ'
+mixin addDateTop(two_title_flag)
+    div(style="display: block; width: 320px")
+        if (two_title_flag == true)
+            .date__two-tops
+                .date__two-top
+                    p= 'ДД.ММ.ГГГГ'
+                .date__two-top
+                    p= 'ДД.ММ.ГГГГ'
+        else
+            .date__top
+                p= 'ДДММ - ДДММ'
 mixin addDateBottom
     .date__bottom
         .date__buffer-value(data-value="")

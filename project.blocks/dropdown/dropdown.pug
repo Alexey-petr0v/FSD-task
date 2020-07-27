@@ -21,25 +21,26 @@ mixin addDropdown(title, attrib, dropdownType, additionalContent, check_status)
                     - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_no_border + " "
                 if attrib.date_two_fields
                     - var date_mod = attrib.date_two_fields + " "
-                    - var two_top_flag = true
+                    - var two_title_flag = true
                 +addField('', fieldMod)
                     .dropdown
                         .dropdown__elem(class=dropdown_elem_mod)
                             .date(class=date_mod)
-                                if two_top_flag
-                                    div(style="display: -webkit-flex; display: flex")
-                                        h3(style="width:164px;margin-right: 20px;")= "date Dropdown"
-                                        h3(style="width:164px")= "date Dropdown"
-                                else
-                                    div(style="display: -webkit-flex; display: flex")
-                                        h3(style="width:164px;margin-right: 20px;")= "filter date dropdown"
+                                .dropdown__title
+                                    if (two_title_flag == true)
+                                        h3= attrib.title_1
+                                        h3= attrib.title_2
+                                    else
+                                        h3= attrib.title_1
                                 .dropdown__top
-                                    +addDateTop(two_top_flag)
+                                    +addDateTop(two_title_flag)
                                 .dropdown__bottom
                                     +addDateBottom
             else if dropdownType.checkbox
                 if attrib.dropdown_elem_no_border
                     - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_no_border + " "
+                if attrib.dropdown_elem_no_absolute
+                    - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_no_absolute + " "
                 .dropdown
                     .dropdown__elem(class=dropdown_elem_mod)
                         .checkbox
