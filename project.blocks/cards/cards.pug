@@ -1,5 +1,27 @@
-include ../hotel-room-search/hotel-room-search
+include ../form-room-search/form-room-search
+include ../form-registration/form-registration
+include ../form-reservation/form-reservation
+include ../form-login/form-login
+include ../date/date
+include ../number-card/number-card
 
 
-
-+addHotelRoomSearch()
+.cards
+    .cards__column
+        .cards__element
+            +addFormRoomSearch()
+        .cards__element
+            +addFormReservation()
+    .cards__column
+        .cards__element
+            +addFormRegistration()
+        .cards__element
+            +addLogin()
+    .cards__column
+        .cards__element
+            .date
+                +addDateBottom
+        .cards__element
+            +addNumberCard(1, 2, 888, "9 990", 145, true)
+        .cards__element
+            +addNumberCard(2, 4, 840, "9 900", 65)

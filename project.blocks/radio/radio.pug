@@ -6,7 +6,7 @@ mixin addRadio(items, num_elem)
             else
                 - var mod = ""
             if items[x].toggle
-                input(id="radio-"+num_elem+"-"+x, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio", checked)
+                input(id="radio-"+num_elem+"-"+x, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio", checked="checked")
                 if items[x].title
                     label(for="radio-"+num_elem+"-"+x)
                         span= items[x].title

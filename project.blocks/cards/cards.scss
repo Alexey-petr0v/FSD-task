@@ -1,0 +1,10 @@
+.cards {
+    display: flex;
+    &__column {
+        margin-right: 40px;
+        &:last-child {margin-right: 0px}
+    }
+    &__element {
+        &:nth-child(n) {margin-bottom: 40px}
+    }
+}

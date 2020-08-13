@@ -1,0 +1,44 @@
+include ../form/form
+include ../text-field/text-field
+include ../button/button
+include ../radio/radio
+include ../checkbox/checkbox
+include ../button/button
+
+-
+    var radio_buttons = [
+        {title: "Мужчина", name: "pol", value: "muzhchina", toggle: true},
+        {title: "Женщина", name: "pol", value: "zhenshina", toggle: false}
+    ]
+
+-
+    var toggle_buttons = [
+        {title: "Получать спецпредложения", name: "poluchat_specpredlozheniya", value : false, toggle: true}
+    ]
+
+mixin addFormReservation
+    .form-reservation
+        +addForm
+            .form-reservation__element
+                h1 Регистрация аккаунта
+            .form-reservation__element
+                +addTextField('Имя')
+            .form-reservation__element
+                +addTextField('Фамилия')
+            .form-reservation__element
+                +addRadio(radio_buttons, 1)
+            .form-reservation__element
+                +addTextField('ДД.ММ.ГГГГ', 'дата рождения', '', 'text-field__elem_masked')
+            .form-reservation__element
+                +addTextField('Email', 'данные входа в сервис')
+            .form-reservation__element
+                +addTextField('Пароль')
+            .form-reservation__element
+                +addCheckbox(toggle_buttons)
+            .form-reservation__element
+                +addButton("перейти к оплате", "id-but-7", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white")
+            .form-reservation__element
+                .form-reservation__column
+                    p Уже есть аккаунт на Toxin
+                .form-reservation__column
+                    +addButton("войти", "id-but-3", "button__elem_opaque-border", "button__content_padding")

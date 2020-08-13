@@ -1,0 +1,59 @@
+include ../radio/radio
+
+
+
+mixin addNumberCard(number_images, checked_rate, number_room, price, number_of_reviews, lux)
+    - var toggle_1 = false
+    - var toggle_2 = false
+    - var toggle_3 = false
+    - var toggle_4 = false
+    - var toggle_5 = false
+    - if (checked_rate == 1)
+        - var toggle_1 = true
+    - if (checked_rate == 2)
+        - var toggle_2 = true
+    - if (checked_rate == 3)
+        - var toggle_3 = true
+    - if (checked_rate == 4)
+        - var toggle_4 = true
+    - if (checked_rate == 5)
+        - var toggle_5 = true
+    -
+        var rate_buttons_1 = [
+            {name: "rate_"+number_images, value: "1", toggle: toggle_1, rate: true},
+            {name: "rate_"+number_images, value: "2", toggle: toggle_2, rate: true},
+            {name: "rate_"+number_images, value: "3", toggle: toggle_3, rate: true},
+            {name: "rate_"+number_images, value: "4", toggle: toggle_4, rate: true},
+            {name: "rate_"+number_images, value: "5", toggle: toggle_5, rate: true}
+        ]
+    .number-card
+        .number-card__element.number-card__image(class="number-card__image_"+number_images)
+            input(name="number-card-"+number_images, class="number-card__input", type="radio", checked)
+            input(name="number-card-"+number_images, class="number-card__input", type="radio")
+            input(name="number-card-"+number_images, class="number-card__input", type="radio")
+            input(name="number-card-"+number_images, class="number-card__input", type="radio")
+            .number-card__buttons.material-icons.md-24
+                .number-card__left
+                    p= "keyboard_arrow_left"
+                .number-card__right
+                    p= "keyboard_arrow_right"
+            .number-card__background
+        .number-card__element
+            .number-card__table
+                p №
+                h2= number_room
+                if lux
+                    h3.purple_text люкс
+                else
+                    h3= " "
+            .number-card__table
+                h3= price+"₽"
+                p в сутки
+        .number-card__element
+            .number-card__line
+        .number-card__element
+            .number-card__table
+                +addRadio(rate_buttons_1, number_images)
+            .number-card__table
+                h3= number_of_reviews
+                p Отзывов

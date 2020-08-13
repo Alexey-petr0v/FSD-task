@@ -1,0 +1,55 @@
+include ../form/form
+include ../dropdown/dropdown
+include ../button/button
+
+-
+    var attributes = [
+        {name: "date-1", title_1: "прибытие", title_2: "выезд", date_two_fields: "date_two-fields", dropdown_elem_no_border: "dropdown__elem_no-border", dropdown_elem_small: false},
+        {name: "list-1", type_units: "together", dropdown_elem_small: false},
+    ]
+
+mixin addFormRegistration
+    .form-registration
+        +addForm
+            .form-registration__element
+                .form-registration__table
+                    p №
+                    h2 888
+                    h3.purple_text люкс
+                .form-registration__table
+                    h3 9 990₽ в сутки
+            .form-registration__element
+                +addDropdown('date Dropdown', attributes_0, {date: true})
+            .form-registration__element
+                +addDropdown('гости', attributes_1, {list: true}, list_people)
+            .form-registration__element
+                .form-registration__table
+                    .form-registration__column
+                        .form-registration__td
+                            p 9 990₽ х 4 суток
+                        .form-registration__td
+                            p Сбор за услуги: скидка 2 179₽
+                        .form-registration__td
+                            p Сбор за дополнительные услуги
+                    .form-registration__column
+                        .form-registration__td
+                            p
+                        .form-registration__td.form-registration__td_circle
+                            p
+                                span i
+                        .form-registration__td.form-registration__td_circle
+                            p
+                                span i
+                    .form-registration__column
+                        .form-registration__td
+                            p 39 960₽
+                        .form-registration__td
+                            p 0₽
+                        .form-registration__td
+                            p 300₽
+            .form-registration__element
+                h2 Итого
+                h3
+                h2 38 081₽
+            .form-registration__element
+                +addButton("забронировать", "id-but-1", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white")

@@ -125,19 +125,19 @@ include ../bullet-list/bullet-list
     .form-elements__columns
         .form-elements__column_first
             .form-elements__element_1
-                +addTextField('Text Field')
+                +addTextField('Email', 'Text Field')
             .form-elements__element_2
-                +addTextField('Text Field')
+                +addTextField('This is pretty awesome', 'Text Field')
             .form-elements__element_3
                 +addDropdown('Dropdown', attributes[0], {list: true}, list_people)
             .form-elements__element_4
-                +addTextField('masked text field', '', 'text-field__elem_masked')
+                +addTextField('ДД.ММ.ГГГГ', 'masked text field', '', 'text-field__elem_masked')
             .form-elements__element_5
                 +addDropdown('date Dropdown', attributes[1], {date: true})
             .form-elements__element_6
                 +addDropdown('filter date dropdown', attributes[2], {date: true})
             .form-elements__element_7
-                +addTextField('subscription text field', 'field__elem_small', 'text-field__elem_arrow-left')
+                +addTextField('Email', 'subscription text field', 'field__elem_small', 'text-field__elem_arrow-left')
             .form-elements__element_8
                 +addDropdown('Dropdown', attributes[3], {list: true}, list_furniture)
             .form-elements__element_9

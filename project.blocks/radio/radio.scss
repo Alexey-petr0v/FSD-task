@@ -58,17 +58,23 @@
         border: 0px;
         width: 20px;
         height: 20px;
-        background: url("/images/star_border.svg") no-repeat;
         &::before { background: none }
         &:checked {
             background: url("/images/star.svg") no-repeat;
             border: 0px;
             &::before { background: none; border: 0px }
         }
-    }
 
-    .radio__input_rate:first-child { margin-left: 2px; background: url("/images/star.svg") no-repeat }
-    .radio__input_rate{ background: url("/images/star.svg") no-repeat }
-    .radio__input_rate:checked{ background: url("/images/star.svg") no-repeat }
-    .radio__input_rate:checked ~ input{ background: url("/images/star_border.svg") no-repeat }
+        &:first-child{
+            background: url("/images/star.svg") no-repeat;
+        }
+
+        &:first-child ~ .radio__input_rate:not(.radio__input_rate:checked ~ .radio__input_rate){
+            background: url("/images/star.svg") no-repeat;
+        }
+
+        &:checked ~ .radio__input_rate{
+            background: url("/images/star_border.svg") no-repeat;
+        }
+    }
 }

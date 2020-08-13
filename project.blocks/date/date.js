@@ -123,7 +123,7 @@ class Date_cal {
     }
     // Функция установки первой и второй даты в инпут
     addDatesToInput() {
-        $(this.id+".dropdown__bottom input").attr('value', '{"full_date_first": "'+this.full_date_first+'", "full_date_last": "'+this.full_date_last+'"}')
+        $(this.id+".date__bottom input").attr('value', '{"full_date_first": "'+this.full_date_first+'", "full_date_last": "'+this.full_date_last+'"}')
     }
     // Функция удаления отметок и выделений
     removeCheckAndAccentClasses(check) {
