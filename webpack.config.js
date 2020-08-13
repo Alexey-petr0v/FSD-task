@@ -124,7 +124,15 @@ module.exports = {
                      loader: 'file-loader?name=./fonts/[name].[ext]'
                  }
              ]
-    }
+      },
+      {
+        test: /\.(jpg)$/,
+        use: [
+                 {
+                     loader: 'file-loader?name=./images/[name].[ext]'
+                 }
+             ]
+      }
     ]
   },
   devServer: {

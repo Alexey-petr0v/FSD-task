@@ -1,3 +1,5 @@
+$PATH: '../dist/images/';
+
 .number-card {
     display: flex;
     flex-direction: column;
@@ -82,32 +84,32 @@
         &_1 {
             .number-card__input {
                 &:nth-child(1):checked ~ .number-card__background {
-                    background: url("/images/number-card__image_1-1.jpg") no-repeat;
+                    background: url($PATH+"number-card__image_1-1.jpg") no-repeat;
                 }
                 &:nth-child(2):checked ~ .number-card__background {
-                    background: 50% 50% url("/images/number-card__image_1-2.jpg") no-repeat;
+                    background: 50% 50% url($PATH+"number-card__image_1-2.jpg") no-repeat;
                 }
                 &:nth-child(3):checked ~ .number-card__background {
-                    background: 10% 10% url("/images/number-card__image_1-3.jpg") no-repeat;
+                    background: 10% 10% url($PATH+"number-card__image_1-3.jpg") no-repeat;
                 }
                 &:nth-child(4):checked ~ .number-card__background {
-                    background: 10% 10% url("/images/number-card__image_1-3.jpg") no-repeat;
+                    background: 10% 10% url($PATH+"number-card__image_1-3.jpg") no-repeat;
                 }
             }
         }
         &_2 {
             .number-card__input {
                 &:nth-child(1):checked ~ .number-card__background {
-                    background: url("/images/number-card__image_2-1.jpg") no-repeat;
+                    background: url($PATH+"number-card__image_2-1.jpg") no-repeat;
                 }
                 &:nth-child(2):checked ~ .number-card__background {
-                    background: 50% 50% url("/images/number-card__image_2-1.jpg") no-repeat;
+                    background: 50% 50% url($PATH+"number-card__image_2-1.jpg") no-repeat;
                 }
                 &:nth-child(3):checked ~ .number-card__background {
-                    background: 10% 10% url("/images/number-card__image_2-1.jpg") no-repeat;
+                    background: 10% 10% url($PATH+"number-card__image_2-1.jpg") no-repeat;
                 }
                 &:nth-child(4):checked ~ .number-card__background {
-                    background: 10% 10% url("/images/number-card__image_2-1.jpg") no-repeat;
+                    background: 10% 10% url($PATH+"number-card__image_2-1.jpg") no-repeat;
                 }
             }
         }
