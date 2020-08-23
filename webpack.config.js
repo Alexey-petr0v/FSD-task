@@ -119,6 +119,7 @@ module.exports = {
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
+        exclude: path.resolve(__dirname, 'app/styles'),
         use: [
                  {
                      loader: 'file-loader?name=./fonts/[name].[ext]'

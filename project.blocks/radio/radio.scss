@@ -1,4 +1,5 @@
 @supports(-webkit-appearance: none) or (-moz-appearance: none) {
+    $PATH: '../dist/images/';
     .radio {
         display: flex;
         -webkit-touch-callout: none;
@@ -13,7 +14,7 @@
     .radio label, .radio__input { cursor: pointer }
 
     .radio label {
-        margin-right: 20px;
+        margin-right: 21px;
     }
 
     .radio__input {
@@ -60,21 +61,21 @@
         height: 20px;
         &::before { background: none }
         &:checked {
-            background: url("/images/star.svg") no-repeat;
+            background: url($PATH+"star.svg") no-repeat;
             border: 0px;
             &::before { background: none; border: 0px }
         }
 
         &:first-child{
-            background: url("/images/star.svg") no-repeat;
+            background: url($PATH+"star.svg") no-repeat;
         }
 
         &:first-child ~ .radio__input_rate:not(.radio__input_rate:checked ~ .radio__input_rate){
-            background: url("/images/star.svg") no-repeat;
+            background: url($PATH+"star.svg") no-repeat;
         }
 
         &:checked ~ .radio__input_rate{
-            background: url("/images/star_border.svg") no-repeat;
+            background: url($PATH+"star_border.svg") no-repeat;
         }
     }
 }

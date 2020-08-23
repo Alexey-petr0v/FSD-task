@@ -5,6 +5,7 @@ include ../checkbox/checkbox
 
 mixin addDropdown(title, attrib, dropdownType, additionalContent, check_status)
             - var dropdown_elem_mod = ""
+            - var dropdown_top_mod = ""
             if attrib.dropdown_elem_small
                 - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_small + " "
             if dropdownType.list
@@ -19,6 +20,8 @@ mixin addDropdown(title, attrib, dropdownType, additionalContent, check_status)
             else if dropdownType.date
                 if attrib.dropdown_elem_no_border
                     - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_no_border + " "
+                if attrib.dropdown_top_no_arrow
+                    - var dropdown_top_mod = dropdown_top_mod + attrib.dropdown_top_no_arrow + " "
                 if attrib.date_two_fields
                     - var date_mod = attrib.date_two_fields + " "
                     - var two_title_flag = true
@@ -32,13 +35,15 @@ mixin addDropdown(title, attrib, dropdownType, additionalContent, check_status)
                                         h3= attrib.title_2
                                     else
                                         h3= attrib.title_1
-                                .dropdown__top
+                                .dropdown__top(class=dropdown_top_mod)
                                     +addDateTop(two_title_flag)
                                 .dropdown__bottom
                                     +addDateBottom
             else if dropdownType.checkbox
                 if attrib.dropdown_elem_no_border
                     - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_no_border + " "
+                if attrib.dropdown_elem_toggle_arrow
+                    - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_toggle_arrow + " "
                 if attrib.dropdown_elem_no_absolute
                     - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_no_absolute + " "
                 .dropdown

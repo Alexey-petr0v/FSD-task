@@ -63,11 +63,6 @@
     text-align: center;
 }
 
-
-
-
-
-
 .date {
     &__buttons {
         margin-top: 6px;
@@ -78,7 +73,11 @@
         flex-direction: row;
         justify-content: space-between;
     
-        h3 {margin-top: 6px;margin-right: 6px;margin-bottom: 6px;}
+        h3 {
+            margin-top: 6px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
     }
 
     &__top {
@@ -102,6 +101,7 @@
         width: 150px;
         padding-left: 14px;
         margin-right: 20px;
+        background: url("/images/expand_more.svg") calc(100% - 16px) 50% no-repeat #ffffff;
         &:last-child{margin-right: 0px;}
     }
 
@@ -154,9 +154,6 @@
         visibility:visible;
         cursor: pointer;
         z-index: 2;
-        // &:nth-child(1){
-        //     background: black!important
-        // }
         &_accent {
             background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
         }

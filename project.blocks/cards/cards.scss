@@ -2,6 +2,8 @@
     display: flex;
     &__column {
         margin-right: 40px;
+        margin-top: 7px;
+        &:first-child {margin-left: 40px}
         &:last-child {margin-right: 0px}
     }
     &__element {

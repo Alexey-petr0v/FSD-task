@@ -4,7 +4,7 @@ let radnom_set = new Set();
 let dropdown = '.dropdown',
     dropdown_top = '.dropdown__top',
     dropdown_bottom = '.dropdown__bottom',
-    dropdown_mod = '.dropdown_no-border',
+    dropdown_mod = '.dropdown__elem_toggle_arrow',
     numberOfClasses = 0,
     subBlockButtonID = ".dropdown__apply"; // ID кнопки вложенного блока для вызова slideToggle при нажатии на неё
 
@@ -40,11 +40,6 @@ for (let x = 0; x < numberOfClasses; x++) {
         $(e.data.bottom).slideToggle()
     });
 }
-
-// Установка визуальной стрелки на поле dropdown__top
-$(dropdown_top).map(function(){
-    $(this).css('background', 'url("/images/expand_more.svg") calc(100% - 13px) 50% no-repeat #ffffff')
-});
 
 // Смена визуальной стрелки на стрелку вверх/вниз
 $(dropdown_mod).find(dropdown_top).click(function(){

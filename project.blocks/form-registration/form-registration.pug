@@ -4,9 +4,13 @@ include ../button/button
 
 -
     var attributes = [
-        {name: "date-1", title_1: "прибытие", title_2: "выезд", date_two_fields: "date_two-fields", dropdown_elem_no_border: "dropdown__elem_no-border", dropdown_elem_small: false},
+        {name: "date-1", title_1: "прибытие", title_2: "выезд", date_two_fields: "date_two-fields", dropdown_elem_no_border: "dropdown__elem_no-border", dropdown_elem_small: false,
+        dropdown_top_no_arrow: "dropdown__top_no_arrow"},
         {name: "list-1", type_units: "together", dropdown_elem_small: false},
     ]
+
+- var attributes_0 = attributes[0]
+- var attributes_1 = attributes[1]
 
 mixin addFormRegistration
     .form-registration
@@ -17,7 +21,8 @@ mixin addFormRegistration
                     h2 888
                     h3.purple_text люкс
                 .form-registration__table
-                    h3 9 990₽ в сутки
+                    h3 9 990₽
+                    p в сутки
             .form-registration__element
                 +addDropdown('date Dropdown', attributes_0, {date: true})
             .form-registration__element

@@ -18,7 +18,7 @@ $PATH: '../dist/images/';
     width: 270px;
     &:nth-child(2) {
         width: 270px;
-        height: 54px;
+        // height: 54px;
         display: flex;
         justify-content: space-between;
     }
@@ -68,6 +68,13 @@ $PATH: '../dist/images/';
         &:hover{
             .number-card__left, .number-card__right {
                 p {visibility: visible}
+            }
+            .number-card__left {
+                background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+            }
+        
+            .number-card__right {
+                background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
             }
         }
     }
@@ -139,11 +146,17 @@ $PATH: '../dist/images/';
     .number-card__left {
         width: 42px;
         height: 151px;
+        &:hover {
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+        }
     }
 
     .number-card__right {
         width: 42px;
         height: 151px;
+        &:hover {
+            background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+        }
     }
 
     .number-card label, .number-card__input { cursor: pointer }

@@ -22,6 +22,9 @@
     &__elem {
         .dropdown__top {
             width: 318px;
+            &:not(.dropdown__top_no_arrow) {
+                background: url("/images/expand_more.svg") calc(100% - 16px) 50% no-repeat #ffffff
+            }
         }
         .dropdown__bottom {
             width: 304px;

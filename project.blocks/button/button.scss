@@ -3,6 +3,7 @@
 
     &__elem {
         border-radius: 22px;
+        .button__text {min-width: 59px}
         &_opaque-background {
             background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
             &.button__text {color: #FFFFFF}
@@ -29,19 +30,20 @@
         }
         &_big {
             background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-            .button__content {background: 286px 12px url("/images/arrow_forward_white.svg") no-repeat;
+            .button__content {background: 289px 13px url("/images/arrow_forward_white.svg") no-repeat;
             }
-            .button__text {width: 280px}
+            .button__text {min-width: 280px}
         }
     }
 
     &__content {
         text-decoration: none;
         cursor: pointer;
-        &_padding {padding: 14px 20px 15px; border-radius: 22px}
+        &_padding {padding: 14.5px 20px 14px; border-radius: 22px}
     }
 
     &__text {
+        font-weight: normal;
         text-align: center;
         color: #BC9CFF;
         &_grey {color: rgba(31, 32, 65, 0.5)}
