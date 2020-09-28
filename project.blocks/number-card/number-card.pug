@@ -27,7 +27,7 @@ mixin addNumberCard(number_images, checked_rate, number_room, price, number_of_r
             {name: "rate_"+number_images, value: "5", toggle: toggle_5, rate: true}
         ]
     .number-card
-        .number-card__element.number-card__image(class="number-card__image_"+number_images)
+        .number-card__element-1.number-card__image(class="number-card__image_"+number_images)
             input(name="number-card-"+number_images, class="number-card__input", type="radio", checked)
             input(name="number-card-"+number_images, class="number-card__input", type="radio")
             input(name="number-card-"+number_images, class="number-card__input", type="radio")
@@ -38,22 +38,24 @@ mixin addNumberCard(number_images, checked_rate, number_room, price, number_of_r
                 .number-card__right
                     p= "keyboard_arrow_right"
             .number-card__background
-        .number-card__element
-            .number-card__table
-                p №
-                h2= number_room
-                if lux
-                    h3.purple_text люкс
-                else
-                    h3= " "
-            .number-card__table
-                h3= price+"₽"
-                p в сутки
-        .number-card__element
-            .number-card__line
-        .number-card__element
-            .number-card__table
-                +addRadio(rate_buttons_1, number_images)
-            .number-card__table
-                h3= number_of_reviews
-                p Отзывов
+        .number-card__description
+            .number-card__element-2
+                .number-card__two-columns
+                    .number-card__number
+                        p №
+                        h2= number_room
+                        if lux
+                            h3.purple_text люкс
+                        else
+                            h3= " "
+                    .number-card__price
+                        h3= price+"₽"
+                        p в сутки
+            .number-card__element-3
+                .number-card__line
+            .number-card__element-4
+                .number-card__table
+                    +addRadio(rate_buttons_1, number_images)
+                .number-card__table
+                    h3= number_of_reviews
+                    p Отзывов

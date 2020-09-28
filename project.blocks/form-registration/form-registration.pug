@@ -16,13 +16,14 @@ mixin addFormRegistration
     .form-registration
         +addForm
             .form-registration__element
-                .form-registration__table
-                    p №
-                    h2 888
-                    h3.purple_text люкс
-                .form-registration__table
-                    h3 9 990₽
-                    p в сутки
+                .form-registration__two-columns
+                    .form-registration__number
+                        p №
+                        h2 888
+                        h3.purple_text люкс
+                    .form-registration__price
+                        h3 9 990₽
+                        p в сутки
             .form-registration__element
                 +addDropdown('date Dropdown', attributes_0, {date: true})
             .form-registration__element

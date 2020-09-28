@@ -5,38 +5,92 @@ $PATH: '../dist/images/';
     flex-direction: column;
     border-radius: 4px;
     &__image {
-        height: 151px;
+        height: 152px;
     }
     &__background {
-        height: 151px;
+        height: 152px;
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
     }
 }
-.number-card__element {
-    background: white;
-    width: 270px;
-    &:nth-child(2) {
-        width: 270px;
-        // height: 54px;
+.number-card__two-columns {
+    width: 233px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-top: 22px;
+    align-items: flex-end;
+    .number-card__number, .number-card__price {
         display: flex;
-        justify-content: space-between;
+        align-items: flex-end;
+        p {
+            font-size: 14px;
+            line-height: 15px;
+        }
+        h2 { line-height: 15px }
+        h3 {
+            font-size: 12px;
+            line-height: 15px;
+        }
     }
-    &:nth-child(4) {
-        width: 270px;
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 19px;
+    .number-card__number {
+        p { margin-right: 6px }
+        h2 {
+            font-size: 19px;
+            line-height: 19px;
+            margin-right: 6px
+        }
+    }
+    .number-card__price {
+        h3, p {
+            color: rgba(31, 32, 65, 0.5);
+            line-height: 15px;
+        }
+        h3 {
+            font-size: 14px;
+            margin-right: 4px
+        }
+        p { font-size: 12px }
     }
 }
+
+.number-card__description {
+    background: white;
+    width: 270px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+}
+
+.number-card__element-1 {
+    width: 270px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.number-card__element-2 {
+    width: 270px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.number-card__element-3 { width: 270px }
+
+.number-card__element-4 {
+    width: 270px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 21px;
+}
+
 .number-card__table {
     p {
         font-size: 14px;
         line-height: 17px;
     }
     display: flex;
-    margin-top: 20px;
-    &:nth-child(1) { margin-left: 20px }
+    margin-top: 10px;
+    &:nth-child(1) { margin-left: 22px }
     &:nth-child(2) {
         margin-right: 20px;
         & h3, p {color: rgba(31, 32, 65, 0.5);line-height: 18px;}
@@ -47,12 +101,12 @@ $PATH: '../dist/images/';
         &:nth-child(3) {margin-left: 5px;}
     }
 }
+
 .number-card__line {
-    margin-top: 10px;
+    margin-top: 12px;
     margin-left: 20px;
     width:230px;
     height: 1px;
-    // background: rgba(31, 32, 65, 0.1);
     background: rgba(31, 32, 65, 0.1);
 }
 
@@ -70,16 +124,16 @@ $PATH: '../dist/images/';
                 p {visibility: visible}
             }
             .number-card__left {
+                border-top-left-radius: 4px;
                 background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
             }
-        
             .number-card__right {
+                border-top-right-radius: 4px;
                 background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
             }
         }
     }
 
-    
     .number-card__num-and-price {
         display: flex;
         justify-content: space-between;
@@ -161,9 +215,7 @@ $PATH: '../dist/images/';
 
     .number-card label, .number-card__input { cursor: pointer }
 
-    .number-card label {
-        margin-right: 20px;
-    }
+    .number-card label { margin-right: 20px }
 
     .number-card__input {
         z-index: 2;

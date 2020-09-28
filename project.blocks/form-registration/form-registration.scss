@@ -1,42 +1,50 @@
 .form-registration {
     &__element {
         &:nth-child(1){
-            display: flex;
-            justify-content: space-between;
-            margin-right: 30px;
-            margin-top: 4px;
-            margin-bottom: 23px;
-            .form-registration__table {
+            .form-registration__two-columns {
+                display: flex;
+                justify-content: space-between;
+                margin-right: 30px;
+                margin-top: 4px;
+                margin-bottom: 23px;
                 align-items: flex-end;
-                &:nth-child(1){
+                .form-registration__number, .form-registration__price {
+                    display: flex;
+                    align-items: flex-end;
+                    p {
+                        font-size: 14px;
+                        line-height: 17px;
+                    }
+                    h2 {
+                        line-height: 17px;
+                    }
+                    h3 {
+                        font-size: 12px;
+                        line-height: 15px;
+                    }
+                }
+                .form-registration__number {
+                    p {
+                        margin-right: 6px
+                    }
                     h2 {
                         font-size: 24px;
                         line-height: 24px;
+                        margin-right: 6px
                     }
                 }
-                &:nth-child(2){
+                .form-registration__price {
                     h3, p {
                         color: rgba(31, 32, 65, 0.5);
                         line-height: 14px;
                     }
                     h3 {
                         font-size: 14px;
+                        margin-right: 3px
                     }
                     p {
-                        margin-left: 4px;
                         font-size: 12px;
                     }
-                }
-                p {
-                    font-size: 14px;
-                    line-height: 17px;
-                }
-                h2 {
-                    line-height: 17px;
-                }
-                h3 {
-                    font-size: 12px;
-                    line-height: 15px;
                 }
             }
         }
@@ -77,6 +85,15 @@
                 }
             }
         }
+    }
+    &__two-columns {
+
+    }
+    &__number {
+
+    }
+    &__price {
+        
     }
     &__table {
         display: flex;
