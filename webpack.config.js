@@ -42,6 +42,10 @@ module.exports = {
         template: PATHS.pages + '/cards.pug',
         filename: 'cards.html'
     }),
+    new HtmlWebpackPlugin({
+        template: PATHS.pages + '/headers-and-footers.pug',
+        filename: 'headers-and-footers.html'
+    }),
     new MiniCssExtractPlugin({
         filename: '[name].css',
     }),

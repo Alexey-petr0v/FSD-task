@@ -1,0 +1,11 @@
+.header-nav {
+    background: white;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    &__nav {
+        height: 70px;
+        width: 70px;
+        background: black;
+    }
+}
