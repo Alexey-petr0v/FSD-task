@@ -7,21 +7,22 @@ include ../number-card/number-card
 
 
 .cards
-    .cards__column
-        .cards__element
-            +addFormRoomSearch()
-        .cards__element
-            +addFormReservation()
-    .cards__column
-        .cards__element
-            +addFormRegistration()
-        .cards__element
-            +addLogin()
-    .cards__column
-        .cards__element
-            .date
-                +addDateBottom
-        .cards__element
-            +addNumberCard(1, 5, 888, "9 990", 145, true)
-        .cards__element
-            +addNumberCard(2, 4, 840, "9 900", 65)
+    .cards__columns
+        .cards__column
+            .cards__element
+                +addFormRoomSearch()
+            .cards__element
+                +addFormReservation()
+        .cards__column
+            .cards__element
+                +addFormRegistration()
+            .cards__element
+                +addLogin()
+        .cards__column
+            .cards__element
+                .date
+                    +addDateBottom
+            .cards__element
+                +addNumberCard(1, 5, 888, "9 990", 145, true)
+            .cards__element
+                +addNumberCard(2, 4, 840, "9 900", 65)

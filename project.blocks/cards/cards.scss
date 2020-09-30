@@ -1,5 +1,8 @@
 .cards {
-    display: flex;
+    &__columns {
+        margin: 3px auto 0px auto ;
+        display: flex;
+    }
     &__column {
         margin-right: 40px;
         margin-top: 7px;
@@ -8,5 +11,37 @@
     }
     &__element {
         &:nth-child(n) {margin-bottom: 40px}
+    }
+}
+
+
+
+// Десктоп. Разрешение < 1991px
+@media (max-width: 1920px) {
+    .cards__columns {
+        flex-direction: row;
+        max-width: 1160px;
+    }
+    .cards__column:first-child {
+        margin-left: 0px;
+    }
+}
+
+// Планшеты. Разрешение < 993px
+@media (max-width: 992px) {
+    .cards__columns {
+        flex-direction: row;
+        max-width: 750px;
+    }
+}
+
+// Смартфоны. Разрешение < 768px
+@media (max-width: 767px) {
+    .cards__columns {
+        max-width: none;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-right: 0px;
+        flex-direction: column;
     }
 }
