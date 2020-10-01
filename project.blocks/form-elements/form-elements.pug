@@ -182,22 +182,26 @@ include ../bullet-list/bullet-list
                 +addRangeSlider
             .form-elements__element_22
                 h3 BUTTONS
-                .form-elements__td
-                    +addButton("CLICK ME", "id-but-1", "button__elem_opaque-background", "button__content_padding", "button__text_white")
-                .form-elements__td
-                    +addButton("CLICK ME", "id-but-2", "button__elem_transparent-background", "button__content_padding", "button__text_white")
+                .form-elements__cells
+                    .form-elements__td
+                        +addButton("CLICK ME", "id-but-1", "button__elem_opaque-background", "button__content_padding", "button__text_white")
+                    .form-elements__td
+                        +addButton("CLICK ME", "id-but-2", "button__elem_transparent-background", "button__content_padding", "button__text_white")
             .form-elements__element_23
-                .form-elements__td.form-elements__td_no-indent
-                    +addButton("CLICK ME", "id-but-3", "button__elem_opaque-border", "button__content_padding")
-                .form-elements__td.form-elements__td_no-indent
-                    +addButton("CLICK ME", "id-but-4", "button__elem_transparent-border", "button__content_padding")
+                .form-elements__cells
+                    .form-elements__td.form-elements__td_no-indent
+                        +addButton("CLICK ME", "id-but-3", "button__elem_opaque-border", "button__content_padding")
+                    .form-elements__td.form-elements__td_no-indent
+                        +addButton("CLICK ME", "id-but-4", "button__elem_transparent-border", "button__content_padding")
             .form-elements__element_24
-                .form-elements__td
-                    +addButton("CLICK ME", "id-but-5")
-                .form-elements__td
-                    +addButton("CLICK ME", "id-but-6", "", "", "button__text_grey")
+                .form-elements__cells
+                    .form-elements__td
+                        +addButton("CLICK ME", "id-but-5")
+                    .form-elements__td
+                        +addButton("CLICK ME", "id-but-6", "", "", "button__text_grey")
             .form-elements__element_25
-                    +addButton("перейти к оплате", "id-but-7", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white")
+                    .form-elements__td
+                        +addButton("перейти к оплате", "id-but-7", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white")
             .form-elements__element_26(id="element_24")
             .form-elements__element_27
                 h3 pagination

@@ -43,9 +43,34 @@
         &_21 {margin-bottom: 44px}
         &_22 {
             &>h3 {margin-bottom: 16px}
+            .form-elements__td {
+                height: 44px;
+                display: flex;
+            }
+            margin-bottom: 30px;
         }
-        &_23 {margin-bottom: 26px}
-        &_25 {margin-bottom: 40px}
+        &_23 {
+            margin-bottom: 16px;
+            .form-elements__td {
+                height: 44px;
+                display: flex;
+            }
+            margin-bottom: 16px;
+        }
+        &_24 {
+            .form-elements__td {
+                height: 44px;
+                display: flex;
+            }
+            margin-bottom: 16px;
+        }
+        &_25 {
+            margin-bottom: 40px;
+            .form-elements__td {
+                height: 44px;
+                display: flex;
+            }
+        }
         &_27 {
             &>h3 {margin-bottom: 16.44px}
             margin-bottom: 233px
@@ -55,10 +80,12 @@
             &>h3 {margin-bottom: 13px}
         }
     }
+    &__cells {
+        display: flex;
+    }
     &__td {
         display: inline-block;
-        margin-right: 16px;
-        margin-bottom: 30px;
+        margin-right: 20px;
         &:last-child { margin-right: 0px}
         &_no-indent {
             margin-bottom: 0px

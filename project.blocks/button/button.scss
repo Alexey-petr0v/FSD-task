@@ -2,6 +2,9 @@
     display: flex;
 
     &__elem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border-radius: 22px;
         .button__text {min-width: 59px}
         &_opaque-background {
@@ -15,31 +18,34 @@
         &_opaque-border {
             background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
             .button__content {
-                padding: 12px 17px 13px;
                 margin: 2px;
                 background: white;
+                min-width: 95px;
             }
         }
         &_transparent-border {
             background: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
             .button__content {
-                padding: 12px 17px 13px;
                 margin: 2px;
                 background: white;
+                min-width: 95px;
             }
         }
         &_big {
             background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
             .button__content {background: 289px 13px url("/images/arrow_forward_white.svg") no-repeat;
             }
-            .button__text {min-width: 280px}
+            .button__text {min-width: 320px}
         }
     }
 
     &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         text-decoration: none;
         cursor: pointer;
-        &_padding {padding: 14.5px 20px 14px; border-radius: 22px}
+        &_padding {height: calc(100% - 4px); min-width: 99px; border-radius: 22px}
     }
 
     &__text {
