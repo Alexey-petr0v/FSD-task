@@ -46,6 +46,10 @@ module.exports = {
         template: PATHS.pages + '/headers-and-footers.pug',
         filename: 'headers-and-footers.html'
     }),
+    new HtmlWebpackPlugin({
+        template: PATHS.pages + '/landing-page.pug',
+        filename: 'landing-page.html'
+    }),
     new MiniCssExtractPlugin({
         filename: '[name].css',
     }),

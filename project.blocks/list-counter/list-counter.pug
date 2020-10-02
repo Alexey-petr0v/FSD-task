@@ -18,5 +18,5 @@ mixin addListCounterBottom(items, name)
         input(name=name, type='hidden', value=val)
         +addItems(items)
         .list-counter__buttons
-            +addButton("очистить", "id-but-list-1", "", "list-counter__clear", "button__text_grey")
+            +addButton("очистить", "id-but-list-1", "", "list-counter__clear", "")
             +addButton("применить", "id-but-list-2", "", "list-counter__apply dropdown__apply", "")

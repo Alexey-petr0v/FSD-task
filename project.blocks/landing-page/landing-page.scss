@@ -1,0 +1,57 @@
+.landing-page {
+    background-image: url("/images/landing-page.png");
+    background-size: cover;
+    &__box {
+        height: 830px;
+        display: flex;
+        justify-content: space-between;
+        .landing-page__form {
+            margin-top: 70px;
+            margin-left: 140px;
+        }
+        .landing-page__text {
+            align-self: flex-end;
+            text-align: right;
+            margin-right: 134px;
+            margin-bottom: 20px;
+            max-width: 297px;
+        }
+    }
+}
+
+
+/*
+
+// Десктоп. Разрешение > 1550px
+@media (min-width: 1550px) {
+    .landing-page__text {
+        text-shadow: 1px 1px 2px black, 0 0 1em red;
+    }
+}
+
+// Десктоп. Разрешение < 1991px
+@media (max-width: 1920px) {
+    .landing-page {
+        min-width: 960px;
+        max-width: 1159px;
+    }
+}
+
+// Планшеты. Разрешение < 993px
+@media (max-width: 992px) {
+    .landing-page {
+        max-width: 750px;
+    }
+}
+
+// Смартфоны. Разрешение < 768px
+@media (max-width: 767px) {
+    .landing-page {
+        max-width: none;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-right: 0px;
+        flex-direction: column;
+    }
+}
+*/

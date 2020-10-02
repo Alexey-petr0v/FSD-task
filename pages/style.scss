@@ -29,7 +29,7 @@
 @import '../project.blocks/header-nav/header-nav.scss';
 @import '../project.blocks/headers-and-footers/headers-and-footers.scss';
 @import '../project.blocks/footer/footer.scss';
-
+@import '../project.blocks/landing-page/landing-page.scss';
 
 * {
     margin: 0;
@@ -47,9 +47,4 @@
     max-width: 1440px;
     min-width: 280px; //320px: margin-left= 20,
     margin: 0px auto;
-}
-
-.header-container {
-    max-width: 1440px;
-    min-width: 320px;
 }
