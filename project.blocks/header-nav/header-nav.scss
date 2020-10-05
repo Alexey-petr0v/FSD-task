@@ -1,3 +1,5 @@
+$PATH: '../dist/images/';
+
 .header-nav {
     background: white;
     &__box {
@@ -7,8 +9,10 @@
         max-width: 1160px;
         margin: 0px auto;
     }
-    &__logo img {
-        margin-top: 6px;
+    &__logo {
+        width: 106px;
+        height: 40px;
+        background: url($PATH+"logo.svg") no-repeat;
     }
     &__nav {
         height: 70px;

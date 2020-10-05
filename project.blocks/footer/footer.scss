@@ -1,5 +1,8 @@
+$PATH: '../dist/images/';
+
 .footer {
     background: white;
+    &__logo { align-self: center; margin-bottom: 17px }
     &_small {
         background: none;
         .footer__top-box {
@@ -59,6 +62,19 @@
         justify-content: space-between;
         a {
             margin-right: 22px;
-            &:last-child {margin-right: 0px} }
+            width: 24px;
+            height: 24px;
+            &:nth-child(1) {background: url($PATH+"twitter.svg") no-repeat}
+            &:nth-child(2) {background: url($PATH+"facebook.svg") no-repeat}
+            &:last-child {
+                background: url($PATH+"instagram.svg") no-repeat;
+                margin-right: 0px
+            }
+        }
+    }
+    &__logo {
+        width: 106px;
+        height: 40px;
+        background: url($PATH+"logo.svg") no-repeat;
     }
 }

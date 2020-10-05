@@ -1,5 +1,7 @@
+$PATH: '../dist/images/';
+
 .landing-page {
-    background: url("/images/landing-page.png");
+    background: url($PATH+"landing-page.png");
     background-size: cover;
     &__box {
         height: 830px;
@@ -25,7 +27,7 @@
 // Десктоп. Разрешение > 1550px
 @media (min-width: 1550px) {
     .landing-page {
-        background: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.3) ), url("/images/landing-page.png");
+        background: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.3) ), url($PATH+"landing-page.png");
         background-size: cover;
     }
     .landing-page__text {
