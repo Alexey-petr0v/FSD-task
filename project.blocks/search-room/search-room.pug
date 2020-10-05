@@ -1,0 +1,35 @@
+include ../number-card/number-card
+
+-
+    var attributes = [
+        {name: "date-1", title_1: "Даты пребывания в отеле", dropdown_elem_small: "dropdown__elem_small-top", dropdown_elem_no_border: "dropdown__elem_no-border"}
+    ]
+
+
+
+main.search-room
+    .main-container
+        .search-room__columns
+            .search-room__column
+                .search-room__filter
+                    .search-room__preference
+                        +addDropdown('Даты пребывания в отеле', attributes[0], {date: true})
+            .search-room__column
+                h1 Номера, которые мы для вас подобрали
+                .search-room__numbers
+                    .search-room__line
+                        +addNumberCard(1, 5, 888, "9 990", 145, true)
+                        +addNumberCard(2, 4, 840, "9 900", 65)
+                        +addNumberCard(1, 5, 888, "9 990", 145, true)
+                    .search-room__line
+                        +addNumberCard(1, 5, 888, "9 990", 145, true)
+                        +addNumberCard(2, 4, 840, "9 900", 65)
+                        +addNumberCard(1, 5, 888, "9 990", 145, true)
+                .search-room__paginator
+
+
+
+
+            
+            //- .form-elements__element_6
+            //-     +addDropdown('filter date dropdown', attributes[2], {date: true})

@@ -1,0 +1,21 @@
+.search-room {
+    &__columns {
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
+    }
+    &__column:nth-child(1) {
+        background: royalblue;
+        width: 266px;
+        margin-right: 60px;
+    }
+    &__column:nth-child(2) {
+        background: goldenrod;
+        margin-top: 4px;
+    }
+    &__line {
+        display: flex;
+        &> *:nth-child(1) {margin-right: 12px}
+        &> *:nth-child(2) {margin-right: 12px}
+    }
+}
