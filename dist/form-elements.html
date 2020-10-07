@@ -61,7 +61,7 @@
                                                   <div class="dropdown__bottom">
                                                               <div class="list-counter__bottom">
                                                                 <input name="list-1" type="hidden">
-                                                                          <div class="list-counter__item">
+                                                                          <div class="list-counter__item" data-name="adults">
                                                                             <h3>взрослые</h3>
                                                                             <div class="list-counter__minusAndPlus">
                                                                               <p class="list-counter__circle list-counter__minus">-</p>
@@ -69,7 +69,7 @@
                                                                               <p class="list-counter__circle list-counter__plus">+</p>
                                                                             </div>
                                                                           </div>
-                                                                          <div class="list-counter__item">
+                                                                          <div class="list-counter__item" data-name="children">
                                                                             <h3>дети</h3>
                                                                             <div class="list-counter__minusAndPlus">
                                                                               <p class="list-counter__circle list-counter__minus">-</p>
@@ -77,7 +77,7 @@
                                                                               <p class="list-counter__circle list-counter__plus">+</p>
                                                                             </div>
                                                                           </div>
-                                                                          <div class="list-counter__item">
+                                                                          <div class="list-counter__item" data-name="babies">
                                                                             <h3>младенцы</h3>
                                                                             <div class="list-counter__minusAndPlus">
                                                                               <p class="list-counter__circle list-counter__minus">-</p>
@@ -310,13 +310,13 @@
                                                 <div class="list-counter" data-type_units="separately">
                                                   <div class="dropdown__top">
                                                               <div class="list-counter__top">
-                                                                <p>Сколько гостей</p>
+                                                                <p>Удобства</p>
                                                               </div>
                                                   </div>
                                                   <div class="dropdown__bottom">
                                                               <div class="list-counter__bottom">
                                                                 <input name="list-2" type="hidden">
-                                                                          <div class="list-counter__item">
+                                                                          <div class="list-counter__item" data-name="bedrooms">
                                                                             <h3>спальни</h3>
                                                                             <div class="list-counter__minusAndPlus">
                                                                               <p class="list-counter__circle list-counter__minus">-</p>
@@ -324,7 +324,7 @@
                                                                               <p class="list-counter__circle list-counter__plus">+</p>
                                                                             </div>
                                                                           </div>
-                                                                          <div class="list-counter__item">
+                                                                          <div class="list-counter__item" data-name="the-beds">
                                                                             <h3>кровати</h3>
                                                                             <div class="list-counter__minusAndPlus">
                                                                               <p class="list-counter__circle list-counter__minus">-</p>
@@ -332,7 +332,7 @@
                                                                               <p class="list-counter__circle list-counter__plus">+</p>
                                                                             </div>
                                                                           </div>
-                                                                          <div class="list-counter__item">
+                                                                          <div class="list-counter__item" data-name="bathrooms">
                                                                             <h3>ванные комнаты</h3>
                                                                             <div class="list-counter__minusAndPlus">
                                                                               <p class="list-counter__circle list-counter__minus">-</p>
@@ -375,13 +375,13 @@
                                                 <div class="list-counter" data-type_units="separately">
                                                   <div class="dropdown__top">
                                                               <div class="list-counter__top">
-                                                                <p>Сколько гостей</p>
+                                                                <p>Удобства</p>
                                                               </div>
                                                   </div>
                                                   <div class="dropdown__bottom">
                                                               <div class="list-counter__bottom">
                                                                 <input name="list-3" type="hidden">
-                                                                          <div class="list-counter__item">
+                                                                          <div class="list-counter__item" data-name="bedrooms">
                                                                             <h3>спальни</h3>
                                                                             <div class="list-counter__minusAndPlus">
                                                                               <p class="list-counter__circle list-counter__minus">-</p>
@@ -389,7 +389,7 @@
                                                                               <p class="list-counter__circle list-counter__plus">+</p>
                                                                             </div>
                                                                           </div>
-                                                                          <div class="list-counter__item">
+                                                                          <div class="list-counter__item" data-name="the-beds">
                                                                             <h3>кровати</h3>
                                                                             <div class="list-counter__minusAndPlus">
                                                                               <p class="list-counter__circle list-counter__minus">-</p>
@@ -397,7 +397,7 @@
                                                                               <p class="list-counter__circle list-counter__plus">+</p>
                                                                             </div>
                                                                           </div>
-                                                                          <div class="list-counter__item">
+                                                                          <div class="list-counter__item" data-name="bathrooms">
                                                                             <h3>ванные комнаты</h3>
                                                                             <div class="list-counter__minusAndPlus">
                                                                               <p class="list-counter__circle list-counter__minus">-</p>
@@ -540,21 +540,23 @@
               <div class="form-elements__column_second">
                 <div class="form-elements__element_13">
                   <h3>CHECKBOX BUTTONS</h3>
-                            <div class="checkbox__item">
-                              <label>
-                                <input class="checkbox__input" name="mozhno_kurit" type="checkbox"><span>Можно курить</span>
-                              </label>
-                            </div>
-                            <div class="checkbox__item">
-                              <label>
-                                <input class="checkbox__input" name="mozhno_s_pitomcami" type="checkbox" checked><span>Можно с питомцами</span>
-                              </label>
-                            </div>
-                            <div class="checkbox__item">
-                              <label>
-                                <input class="checkbox__input" name="mozhno_priglasit_gostej" type="checkbox" checked><span>Можно пригласить гостей (до 10 человек)</span>
-                              </label>
-                            </div>
+                  <div class="checkbox">
+                              <div class="checkbox__item">
+                                <label>
+                                  <input class="checkbox__input" name="mozhno_kurit" type="checkbox"><span>Можно курить</span>
+                                </label>
+                              </div>
+                              <div class="checkbox__item">
+                                <label>
+                                  <input class="checkbox__input" name="mozhno_s_pitomcami" type="checkbox" checked><span>Можно с питомцами</span>
+                                </label>
+                              </div>
+                              <div class="checkbox__item">
+                                <label>
+                                  <input class="checkbox__input" name="mozhno_priglasit_gostej" type="checkbox" checked><span>Можно пригласить гостей (до 10 человек)</span>
+                                </label>
+                              </div>
+                  </div>
                 </div>
                 <div class="form-elements__element_14">
                   <h3>RADIO BUTTONS</h3>
@@ -567,29 +569,33 @@
                 </div>
                 <div class="form-elements__element_15">
                   <h3>TOGGLE</h3>
-                            <div class="checkbox__item checkbox__item_toggle">
-                              <label>
-                                <input class="checkbox__input" name="poluchat_specpredlozheniya" type="checkbox" checked><span>Получать спецпредложения</span>
-                              </label>
-                            </div>
-                            <div class="checkbox__item checkbox__item_toggle">
-                              <label>
-                                <input class="checkbox__input" name="poluchat_specpredlozheniya" type="checkbox"><span>Получать спецпредложения</span>
-                              </label>
-                            </div>
+                  <div class="checkbox">
+                              <div class="checkbox__item checkbox__item_toggle">
+                                <label>
+                                  <input class="checkbox__input" name="poluchat_specpredlozheniya" type="checkbox" checked><span>Получать спецпредложения</span>
+                                </label>
+                              </div>
+                              <div class="checkbox__item checkbox__item_toggle">
+                                <label>
+                                  <input class="checkbox__input" name="poluchat_specpredlozheniya" type="checkbox"><span>Получать спецпредложения</span>
+                                </label>
+                              </div>
+                  </div>
                 </div>
                 <div class="form-elements__element_16">
                   <h3>LIKE BUTTON</h3>
-                            <div class="checkbox__item checkbox__item_like">
-                              <label>
-                                <input class="checkbox__input" name="like_1" type="checkbox">
-                              </label>
-                            </div>
-                            <div class="checkbox__item checkbox__item_like">
-                              <label>
-                                <input class="checkbox__input" name="like_2" type="checkbox" checked>
-                              </label>
-                            </div>
+                  <div class="checkbox">
+                              <div class="checkbox__item checkbox__item_like">
+                                <label>
+                                  <input class="checkbox__input" name="like_1" type="checkbox">
+                                </label>
+                              </div>
+                              <div class="checkbox__item checkbox__item_like">
+                                <label>
+                                  <input class="checkbox__input" name="like_2" type="checkbox" checked>
+                                </label>
+                              </div>
+                  </div>
                 </div>
                 <div class="form-elements__element_17">
                   <h3>RATE BUTTON</h3>
@@ -628,7 +634,7 @@
                                                   <div class="dropdown__bottom">
                                                               <div class="list-counter__bottom">
                                                                 <input name="list-4" type="hidden">
-                                                                          <div class="list-counter__item">
+                                                                          <div class="list-counter__item" data-name="adults">
                                                                             <h3>взрослые</h3>
                                                                             <div class="list-counter__minusAndPlus">
                                                                               <p class="list-counter__circle list-counter__minus">-</p>
@@ -636,7 +642,7 @@
                                                                               <p class="list-counter__circle list-counter__plus">+</p>
                                                                             </div>
                                                                           </div>
-                                                                          <div class="list-counter__item">
+                                                                          <div class="list-counter__item" data-name="children">
                                                                             <h3>дети</h3>
                                                                             <div class="list-counter__minusAndPlus">
                                                                               <p class="list-counter__circle list-counter__minus">-</p>
@@ -644,7 +650,7 @@
                                                                               <p class="list-counter__circle list-counter__plus">+</p>
                                                                             </div>
                                                                           </div>
-                                                                          <div class="list-counter__item">
+                                                                          <div class="list-counter__item" data-name="babies">
                                                                             <h3>младенцы</h3>
                                                                             <div class="list-counter__minusAndPlus">
                                                                               <p class="list-counter__circle list-counter__minus">-</p>
@@ -679,24 +685,26 @@
                 </div>
                 <div class="form-elements__element_19">
                   <h3>RICH CHECKBOX BUTTONS</h3>
-                            <div class="checkbox__item">
-                              <label>
-                                <input class="checkbox__input" name="shirokij_koridor" type="checkbox">
-                                <div class="checkbox__rich">
-                                  <p><b><span>Широкий коридор</span><br></b></p>
-                                  <p><span>Ширина коридоров в номере не менее 91 см.</span></p>
-                                </div>
-                              </label>
-                            </div>
-                            <div class="checkbox__item">
-                              <label>
-                                <input class="checkbox__input" name="pomoshchnik_dlya_invalidov" type="checkbox">
-                                <div class="checkbox__rich">
-                                  <p><b><span>Помощник для инвалидов</span><br></b></p>
-                                  <p><span>На 1 этаже вас встретит специалист и проводит до номера.</span></p>
-                                </div>
-                              </label>
-                            </div>
+                  <div class="checkbox">
+                              <div class="checkbox__item">
+                                <label>
+                                  <input class="checkbox__input" name="shirokij_koridor" type="checkbox">
+                                  <div class="checkbox__rich">
+                                    <p><b><span>Широкий коридор</span><br></b></p>
+                                    <p><span>Ширина коридоров в номере не менее 91 см.</span></p>
+                                  </div>
+                                </label>
+                              </div>
+                              <div class="checkbox__item">
+                                <label>
+                                  <input class="checkbox__input" name="pomoshchnik_dlya_invalidov" type="checkbox">
+                                  <div class="checkbox__rich">
+                                    <p><b><span>Помощник для инвалидов</span><br></b></p>
+                                    <p><span>На 1 этаже вас встретит специалист и проводит до номера.</span></p>
+                                  </div>
+                                </label>
+                              </div>
+                  </div>
                 </div>
                 <div class="form-elements__element_20">
                             <div class="two-elements">
@@ -858,7 +866,7 @@
                                                   <div class="dropdown__bottom">
                                                               <div class="list-counter__bottom">
                                                                 <input name="list-5" type="hidden">
-                                                                          <div class="list-counter__item">
+                                                                          <div class="list-counter__item" data-name="adults">
                                                                             <h3>взрослые</h3>
                                                                             <div class="list-counter__minusAndPlus">
                                                                               <p class="list-counter__circle list-counter__minus">-</p>
@@ -866,7 +874,7 @@
                                                                               <p class="list-counter__circle list-counter__plus">+</p>
                                                                             </div>
                                                                           </div>
-                                                                          <div class="list-counter__item">
+                                                                          <div class="list-counter__item" data-name="children">
                                                                             <h3>дети</h3>
                                                                             <div class="list-counter__minusAndPlus">
                                                                               <p class="list-counter__circle list-counter__minus">-</p>
@@ -874,7 +882,7 @@
                                                                               <p class="list-counter__circle list-counter__plus">+</p>
                                                                             </div>
                                                                           </div>
-                                                                          <div class="list-counter__item">
+                                                                          <div class="list-counter__item" data-name="babies">
                                                                             <h3>младенцы</h3>
                                                                             <div class="list-counter__minusAndPlus">
                                                                               <p class="list-counter__circle list-counter__minus">-</p>

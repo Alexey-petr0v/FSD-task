@@ -5,14 +5,14 @@ include ../button/button
 -
     var attributes = [
         {name: "date-1", title_1: "прибытие", title_2: "выезд", date_two_fields: "date_two-fields", dropdown_elem_no_border: "dropdown__elem_no-border", dropdown_elem_small: false},
-        {name: "list-1", type_units: "together", dropdown_elem_small: false},
+        {name: "list-1", input_title: "Сколько гостей", type_units: "together", dropdown_elem_small: false},
     ]
 
 -
     var list_people = [
-        {title: "взрослые", value : "0"},
-        {title: "дети", value : "0"},
-        {title: "младенцы", value : "0"}
+        {title: "взрослые", value : "0", name: "adults" },
+        {title: "дети", value : "0", name: "children" },
+        {title: "младенцы", value : "0", name: "babies" }
     ]
 - var attributes_0 = attributes[0]
 - var attributes_1 = attributes[1]

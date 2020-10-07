@@ -138,12 +138,21 @@ function totalAmount(This) {
     }
     else if ($(block).data("type_units") == "separately"){
         $('.list-counter[id="'+ID+'"] .list-counter__top > p').text(function() {
-            let value_1 = $(block).find(".list-counter__item").eq(0).find(".list-counter__minusAndPlus").children("h3").text();
-            let value_2 = $(block).find(".list-counter__item").eq(1).find(".list-counter__minusAndPlus").children("h3").text();
-
-            let units_1 = generateUnits(value_1, "bedrooms");
-            let units_2 = generateUnits(value_2, "the-beds");
-            return value_1 + units_1 + ", "+value_2 + units_2+"...";
+            let result = "";
+            let i = 0;
+            $(block).find(".list-counter__item").map(function() {
+                let value = parseInt($(this).find(".list-counter__minusAndPlus").children("h3").text());
+                if ((value > 0)&&(i < 2)) {
+                    if (i != 0) { result += ", " }
+                    let name = $(this).data("name");
+                    let unit = generateUnits(value, name);
+                    result += value + unit;
+                    i++
+                }
+            })
+            if (result === "") { result = "Удобства" }
+            console.log(result)
+            return result
         })
     }
 }
@@ -170,14 +179,22 @@ function totalAmountNum(ID, clear) {
 // Функция вывода слов: "гость", "гостя" и "гостей"
 function generateUnits(totalAmount, name_units) {
     let variant_1, variant_2, variant_3;
+
+    // ПЕРЕМЕСТИТЬ variant_1,2,3 в data-атрибуты
     if (name_units == "the-guests") {
         variant_1 = " гость"; variant_2 = " гостя"; variant_3 = " гостей";
     }
-    else if (name_units == "bedrooms"){
+    else if (name_units == "babies") {
+        variant_1 = " младенец"; variant_2 = " младенца"; variant_3 = " младенцев";
+    }
+    else if (name_units == "bedrooms") {
         variant_1 = " спальня"; variant_2 = " спальни"; variant_3 = " спален";
     }
-    else {
+    else if (name_units == "the-beds") {
         variant_1 = " кровать"; variant_2 = " кровати"; variant_3 = " кроватей";
+    }
+    else if (name_units == "bathrooms") {
+        variant_1 = " ванная"; variant_2 = " ванные"; variant_3 = " ванных";
     }
 
     let units, lastDigits = totalAmount - (Math.trunc((totalAmount/100)) * 100);

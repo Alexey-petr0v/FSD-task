@@ -10,29 +10,29 @@ include ../bullet-list/bullet-list
 
 -
     var attributes = [
-        {name: "list-1", type_units: "together"},
+        {name: "list-1", input_title: "Сколько гостей", type_units: "together"},
         {name: "date-1", title_1: "date Dropdown", title_2: "date Dropdown", date_two_fields: "date_two-fields", dropdown_elem_no_border: "dropdown__elem_no-border",
         dropdown_top_no_arrow: "dropdown__top_no_arrow"},
         {name: "date-2", title_1: "filter date dropdown", dropdown_elem_small: "dropdown__elem_small-top", dropdown_elem_no_border: "dropdown__elem_no-border"},
-        {name: "list-2", dropdown_elem_small: "dropdown__elem_small", type_units: "separately"},
-        {name: "list-3", dropdown_elem_small: "dropdown__elem_small", type_units: "separately"},
+        {name: "list-2", input_title: "Удобства", dropdown_elem_small: "dropdown__elem_small", type_units: "separately"},
+        {name: "list-3", input_title: "Удобства", dropdown_elem_small: "dropdown__elem_small", type_units: "separately"},
         {dropdown_elem_small: "dropdown__elem_small", dropdown_elem_no_border: "dropdown__elem_no-border", dropdown_elem_no_absolute: "dropdown__elem_no-absolute", dropdown_elem_toggle_arrow: "dropdown__elem_toggle_arrow"},
-        {name: "list-4", type_units: "together"},
-        {name: "list-5", type_units: "together"}
+        {name: "list-4", input_title: "Сколько гостей", type_units: "together"},
+        {name: "list-5", input_title: "Сколько гостей", type_units: "together"}
     ]
 
 -
     var list_people = [
-        {title: "взрослые", value : "0"},
-        {title: "дети", value : "0"},
-        {title: "младенцы", value : "0"}
+        {title: "взрослые", value : "0", name: "adults" },
+        {title: "дети", value : "0", name: "children" },
+        {title: "младенцы", value : "0", name: "babies" }
     ]
 
 -
     var list_furniture = [
-        {title: "спальни", value : "0"},
-        {title: "кровати", value : "0"},
-        {title: "ванные комнаты", value : "0"}
+        {title: "спальни", value: "0", name: "bedrooms" },
+        {title: "кровати", value: "0", name: "the-beds" },
+        {title: "ванные комнаты", value: "0", name: "bathrooms" }
     ]
 
 -
@@ -153,16 +153,19 @@ include ../bullet-list/bullet-list
         .form-elements__column_second
             .form-elements__element_13
                 h3 CHECKBOX BUTTONS
-                +addCheckbox(checkbox_buttons)
+                .checkbox
+                    +addCheckbox(checkbox_buttons)
             .form-elements__element_14
                 h3 RADIO BUTTONS
                 +addRadio(radio_buttons, 1)
             .form-elements__element_15
                 h3 TOGGLE
-                +addCheckbox(toggle_buttons)
+                .checkbox
+                    +addCheckbox(toggle_buttons)
             .form-elements__element_16
                 h3 LIKE BUTTON
-                +addCheckbox(like_buttons)
+                .checkbox
+                    +addCheckbox(like_buttons)
             .form-elements__element_17
                 h3 RATE BUTTON
                 .form-elements__td
@@ -173,13 +176,14 @@ include ../bullet-list/bullet-list
                 +addDropdown('Dropdown', attributes[6], {list: true}, list_people)
             .form-elements__element_19
                 h3 RICH CHECKBOX BUTTONS
-                +addCheckbox(rich_checkbox_buttons)
+                .checkbox
+                    +addCheckbox(rich_checkbox_buttons)
             .form-elements__element_20
                 +addTwoElements({image_and_text: true}, {image_and_text : true}, otziv_part1)
                 +addTwoElements({but_and_text: true}, {but_and_text : true}, otziv_part2, like_button)
         .form-elements__column_third
             .form-elements__element_21
-                +addRangeSlider
+                +addRangeSlider("RANGE SLIDER")
             .form-elements__element_22
                 h3 BUTTONS
                 .form-elements__cells

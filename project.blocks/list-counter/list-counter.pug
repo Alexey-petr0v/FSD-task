@@ -2,16 +2,16 @@ include ../button/button
 
 mixin addItems(items)
     - for (var x = 0; x < items.length; x++)
-        .list-counter__item
+        .list-counter__item(data-name=items[x].name)
             h3= items[x].title
             .list-counter__minusAndPlus
                 p.list-counter__circle.list-counter__minus -
                 h3= items[x].value
                 p.list-counter__circle.list-counter__plus +
 
-mixin addListCounterTop
+mixin addListCounterTop(title)
     .list-counter__top
-        p= 'Сколько гостей'
+        p= title
 
 mixin addListCounterBottom(items, name)
     .list-counter__bottom

@@ -20,7 +20,7 @@ mixin addDropdown(title, attrib, dropdownType, additionalContent, check_status)
                         .dropdown__elem(class=dropdown_elem_mod)
                             .list-counter(data-type_units=attrib.type_units)
                                 .dropdown__top
-                                    +addListCounterTop
+                                    +addListCounterTop(attrib.input_title)
                                 .dropdown__bottom
                                     +addListCounterBottom(additionalContent, attrib.name)
             else if dropdownType.date

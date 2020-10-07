@@ -135,22 +135,25 @@
             }
         }
     }
-}
 
-.checkbox__rich {
-    display: inline-block;
-    max-width: 223px;
-    margin-bottom: 3px;
-}
-.checkbox__rich p > span {
-    font-size: 12px;
-    line-height: 14px;
-}
-.checkbox__rich p > b > span {
-    font-size: 14px;
-    line-height: 18px;
-}
-.checkbox__rich p {
-    margin-bottom: 5px;
-    &:last-child {margin-bottom: 0px}
+    .checkbox__rich {
+        display: inline-block;
+        max-width: 223px;
+        margin-bottom: 9px;
+    }
+    .checkbox__rich p > span {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .checkbox__rich p > b > span {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .checkbox__rich p {
+        line-height: 14px;
+        &:first-child {
+            margin-top: 1px;
+            margin-bottom: 6px
+        }
+    }
 }
