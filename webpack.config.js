@@ -54,6 +54,10 @@ module.exports = {
         template: PATHS.pages + '/search-room.pug',
         filename: 'search-room.html'
     }),
+    new HtmlWebpackPlugin({
+        template: PATHS.pages + '/room-details.pug',
+        filename: 'room-details.html'
+    }),
     new MiniCssExtractPlugin({
         filename: '[name].css',
     }),

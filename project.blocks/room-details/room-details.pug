@@ -1,0 +1,40 @@
+
+include ../two-elements/two-elements
+
+-
+    var advantages = [
+        {image: "./images/insert_emoticon.svg", title: "Комфорт", text: "Шумопоглощающие стены", line: true},
+        {image: "./images/location_city.svg", title: "Удобство", text: "Окно в каждой из спален", line: true},
+        {image: "./images/whatshot.svg", title: "Уют", text: "Номер оснащён камином", line: false}
+    ]
+
+main.room-details
+    .main-container
+        .room-details__images
+            .room-details__img-col
+                img(src="./images/room-details__image_1-1.png")
+            .room-details__img-col
+                img(src="./images/room-details__image_1-2.png")
+                img(src="./images/room-details__image_1-3.png")
+        .room-details__box
+            .room-details__column
+                .room-details__element
+                    h2 Сведения о номере
+                    +addTwoElements({image_and_text: true}, {image_and_text : true}, advantages)
+                .room-details__element
+            .room-details__column
+                h2 Впечатления от номера
+                .room-details__vote
+                    .room-details__ellipse-border
+                        <svg viewBox="-62 -62 124 124" width="120" height="120" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <!--
+                            <path d="M60,0 A60,60 0 0,0 0,60" fill="none" stroke="orange" stroke-width="4"/>
+                            <path d="M60,0 A60,60 0 0,0 0,-60" fill="none" stroke="purple" stroke-width="4"/>
+                            <path d="M60,120 A60,60 0 0,0 120,60" fill="none" stroke="green" stroke-width="4"/>-->
+                            <!--360гр == 100% 3,6гр == 1% -->
+                        </svg>
+                        .room-details__ellipse-background
+                            h1 260
+                            h3 голосов 
+
+

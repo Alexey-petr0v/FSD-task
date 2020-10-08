@@ -1,0 +1,54 @@
+$PATH: '../dist/images/';
+
+.room-details__images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.room-details__img-col {
+    display: flex;
+    flex-wrap: wrap;
+    &:first-child {
+        width: 68.125%;
+    }
+    &:last-child {
+        width: 31.875%;
+    }
+}
+
+
+// Смартфоны. Разрешение < 768px
+@media (max-width: 767px) {
+    .room-details__img-col {
+        &:first-child {
+            width: 100%;
+        }
+        &:last-child {
+            width: 100%;
+            display: flex;
+            img { width: 50%; }
+        }
+    }
+}
+
+.room-details__box {
+    margin-top: 70px;
+    margin-left: 140px;
+    .room-details__column {
+
+    }
+    .room-details__element {
+
+    }
+    .room-details__ellipse-border {
+        width: 120px;
+        height: 120px;
+        background: grey;
+        svg {
+            position: absolute;
+        }
+        .room-details__ellipse-background {
+            position: absolute;
+        }
+    }
+}
