@@ -1,0 +1,9 @@
+$PATH: '../dist/images/';
+
+.room-details {
+    background: url($PATH+"reg-and-log.png");
+    background-size: cover;
+    &__box {
+        height: 830px;
+    }
+}

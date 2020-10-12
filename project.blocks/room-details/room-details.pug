@@ -1,11 +1,50 @@
 
 include ../two-elements/two-elements
+include ../bullet-list/bullet-list
+include ../form-registration/form-registration
 
 -
     var advantages = [
         {image: "./images/insert_emoticon.svg", title: "Комфорт", text: "Шумопоглощающие стены", line: true},
         {image: "./images/location_city.svg", title: "Удобство", text: "Окно в каждой из спален", line: true},
         {image: "./images/whatshot.svg", title: "Уют", text: "Номер оснащён камином", line: false}
+    ]
+
+-
+    var like1_button = [
+        {name: "like_1", value : true, like: true}
+    ]
+
+-
+    var like2_button = [
+        {name: "like_2", value : false, like: true}
+    ]
+
+-
+    var otziv1_part1 = [
+        {image: "./images/murat_sarafanov.png", title: "Мурад Сарафанов", text: "5 дней назад"}
+    ]
+
+-
+    var otziv1_part2 = [
+        {text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."}
+    ]
+
+-
+    var otziv2_part1 = [
+        {image: "./images/patrisiya_stektishkova.png", title: "Патрисия Стёклышкова", text: "Неделю назад"}
+    ]
+
+-
+    var otziv2_part2 = [
+        {text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"}
+    ]
+
+-
+    var bullet_list = [
+        {text: "Нельзя с питомцами"},
+        {text: "Без вечеринок и мероприятий"},
+        {text: "Время прибытия — после 13:00, а выезд до 12:00"}
     ]
 
 main.room-details
@@ -17,24 +56,39 @@ main.room-details
                 img(src="./images/room-details__image_1-2.png")
                 img(src="./images/room-details__image_1-3.png")
         .room-details__box
-            .room-details__column
-                .room-details__element
-                    h2 Сведения о номере
-                    +addTwoElements({image_and_text: true}, {image_and_text : true}, advantages)
-                .room-details__element
-            .room-details__column
-                h2 Впечатления от номера
-                .room-details__vote
-                    .room-details__ellipse-border
-                        <svg viewBox="-62 -62 124 124" width="120" height="120" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                            <!--
-                            <path d="M60,0 A60,60 0 0,0 0,60" fill="none" stroke="orange" stroke-width="4"/>
-                            <path d="M60,0 A60,60 0 0,0 0,-60" fill="none" stroke="purple" stroke-width="4"/>
-                            <path d="M60,120 A60,60 0 0,0 120,60" fill="none" stroke="green" stroke-width="4"/>-->
-                            <!--360гр == 100% 3,6гр == 1% -->
-                        </svg>
-                        .room-details__ellipse-background
-                            h1 260
-                            h3 голосов 
-
-
+            .room-details__columns
+                .room-details__column
+                    .room-details__element
+                        h2 Сведения о номере
+                        +addTwoElements({image_and_text: true}, {image_and_text : true}, advantages)
+                    .room-details__element
+                        h2 Впечатления от номера
+                        .room-details__vote
+                            .room-details__ellipse-border
+                                .room-details__ellipse-background
+                                    h1 260
+                                    h3 голосов 
+                            ul.room-details__list
+                                li Великолепно
+                                li Хорошо
+                                li Удовлетворительно
+                                li Разочарован
+                    .room-details__element
+                        .room-details__columns
+                            .room-details__column
+                                h2 Отзывы посетителей номера
+                            .room-details__column
+                                p 2 отзыва
+                        +addTwoElements({image_and_text: true}, {image_and_text : true}, otziv1_part1)
+                        +addTwoElements({but_and_text: true}, {but_and_text : true}, otziv1_part2, like1_button)
+                    .room-details__element
+                        +addTwoElements({image_and_text: true}, {image_and_text : true}, otziv2_part1)
+                        +addTwoElements({but_and_text: true}, {but_and_text : true}, otziv2_part2, like2_button)
+                    .room-details__element
+                        h2 Правила
+                        +addBulletList(bullet_list)
+                    .room-details__element
+                        h2 Отмена
+                        p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                .room-details__column
+                    +addFormRegistration()

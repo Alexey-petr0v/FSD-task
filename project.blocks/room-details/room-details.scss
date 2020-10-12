@@ -1,5 +1,14 @@
 $PATH: '../dist/images/';
 
+
+
+
+
+.room-details {
+    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+}
+
+
 .room-details__images {
     display: flex;
     flex-wrap: wrap;
@@ -17,8 +26,146 @@ $PATH: '../dist/images/';
 }
 
 
+.room-details__vote {
+    display: flex;
+    align-items: flex-end;
+    ul {
+        list-style:none;
+        padding: 0;
+        margin:0px;
+    }
+    li {
+        font-size:16px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+        &:nth-child(n) {
+            &:before {
+                content: '';
+                display: inline-block;
+                height:10px;
+                width: 10px;
+                vertical-align: middle;
+                border-radius:50%;
+                margin-right:5px;
+            }
+        }
+        &:nth-child(1) { &:before { background: linear-gradient(#FFE39C, #FFBA9C) } }
+        &:nth-child(2) { &:before { background: linear-gradient(#66D2EA, #6FCF97) } }
+        &:nth-child(3) { &:before { background: linear-gradient(#BC9CFF, #8BA4F9) } }
+        &:nth-child(4) { &:before { background: linear-gradient(#919191, #3D4975) } }
+    }
+}
+
+
+.room-details__box {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+
+    .room-details__columns {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .room-details__column {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 711px;
+        &:first-child {margin-right: 70px;}
+    }
+    .room-details__element {
+        &:nth-child(1) {
+            h2 {margin-bottom: 20px}
+            margin-right: 81px;
+            margin-bottom: 20px;
+        }
+        &:nth-child(2) {
+            h2 {margin-bottom: 21px}
+            margin-bottom: 20px;
+        }
+        &:nth-child(3) {
+            h2 {margin-bottom: 19px}
+            max-width: 711px;
+            margin-bottom: 16px;
+        }
+        &:nth-child(4) {
+            max-width: 711px;
+            margin-bottom: 27px;
+        }
+        &:nth-child(5) {
+            h2 {margin-bottom: 16px; margin-left: 20px}
+            margin-right: 69px;
+        }
+        &:nth-child(6) {
+            h2 {margin-bottom: 16px}
+            max-width: 341px;
+            margin-bottom: 92px
+        }
+    }
+    .room-details__ellipse-border {
+        margin-right: 30px;
+        width: 120px;
+        height: 120px;
+        svg {
+            position: absolute;
+        }
+        .room-details__ellipse-background {
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            margin-top: 33px;
+            h1, h3 { color: #BC9CFF }
+        }
+
+        
+        #path_1_1 { stroke: url(#Gradient_1_1); }
+        #Gradient_1_1 .stop1 { stop-color: #66D2EA; }
+        #Gradient_1_1 .stop2 { stop-color: #6FCF97; }
+
+        #path_1_2 { stroke: url(#Gradient_1_2); }
+        #Gradient_1_2 .stop1 { stop-color: #6FCF97; }
+        #Gradient_1_2 .stop2 { stop-color: #6FCF97; }
+        
+        #path_2_1 { stroke: url(#Gradient_2_1); }
+        #Gradient_2_1 .stop1 { stop-color: #8BA4F9; }
+        #Gradient_2_1 .stop2 { stop-color: #BC9CFF; }
+
+        #path_2_2 { stroke: url(#Gradient_2_2); }
+        #Gradient_2_2 .stop1 { stop-color: #8BA4F9; }
+        #Gradient_2_2 .stop2 { stop-color: #BC9CFF; }
+        
+        #path_3_1 { stroke: url(#Gradient_3_1); }
+        #Gradient_3_1 .stop1 { stop-color: #FFE39C; }
+        #Gradient_3_1 .stop2 { stop-color: #FFE39C; }
+
+        #path_3_2 { stroke: url(#Gradient_3_2); }
+        #Gradient_3_2 .stop1 { stop-color: #FFBA9C; }
+        #Gradient_3_2 .stop2 { stop-color: #FFE39C; }
+    }
+}
+
+
+
 // Смартфоны. Разрешение < 768px
 @media (max-width: 767px) {
+    .room-details__box .room-details__element:nth-child(1) {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .room-details__box .room-details__element:nth-child(3) {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .room-details__box .room-details__element:nth-child(4) {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
     .room-details__img-col {
         &:first-child {
             width: 100%;
@@ -31,24 +178,27 @@ $PATH: '../dist/images/';
     }
 }
 
-.room-details__box {
-    margin-top: 70px;
-    margin-left: 140px;
-    .room-details__column {
-
+// Смартфоны. Разрешение < 1162px
+@media (max-width: 1161px) {
+    .room-details__element:nth-child(3) {
+        margin-left: 20px;
+        margin-right: 20px;
     }
-    .room-details__element {
-
+    .room-details__box .room-details__column:first-child {
+        justify-content: center;
+        margin-right: 0px;
     }
-    .room-details__ellipse-border {
-        width: 120px;
-        height: 120px;
-        background: grey;
-        svg {
-            position: absolute;
-        }
-        .room-details__ellipse-background {
-            position: absolute;
+    .room-details__box .room-details__column:last-child {
+        margin-bottom: 20px;
+    }
+    .room-details__box .room-details__columns {
+        justify-content: center;
+    }
+    .room-details__element:nth-child(3) {
+        .room-details__columns {
+            .room-details__column:first-child {
+                margin-right: 20px;
+            }
         }
     }
 }
