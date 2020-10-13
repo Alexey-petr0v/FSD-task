@@ -1,14 +1,13 @@
 $PATH: '../dist/images/';
 
-.registration {
+.sign-in {
     background: url($PATH+"reg-and-log.png");
     background-size: cover;
 }
 
-.registration__box {
+.sign-in__box {
     display: flex;
     justify-content: center;
-    margin-top: 19px;
-    margin-left: 6px;
-    margin-bottom: 19px;
+    margin-top: 172px;
+    margin-bottom: 172px;
 }

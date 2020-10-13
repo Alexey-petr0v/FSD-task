@@ -16,6 +16,10 @@
             justify-content: space-between;
             padding-right: 30px;
             margin-bottom: 2px;
+            height: 44px;
+            .form-login__column {
+                display: flex;
+            }
         }
     }
     &__column {
