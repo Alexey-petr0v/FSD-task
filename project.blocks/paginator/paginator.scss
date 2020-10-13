@@ -1,3 +1,5 @@
+$PATH: '../dist/images/';
+
 .paginator__items {
     display: flex;
     width: 321px;
@@ -52,11 +54,7 @@
 .paginator__button p { 
     width: 100%;
     height: 100%;
-    background: 50% 50% url("/images/arrow_forward_white.svg") no-repeat;
-}
-
-.paginator__button_left p { 
-    background: 50% 50% url("/images/arrow_forward_white_left.svg") no-repeat;
+    background: 50% 50% url($PATH+"arrow_forward_white.svg") no-repeat;
 }
 
 .paginator__text p {

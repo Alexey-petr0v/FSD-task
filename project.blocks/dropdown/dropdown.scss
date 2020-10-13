@@ -1,5 +1,7 @@
 /* DROPDOWN */
 
+$PATH: '../dist/images/';
+
 .dropdown {
     /* Запрет выделения текста */
     -webkit-touch-callout: none; /* iOS Safari */
@@ -58,7 +60,7 @@
         .dropdown__top {
             width: 318px;
             &:not(.dropdown__top_no_arrow) {
-                background: url("/images/expand_more.svg") calc(100% - 16px) 50% no-repeat
+                background: url($PATH+"expand_more.svg") calc(100% - 16px) 50% no-repeat
             }
         }
         .dropdown__bottom {
@@ -71,7 +73,7 @@
             .dropdown__top {
                 width: 264px;
                 &:not(.dropdown__top_no_arrow) {
-                    background: url("/images/expand_more.svg") calc(100% - 16px) 50% no-repeat
+                    background: url($PATH+"expand_more.svg") calc(100% - 16px) 50% no-repeat
                 }
             }
             .dropdown__bottom {
@@ -82,7 +84,7 @@
             .dropdown__top {
                 width: 262px;
                 &:not(.dropdown__top_no_arrow) {
-                    background: url("/images/expand_more.svg") calc(100% - 13px) 50% no-repeat
+                    background: url($PATH+"expand_more.svg") calc(100% - 13px) 50% no-repeat
                 }
             }
         }

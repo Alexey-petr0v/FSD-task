@@ -1,5 +1,4 @@
-.date__items {
-}
+$PATH: '../dist/images/';
 
 .date__paginator { 
     /* Запрет выделения текста */
@@ -52,11 +51,11 @@
 }
 
 .date__button_left p { 
-    background: 50% 50% url("/images/arrow_back.svg") no-repeat;
+    background: 50% 50% url($PATH+"arrow_back.svg") no-repeat;
 }
 
 .date__button_right p { 
-    background: 50% 50% url("/images/arrow_forward.svg") no-repeat;
+    background: 50% 50% url($PATH+"arrow_forward.svg") no-repeat;
 }
 
 .date__text p {
@@ -101,7 +100,7 @@
         width: 150px;
         padding-left: 14px;
         margin-right: 20px;
-        background: url("/images/expand_more.svg") calc(100% - 16px) 50% no-repeat #ffffff;
+        background: url($PATH+"expand_more.svg") calc(100% - 16px) 50% no-repeat #ffffff;
         &:last-child{margin-right: 0px;}
     }
 
