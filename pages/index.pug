@@ -1,7 +1,7 @@
-doctype
-html(lang='en')
-    head
-        meta(charset='utf-8')
-        title Landing Page
-    body
-        
+extends /layouts/pages
+
+block title
+    title= "Landing page"
+
+block content
+    include ../project.blocks/landing-page/landing-page
