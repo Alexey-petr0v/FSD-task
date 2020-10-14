@@ -1,4 +1,4 @@
-$PATH: '../dist/images/';
+$PATH: '../docs/images/';
 
 .landing-page {
     &_background-1 { background: url($PATH+"landing-page-1.png") }
@@ -26,7 +26,7 @@ $PATH: '../dist/images/';
 
 
 // Десктоп. Разрешение > 1550px
-@media (min-width: 1550px) {
+@media (min-width: 1441px) {
     .landing-page {
         &_background-1 { background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.3)), url($PATH+"landing-page-1.png"); background-size: cover; }
         &_background-2 { background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.3)), url($PATH+"landing-page-2.png"); background-size: cover; }

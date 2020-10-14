@@ -7,7 +7,7 @@ const $ = require("jquery");
 
 const PATHS = {
     pages: path.resolve(__dirname, "pages"),
-    dist: path.resolve(__dirname, "dist"),
+    docs: path.resolve(__dirname, "docs"),
     projBlocks: path.resolve(__dirname, "project.blocks"),
     libBlocks: path.resolve(__dirname, "library.blocks"),
 }
@@ -18,7 +18,7 @@ module.exports = {
   },
   output: {
     filename: "[name].js",
-    path: PATHS.dist,
+    path: PATHS.docs,
   },
   plugins: [
     new webpack.ProvidePlugin({
@@ -161,6 +161,6 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: path.resolve(__dirname, PATHS.dist)
+    contentBase: path.resolve(__dirname, PATHS.docs)
   }
 }
