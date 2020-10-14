@@ -1,7 +1,12 @@
 $PATH: '../dist/images/';
 
+html {
+    --element-height: brown;
+}
 .landing-page {
-    background: url($PATH+"landing-page.png");
+    &_background-1 { background: url($PATH+"landing-page-1.png") }
+    &_background-2 { background: url($PATH+"landing-page-2.png") }
+    &_background-3 { background: url($PATH+"landing-page-3.png") }
     background-size: cover;
     &__box {
         height: 830px;
@@ -27,7 +32,7 @@ $PATH: '../dist/images/';
 // Десктоп. Разрешение > 1550px
 @media (min-width: 1550px) {
     .landing-page {
-        background: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.3) ), url($PATH+"landing-page.png");
+        background-color: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.3) );
         background-size: cover;
     }
     .landing-page__text {

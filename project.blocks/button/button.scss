@@ -1,3 +1,5 @@
+$PATH: '../dist/images/';
+
 .button {
     display: flex;
 
@@ -33,7 +35,7 @@
         }
         &_big {
             background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-            .button__content {background: 289px 13px url("/images/arrow_forward_white.svg") no-repeat;
+            .button__content {background: 289px 13px url($PATH+"arrow_forward_white.svg") no-repeat;
             }
             .button__text {min-width: 320px}
         }
