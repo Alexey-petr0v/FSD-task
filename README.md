@@ -1,6 +1,6 @@
 # FSD-task
 ## Pages
-**Website pages(bold)**
+**Website pages**
 - Landing page
     - https://alexey-petr0v.github.io/FSD-task/
 - Search room
@@ -11,7 +11,8 @@
     - https://alexey-petr0v.github.io/FSD-task/registration.html
 - Sign in
     - https://alexey-petr0v.github.io/FSD-task/sign-in.html
-**Ui kit(bold)**
+
+**Ui kit**
 - Colors & Type
     - https://alexey-petr0v.github.io/FSD-task/colors-and-type.html
 - Form Elements
