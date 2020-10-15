@@ -1,14 +1,14 @@
 $PATH: '../docs/images/';
 
 .registration {
-    background: url($PATH+"reg-and-log.png");
+    background: url($PATH+"reg.png");
     background-size: cover;
 }
 
 .registration__box {
     display: flex;
     justify-content: center;
-    margin-top: 19px;
+    margin-top: 89px;
     margin-left: 6px;
     margin-bottom: 19px;
 }

@@ -97,7 +97,6 @@
     display: -webkit-flex; 
     display: flex; 
     flex-direction: row;
-    // overflow: auto;
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 3px;
@@ -105,27 +104,54 @@
 
 .form-elements__column_first {
     min-width: 320px;
-    margin-right: 119px;
+    margin-right: 127px;
 }
 
 .form-elements__column_second {
     min-width: 320px;
-    margin-right: 64px;
-    /* пример будущего расположения */
+    margin-right: 73px;
     &> div:last-child {
         position: absolute;
         max-width: 711px;
-        /**/
         &.field .field__input{max-width: 711px}
     }
 }
 
 .form-elements__column_third {
-    display: -webkit-flex; 
-    display: flex; 
-    flex-direction: column;
     min-width: 320px;
 }
+
+
+
+
+
+
+// Десктоп. Разрешение < 1443px
+@media (max-width: 1442px) {
+    .form-elements__columns {
+        justify-content: center;
+    }
+    .form-elements__column_first {
+        margin-bottom: 50px;
+    }
+}
+
+// Десктоп. Разрешение < 704px
+@media (max-width: 703px) {
+    .form-elements__column_second {
+        &> div:last-child {
+            position: static;
+            max-width: auto;
+            max-width: 320px;
+            margin-bottom: 50px;
+            &.field .field__input{max-width: 320px}
+        }
+    }
+}
+
+
+
+/*
 
 // Десктоп. Разрешение < 1991px
 @media (max-width: 1920px) {
@@ -147,13 +173,21 @@
 // Смартфоны. Разрешение < 768px
 @media (max-width: 767px) {
     .form-elements {
-        max-width: none;
-        margin-left: 20px;
-        margin-right: 20px;
+        max-width: 767px;
+        // margin-left: 20px;
+        // margin-right: 20px;
         padding-right: 0px;
         flex-direction: column;
         .form-elements__columns {
             // margin-bottom: 20px;
         }
     }
+    .form-elements__column_second {
+        &> div:last-child {
+            position: static;
+            max-width: auto;
+            &.field .field__input{max-width: 320px}
+        }
+    }
 }
+*/

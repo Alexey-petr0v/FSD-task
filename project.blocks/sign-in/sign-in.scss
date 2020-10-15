@@ -1,13 +1,13 @@
 $PATH: '../docs/images/';
 
 .sign-in {
-    background: url($PATH+"reg-and-log.png");
+    background: url($PATH+"sign-in.png");
     background-size: cover;
 }
 
 .sign-in__box {
     display: flex;
     justify-content: center;
-    margin-top: 172px;
+    margin-top: 242px;
     margin-bottom: 172px;
 }

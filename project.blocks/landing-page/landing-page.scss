@@ -1,17 +1,17 @@
 $PATH: '../docs/images/';
 
 .landing-page {
-    &_background-1 { background: url($PATH+"landing-page-1.png") }
-    &_background-2 { background: url($PATH+"landing-page-2.png") }
-    &_background-3 { background: url($PATH+"landing-page-3.png") }
+    &_background-1 { background: url($PATH+"landing-page-1.png")}
+    &_background-2 { background: url($PATH+"landing-page-2.png")}
+    &_background-3 { background: url($PATH+"landing-page-3.png")}
     background-size: cover;
     &__box {
-        height: 830px;
+        height: 900px;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         .landing-page__form {
-            margin-top: 70px;
+            margin-top: 140px;
             margin-left: 140px;
         }
         .landing-page__text {

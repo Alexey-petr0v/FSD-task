@@ -16,8 +16,12 @@ include ../dropdown/dropdown
         {title: "Соглашение 4", link: "https://yandex.ru/"}
     ]
 
-mixin addHeaderNav(logged)
-    header.header-nav(data-logged=logged)
+mixin addHeaderNav(logged, no_fixed)
+    if no_fixed
+        - var no_fixed = 'header-nav_no-fixed'
+    else
+        - var no_fixed = ''
+    header.header-nav(data-logged=logged, class=no_fixed)
         .header-nav__box
             .header-nav__logo
             .header-nav__nav
