@@ -2,6 +2,8 @@
     &__columns {
         margin: 3px auto 0px auto ;
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     &__column {
         margin-right: 40px;
@@ -42,6 +44,20 @@
         margin-left: 20px;
         margin-right: 20px;
         padding-right: 0px;
-        flex-direction: column;
+        // flex-direction: column;
     }
 }
+
+// Смартфоны. Разрешение < 420px
+@media (max-width: 419px) {
+    .cards__columns {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .cards__column {
+        margin-left: 0px;
+        margin-right: 0px;
+        &:first-child {margin-left: 0px}
+    }
+}
+

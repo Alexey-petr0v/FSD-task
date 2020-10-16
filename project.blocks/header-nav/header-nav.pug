@@ -22,18 +22,23 @@ mixin addHeaderNav(logged, no_fixed)
     else
         - var no_fixed = ''
     header.header-nav(data-logged=logged, class=no_fixed)
+        input.header-nav__mobile-button(type="checkbox", id="header")
+        label(for="header")
+            h1 ≡
+        .header-nav__mobile-background
         .header-nav__box
             .header-nav__logo
             .header-nav__nav
-                ul.header-nav__menu
-                    li
-                        p О нас
-                    li
-                        +addDropdown('Услуги', {name: "list-1", dropdown_elem_small: "dropdown__elem_elastic", dropdown_elem_no_border: "dropdown__elem_no-border", type_units: "separately"}, false, services)
-                    li
-                        p Вакансии
-                    li
-                        p Новости
-                    li
-                        +addDropdown('Соглашения', {name: "list-2", dropdown_elem_small: "dropdown__elem_elastic", dropdown_elem_no_border: "dropdown__elem_no-border", type_units: "separately"}, false, agreements)
+                .header-nav__menu
+                    ul
+                        li
+                            p О нас
+                        li
+                            +addDropdown('Услуги', {name: "list-1", dropdown_elem_small: "dropdown__elem_elastic", dropdown_elem_no_border: "dropdown__elem_no-border", type_units: "separately"}, false, services)
+                        li
+                            p Вакансии
+                        li
+                            p Новости
+                        li
+                            +addDropdown('Соглашения', {name: "list-2", dropdown_elem_small: "dropdown__elem_elastic", dropdown_elem_no_border: "dropdown__elem_no-border", type_units: "separately"}, false, agreements)
                 .header-nav__user

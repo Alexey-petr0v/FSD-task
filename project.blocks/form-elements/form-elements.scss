@@ -136,9 +136,21 @@
     }
 }
 
+// Десктоп. Разрешение < 1160px
+@media (max-width: 1159px) {
+    .form-elements__columns {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
 // Десктоп. Разрешение < 904px
 @media (max-width: 903px) {
+    .form-elements__column_first {
+        margin-right: 30px;
+    }
     .form-elements__column_second {
+        margin-right: 30px;
         &> div:last-child {
             position: static;
             max-width: auto;
@@ -146,6 +158,26 @@
             margin-bottom: 50px;
             &.field .field__input{max-width: 320px}
         }
+    }
+    .form-elements__column_third {
+        margin-right: 30px;
+    }
+}
+
+// Десктоп. Разрешение < 375px
+@media (max-width: 374px) {
+    .form-elements__columns {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .form-elements__column_first {
+        margin-right: 0px;
+    }
+    .form-elements__column_second {
+        margin-right: 0px;
+    }
+    .form-elements__column_third {
+        margin-right: 0px;
     }
 }
 
