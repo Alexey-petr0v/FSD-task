@@ -136,8 +136,8 @@
     }
 }
 
-// Десктоп. Разрешение < 704px
-@media (max-width: 703px) {
+// Десктоп. Разрешение < 904px
+@media (max-width: 903px) {
     .form-elements__column_second {
         &> div:last-child {
             position: static;
