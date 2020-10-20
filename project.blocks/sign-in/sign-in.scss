@@ -11,3 +11,11 @@ $PATH: '../docs/images/';
     margin-top: 242px;
     margin-bottom: 172px;
 }
+
+// Десктоп. Разрешение < 375px
+@media (max-width: 374px) {
+    .sign-in__box {
+        margin-top: 70px;
+        margin-bottom: 0px;
+    }
+}

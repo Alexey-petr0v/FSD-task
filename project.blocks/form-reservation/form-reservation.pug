@@ -1,44 +1,68 @@
 include ../form/form
-include ../text-field/text-field
-include ../button/button
-include ../radio/radio
-include ../checkbox/checkbox
+include ../dropdown/dropdown
 include ../button/button
 
 -
-    var radio_buttons = [
-        {title: "Мужчина", name: "pol", value: "muzhchina", toggle: true},
-        {title: "Женщина", name: "pol", value: "zhenshina", toggle: false}
+    var attributes = [
+        {name: "date-1", title_1: "прибытие", title_2: "выезд", date_two_fields: "date_two-fields", dropdown_elem_no_border: "dropdown__elem_no-border", dropdown_elem_small: false,
+        dropdown_top_no_arrow: "dropdown__top_no_arrow"},
+        {name: "list-1", input_title: "Сколько гостей", type_units: "together", dropdown_elem_small: false},
     ]
 
 -
-    var toggle_buttons = [
-        {title: "Получать спецпредложения", name: "poluchat_specpredlozheniya", value : false, toggle: true}
+    var list_people = [
+        {title: "взрослые", value : "0", name: "adults" },
+        {title: "дети", value : "0", name: "children" },
+        {title: "младенцы", value : "0", name: "babies" }
     ]
+
+- var attributes_0 = attributes[0]
+- var attributes_1 = attributes[1]
 
 mixin addFormReservation
     .form-reservation
         +addForm
             .form-reservation__element
-                h1 Регистрация аккаунта
+                .form-reservation__two-columns
+                    .form-reservation__number
+                        p №
+                        h2 888
+                        h3.purple_text люкс
+                    .form-reservation__price
+                        h3 9 990₽
+                        p в сутки
             .form-reservation__element
-                +addTextField('Имя')
+                +addDropdown('date Dropdown', attributes_0, {date: true})
             .form-reservation__element
-                +addTextField('Фамилия')
+                +addDropdown('гости', attributes_1, {list: true}, list_people)
             .form-reservation__element
-                +addRadio(radio_buttons, 1)
+                .form-reservation__table
+                    .form-reservation__column
+                        .form-reservation__td
+                            p 9 990₽ х 4 суток
+                        .form-reservation__td
+                            p Сбор за услуги: скидка 2 179₽
+                        .form-reservation__td
+                            p Сбор за дополнительные услуги
+                    .form-reservation__column
+                        .form-reservation__td
+                            p
+                        .form-reservation__td.form-reservation__td_circle
+                            p
+                                span i
+                        .form-reservation__td.form-reservation__td_circle
+                            p
+                                span i
+                    .form-reservation__column
+                        .form-reservation__td
+                            p 39 960₽
+                        .form-reservation__td
+                            p 0₽
+                        .form-reservation__td
+                            p 300₽
             .form-reservation__element
-                +addTextField('ДД.ММ.ГГГГ', 'дата рождения', '', 'text-field__elem_masked')
+                h2 Итого
+                h3
+                h2 38 081₽
             .form-reservation__element
-                +addTextField('Email', 'данные для входа в сервис')
-            .form-reservation__element
-                +addTextField('Пароль')
-            .form-reservation__element
-                +addCheckbox(toggle_buttons)
-            .form-reservation__element
-                +addButton("перейти к оплате", "id-but-7", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white")
-            .form-reservation__element
-                .form-reservation__column
-                    p Уже есть аккаунт на Toxin
-                .form-reservation__column
-                    +addButton("войти", "id-but-3", "button__elem_opaque-border", "button__content_padding")
+                +addButton("забронировать", "id-but-1", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white")

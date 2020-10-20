@@ -25,3 +25,13 @@
     }
 }
 
+
+// Десктоп. Разрешение < 360px
+@media (max-width: 359px) {
+    .two-elements__element {
+        justify-content: center;
+    }
+    .two-elements__right {
+        width: 220px;
+    }
+}

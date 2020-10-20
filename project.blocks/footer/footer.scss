@@ -31,11 +31,12 @@ $PATH: '../docs/images/';
     &__columns {
         display: flex;
         max-width: 1160px;
-        margin: 100px auto;
+        margin: 100px auto 70px;
         flex-wrap: wrap;
     }
     &__column {
         max-width: 260px;
+        margin-bottom: 30px;
         h3 { margin-top: 4px; margin-bottom: 21px }
         img { margin-bottom: 10px}
         p { margin-bottom: 20px; &:last-child { margin-bottom: 0px } }
@@ -77,5 +78,32 @@ $PATH: '../docs/images/';
         width: 106px;
         height: 40px;
         background: url($PATH+"logo.svg") no-repeat;
+    }
+}
+
+// Десктоп. Разрешение < 1200px
+@media (max-width: 1199px) {
+    .footer:not(.footer_small) {
+        .footer__column {
+            margin-left: 20px;
+        }
+        .footer__social {
+            margin-right: 20px;
+        }
+        p {
+            margin-right: 20px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        .footer__bottom-box {
+            height: auto;
+        }
+    }
+    .footer_small .footer__top-box {
+        min-width: auto;
+        .footer__columns p {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
     }
 }

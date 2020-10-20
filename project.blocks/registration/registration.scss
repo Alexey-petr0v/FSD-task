@@ -12,3 +12,12 @@ $PATH: '../docs/images/';
     margin-left: 6px;
     margin-bottom: 19px;
 }
+
+// Десктоп. Разрешение < 375px
+@media (max-width: 374px) {
+    .registration__box {
+        margin-top: 70px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+    }
+}

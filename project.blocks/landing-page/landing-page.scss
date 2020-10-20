@@ -1,15 +1,21 @@
 $PATH: '../docs/images/';
 
 .landing-page {
-    &_background-1 { background: url($PATH+"landing-page-1.png")}
-    &_background-2 { background: url($PATH+"landing-page-2.png")}
-    &_background-3 { background: url($PATH+"landing-page-3.png")}
+    &_background-1 { background: url($PATH+"landing-page-1.png"); background-size: cover; }
+    &_background-2 {
+        background: url($PATH+"landing-page-2.png");
+        background-size: cover; 
+        .landing-page__text {
+            box-shadow: 10px 0 0px rgba(210,210,210,0.8);
+            background: rgba(255,255,255,0.8);
+        }
+    }
+    &_background-3 { background: url($PATH+"landing-page-3.png"); background-size: cover; }
     background-size: cover;
     &__box {
         height: 900px;
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
         .landing-page__form {
             margin-top: 140px;
             margin-left: 140px;
@@ -19,7 +25,7 @@ $PATH: '../docs/images/';
             text-align: right;
             margin-right: 134px;
             margin-bottom: 20px;
-            max-width: 297px;
+            max-width: 267px;
         }
     }
 }
@@ -28,38 +34,71 @@ $PATH: '../docs/images/';
 // Десктоп. Разрешение > 1550px
 @media (min-width: 1441px) {
     .landing-page {
-        &_background-1 { background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.3)), url($PATH+"landing-page-1.png"); background-size: cover; }
-        &_background-2 { background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.3)), url($PATH+"landing-page-2.png"); background-size: cover; }
-        &_background-3 { background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.3)), url($PATH+"landing-page-3.png"); background-size: cover; }
+        &_background-1 { background: url($PATH+"landing-page-1.png"); background-size: cover; }
+        &_background-2 { background: url($PATH+"landing-page-2.png"); background-size: cover; }
+        &_background-3 { background: url($PATH+"landing-page-3.png"); background-size: cover; }
         
     }
     .landing-page__text {
-        color: black;
-        text-shadow: 0 0 16px rgba(255,255,255,1);
+        box-shadow: 10px 0 0px rgba(210,210,210,0.8);
+        background: rgba(255,255,255,0.8);
     }
 }
 
 // Десктоп. Разрешение < 1991px
 @media (max-width: 1920px) {
-    .landing-page {
+    .landing-page__box {
         min-width: 960px;
     }
 }
 
 // Планшеты. Разрешение < 993px
 @media (max-width: 992px) {
-    .landing-page {
-        max-width: 750px;
+    .landing-page__box {
+        height: 600px;
+        min-width: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .landing-page__box .landing-page__text {
+        margin-right: 0px;
     }
 }
 
 // Смартфоны. Разрешение < 768px
 @media (max-width: 767px) {
-    .landing-page {
+    .landing-page__box {
         max-width: none;
-        margin-left: 20px;
-        margin-right: 20px;
         padding-right: 0px;
         flex-direction: column;
+        align-items: center;
+        .landing-page__form {
+            margin-top: 140px;
+            margin-left: 0px;
+        }
+    }
+}
+
+// Десктоп. Разрешение < 375px
+@media (max-width: 374px) {
+    .landing-page_background-2 {
+        .landing-page__text {
+            box-shadow: none;
+            background: none;
+        }
+    }
+    .landing-page__box {
+        height: auto;
+        background: white;
+        margin-left: 0px;
+        margin-right: 0px;
+        align-items: center;
+        .landing-page__form {
+            margin-top: 70px;
+        }
+        .landing-page__text {
+            margin-top: 10px;
+            align-self: center;
+        }
     }
 }

@@ -4,7 +4,7 @@ $PATH: '../docs/images/';
     background: white;
     display: flex;
     position: fixed;
-    z-index: 3;
+    z-index: 100;
     width: 100%;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
     &_no-fixed { position: static }
@@ -29,11 +29,17 @@ $PATH: '../docs/images/';
     }
     label[for="header"] {
         display: none;
+        /* Запрет выделения текста */
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none;   /* Chrome/Safari/Opera */
+        -khtml-user-select: none;    /* Konqueror */
+        -moz-user-select: none;      /* Firefox */
+        -ms-user-select: none;
+        user-select: none;
     }
     &__menu ul {
         display: flex;
         align-items: center;
-        background: crimson;
         li {
             display: flex;
             list-style: none;
@@ -99,34 +105,65 @@ $PATH: '../docs/images/';
             display: none;
         }
         &__mobile-button {
-            display: block;
-            z-index: 5;
+            display: none;
             cursor: pointer;
         }
         label[for="header"] {
-            z-index: 4;
+            z-index: 102;
             display: flex;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-left: 20px;
         }
         &__mobile-button:checked {
-            position: fixed; display: block;
-            &~ .header-nav__box .header-nav_menu {
+            display: none;
+            &~ label[for="header"] {
+                position: fixed;
+            }
+            &~ .header-nav__box .header-nav__menu {
+                position: fixed;
                 display: flex;
                 justify-content: flex-start;
-                height: 100%;
-                z-index: 4;
+                z-index: 103;
             }
-            &~ .header-nav__box .header-nav__menu ul{
+            &~ .header-nav__box .header-nav__menu ul {
+                position: fixed;
+                background: #f3f4f6;
+                margin-top: 20px;
+                left: 20px;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
+                z-index: 103;
             }
             &~ .header-nav__mobile-background {
+                top: 0px;
                 display: block;
                 position: fixed;
-                background: cyan;
+                background: #f3f4f6;
                 width: 300px;
                 height: 100%;
+                z-index: 101;
             }
+        }
+    }
+}
+
+// Десктоп. Разрешение < 360px
+@media (max-width: 359px) {
+    .header-nav {
+        label[for="header"] {
+            margin-left: 5px;
+        }
+        &__box {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        &__buttons > * {
+            margin-right: 10px;
+        }
+        &__user-name {
+            margin-right: 10px;
         }
     }
 }

@@ -65,6 +65,7 @@ $PATH: '../docs/images/';
     margin-top: 70px;
     display: flex;
     justify-content: center;
+    margin-bottom: 43px;
 
     .room-details__columns {
         display: flex;
@@ -85,7 +86,7 @@ $PATH: '../docs/images/';
         }
         &:nth-child(2) {
             h2 {margin-bottom: 21px}
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         &:nth-child(3) {
             h2 {margin-bottom: 19px}
@@ -99,11 +100,12 @@ $PATH: '../docs/images/';
         &:nth-child(5) {
             h2 {margin-bottom: 16px; margin-left: 20px}
             margin-right: 69px;
+            margin-bottom: 20px;
         }
         &:nth-child(6) {
             h2 {margin-bottom: 16px}
             max-width: 341px;
-            margin-bottom: 92px
+            margin-bottom: 30px;
         }
     }
     .room-details__ellipse-border {
@@ -200,6 +202,19 @@ $PATH: '../docs/images/';
             .room-details__column:first-child {
                 margin-right: 20px;
             }
+        }
+    }
+}
+
+// Смартфоны. Разрешение < 360px
+@media (max-width: 359px) {
+    .room-details__column .room-details__element {
+        &:nth-child(5) {
+            margin-right: 0px;
+            max-width: 300px;
+        }
+        &:nth-child(6) {
+            max-width: 300px;
         }
     }
 }

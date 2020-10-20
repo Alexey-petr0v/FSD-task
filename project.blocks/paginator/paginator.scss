@@ -2,12 +2,11 @@ $PATH: '../docs/images/';
 
 .paginator__items {
     display: flex;
-    width: 321px;
     margin-bottom: 8px;
 }
 
 .paginator__elem { 
-    width: 241px;
+    // width: 241px;
     /* Запрет выделения текста */
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none;   /* Chrome/Safari/Opera */
@@ -58,5 +57,5 @@ $PATH: '../docs/images/';
 }
 
 .paginator__text p {
-    text-align: center;
+    margin-left: 5px;
 }
