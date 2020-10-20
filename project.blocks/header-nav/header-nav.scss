@@ -9,7 +9,6 @@ $PATH: '../docs/images/';
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
     &_no-fixed { position: static }
     &__mobile-background { display: none }
-    &__mobile-button { display: none }
     &__box {
         justify-content: space-between;
         align-items: center;
@@ -21,40 +20,12 @@ $PATH: '../docs/images/';
         width: 106px;
         height: 40px;
         background: url($PATH+"logo.svg") no-repeat;
+        background-size: contain;
     }
     &__nav {
         height: 70px;
         display: flex;
         align-items: center;
-    }
-    label[for="header"] {
-        display: none;
-        /* Запрет выделения текста */
-        -webkit-touch-callout: none; /* iOS Safari */
-        -webkit-user-select: none;   /* Chrome/Safari/Opera */
-        -khtml-user-select: none;    /* Konqueror */
-        -moz-user-select: none;      /* Firefox */
-        -ms-user-select: none;
-        user-select: none;
-    }
-    &__menu ul {
-        display: flex;
-        align-items: center;
-        li {
-            display: flex;
-            list-style: none;
-            margin-right: 20.5px;
-            img {
-                margin-left: 6px;
-                margin-right: 6.5px;
-            }
-            &:nth-child(2) {
-                margin-right: 44.5px;
-            }
-            &:last-child {
-                margin-right: 44.5px;
-            }
-        }
     }
     &__user {
         height: 70px;
@@ -77,7 +48,7 @@ $PATH: '../docs/images/';
     }
 }
 
-// Десктоп. Разрешение < 1160px
+// Разрешение < 1160px
 @media (max-width: 1159px) {
     .header-nav {
         &__box {
@@ -86,84 +57,76 @@ $PATH: '../docs/images/';
             min-width: auto;
             flex-grow: 2;
         }
-        &__logo {
-            margin-right: 20px;
-        }
+        &__logo { margin-right: 20px }
     }
 }
 
-// Десктоп. Разрешение < 935px
+// Разрешение < 935px
 @media (max-width: 934px) {
     .header-nav {
         justify-content: flex-start;
+        &__logo {
+            order: 1;
+        }
         &__box {
-            justify-content: flex-end;
             flex-grow: 2;
+            align-items: center;
         }
-        &__logo { display: none }
-        &__menu {
-            display: none;
+        &__nav {
+            align-items: center;
         }
-        &__mobile-button {
-            display: none;
-            cursor: pointer;
-        }
-        label[for="header"] {
-            z-index: 102;
-            display: flex;
-            cursor: pointer;
-            margin-top: 20px;
+        &__user {
             margin-left: 20px;
-        }
-        &__mobile-button:checked {
-            display: none;
-            &~ label[for="header"] {
-                position: fixed;
-            }
-            &~ .header-nav__box .header-nav__menu {
-                position: fixed;
-                display: flex;
-                justify-content: flex-start;
-                z-index: 103;
-            }
-            &~ .header-nav__box .header-nav__menu ul {
-                position: fixed;
-                background: #f3f4f6;
-                margin-top: 20px;
-                left: 20px;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                z-index: 103;
-            }
-            &~ .header-nav__mobile-background {
-                top: 0px;
-                display: block;
-                position: fixed;
-                background: #f3f4f6;
-                width: 300px;
-                height: 100%;
-                z-index: 101;
-            }
         }
     }
 }
 
-// Десктоп. Разрешение < 360px
+// Разрешение < 510
+@media (max-width: 509px) {
+    .header-nav {
+        &__logo {
+            margin-right: 0px;
+            transform: scale(0.8);
+        }
+        &__user {
+            height: 35px;
+            transform: scale(0.8); 
+            align-items: flex-end;
+        }
+    }
+}
+
+// Разрешение < 465px
+@media (max-width: 464px) {
+    .header-nav {
+        &__nav { height: 35px }
+        &__box {
+            height: 70px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &__logo {
+            align-self: flex-end;
+            margin-right: 0px;
+            transform: scale(0.8);
+            order: 0;
+        }
+        &__user {
+            height: 35px;
+            transform: scale(0.8); 
+            align-items: flex-end;
+        }
+    }
+}
+
+// Разрешение < 360px
 @media (max-width: 359px) {
     .header-nav {
-        label[for="header"] {
-            margin-left: 5px;
-        }
         &__box {
-            margin-left: 0px;
+            margin-left: 8px;
             margin-right: 0px;
         }
-        &__buttons > * {
-            margin-right: 10px;
-        }
-        &__user-name {
-            margin-right: 10px;
-        }
+        &__buttons > * { margin-right: 5px }
+        &__user { right: 0px }
     }
 }

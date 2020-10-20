@@ -1,0 +1,68 @@
+.navigator {
+    &__mobile-button { display: none; cursor: pointer; }
+    ul {
+        display: flex;
+        align-items: center;
+        li {
+            display: flex;
+            list-style: none;
+            margin-right: 20.5px;
+            img {
+                margin-left: 6px;
+                margin-right: 6.5px;
+            }
+            &:nth-child(2) {
+                margin-right: 44.5px;
+            }
+            &:last-child {
+                margin-right: 44.5px;
+            }
+        }
+    }
+    label[for="header"] {
+        display: none;
+        /* Запрет выделения текста */
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none;   /* Chrome/Safari/Opera */
+        -khtml-user-select: none;    /* Konqueror */
+        -moz-user-select: none;      /* Firefox */
+        -ms-user-select: none;
+        user-select: none;
+    }
+}
+
+// Десктоп. Разрешение < 935px
+@media (max-width: 934px) {
+    .navigator {
+        ul { display: none }
+        label[for="header"] {
+            z-index: 102;
+            display: flex;
+            cursor: pointer;
+        }
+        .navigator__mobile-button:checked {
+            &~ ul {
+                position: fixed;
+                background: #f3f4f6;
+                margin-top: 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                z-index: 103;
+            }
+            &~ label[for="header"] {
+                position: fixed;
+            }
+            &~ .navigator__mobile-background {
+                top: 0px;
+                left: 0px;
+                display: block;
+                position: fixed;
+                background: #f3f4f6;
+                width: 300px;
+                height: 100%;
+                z-index: 101;
+            }
+        }
+    }
+}
