@@ -1,0 +1,57 @@
+.user-panel {
+    &__box {
+        display: flex;
+        align-items: center;
+    }
+    &__buttons {
+        display: flex;
+        height: 34px;
+        &> * {
+            margin-right: 20px;
+            &:last-child { margin-right: 0px }
+        }
+    }
+    &__line {
+        width: 1px;
+        height: 30px;
+        background: rgba(31, 32, 65, 0.1);
+        margin-right: 20px;
+    }
+}
+
+// Разрешение < 935px
+@media (max-width: 934px) {
+    .user-panel {
+        &__box { margin-left: 20px }
+    }
+}
+
+// Разрешение < 510
+@media (max-width: 509px) {
+    .user-panel {
+        &__box {
+            height: 35px;
+            transform: scale(0.8); 
+            align-items: flex-end;
+        }
+    }
+}
+
+// Разрешение < 465px
+@media (max-width: 464px) {
+    .user-panel {
+        &__box {
+            height: 35px;
+            transform: scale(0.8); 
+            align-items: flex-end;
+        }
+    }
+}
+
+// Разрешение < 360px
+@media (max-width: 359px) {
+    .user-panel {
+        &__buttons > * { margin-right: 5px }
+        &__box { right: 0px }
+    }
+}

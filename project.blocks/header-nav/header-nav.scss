@@ -27,25 +27,6 @@ $PATH: '../docs/images/';
         display: flex;
         align-items: center;
     }
-    &__user {
-        height: 70px;
-        display: flex;
-        align-items: center;
-    }
-    &__line {
-        width: 1px;
-        height: 30px;
-        background: rgba(31, 32, 65, 0.1);
-        margin-right: 20px;
-    }
-    &__buttons {
-        display: flex;
-        height: 34px;
-        &> * {
-            margin-right: 20px;
-            &:last-child { margin-right: 0px }
-        }
-    }
 }
 
 // Разрешение < 1160px
@@ -65,19 +46,12 @@ $PATH: '../docs/images/';
 @media (max-width: 934px) {
     .header-nav {
         justify-content: flex-start;
-        &__logo {
-            order: 1;
-        }
+        &__logo { order: 1 }
         &__box {
             flex-grow: 2;
             align-items: center;
         }
-        &__nav {
-            align-items: center;
-        }
-        &__user {
-            margin-left: 20px;
-        }
+        &__nav { align-items: center }
     }
 }
 
@@ -87,11 +61,6 @@ $PATH: '../docs/images/';
         &__logo {
             margin-right: 0px;
             transform: scale(0.8);
-        }
-        &__user {
-            height: 35px;
-            transform: scale(0.8); 
-            align-items: flex-end;
         }
     }
 }
@@ -111,11 +80,6 @@ $PATH: '../docs/images/';
             transform: scale(0.8);
             order: 0;
         }
-        &__user {
-            height: 35px;
-            transform: scale(0.8); 
-            align-items: flex-end;
-        }
     }
 }
 
@@ -126,7 +90,5 @@ $PATH: '../docs/images/';
             margin-left: 8px;
             margin-right: 0px;
         }
-        &__buttons > * { margin-right: 5px }
-        &__user { right: 0px }
     }
 }

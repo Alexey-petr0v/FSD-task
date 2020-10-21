@@ -1,7 +1,7 @@
 import './style.scss'
 import Cleave from 'cleave.js'
 import '../project.blocks/text-field/text-field.js'
-import '../project.blocks/header-nav/header-nav.js'
+import '../project.blocks/user-panel/user-panel.js'
 import '../project.blocks/dropdown/dropdown.js'
 import '../project.blocks/list-counter/list-counter.js'
 import '../project.blocks/date/date.js'

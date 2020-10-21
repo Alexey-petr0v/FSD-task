@@ -1,0 +1,7 @@
+mixin addUserPanel(logged)
+    if logged
+        - var data_logged = "true"
+    else
+        - var data_logged = "false"
+    .user-panel
+        .user-panel__box(data-logged=data_logged)

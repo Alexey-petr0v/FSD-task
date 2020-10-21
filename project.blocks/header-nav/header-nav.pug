@@ -1,5 +1,5 @@
 include ../navigator/navigator
-include ../dropdown/dropdown
+include ../user-panel/user-panel
 
 -
     var services = [
@@ -17,14 +17,15 @@ include ../dropdown/dropdown
         {title: "Соглашение 4", link: "https://yandex.ru/"}
     ]
 
-mixin addHeaderNav(logged, no_fixed)
+mixin addHeaderNav(no_fixed, attr)
     if no_fixed
         - var no_fixed = 'header-nav_no-fixed'
     else
         - var no_fixed = ''
-    header.header-nav(data-logged=logged, class=no_fixed)
+    - var logged = attr.logged
+    header.header-nav(class=no_fixed)
         .header-nav__box
             .header-nav__logo
             .header-nav__nav
                 +addNavigator
-                .header-nav__user
+                +addUserPanel(attr.logged)

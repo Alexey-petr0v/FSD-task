@@ -1,6 +1,11 @@
 include ../../project.blocks/header-nav/header-nav
 include ../../project.blocks/footer/footer
 
+-
+    var attr = [
+        {logged: false}
+    ]
+
 doctype
 html(lang='en')
     head
@@ -9,6 +14,6 @@ html(lang='en')
         block title
     body
         .wrapper
-            +addHeaderNav("false")
+            +addHeaderNav(null, attr[0])
             block content
             +addFooter
