@@ -2,6 +2,11 @@ $PATH: '../docs/images/';
 
 .footer {
     background: white;
+    &:not(.footer_small) {
+        .footer__columns {
+            justify-content: center;
+        }
+    }
     &__logo { align-self: center; margin-bottom: 17px }
     &_small {
         background: none;
