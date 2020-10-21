@@ -2,6 +2,7 @@
 include ../two-elements/two-elements
 include ../bullet-list/bullet-list
 include ../form-reservation/form-reservation
+include ../statistics/statistics
 
 -
     var advantages = [
@@ -47,6 +48,13 @@ include ../form-reservation/form-reservation
         {text: "Время прибытия — после 13:00, а выезд до 12:00"}
     ]
 
+-
+    var precent_items = [
+        {percent_1: 25, color_1: "#FFE39C", color_2: "#FFBA9C"},
+        {percent_2: 25, color_1: "#66D2EA", color_2: "#6FCF97"},
+        {percent_3: 50, color_1: "#BC9CFF", color_2: "#8BA4F9"}
+    ]
+
 main.room-details
     .main-container
         .room-details__images
@@ -62,17 +70,7 @@ main.room-details
                         h2 Сведения о номере
                         +addTwoElements({image_and_text: true}, {image_and_text : true}, advantages)
                     .room-details__element
-                        h2 Впечатления от номера
-                        .room-details__vote
-                            .room-details__ellipse-border
-                                .room-details__ellipse-background
-                                    h1 260
-                                    h3 голосов 
-                            ul.room-details__list
-                                li Великолепно
-                                li Хорошо
-                                li Удовлетворительно
-                                li Разочарован
+                        +addStatistics("Впечатления от номера", "260", precent_items)
                     .room-details__element
                         .room-details__columns
                             .room-details__column
