@@ -78,5 +78,6 @@
     }
     &__bottom {
         &_small {width: 234px}
+        &_hide { display: none }
     }
 }

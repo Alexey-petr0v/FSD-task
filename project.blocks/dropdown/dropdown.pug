@@ -12,8 +12,10 @@ mixin addDefaultItemsDropdown(items)
 mixin addDropdown(title, attrib, dropdownType, additionalContent, check_status)
             - var dropdown_elem_mod = ""
             - var dropdown_top_mod = ""
+            - var hide_buttons_mod = ""
             if attrib.dropdown_elem_small
                 - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_small + " "
+                - var hide_buttons_mod = "list-counter__bottom_hide"
             if dropdownType.list
                 +addField(title, fieldMod)
                     .dropdown
@@ -22,7 +24,7 @@ mixin addDropdown(title, attrib, dropdownType, additionalContent, check_status)
                                 .dropdown__top
                                     +addListCounterTop(attrib.input_title)
                                 .dropdown__bottom
-                                    +addListCounterBottom(additionalContent, attrib.name)
+                                    +addListCounterBottom(additionalContent, attrib.name, hide_buttons_mod)
             else if dropdownType.date
                 if attrib.dropdown_elem_no_border
                     - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_no_border + " "

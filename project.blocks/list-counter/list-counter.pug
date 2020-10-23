@@ -13,10 +13,10 @@ mixin addListCounterTop(title)
     .list-counter__top
         p= title
 
-mixin addListCounterBottom(items, name)
+mixin addListCounterBottom(items, name, hide_buttons_mod)
     .list-counter__bottom
         input(name=name, type='hidden', value=val)
         +addItems(items)
-        .list-counter__buttons
+        .list-counter__buttons(class=hide_buttons_mod)
             +addButton("очистить", "id-but-list-1", "", "list-counter__clear", "")
             +addButton("применить", "id-but-list-2", "", "list-counter__apply dropdown__apply", "")

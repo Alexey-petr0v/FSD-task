@@ -67,9 +67,6 @@ $PATH: '../docs/images/';
             width: 304px;
         }
         &_small {
-            .list-counter__buttons {
-                display: none;
-            }
             .dropdown__top {
                 width: 264px;
                 &:not(.dropdown__top_no_arrow) {
