@@ -1,37 +1,20 @@
 include ../colors/colors
 include ../type/type
 
+-
+    var colors = [
+        {text_1: "Dark Shade  100%", text_2: "#1F2041"},
+        {text_1: "Dark Shade 75%", text_2: "#1F2041"},
+        {text_1: "Dark Shade 50%", text_2: "#1F2041"},
+        {text_1: "Dark Shade 25%", text_2: "#1F2041"},
+        {text_1: "Dark Shade 5%", text_2: "#1F2041"},
+        {text_1: "Purple", text_2: "#BC9CFF"},
+        {text_1: "Green", text_2: "#6FCF97"}
+    ]
+
 .colors-and-type
     .colors-and-type__column
-        +addColumnColors('color_1')
-            h2
-                b Dark Shade  100%
-            h2 #1F2041
-        +addColumnColors('color_2')
-            h2
-                b Dark Shade 75%
-            h2 #1F2041
-        +addColumnColors('color_3')
-            h2
-                b Dark Shade 50%
-            h2 #1F2041
-        +addColumnColors('color_4')
-            h2
-                b Dark Shade 25%
-            h2 #1F2041
-        +addColumnColors('color_5')
-            h2
-                b Dark Shade 5%
-            h2 #1F2041
-
-        +addColumnColors('color_6')
-            h2
-                b Purple
-            h2 #BC9CFF
-        +addColumnColors('color_7')
-            h2
-                b Green
-            h2 #6FCF97
+        +addColors(colors)
     .colors-and-type__column
         +addColumnType('H1', 'l-font-1', 'r-font-1')
             h1 This one is the sub-section or widget title
