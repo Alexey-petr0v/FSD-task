@@ -1,3 +1,4 @@
+
 mixin addStatistics(title, vote, percent_items)
     .statistics
         h2= title
@@ -7,7 +8,5 @@ mixin addStatistics(title, vote, percent_items)
                     h1= vote
                     h3 голосов
             ul.statistics__list
-                li Великолепно
-                li Хорошо
-                li Удовлетворительно
-                li Разочарован
+                - for(var x = 0; x < percent_items.length; x++)
+                    li(data-num=x)= percent_items[x].name

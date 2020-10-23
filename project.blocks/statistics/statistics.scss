@@ -2,6 +2,8 @@
     display: flex;
     align-items: flex-end;
     ul {
+        display: flex;
+        flex-direction: column;
         list-style:none;
         padding: 0;
         margin:0px;
@@ -24,10 +26,6 @@
                 margin-right:5px;
             }
         }
-        // &:nth-child(1) { &:before { background: linear-gradient(#FFE39C, #FFBA9C) } }
-        // &:nth-child(2) { &:before { background: linear-gradient(#66D2EA, #6FCF97) } }
-        // &:nth-child(3) { &:before { background: linear-gradient(#BC9CFF, #8BA4F9) } }
-        &:nth-child(4) { &:before { background: linear-gradient(#919191, #3D4975) } }
     }
 }
 .statistics__ellipse-border {
@@ -35,7 +33,12 @@
     width: 120px;
     height: 120px;
     svg {
-        position: absolute;
+        position: absolute; 
+        -moz-transform: rotate(180deg); /* Для Firefox */
+        -ms-transform: rotate(180deg); /* Для IE */
+        -webkit-transform: rotate(180deg); /* Для Safari, Chrome, iOS */
+        -o-transform: rotate(180deg); /* Для Opera */
+        transform: rotate(180deg);
     }
     .statistics__ellipse-background {
         width: 120px;
@@ -47,29 +50,4 @@
         margin-top: 33px;
         h1, h3 { color: #BC9CFF }
     }
-
-    
-    #path_0_0 { stroke: url(#Gradient_0_0); }
-    #Gradient_0_0 .stop1 { stop-color: #66D2EA; }
-    #Gradient_0_0 .stop2 { stop-color: #6FCF97; }
-
-    #path_0_1 { stroke: url(#Gradient_0_1); }
-    #Gradient_0_1 .stop1 { stop-color: #6FCF97; }
-    #Gradient_0_1 .stop2 { stop-color: #6FCF97; }
-    
-    #path_1_0 { stroke: url(#Gradient_1_0); }
-    #Gradient_1_0 .stop1 { stop-color: #8BA4F9; }
-    #Gradient_1_0 .stop2 { stop-color: #BC9CFF; }
-
-    #path_1_1 { stroke: url(#Gradient_1_1); }
-    #Gradient_1_1 .stop1 { stop-color: #8BA4F9; }
-    #Gradient_1_1 .stop2 { stop-color: #BC9CFF; }
-    
-    #path_2_0 { stroke: url(#Gradient_2_0); }
-    #Gradient_2_0 .stop1 { stop-color: #FFBA9C; }
-    #Gradient_2_0 .stop2 { stop-color: #FFE39C; }
-
-    #path_2_1 { stroke: url(#Gradient_2_1); }
-    #Gradient_2_1 .stop1 { stop-color: #FFBA9C; }
-    #Gradient_2_1 .stop2 { stop-color: #FFE39C; }
 }
