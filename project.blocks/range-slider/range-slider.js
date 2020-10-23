@@ -20,12 +20,12 @@ $('.range-slider').map(function() {
 
   let ID_left = uniqueIDTop[iteration]+'_left';
   $(this).find(".range-slider__limit_left").attr('id', ID_left);
-  $(this).find(".range-slider__limit_left").children().attr('id', ID_left+"header");
+  $(this).find(".range-slider__limit_left").children().attr('id', ID_left+"_point");
   dragElement(document.getElementById((ID_left)));
 
   let ID_right = uniqueIDTop[iteration]+'_right';
   $(this).find(".range-slider__limit_right").attr('id', ID_right);
-  $(this).find(".range-slider__limit_right").children().attr('id', ID_right+"header")
+  $(this).find(".range-slider__limit_right").children().attr('id', ID_right+"_point")
   dragElement(document.getElementById((ID_right)));
 
   let ID_accent = uniqueIDTop[iteration]+'_accent';
@@ -41,8 +41,8 @@ function dragElement(elmnt) {
   let accent_id = "#"+parent_id+"_accent";
 
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  if (document.getElementById(elmnt.id + "_point")) {
+    document.getElementById(elmnt.id + "_point").onmousedown = dragMouseDown;
   } else {
     elmnt.onmousedown = dragMouseDown;
   }

@@ -20,14 +20,21 @@
     justify-content: space-between
 }
 
-.mydiv {
-    &1, &2 {
+.range-slider__limit {
+    &_left {
         position: absolute;
         margin-top: -6.5px;
+        margin-left: 76px
     }
-    &1 { margin-left: 76px }
-    &2 { margin-left: 161px }
-    &1header, &2header {
+    &_right {
+        position: absolute;
+        margin-top: -6.5px;
+        margin-left: 161px
+    }
+}
+
+.range-slider__point {
+    &_1, &_2 {
         background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
         border-radius: 50%;
         height: 12px;
