@@ -1,7 +1,20 @@
+include ../dropdown/dropdown
+include ../button/button
+
+-
+    var expandable_checkbox_list = [
+        {title: "Выход", link: "https://yandex.ru/"}
+    ]
+
 mixin addUserPanel(logged)
-    if logged
-        - var data_logged = "true"
-    else
-        - var data_logged = "false"
     .user-panel
-        .user-panel__box(data-logged=data_logged)
+        if logged
+            .user-panel__box(data-logged="true")
+                .user-panel__line
+                .user-panel__user-name
+                    +addDropdown('Имя пользователя', {dropdown_elem_no_border: "dropdown__elem_no-border", dropdown_elem_elastic: "dropdown__elem_elastic", dropdown_top_no_arrow: "dropdown__top_no-arrow"}, false, expandable_checkbox_list)
+        else
+            .user-panel__box(data-logged="false")
+                .user-panel__buttons
+                    +addButton("Войти", "id-but-1", "button__elem_opaque-border", "button__content_padding", "", "min-width: 83px")
+                    +addButton("Зарегистрироваться", "id-but-2", "button__elem_opaque-background", "button__content_padding", "button__text_white", "width: 196px")

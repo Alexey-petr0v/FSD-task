@@ -27,6 +27,8 @@ mixin addDropdown(title, attrib, dropdownType, additionalContent, check_status)
         - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_toggle_arrow + " "
     if attrib.dropdown_elem_no_absolute
         - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_no_absolute + " "
+    if attrib.dropdown_elem_elastic
+        - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_elastic + " "
     if dropdownType.list
         +addField(title, fieldMod)
             .dropdown
@@ -62,7 +64,7 @@ mixin addDropdown(title, attrib, dropdownType, additionalContent, check_status)
     else
         .dropdown
             .dropdown__elem(class=dropdown_elem_mod)
-                .dropdown__top
+                .dropdown__top(class=dropdown_top_mod)
                     p= title
                 .dropdown__bottom
                     +addDefaultItemsDropdown(additionalContent)

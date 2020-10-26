@@ -59,7 +59,7 @@ $PATH: '../docs/images/';
     &__elem {
         .dropdown__top {
             width: 318px;
-            &:not(.dropdown__top_no_arrow) {
+            &:not(.dropdown__top_no-arrow) {
                 background: url($PATH+"expand_more.svg") calc(100% - 16px) 50% no-repeat
             }
         }
@@ -69,7 +69,7 @@ $PATH: '../docs/images/';
         &_small {
             .dropdown__top {
                 width: 264px;
-                &:not(.dropdown__top_no_arrow) {
+                &:not(.dropdown__top_no-arrow) {
                     background: url($PATH+"expand_more.svg") calc(100% - 16px) 50% no-repeat
                 }
             }
@@ -80,7 +80,7 @@ $PATH: '../docs/images/';
         &_small-top {
             .dropdown__top {
                 width: 262px;
-                &:not(.dropdown__top_no_arrow) {
+                &:not(.dropdown__top_no-arrow) {
                     background: url($PATH+"expand_more.svg") calc(100% - 13px) 50% no-repeat
                 }
             }

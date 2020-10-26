@@ -43,20 +43,20 @@ if ($(".statistics").length) {
         $(".statistics").prepend("<style>"+
         "li[data-num='"+x+"']:before { background: linear-gradient("+st.percent_items[x].color_1+", "+st.percent_items[x].color_2+") }"+
         " #statistics_path_"+x+"_0 { stroke: url(#statistics_gradient_"+x+"_0) }"+
-        " #statistics_gradient_"+x+"_0 .statistics_color_1 { stop-color: "+st.percent_items[x].color_1+" }"+
-        " #statistics_gradient_"+x+"_0 .statistics_color_2 { stop-color: "+st.percent_items[x].color_2+" }"+
+        " #statistics_gradient_"+x+"_0 .statistics__color_1 { stop-color: "+st.percent_items[x].color_1+" }"+
+        " #statistics_gradient_"+x+"_0 .statistics__color_2 { stop-color: "+st.percent_items[x].color_2+" }"+
         " #statistics_path_"+x+"_1 { stroke: url(#statistics_gradient_"+x+"_1) }"+
-        " #statistics_gradient_"+x+"_1 .statistics_color_1 { stop-color: "+st.percent_items[x].color_1+" }"+
-        " #statistics_gradient_"+x+"_1 .statistics_color_2 { stop-color: "+st.percent_items[x].color_2+" }"+
+        " #statistics_gradient_"+x+"_1 .statistics__color_1 { stop-color: "+st.percent_items[x].color_1+" }"+
+        " #statistics_gradient_"+x+"_1 .statistics__color_2 { stop-color: "+st.percent_items[x].color_2+" }"+
         "</style>");
         vote.svg_defs = vote.svg_defs + 
         '<linearGradient id="statistics_gradient_'+x+'_0" x1="0" x2="0" y1="1" y2="0">'+
-        '<stop class="statistics_color_1" offset="0%"/>'+
-        '<stop class="statistics_color_2" offset="100%"/>'+
+        '<stop class="statistics__color_1" offset="0%"/>'+
+        '<stop class="statistics__color_2" offset="100%"/>'+
         '</linearGradient>'+
         '<linearGradient id="statistics_gradient_'+x+'_1" x1="0" x2="0" y1="1" y2="0">'+
-        '<stop class="statistics_color_1" offset="0%"/>'+
-        '<stop class="statistics_color_2" offset="100%"/>'+
+        '<stop class="statistics__color_1" offset="0%"/>'+
+        '<stop class="statistics__color_2" offset="100%"/>'+
         '</linearGradient>';
     
         vote.percent[x] = st.percent_items[x].percent; // Color
