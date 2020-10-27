@@ -26,6 +26,24 @@ module.exports = {
       jQuery: "jquery/dist/jquery.min.js",
       "window.jQuery": "jquery/dist/jquery.min.js"
      }),
+     new CopyWebpackPlugin([
+       {from: PATHS.projBlocks + '/**/images/*.svg', to:'images', flatten: true, ignore: ['*Bold.svg', '*Regular.svg']}
+     ]),
+     new CopyWebpackPlugin([
+       {from: PATHS.projBlocks + '/**/images/*.img', to:'images', flatten: true}
+     ]),
+     new CopyWebpackPlugin([
+       {from: PATHS.projBlocks + '/**/images/*.jpg', to:'images', flatten: true}
+     ]),
+     new CopyWebpackPlugin([
+       {from: PATHS.projBlocks + '/**/images/*.png', to:'images', flatten: true}
+     ]),
+     new CopyWebpackPlugin([
+       {from: PATHS.projBlocks + '/**/images/*.gif', to:'images', flatten: true}
+     ]),
+     new CopyWebpackPlugin([
+       {from: PATHS.projBlocks + '/**/fonts/*', to:'fonts', flatten: true}
+     ]),
     new HtmlWebpackPlugin({
         template: PATHS.pages + '/index.pug',
         filename: 'index.html'
@@ -64,37 +82,7 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
         filename: '[name].css',
-    }),
-    new CopyWebpackPlugin([
-      {from: PATHS.projBlocks + '/**/*.svg', to:'images', flatten: true, ignore: ['*Bold.svg', '*Regular.svg']}
-    ]),
-    new CopyWebpackPlugin([
-      {from: PATHS.projBlocks + '/**/*.img', to:'images', flatten: true}
-    ]),
-    new CopyWebpackPlugin([
-      {from: PATHS.projBlocks + '/**/*.png', to:'images', flatten: true}
-    ]),
-    new CopyWebpackPlugin([
-      {from: PATHS.projBlocks + '/**/*.gif', to:'images', flatten: true}
-    ]),
-    new CopyWebpackPlugin([
-      {from: PATHS.projBlocks + '/**/fonts/*', to:'fonts', flatten: true}
-    ]),
-    new CopyWebpackPlugin([
-      {from: PATHS.libBlocks + '/**/*.svg', to:'images', flatten: true, ignore: ['*Bold.svg', '*Regular.svg']}
-    ]),
-    new CopyWebpackPlugin([
-      {from: PATHS.libBlocks + '/**/*.img', to:'images', flatten: true}
-    ]),
-    new CopyWebpackPlugin([
-      {from: PATHS.libBlocks + '/**/*.png', to:'images', flatten: true}
-    ]),
-    new CopyWebpackPlugin([
-      {from: PATHS.libBlocks + '/**/*.gif', to:'images', flatten: true}
-    ]),
-    new CopyWebpackPlugin([
-      {from: PATHS.libBlocks + '/**/fonts/*', to:'fonts', flatten: true}
-    ])
+    })
   ],
   module: {
     rules: [
