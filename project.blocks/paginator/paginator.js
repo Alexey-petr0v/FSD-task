@@ -24,13 +24,13 @@ export default class Paginator {
         $(".paginator__number").eq(this.data_page).addClass("paginator__number_checked")
     }
     addButtons() {
-        $(this.id_but_next).click({that: this}, function (e) {
+        $("body").on("click", this.id_but_next, {that: this}, function(e){
             if (e.data.that.data_page < e.data.that.amount){
                 e.data.that.data_page++
                 e.data.that.editPaginator(e.data.that, e.data.that.data_page+1)
             }
         })
-        $('.paginator__number').click({that: this}, function (e) {
+        $("body").on("click", '.paginator__number', {that: this}, function(e){
             let number_text = $(this).text();
             if (number_text != "...") {
                 let number = parseInt(number_text);

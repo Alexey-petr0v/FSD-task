@@ -140,7 +140,7 @@ class Date_cal {
     // Функция активации кнопок
     addButtons() {
         // Обработчик нажатия кнопки next
-        $(this.id+'#date-but-next').click({that: this}, function(e){
+        $("body").on("click", this.id+'#date-but-next', {that: this}, function(e){
             e.data.that.current_first_date.setMonth(e.data.that.current_first_date.getMonth()+1); // Переключение месяца на следующий
             let iter_date = e.data.that.createIterDate(new Date(), e.data.that.current_first_date.getDate()) 
             e.data.that.removeMonth();
@@ -150,7 +150,7 @@ class Date_cal {
             e.data.that.editFlagsAndAddAccent('#date-but-next')
         })
         // Обработчик нажатия кнопки prev
-        $(this.id+'#date-but-prev').click({that: this}, function(e){
+        $("body").on("click", this.id+'#date-but-prev', {that: this}, function(e){
             e.data.that.current_first_date.setMonth(e.data.that.current_first_date.getMonth()-1); // Переключение месяца на предыдущий
             let iter_date = e.data.that.createIterDate(new Date(), e.data.that.current_first_date.getDate()) 
             e.data.that.removeMonth();

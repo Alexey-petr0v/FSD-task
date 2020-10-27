@@ -31,18 +31,18 @@ for (let x = 0; x < numberOfClasses; x++) {
     $(bottom_selector).css('z-index', numberOfClasses-x);
 
     // Обработчик нажатия кнопки дочернего класса
-    $(button_selector[x]).click({ bottom : bottom_selector}, function(e){
+    $("body").on("click", button_selector[x], { bottom : bottom_selector}, function(e){
         $(e.data.bottom).slideToggle()
     });
     
     // Обработчик нажатия 'dropdown__top'
-    $(top_selector).click({ bottom : bottom_selector}, function(e){
+    $("body").on("click", top_selector, { bottom : bottom_selector}, function(e){
         $(e.data.bottom).slideToggle()
     });
 }
 
 // Смена визуальной стрелки на стрелку вверх/вниз
-$(dropdown_mod).find(dropdown_top).click(function(){
+$("body").on("click", dropdown_mod + " " + dropdown_top, {}, function(e){
     let height_bottom_px = $(this).parents(dropdown_mod).find(dropdown_bottom).css("height"),
         height_bottom = height_bottom_px.replace(/[\p\x]/g, '');
     if (height_bottom > 1) {

@@ -1,5 +1,4 @@
-
-$(".number-card__left p").click(function(){
+$("body").on("click", ".number-card__left p", {}, function(e){
     let main_parent = $(this).parent().parent().parent()
     let inputs = $(main_parent).children('input')
     let first_index = inputs.first().index()
@@ -12,7 +11,7 @@ $(".number-card__left p").click(function(){
         $(inputs[current_index-1]).trigger("click")
     }
 })
-$(".number-card__right p").click(function(){
+$("body").on("click", ".number-card__right p", {}, function(e){
     let main_parent = $(this).parent().parent().parent()
     let inputs = $(main_parent).children('input')
     let first_index = inputs.first().index()

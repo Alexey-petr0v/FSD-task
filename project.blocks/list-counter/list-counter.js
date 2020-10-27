@@ -44,7 +44,7 @@ $(block_class).map(function(){
 editButtons();
 
 // Обработчики нажатия list-counter
-$(top_selector).click (function(e){
+$("body").on("click", top_selector, {}, function(e){
     if(!$(this).hasClass("active")){
         $(this).addClass("active");
         return "add class active"
@@ -55,15 +55,15 @@ $(top_selector).click (function(e){
 });
 
 // Обработчики нажатия кнопок '-' и '+'
-$(".list-counter__minus").click (function(e){
+$("body").on("click", ".list-counter__minus", {}, function(e){
     minus ($(this))
 });
-$(".list-counter__plus").click (function(e){
+$("body").on("click", ".list-counter__plus", {}, function(e){
     plus ($(this))
 });
 
 // Обработчики нажатия кнопок 'применить'
-$('.list-counter__apply').click (function(e){
+$("body").on("click", ".list-counter__apply", {}, function(e){
     let top = $(this).parents(".list-counter").find(".list-counter__top");
     if(!$(top).hasClass("active")){
         $(top).addClass("active");
@@ -75,7 +75,7 @@ $('.list-counter__apply').click (function(e){
 });
 
 // Обработчик нажатия кнопки 'отменить'
-$('.list-counter__clear').click (function view(){
+$("body").on("click", ".list-counter__clear", {}, function view(){
     clear($(this))
 });
 
