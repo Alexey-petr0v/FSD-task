@@ -12,15 +12,16 @@ include ../type/type
         {text_1: "Green", text_2: "#6FCF97"}
     ]
 
+-
+    var type = [
+        {modColumn1: "l-font-1", modColumn2: "r-font-1", textColumn1: "H1", textColumn2: "This one is the sub-section or widget title"},
+        {modColumn1: "l-font-2", modColumn2: "r-font-2", textColumn1: "H2", textColumn2: "Next one is the item title inside widgets"},
+        {modColumn1: "l-font-3", modColumn2: "r-font-3", textColumn1: "H3", textColumn2: "This is a label or CTA text"},
+        {modColumn1: "l-font-4", modColumn2: "r-font-4", textColumn1: "Body", textColumn2: "This is the body text which is used for most of the design, like paragraphs, lists, etc."}
+    ]
+
 .colors-and-type
     .colors-and-type__column
         +addColors(colors)
     .colors-and-type__column
-        +addColumnType('H1', 'l-font-1', 'r-font-1')
-            h1 This one is the sub-section or widget title
-        +addColumnType('H2', 'l-font-2', 'r-font-2')
-            h2 Next one is the item title inside widgets
-        +addColumnType('H3', 'l-font-3', 'r-font-3')
-            h3 This is a label or CTA text
-        +addColumnType('Body', 'l-font-4', 'r-font-4')
-            p This is the body text which is used for most of the design, like paragraphs, lists, etc.
+        +addType(type)
