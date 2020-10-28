@@ -1,3 +1,7 @@
+
+$PATH: '../project.blocks/text-field/images/';
+
+
 /* TEXT FIELD */
 .text-field__elem {
     font-family: "Montserrat";
@@ -31,7 +35,7 @@
         }
     }
     &_arrow-left {
-        background: url("/images/arrow_forward.svg") calc(100% - 13px) 50% no-repeat #ffffff;
+        background: url($PATH+"arrow_forward.svg") calc(100% - 13px) 50% no-repeat #ffffff;
     }
     &::-webkit-input-placeholder{
         font-family: Montserrat;
