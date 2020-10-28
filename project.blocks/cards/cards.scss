@@ -1,6 +1,7 @@
 .cards {
     &__columns {
         margin: 3px auto 0px auto ;
+        display: -webkit-flex; 
         display: flex;
         flex-wrap: wrap;
         justify-content: center;

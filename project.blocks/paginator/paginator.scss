@@ -1,6 +1,7 @@
 $PATH: '../project.blocks/paginator/images/';
 
 .paginator__items {
+    display: -webkit-flex; 
     display: flex;
     margin-bottom: 8px;
 }
@@ -16,6 +17,7 @@ $PATH: '../project.blocks/paginator/images/';
     user-select: none;
 }
 .paginator__numbers {
+    display: -webkit-flex; 
     display: flex;
 }
 .paginator__number { 
@@ -24,6 +26,7 @@ $PATH: '../project.blocks/paginator/images/';
     width: 40px;
     height: 40px;
     justify-content: center;
+    display: -webkit-flex; 
     display: flex;
     align-items: center;
 }
@@ -45,6 +48,7 @@ $PATH: '../project.blocks/paginator/images/';
     width: 40px;
     height: 40px;
     justify-content: center;
+    display: -webkit-flex; 
     display: flex;
     align-items: center;
     cursor: pointer;

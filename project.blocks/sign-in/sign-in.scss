@@ -6,6 +6,7 @@ $PATH: '../project.blocks/sign-in/images/';
 }
 
 .sign-in__box {
+    display: -webkit-flex; 
     display: flex;
     justify-content: center;
     margin-top: 242px;

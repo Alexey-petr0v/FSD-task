@@ -1,9 +1,11 @@
 .user-panel {
     &__box {
+        display: -webkit-flex; 
         display: flex;
         align-items: center;
     }
     &__buttons {
+        display: -webkit-flex; 
         display: flex;
         height: 34px;
         &> * {

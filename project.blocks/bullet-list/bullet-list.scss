@@ -3,6 +3,7 @@
 }
 
 .bullet-list__item {
+    display: -webkit-flex; 
     display: flex;
     vertical-align: middle;
     margin-bottom: 10px;

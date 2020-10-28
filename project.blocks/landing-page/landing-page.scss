@@ -14,6 +14,7 @@ $PATH: '../project.blocks/landing-page/images/';
     background-size: cover;
     &__box {
         height: 900px;
+        display: -webkit-flex; 
         display: flex;
         justify-content: space-between;
         .landing-page__form {

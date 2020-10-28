@@ -1,9 +1,11 @@
 $PATH: '../project.blocks/button/images/';
 
 .button {
+    display: -webkit-flex; 
     display: flex;
 
     &__elem {
+        display: -webkit-flex; 
         display: flex;
         justify-content: center;
         align-items: center;
@@ -44,6 +46,7 @@ $PATH: '../project.blocks/button/images/';
     &__content {
         .button__text_grey:not(.purple_text) { color: rgba(31, 32, 65, 0.5) }
         .button__text_white:not(.purple_text) { color: #FFFFFF }
+        display: -webkit-flex; 
         display: flex;
         justify-content: center;
         align-items: center;

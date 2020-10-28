@@ -1,6 +1,7 @@
 $PATH: '../project.blocks/number-card/images/';
 
 .number-card {
+    display: -webkit-flex; 
     display: flex;
     flex-direction: column;
     border-radius: 4px;
@@ -15,12 +16,14 @@ $PATH: '../project.blocks/number-card/images/';
 }
 .number-card__two-columns {
     width: 233px;
+    display: -webkit-flex; 
     display: flex;
     justify-content: space-between;
     margin-left: 20px;
     margin-top: 22px;
     align-items: flex-end;
     .number-card__number, .number-card__price {
+        display: -webkit-flex; 
         display: flex;
         align-items: flex-end;
         p {
@@ -70,6 +73,7 @@ $PATH: '../project.blocks/number-card/images/';
 
 .number-card__element-2 {
     width: 270px;
+    display: -webkit-flex; 
     display: flex;
     justify-content: space-between;
 }
@@ -78,6 +82,7 @@ $PATH: '../project.blocks/number-card/images/';
 
 .number-card__element-4 {
     width: 270px;
+    display: -webkit-flex; 
     display: flex;
     justify-content: space-between;
     padding-bottom: 21px;
@@ -88,6 +93,7 @@ $PATH: '../project.blocks/number-card/images/';
         font-size: 14px;
         line-height: 17px;
     }
+    display: -webkit-flex; 
     display: flex;
     margin-top: 10px;
     &:nth-child(1) { margin-left: 22px }
@@ -112,6 +118,7 @@ $PATH: '../project.blocks/number-card/images/';
 
 @supports(-webkit-appearance: none) or (-moz-appearance: none) {
     .number-card {
+        display: -webkit-flex; 
         display: flex;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -135,6 +142,7 @@ $PATH: '../project.blocks/number-card/images/';
     }
 
     .number-card__num-and-price {
+        display: -webkit-flex; 
         display: flex;
         justify-content: space-between;
         margin-right: 30px;
@@ -337,6 +345,7 @@ $PATH: '../project.blocks/number-card/images/';
     }
 
     .number-card__buttons {
+        display: -webkit-flex; 
         display: flex;
         justify-content: space-between;
         position: absolute;
@@ -348,6 +357,7 @@ $PATH: '../project.blocks/number-card/images/';
     }
 
     .number-card__left, .number-card__right {
+        display: -webkit-flex; 
         display: flex;
         justify-content: center;
         align-items: center;

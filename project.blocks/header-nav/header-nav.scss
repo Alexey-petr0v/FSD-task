@@ -2,6 +2,7 @@ $PATH: '../project.blocks/header-nav/images/';
 
 .header-nav {
     background: white;
+    display: -webkit-flex; 
     display: flex;
     position: fixed;
     z-index: 100;
@@ -12,6 +13,7 @@ $PATH: '../project.blocks/header-nav/images/';
     &__box {
         justify-content: space-between;
         align-items: center;
+        display: -webkit-flex; 
         display: flex;
         min-width: 1160px;
         margin: 0px auto;
@@ -24,6 +26,7 @@ $PATH: '../project.blocks/header-nav/images/';
     }
     &__nav {
         height: 70px;
+        display: -webkit-flex; 
         display: flex;
         align-items: center;
     }

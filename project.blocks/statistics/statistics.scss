@@ -1,7 +1,9 @@
 .statistics__vote {
+    display: -webkit-flex; 
     display: flex;
     align-items: flex-end;
     ul {
+        display: -webkit-flex; 
         display: flex;
         flex-direction: column;
         list-style:none;
@@ -45,6 +47,7 @@
         height: 120px;
         position: absolute;
         text-align: center;
+        display: -webkit-flex; 
         display: flex;
         flex-direction: column;
         margin-top: 33px;

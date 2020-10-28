@@ -10,12 +10,14 @@ $PATH: '../project.blocks/room-details/images/';
 
 
 .room-details__images {
+    display: -webkit-flex; 
     display: flex;
     flex-wrap: wrap;
     margin-top: 70px;
 }
 
 .room-details__img-col {
+    display: -webkit-flex; 
     display: flex;
     flex-wrap: wrap;
     &:first-child {
@@ -32,16 +34,19 @@ $PATH: '../project.blocks/room-details/images/';
 
 .room-details__box {
     margin-top: 70px;
+    display: -webkit-flex; 
     display: flex;
     justify-content: center;
     margin-bottom: 43px;
 
     .room-details__columns {
+        display: -webkit-flex; 
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
     }
     .room-details__column {
+        display: -webkit-flex; 
         display: flex;
         flex-wrap: wrap;
         max-width: 711px;
@@ -101,6 +106,7 @@ $PATH: '../project.blocks/room-details/images/';
         }
         &:last-child {
             width: 100%;
+            display: -webkit-flex; 
             display: flex;
             img { width: 50%; }
         }

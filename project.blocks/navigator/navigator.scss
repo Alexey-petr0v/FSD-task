@@ -1,9 +1,11 @@
 .navigator {
     &__mobile-button { display: none; cursor: pointer; }
     ul {
+        display: -webkit-flex; 
         display: flex;
         align-items: center;
         li {
+            display: -webkit-flex; 
             display: flex;
             list-style: none;
             margin-right: 20.5px;
@@ -37,6 +39,7 @@
         ul { display: none }
         label[for="header"] {
             z-index: 102;
+            display: -webkit-flex; 
             display: flex;
             cursor: pointer;
         }
@@ -45,6 +48,7 @@
                 position: fixed;
                 background: #f3f4f6;
                 margin-top: 40px;
+                display: -webkit-flex; 
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;

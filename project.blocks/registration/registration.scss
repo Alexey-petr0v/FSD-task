@@ -6,6 +6,7 @@ $PATH: '../project.blocks/registration/images/';
 }
 
 .registration__box {
+    display: -webkit-flex; 
     display: flex;
     justify-content: center;
     margin-top: 89px;
