@@ -76,6 +76,7 @@ $PATH: '../project.blocks/date/images/';
             margin-top: 6px;
             margin-right: 6px;
             margin-bottom: 6px;
+            font-weight: bold;
         }
     }
 
@@ -138,7 +139,6 @@ $PATH: '../project.blocks/date/images/';
         display: flex; 
         flex-wrap: wrap;
         font-weight: bold;
-        color: #BC9CFF;
         padding-top: 14px;
     }
     &__day {

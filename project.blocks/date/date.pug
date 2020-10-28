@@ -21,12 +21,12 @@ mixin addDateBottom
             .date__of-the-month
             .date__button.date__button_right(id="date-but-next")
                 p
-        .date__days
+        .date__days.purple_text
             - var days = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
             - for (var i = 0; i < days.length; i++)
                 .date__day
                     p= days[i]
         .date__cal(id="element_200")
         .date__buttons
-            +addButton("очистить", "id-but-date-1", "", "date__clear", "")
-            +addButton("применить", "id-but-date-2", "", "date__apply dropdown__apply", "")
+            +addButton("очистить", "id-but-date-1", "", "date__clear", "purple_text")
+            +addButton("применить", "id-but-date-2", "", "date__apply dropdown__apply", "purple_text")

@@ -42,6 +42,8 @@ $PATH: '../project.blocks/button/images/';
     }
 
     &__content {
+        .button__text_grey:not(.purple_text) { color: rgba(31, 32, 65, 0.5) }
+        .button__text_white:not(.purple_text) { color: #FFFFFF }
         display: flex;
         justify-content: center;
         align-items: center;
@@ -53,8 +55,5 @@ $PATH: '../project.blocks/button/images/';
     &__text {
         font-weight: normal;
         text-align: center;
-        color: #BC9CFF;
-        &_grey {color: rgba(31, 32, 65, 0.5)}
-        &_white {color: #FFFFFF}
     }
 }

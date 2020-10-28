@@ -18,15 +18,16 @@
     
         h3 {margin-top: 6px;margin-right: 6px;margin-bottom: 6px;}
     
+        
         .list-counter__clear {
             cursor: pointer;
-            color: rgba(31, 32, 65, 0.5);
             visibility: hidden;
+            h3 {font-weight: bold;}
         }
     
         .list-counter__apply {
             cursor: pointer;
-            color: #BC9CFF;
+            h3 {font-weight: bold;}
         }
     }
     
