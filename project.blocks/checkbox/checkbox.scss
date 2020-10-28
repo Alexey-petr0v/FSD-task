@@ -97,7 +97,6 @@
         border-radius: 10px;
         border: 1px solid rgba(31, 32, 65, 0.25);
         width: 40px;
-        color: rgba(31, 32, 65, 0.25);
         background: white;
         margin-right: 0px;
 
@@ -118,9 +117,11 @@
             width: 16px;
             text-align: center;
         }
+        &:not(:checked) {
+            color: rgba(31, 32, 65, 0.25);
+        }
         &:checked {
             background: white;
-            color: #BC9CFF;
             margin-left: 1px;
             margin-top: 1px;
             margin-bottom: 1px;
