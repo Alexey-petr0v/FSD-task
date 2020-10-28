@@ -27,19 +27,7 @@ module.exports = {
       "window.jQuery": "jquery/dist/jquery.min.js"
      }),
      new CopyWebpackPlugin([
-       {from: PATHS.projBlocks + '/**/images/*.svg', to:'images', flatten: true, ignore: ['*Bold.svg', '*Regular.svg']}
-     ]),
-     new CopyWebpackPlugin([
-       {from: PATHS.projBlocks + '/**/images/*.img', to:'images', flatten: true}
-     ]),
-     new CopyWebpackPlugin([
-       {from: PATHS.projBlocks + '/**/images/*.jpg', to:'images', flatten: true}
-     ]),
-     new CopyWebpackPlugin([
-       {from: PATHS.projBlocks + '/**/images/*.png', to:'images', flatten: true}
-     ]),
-     new CopyWebpackPlugin([
-       {from: PATHS.projBlocks + '/**/images/*.gif', to:'images', flatten: true}
+       {from: PATHS.projBlocks + '/**/images/*', to:'images', flatten: true}
      ]),
      new CopyWebpackPlugin([
        {from: PATHS.projBlocks + '/**/fonts/*', to:'fonts', flatten: true}
@@ -127,18 +115,19 @@ module.exports = {
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
-        exclude: path.resolve(__dirname, 'app/styles'),
+        include: path.resolve(__dirname, 'project.blocks/fonts/'),
         use: [
                  {
-                     loader: 'file-loader?name=./fonts/[name].[ext]'
+                     loader: 'file-loader?name=fonts/[name].[ext]'
                  }
              ]
       },
       {
-        test: /\.(jpg|png)$/,
+        test: /\.(jpg|png|svg)$/,
+        exclude: path.resolve(__dirname, 'project.blocks/fonts/'),
         use: [
                  {
-                     loader: 'file-loader?name=./images/[name].[ext]'
+                     loader: 'file-loader?name=images/[name].[ext]'
                  }
              ]
       }

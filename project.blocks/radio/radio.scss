@@ -1,5 +1,5 @@
 @supports(-webkit-appearance: none) or (-moz-appearance: none) {
-    $PATH: '/images/';
+    $PATH: '../project.blocks/radio/images/';
     .radio {
         display: flex;
         -webkit-touch-callout: none;
