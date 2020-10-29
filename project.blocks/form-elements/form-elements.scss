@@ -80,9 +80,7 @@
             margin-bottom: 233px
         }
         &_28 {margin-bottom: 256px}
-        &_29 {
-            &>h3 {margin-bottom: 13px}
-        }
+        &_29 { &>h3 {margin-bottom: 13px} }
     }
     &__cells {
         display: -webkit-flex; 
@@ -91,97 +89,74 @@
     &__td {
         display: inline-block;
         margin-right: 20px;
-        &:last-child { margin-right: 0px}
-        &_no-indent {
-            margin-bottom: 0px
+        &:last-child { margin-right: 0px }
+        &_no-indent { margin-bottom: 0px }
+    }
+    &__columns {
+        display: -webkit-flex; 
+        display: flex; 
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 3px;
+    }
+    &__column {
+        &_first {
+            min-width: 320px;
+            margin-right: 127px;
         }
+        &_second {
+            min-width: 320px;
+            margin-right: 73px;
+            &> div:last-child {
+                position: absolute;
+                max-width: 711px;
+                &.field__input { max-width: 711px }
+            }
+        }
+        &_third { min-width: 320px }
     }
 }
-
-.form-elements__columns {
-    display: -webkit-flex; 
-    display: flex; 
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 3px;
-}
-
-.form-elements__column_first {
-    min-width: 320px;
-    margin-right: 127px;
-}
-
-.form-elements__column_second {
-    min-width: 320px;
-    margin-right: 73px;
-    &> div:last-child {
-        position: absolute;
-        max-width: 711px;
-        &.field .field__input{max-width: 711px}
-    }
-}
-
-.form-elements__column_third {
-    min-width: 320px;
-}
-
-
-
-
-
 
 // Десктоп. Разрешение < 1443px
 @media (max-width: 1442px) {
-    .form-elements__columns {
-        justify-content: center;
-    }
-    .form-elements__column_first {
-        margin-bottom: 50px;
+    .form-elements {
+        &__columns { justify-content: center }
+        &__column_first { margin-bottom: 50px }
     }
 }
 
 // Десктоп. Разрешение < 1160px
 @media (max-width: 1159px) {
-    .form-elements__columns {
-        margin-left: 10px;
-        margin-right: 10px;
+    .form-elements {
+        &__columns { margin-left: 10px; margin-right: 10px }
     }
 }
 
-// Десктоп. Разрешение < 904px
+// Планшет. Разрешение < 904px
 @media (max-width: 903px) {
-    .form-elements__column_first {
-        margin-right: 30px;
-    }
-    .form-elements__column_second {
-        margin-right: 30px;
-        &> div:last-child {
-            position: static;
-            max-width: auto;
-            max-width: 320px;
-            margin-bottom: 50px;
-            &.field .field__input{max-width: 320px}
+    .form-elements__column {
+        &_first { margin-right: 30px }
+        &_second {
+            margin-right: 30px;
+            &> div:last-child {
+                position: static;
+                max-width: auto;
+                max-width: 320px;
+                margin-bottom: 50px;
+                &.field .field__input{max-width: 320px}
+            }
         }
-    }
-    .form-elements__column_third {
-        margin-right: 30px;
+        &_third { margin-right: 30px }
     }
 }
 
-// Десктоп. Разрешение < 375px
+// Смартфон. Разрешение < 375px
 @media (max-width: 374px) {
-    .form-elements__columns {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-    .form-elements__column_first {
-        margin-right: 0px;
-    }
-    .form-elements__column_second {
-        margin-right: 0px;
-    }
-    .form-elements__column_third {
-        margin-right: 0px;
+    .form-elements {
+        &__columns { margin-left: 0px; margin-right: 0px }
+        &__column {
+            &_first, &_second, &_third { margin-right: 0px }
+        }
     }
 }

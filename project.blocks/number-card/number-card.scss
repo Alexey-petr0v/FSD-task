@@ -5,115 +5,106 @@ $PATH: '../project.blocks/number-card/images/';
     display: flex;
     flex-direction: column;
     border-radius: 4px;
-    &__image {
-        height: 152px;
-    }
+    &__image { height: 152px }
     &__background {
         height: 152px;
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
     }
-}
-.number-card__two-columns {
-    width: 233px;
-    display: -webkit-flex; 
-    display: flex;
-    justify-content: space-between;
-    margin-left: 20px;
-    margin-top: 22px;
-    align-items: flex-end;
-    .number-card__number, .number-card__price {
+    &__two-columns {
+        width: 233px;
         display: -webkit-flex; 
         display: flex;
+        justify-content: space-between;
+        margin-left: 20px;
+        margin-top: 22px;
         align-items: flex-end;
+        .number-card__number, .number-card__price {
+            display: -webkit-flex; 
+            display: flex;
+            align-items: flex-end;
+            p {
+                font-size: 14px;
+                line-height: 15px;
+            }
+            h2 { line-height: 15px }
+            h3 {
+                font-size: 12px;
+                line-height: 15px;
+            }
+        }
+        .number-card__number {
+            p { margin-right: 6px }
+            h2 {
+                font-size: 19px;
+                line-height: 19px;
+                margin-right: 6px
+            }
+        }
+        .number-card__price {
+            h3, p {
+                color: rgba(31, 32, 65, 0.5);
+                line-height: 15px;
+            }
+            h3 {
+                font-size: 14px;
+                margin-right: 4px
+            }
+            p { font-size: 12px }
+        }
+    }
+    &__description {
+        background: white;
+        width: 270px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    }
+    &__element-1 {
+        width: 270px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+    &__element-2 {
+        width: 270px;
+        display: -webkit-flex; 
+        display: flex;
+        justify-content: space-between;
+    }
+    &__element-3 { width: 270px }
+    &__element-4 {
+        width: 270px;
+        display: -webkit-flex; 
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 21px;
+    }
+    &__table {
         p {
             font-size: 14px;
-            line-height: 15px;
+            line-height: 17px;
         }
-        h2 { line-height: 15px }
-        h3 {
-            font-size: 12px;
-            line-height: 15px;
+        display: -webkit-flex; 
+        display: flex;
+        margin-top: 10px;
+        &:nth-child(1) { margin-left: 22px }
+        &:nth-child(2) {
+            margin-right: 20px;
+            & h3, p {color: rgba(31, 32, 65, 0.5);line-height: 18px;}
+        }
+        &:nth-child(n) > * {
+            align-self: flex-end;
+            &:nth-child(2) {margin-left: 5px;}
+            &:nth-child(3) {margin-left: 5px;}
         }
     }
-    .number-card__number {
-        p { margin-right: 6px }
-        h2 {
-            font-size: 19px;
-            line-height: 19px;
-            margin-right: 6px
-        }
+    &__line {
+        margin-top: 12px;
+        margin-left: 20px;
+        width:230px;
+        height: 1px;
+        background: rgba(31, 32, 65, 0.1);
     }
-    .number-card__price {
-        h3, p {
-            color: rgba(31, 32, 65, 0.5);
-            line-height: 15px;
-        }
-        h3 {
-            font-size: 14px;
-            margin-right: 4px
-        }
-        p { font-size: 12px }
-    }
-}
-
-.number-card__description {
-    background: white;
-    width: 270px;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-}
-
-.number-card__element-1 {
-    width: 270px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-}
-
-.number-card__element-2 {
-    width: 270px;
-    display: -webkit-flex; 
-    display: flex;
-    justify-content: space-between;
-}
-
-.number-card__element-3 { width: 270px }
-
-.number-card__element-4 {
-    width: 270px;
-    display: -webkit-flex; 
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 21px;
-}
-
-.number-card__table {
-    p {
-        font-size: 14px;
-        line-height: 17px;
-    }
-    display: -webkit-flex; 
-    display: flex;
-    margin-top: 10px;
-    &:nth-child(1) { margin-left: 22px }
-    &:nth-child(2) {
-        margin-right: 20px;
-        & h3, p {color: rgba(31, 32, 65, 0.5);line-height: 18px;}
-    }
-    &:nth-child(n) > * {
-        align-self: flex-end;
-        &:nth-child(2) {margin-left: 5px;}
-        &:nth-child(3) {margin-left: 5px;}
-    }
-}
-
-.number-card__line {
-    margin-top: 12px;
-    margin-left: 20px;
-    width:230px;
-    height: 1px;
-    background: rgba(31, 32, 65, 0.1);
 }
 
 @supports(-webkit-appearance: none) or (-moz-appearance: none) {
@@ -139,290 +130,104 @@ $PATH: '../project.blocks/number-card/images/';
                 background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
             }
         }
-    }
-
-    .number-card__num-and-price {
-        display: -webkit-flex; 
-        display: flex;
-        justify-content: space-between;
-        margin-right: 30px;
-        margin-bottom: 20px;
-    }
-
-    .number-card__image {
-        &_1 {
-            .number-card__input {
-                &:nth-child(1):checked ~ .number-card__background {
-                    background: url($PATH+"number-card__image_1-1.jpg") no-repeat;
-                }
-                &:nth-child(2):checked ~ .number-card__background {
-                    background: 50% 50% url($PATH+"number-card__image_1-2.jpg") no-repeat;
-                }
-                &:nth-child(3):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_1-3.jpg") no-repeat;
-                }
-                &:nth-child(4):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_1-3.jpg") no-repeat;
+        &__num-and-price {
+            display: -webkit-flex; 
+            display: flex;
+            justify-content: space-between;
+            margin-right: 30px;
+            margin-bottom: 20px;
+        }
+        &__image {
+            &_{
+                @for $i from 1 through 12 {
+                    &#{$i} {
+                        .number-card__input {
+                            @for $j from 1 through 4 {
+                                &:nth-child(#{$j}):checked ~ .number-card__background {
+                                    $URL: $PATH+"number-card__image_"+$i+"-"+$j+".jpg";
+                                    background-image: url($URL);
+                                    background-repeat: no-repeat;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
-        &_2 {
-            .number-card__input {
-                &:nth-child(1):checked ~ .number-card__background {
-                    background: url($PATH+"number-card__image_2-1.jpg") no-repeat;
-                }
-                &:nth-child(2):checked ~ .number-card__background {
-                    background: 50% 50% url($PATH+"number-card__image_2-1.jpg") no-repeat;
-                }
-                &:nth-child(3):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_2-1.jpg") no-repeat;
-                }
-                &:nth-child(4):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_2-1.jpg") no-repeat;
-                }
+        &__background {
+            background-size: cover;
+        }
+        &__buttons {
+            display: -webkit-flex; 
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            width: 270px;
+            z-index: 1;
+            color: white;
+            font-size: 24px;
+            line-height: 24px;
+        }
+        &__left, &__right {
+            display: -webkit-flex; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p {
+                cursor: pointer;
+                visibility: hidden;
             }
         }
-        &_3 {
-            .number-card__input {
-                &:nth-child(1):checked ~ .number-card__background {
-                    background: url($PATH+"number-card__image_3-1.jpg") no-repeat;
-                }
-                &:nth-child(2):checked ~ .number-card__background {
-                    background: 50% 50% url($PATH+"number-card__image_3-1.jpg") no-repeat;
-                }
-                &:nth-child(3):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_3-1.jpg") no-repeat;
-                }
-                &:nth-child(4):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_3-1.jpg") no-repeat;
-                }
+        &__left {
+            width: 42px;
+            height: 151px;
+            &:hover {
+                background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
             }
         }
-        &_4 {
-            .number-card__input {
-                &:nth-child(1):checked ~ .number-card__background {
-                    background: url($PATH+"number-card__image_4-1.jpg") no-repeat;
-                }
-                &:nth-child(2):checked ~ .number-card__background {
-                    background: 50% 50% url($PATH+"number-card__image_4-1.jpg") no-repeat;
-                }
-                &:nth-child(3):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_4-1.jpg") no-repeat;
-                }
-                &:nth-child(4):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_4-1.jpg") no-repeat;
-                }
+        &__right {
+            width: 42px;
+            height: 151px;
+            &:hover {
+                background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
             }
         }
-        &_5 {
-            .number-card__input {
-                &:nth-child(1):checked ~ .number-card__background {
-                    background: url($PATH+"number-card__image_5-1.jpg") no-repeat;
-                }
-                &:nth-child(2):checked ~ .number-card__background {
-                    background: 50% 50% url($PATH+"number-card__image_5-1.jpg") no-repeat;
-                }
-                &:nth-child(3):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_5-1.jpg") no-repeat;
-                }
-                &:nth-child(4):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_5-1.jpg") no-repeat;
-                }
-            }
-        }
-        &_6 {
-            .number-card__input {
-                &:nth-child(1):checked ~ .number-card__background {
-                    background: url($PATH+"number-card__image_6-1.jpg") no-repeat;
-                }
-                &:nth-child(2):checked ~ .number-card__background {
-                    background: 50% 50% url($PATH+"number-card__image_6-1.jpg") no-repeat;
-                }
-                &:nth-child(3):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_6-1.jpg") no-repeat;
-                }
-                &:nth-child(4):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_6-1.jpg") no-repeat;
-                }
-            }
-        }
-        &_7 {
-            .number-card__input {
-                &:nth-child(1):checked ~ .number-card__background {
-                    background: url($PATH+"number-card__image_7-1.jpg") no-repeat;
-                }
-                &:nth-child(2):checked ~ .number-card__background {
-                    background: 50% 50% url($PATH+"number-card__image_7-1.jpg") no-repeat;
-                }
-                &:nth-child(3):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_7-1.jpg") no-repeat;
-                }
-                &:nth-child(4):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_7-1.jpg") no-repeat;
-                }
-            }
-        }
-        &_8 {
-            .number-card__input {
-                &:nth-child(1):checked ~ .number-card__background {
-                    background: url($PATH+"number-card__image_8-1.jpg") no-repeat;
-                }
-                &:nth-child(2):checked ~ .number-card__background {
-                    background: 50% 50% url($PATH+"number-card__image_8-1.jpg") no-repeat;
-                }
-                &:nth-child(3):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_8-1.jpg") no-repeat;
-                }
-                &:nth-child(4):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_8-1.jpg") no-repeat;
-                }
-            }
-        }
-        &_9 {
-            .number-card__input {
-                &:nth-child(1):checked ~ .number-card__background {
-                    background: url($PATH+"number-card__image_9-1.jpg") no-repeat;
-                }
-                &:nth-child(2):checked ~ .number-card__background {
-                    background: 50% 50% url($PATH+"number-card__image_9-1.jpg") no-repeat;
-                }
-                &:nth-child(3):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_9-1.jpg") no-repeat;
-                }
-                &:nth-child(4):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_9-1.jpg") no-repeat;
-                }
-            }
-        }
-        &_10 {
-            .number-card__input {
-                &:nth-child(1):checked ~ .number-card__background {
-                    background: url($PATH+"number-card__image_10-1.jpg") no-repeat;
-                }
-                &:nth-child(2):checked ~ .number-card__background {
-                    background: 50% 50% url($PATH+"number-card__image_10-1.jpg") no-repeat;
-                }
-                &:nth-child(3):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_10-1.jpg") no-repeat;
-                }
-                &:nth-child(4):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_10-1.jpg") no-repeat;
-                }
-            }
-        }
-        &_11 {
-            .number-card__input {
-                &:nth-child(1):checked ~ .number-card__background {
-                    background: url($PATH+"number-card__image_11-1.jpg") no-repeat;
-                }
-                &:nth-child(2):checked ~ .number-card__background {
-                    background: 50% 50% url($PATH+"number-card__image_11-1.jpg") no-repeat;
-                }
-                &:nth-child(3):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_11-1.jpg") no-repeat;
-                }
-                &:nth-child(4):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_11-1.jpg") no-repeat;
-                }
-            }
-        }
-        &_12 {
-            .number-card__input {
-                &:nth-child(1):checked ~ .number-card__background {
-                    background: url($PATH+"number-card__image_12-1.jpg") no-repeat;
-                }
-                &:nth-child(2):checked ~ .number-card__background {
-                    background: 50% 50% url($PATH+"number-card__image_12-1.jpg") no-repeat;
-                }
-                &:nth-child(3):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_12-1.jpg") no-repeat;
-                }
-                &:nth-child(4):checked ~ .number-card__background {
-                    background: 10% 10% url($PATH+"number-card__image_12-1.jpg") no-repeat;
-                }
-            }
-        }
-    }
-
-    .number-card__buttons {
-        display: -webkit-flex; 
-        display: flex;
-        justify-content: space-between;
-        position: absolute;
-        width: 270px;
-        z-index: 1;
-        color: white;
-        font-size: 24px;
-        line-height: 24px;
-    }
-
-    .number-card__left, .number-card__right {
-        display: -webkit-flex; 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        p {
-            cursor: pointer;
-            visibility: hidden;
-        }
-    }
-    
-    .number-card__left {
-        width: 42px;
-        height: 151px;
-        &:hover {
-            background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
-        }
-    }
-
-    .number-card__right {
-        width: 42px;
-        height: 151px;
-        &:hover {
-            background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
-        }
-    }
-
-    .number-card label, .number-card__input { cursor: pointer }
-
-    .number-card label { margin-right: 20px }
-
-    .number-card__input {
-        z-index: 2;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        height: 7.5px;
-        width: 7.5px;
-        outline: none;
-        margin-bottom: 0;
-        margin-right: 10px;
-        &:last-child { margin-right: 0px }
-        border: 1px solid white;
-        border-radius: 50%;
-        position: absolute;
-        &:nth-child(1) { margin-left: 213.75px; margin-top: 128.4px }
-        &:nth-child(2) { margin-left: 225px; margin-top: 128.4px }
-        &:nth-child(3) { margin-left: 236.25px; margin-top: 128.4px }
-        &:nth-child(4) { margin-left: 247.5px; margin-top: 128.4px }
-        &::before {
-            content: '';
-            border-radius: 50%;
-            display: inline-block;
-        }
-        &:checked {
-            background: none;
-            border: 1px solid white;
-            width: 7.5px;
+        label, &__input { cursor: pointer }
+        label { margin-right: 20px }
+        &__input {
+            z-index: 2;
+            -webkit-appearance: none;
+            -moz-appearance: none;
             height: 7.5px;
-            background: white;
-            &::before { background: white }
+            width: 7.5px;
+            outline: none;
+            margin-bottom: 0;
+            margin-right: 10px;
+            &:last-child { margin-right: 0px }
+            border: 1px solid white;
+            border-radius: 50%;
+            position: absolute;
+            &:nth-child(1) { margin-left: 213.75px; margin-top: 128.4px }
+            &:nth-child(2) { margin-left: 225px; margin-top: 128.4px }
+            &:nth-child(3) { margin-left: 236.25px; margin-top: 128.4px }
+            &:nth-child(4) { margin-left: 247.5px; margin-top: 128.4px }
+            &::before {
+                content: '';
+                border-radius: 50%;
+                display: inline-block;
+            }
+            &:checked {
+                background: none;
+                border: 1px solid white;
+                width: 7.5px;
+                height: 7.5px;
+                background: white;
+                &::before { background: white }
+            }
         }
-    }
-
-    .number-card span {
-        vertical-align: top;
-        color: rgba(31, 32, 65, 0.5);
+        span {
+            vertical-align: top;
+            color: rgba(31, 32, 65, 0.5);
+        }
     }
 }
-
-

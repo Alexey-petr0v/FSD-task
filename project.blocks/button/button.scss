@@ -3,14 +3,12 @@ $PATH: '../project.blocks/button/images/';
 .button {
     display: -webkit-flex; 
     display: flex;
-
     &__elem {
         display: -webkit-flex; 
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 22px;
-        .button__text {min-width: 59px}
         &_opaque-background {
             background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
             &.button__text {color: #FFFFFF}
@@ -42,7 +40,6 @@ $PATH: '../project.blocks/button/images/';
             .button__text {min-width: 320px}
         }
     }
-
     &__content {
         .button__text_grey:not(.purple_text) { color: rgba(31, 32, 65, 0.5) }
         .button__text_white:not(.purple_text) { color: #FFFFFF }
@@ -54,9 +51,9 @@ $PATH: '../project.blocks/button/images/';
         cursor: pointer;
         &_padding {height: calc(100% - 4px); min-width: 99px; border-radius: 22px}
     }
-
     &__text {
         font-weight: normal;
         text-align: center;
+        min-width: 59px
     }
 }

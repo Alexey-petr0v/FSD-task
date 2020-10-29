@@ -1,72 +1,61 @@
 $PATH: '../project.blocks/date/images/';
 
-.date__paginator { 
-    /* Запрет выделения текста */
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;
-    user-select: none;
-    display: -webkit-flex; 
-    display: flex;
-    width: 321px;
-    margin-bottom: 8px;
-}
-.date__of-the-month {
-    display: -webkit-flex; 
-    display: flex;
-    color: #1F2041;
-}
-.date__month { 
-    text-align: center;
-    width: 215px;
-    height: 40px;
-    justify-content: center;
-    display: -webkit-flex; 
-    display: flex;
-    align-items: center;
-}
-
-.date__month_checked { 
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    border-radius: 22px;
-    color: #FFFFFF;
-}
-
-.date__month_invisible {
-    display: none
-}
-
-.date__button { 
-    text-align: center;
-    width: 40px;
-    height: 40px;
-    justify-content: center;
-    display: -webkit-flex; 
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.date__button p { 
-    width: 100%;
-    height: 100%;
-}
-
-.date__button_left p { 
-    background: 50% 50% url($PATH+"arrow_back.svg") no-repeat;
-}
-
-.date__button_right p { 
-    background: 50% 50% url($PATH+"arrow_forward.svg") no-repeat;
-}
-
-.date__text p {
-    text-align: center;
-}
-
 .date {
+    &__paginator {
+        /* Запрет выделения текста */
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none;   /* Chrome/Safari/Opera */
+        -khtml-user-select: none;    /* Konqueror */
+        -moz-user-select: none;      /* Firefox */
+        -ms-user-select: none;
+        user-select: none;
+        display: -webkit-flex; 
+        display: flex;
+        width: 321px;
+        margin-bottom: 8px;
+    }
+    &__of-the-month {
+        display: -webkit-flex; 
+        display: flex;
+        color: #1F2041;
+    }
+    &__month {
+        text-align: center;
+        width: 215px;
+        height: 40px;
+        justify-content: center;
+        display: -webkit-flex; 
+        display: flex;
+        align-items: center;
+        &_checked {
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            border-radius: 22px;
+            color: #FFFFFF;
+        }
+        &_invisible {
+            display: none
+        }
+    }
+    &__button {
+        text-align: center;
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+        display: -webkit-flex; 
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        p { width: 100%; height: 100% }
+        &_left p {
+            background: 50% 50% url($PATH+"arrow_back.svg") no-repeat;
+        }
+        &_right p {
+            background: 50% 50% url($PATH+"arrow_forward.svg") no-repeat;
+        }
+    }
+    &__text p {
+        text-align: center;
+    }
     &__buttons {
         margin-top: 6px;
         padding-bottom: 7px;
@@ -75,7 +64,6 @@ $PATH: '../project.blocks/date/images/';
         display: flex; 
         flex-direction: row;
         justify-content: space-between;
-    
         h3 {
             margin-top: 6px;
             margin-right: 6px;
@@ -83,7 +71,6 @@ $PATH: '../project.blocks/date/images/';
             font-weight: bold;
         }
     }
-
     &__top {
         display: -webkit-flex; 
         display: flex; 
@@ -93,14 +80,12 @@ $PATH: '../project.blocks/date/images/';
         padding-left: 14px;
         min-width: 250px;
     }
-    
     &__two-tops {
         display: -webkit-flex; 
         display: flex; 
         flex-direction: row;
         width: 320px;
     }
-
     &__two-top {
         width: 150px;
         padding-left: 14px;
@@ -108,7 +93,6 @@ $PATH: '../project.blocks/date/images/';
         background: url($PATH+"expand_more.svg") calc(100% - 16px) 50% no-repeat #ffffff;
         &:last-child{margin-right: 0px;}
     }
-
     &__bottom {
         padding-top: 11px;
         padding-bottom: 6px;
@@ -116,17 +100,13 @@ $PATH: '../project.blocks/date/images/';
         width: 306px;
         background: white;
     }
-
     &__top, &__bottom, &__two-top {
         border: 1px solid rgba(31, 32, 65, 0.25);
         border-radius: 4px;
     }
-
     &__days, &__cal, &__buttons {
         padding-left: 8px;
-
     }
-
     &__cal {
         display: -webkit-flex; 
         display: flex; 
@@ -185,6 +165,5 @@ $PATH: '../project.blocks/date/images/';
             font-weight: bold;
             color: #FFFFFF;
         }
-
     }
 }
