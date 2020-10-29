@@ -1,65 +1,53 @@
 $PATH: '../project.blocks/paginator/images/';
 
-.paginator__items {
-    display: -webkit-flex; 
-    display: flex;
-    margin-bottom: 8px;
-}
-
-.paginator__elem { 
-    // width: 241px;
-    /* Запрет выделения текста */
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;
-    user-select: none;
-}
-.paginator__numbers {
-    display: -webkit-flex; 
-    display: flex;
-}
-.paginator__number { 
-    cursor: pointer;
-    text-align: center;
-    width: 40px;
-    height: 40px;
-    justify-content: center;
-    display: -webkit-flex; 
-    display: flex;
-    align-items: center;
-}
-
-.paginator__number_checked { 
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    border-radius: 22px;
-    color: #FFFFFF;
-}
-
-.paginator__number_invisible {
-    display: none
-}
-
-.paginator__button { 
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-    border-radius: 22px;
-    text-align: center;
-    width: 40px;
-    height: 40px;
-    justify-content: center;
-    display: -webkit-flex; 
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.paginator__button p { 
-    width: 100%;
-    height: 100%;
-    background: 50% 50% url($PATH+"arrow_forward_white.svg") no-repeat;
-}
-
-.paginator__text p {
-    margin-left: 5px;
+.paginator {
+    &__items {
+        display: -webkit-flex; 
+        display: flex;
+        margin-bottom: 8px;
+    }
+    &__elem { 
+        /* Запрет выделения текста */
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none;   /* Chrome/Safari/Opera */
+        -khtml-user-select: none;    /* Konqueror */
+        -moz-user-select: none;      /* Firefox */
+        -ms-user-select: none;
+        user-select: none;
+    }
+    &__numbers {
+        display: -webkit-flex; 
+        display: flex;
+    }
+    &__number { 
+        cursor: pointer;
+        text-align: center;
+        width: 40px; height: 40px;
+        justify-content: center;
+        display: -webkit-flex; 
+        display: flex;
+        align-items: center;
+        &_checked { 
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            border-radius: 22px;
+            color: #FFFFFF;
+        }
+        &_invisible { display: none }
+    }
+    &__button { 
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        border-radius: 22px;
+        text-align: center;
+        width: 40px; height: 40px;
+        justify-content: center;
+        display: -webkit-flex; 
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        p { 
+            width: 100%; height: 100%;
+            background: 50% 50% url($PATH+"arrow_forward_white.svg") no-repeat;
+        }
+    }
+    &__text p { margin-left: 5px }
 }

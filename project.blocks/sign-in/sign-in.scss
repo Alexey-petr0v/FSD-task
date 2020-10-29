@@ -3,14 +3,13 @@ $PATH: '../project.blocks/sign-in/images/';
 .sign-in {
     background: url($PATH+"sign-in.png");
     background-size: cover;
-}
-
-.sign-in__box {
-    display: -webkit-flex; 
-    display: flex;
-    justify-content: center;
-    margin-top: 242px;
-    margin-bottom: 172px;
+    &__box {
+        display: -webkit-flex; 
+        display: flex;
+        justify-content: center;
+        margin-top: 242px;
+        margin-bottom: 172px;
+    }
 }
 
 // Десктоп. Разрешение < 375px

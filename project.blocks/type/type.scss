@@ -2,18 +2,15 @@
     display: -webkit-flex; 
     display: flex; 
     flex-direction: column;
-
     &__elem {
         margin-bottom: 50px;
         display: -webkit-flex; 
         display: flex; 
         flex-direction: row;
     }
-
     &__column-left {
         width: 37px;
         margin-right: 30px;
-
         * {
             text-align: right;
             color: rgba(31, 32, 65, 0.25);
@@ -21,32 +18,27 @@
             font-style: normal;
             font-weight: normal;
         }
-
         &_l-font-1 {font-size: 24px; line-height: 29px;}
         &_l-font-2 {font-size: 19px; line-height: 23px;}
         &_l-font-3 {font-size: 12px; line-height: 15px;}
         &_l-font-4 {font-size: 14px; line-height: 24px;}
     }
-
     &__column-right {
         &_r-font-1 {
             width: 336px;
             min-height: 60px;
             h1 {vertical-align: top;}
         }
-
         &_r-font-2 {
             width: 282px;
             min-height: 48px;
             h2 {vertical-align: top;}
         }
-
         &_r-font-3 {
             width: 186px;
             min-height: 15px;
             h3 {vertical-align: top;}
         }
-
         &_r-font-4 {
             * {color: rgba(31, 32, 65, 0.75);}
             width: 301px;

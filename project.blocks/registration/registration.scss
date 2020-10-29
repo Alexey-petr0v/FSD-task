@@ -3,15 +3,14 @@ $PATH: '../project.blocks/registration/images/';
 .registration {
     background: url($PATH+"reg.png");
     background-size: cover;
-}
-
-.registration__box {
-    display: -webkit-flex; 
-    display: flex;
-    justify-content: center;
-    margin-top: 89px;
-    margin-left: 6px;
-    margin-bottom: 19px;
+    &__box {
+        display: -webkit-flex; 
+        display: flex;
+        justify-content: center;
+        margin-top: 89px;
+        margin-left: 6px;
+        margin-bottom: 19px;
+    }
 }
 
 // Десктоп. Разрешение < 375px

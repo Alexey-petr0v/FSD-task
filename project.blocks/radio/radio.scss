@@ -10,73 +10,62 @@
         -ms-user-select: none;
         user-select: none;
         align-items: center;
-    }
-
-    .radio label, .radio__input { cursor: pointer }
-
-    .radio label {
-        margin-right: 21px;
-    }
-
-    .radio__input {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        height: 20px;
-        outline: none;
-        margin-left: 0;
-        margin-top: 0;
-        margin-bottom: 0;
-        margin-right: 10px;
-        &:last-child { margin-right: 0px }
-        border: 1px solid rgba(31, 32, 65, 0.25);
-        border-radius: 50%;
-        &::before {
-            content: '';
+        label, &__input { cursor: pointer }
+        label { margin-right: 21px }
+        &__input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            height: 20px;
+            outline: none;
+            margin-left: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-right: 10px;
+            &:last-child { margin-right: 0px }
+            border: 1px solid rgba(31, 32, 65, 0.25);
             border-radius: 50%;
-            display: inline-block;
-            width: 18px;
-            height: 18px;
-        }
-        &:checked {
-            background: none;
-            border: 1px solid #BC9CFF;
             &::before {
-                width: 12px;
-                height: 12px;
-                margin: 3px;
-                background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+                content: '';
+                border-radius: 50%;
+                display: inline-block;
+                width: 18px;
+                height: 18px;
+            }
+            &:checked {
+                background: none;
+                border: 1px solid #BC9CFF;
+                &::before {
+                    width: 12px;
+                    height: 12px;
+                    margin: 3px;
+                    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+                }
+            }
+            &_rate {
+                margin-right: 4px;
+                border-radius: 0px;
+                border: 0px;
+                width: 20px; height: 20px;
+                &::before { background: none }
+                &:checked {
+                    background: url($PATH+"star.svg") no-repeat;
+                    border: 0px;
+                    &::before { background: none; border: 0px }
+                }
+                &:first-child{
+                    background: url($PATH+"star.svg") no-repeat;
+                }
+                &:first-child ~ .radio__input_rate:not(.radio__input_rate:checked ~ .radio__input_rate){
+                    background: url($PATH+"star.svg") no-repeat;
+                }
+                &:checked ~ .radio__input_rate{
+                    background: url($PATH+"star_border.svg") no-repeat;
+                }
             }
         }
-    }
-
-    .radio span {
-        vertical-align: top;
-        color: rgba(31, 32, 65, 0.5);
-    }
-
-    .radio__input_rate {
-        margin-right: 4px;
-        border-radius: 0px;
-        border: 0px;
-        width: 20px;
-        height: 20px;
-        &::before { background: none }
-        &:checked {
-            background: url($PATH+"star.svg") no-repeat;
-            border: 0px;
-            &::before { background: none; border: 0px }
-        }
-
-        &:first-child{
-            background: url($PATH+"star.svg") no-repeat;
-        }
-
-        &:first-child ~ .radio__input_rate:not(.radio__input_rate:checked ~ .radio__input_rate){
-            background: url($PATH+"star.svg") no-repeat;
-        }
-
-        &:checked ~ .radio__input_rate{
-            background: url($PATH+"star_border.svg") no-repeat;
+        span {
+            vertical-align: top;
+            color: rgba(31, 32, 65, 0.5);
         }
     }
 }
