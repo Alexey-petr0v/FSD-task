@@ -1,6 +1,5 @@
 .cards {
     &__columns {
-        margin: 3px auto 0px auto ;
         display: -webkit-flex; 
         display: flex;
         flex-wrap: wrap;
@@ -8,7 +7,7 @@
     }
     &__column {
         margin-right: 40px;
-        margin-top: 7px;
+        margin-top: 10px;
         &:first-child {margin-left: 40px}
         &:last-child {margin-right: 0px}
     }
@@ -20,21 +19,9 @@
 // Десктоп. Разрешение < 1991px
 @media (max-width: 1920px) {
     .cards {
-        &__columns {
-            flex-direction: row;
-            max-width: 1160px;
-        }
         &__column:first-child {
             margin-left: 0px;
         }
-    }
-}
-
-// Планшеты. Разрешение < 993px
-@media (max-width: 992px) {
-    .cards__columns {
-        flex-direction: row;
-        max-width: 750px;
     }
 }
 

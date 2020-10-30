@@ -6,7 +6,6 @@ $PATH: '../project.blocks/button/images/';
     &__elem {
         display: -webkit-flex; 
         display: flex;
-        justify-content: center;
         align-items: center;
         border-radius: 22px;
         &_opaque-background {
@@ -47,13 +46,11 @@ $PATH: '../project.blocks/button/images/';
         display: flex;
         justify-content: center;
         align-items: center;
-        text-decoration: none;
         cursor: pointer;
         &_padding {height: calc(100% - 4px); min-width: 99px; border-radius: 22px}
     }
     &__text {
         font-weight: normal;
         text-align: center;
-        min-width: 59px
     }
 }

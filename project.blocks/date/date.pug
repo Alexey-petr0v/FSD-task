@@ -16,11 +16,13 @@ mixin addDateBottom
         .date__buffer-value(data-value="")
         input(name='date', value='{"full_date_1": "2000-0-1", "full_date_2": "2000-0-3"}', type='hidden')
         .date__paginator
-            .date__button.date__button_left(id="date-but-prev")
+            .date__button.date__button_left(id="date-but-prev").material-icons.md-24.purple_text
                 p
+                    span= "arrow_back"
             .date__of-the-month
-            .date__button.date__button_right(id="date-but-next")
+            .date__button.date__button_right(id="date-but-next").material-icons.md-24.purple_text
                 p
+                    span= "arrow_forward"
         .date__days.purple_text
             - var days = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
             - for (var i = 0; i < days.length; i++)

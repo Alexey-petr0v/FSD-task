@@ -11,16 +11,9 @@ $PATH: '../project.blocks/date/images/';
         user-select: none;
         display: -webkit-flex; 
         display: flex;
-        width: 321px;
         margin-bottom: 8px;
     }
-    &__of-the-month {
-        display: -webkit-flex; 
-        display: flex;
-        color: #1F2041;
-    }
     &__month {
-        text-align: center;
         width: 215px;
         height: 40px;
         justify-content: center;
@@ -32,9 +25,7 @@ $PATH: '../project.blocks/date/images/';
             border-radius: 22px;
             color: #FFFFFF;
         }
-        &_invisible {
-            display: none
-        }
+        &_invisible { display: none }
     }
     &__button {
         text-align: center;
@@ -45,19 +36,13 @@ $PATH: '../project.blocks/date/images/';
         display: flex;
         align-items: center;
         cursor: pointer;
-        p { width: 100%; height: 100% }
-        &_left p {
-            background: 50% 50% url($PATH+"arrow_back.svg") no-repeat;
-        }
-        &_right p {
-            background: 50% 50% url($PATH+"arrow_forward.svg") no-repeat;
+        &_left, &_right {
+            p { padding-top: 0.9px; }
         }
     }
-    &__text p {
-        text-align: center;
-    }
+    &__text p { text-align: center }
     &__buttons {
-        margin-top: 6px;
+        padding-top: 7px;
         padding-bottom: 7px;
         padding-right: 13px;
         display: -webkit-flex; 
@@ -104,26 +89,21 @@ $PATH: '../project.blocks/date/images/';
         border: 1px solid rgba(31, 32, 65, 0.25);
         border-radius: 4px;
     }
-    &__days, &__cal, &__buttons {
-        padding-left: 8px;
-    }
+    &__days, &__cal { padding-left: 8px }
+    &__buttons { padding-left: 7px }
     &__cal {
         display: -webkit-flex; 
         display: flex; 
         flex-wrap: wrap;
-        padding-left: 10px;
         padding-bottom: 8px;
     }
-    &__cal, &__days {
-        font-size: 12px;
-        line-height: 15px;
-    }
+    &__cal, &__days { font-size: 12px }
     &__days {
         display: -webkit-flex; 
         display: flex; 
         flex-wrap: wrap;
         font-weight: bold;
-        padding-top: 14px;
+        padding-top: 13px;
     }
     &__day {
         width: 39.88px;
@@ -134,9 +114,7 @@ $PATH: '../project.blocks/date/images/';
         justify-content: center;
     }
     &__cell {
-        visibility:visible;
         cursor: pointer;
-        z-index: 2;
         &_accent {
             background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
         }
@@ -155,6 +133,10 @@ $PATH: '../project.blocks/date/images/';
         display: flex; 
         align-items: center;
         justify-content: center;
+        color: rgba(31, 32, 65, 0.5);
+        &_other-month {
+            color: rgba(31, 32, 65, 0.25);
+        }
         &_current {
             background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
             font-weight: bold;

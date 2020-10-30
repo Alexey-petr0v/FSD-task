@@ -2,7 +2,6 @@
     $PATH: '../project.blocks/checkbox/images/';
     .checkbox {
         &__item {
-            padding: 0px;
             -webkit-touch-callout: none;
             -webkit-user-select: none;
             -khtml-user-select: none;
@@ -10,24 +9,18 @@
             -ms-user-select: none;
             user-select: none;
             input {
+                background: white;
                 -webkit-appearance: none;
                 -moz-appearance: none;
                 height: 20px;
-                outline: none;
-                display: inline-block;
-                margin-left: 0;
-                margin-top: 0;
-                margin-bottom: 0;
                 margin-right: 10px;
                 border: 1px solid rgba(31, 32, 65, 0.25);
                 border-radius: 4px;
                 cursor: pointer;
-                vertical-align: top;
                 &::before {
                     content: '';
                     display: inline-block;
-                    width: 18px;
-                    height: 18px;
+                    width: 18px; height: 18px;
                 }
                 &::after {
                     content: '';
@@ -35,23 +28,16 @@
                     height: 18px;
                 }
                 &:checked {
-                    background: url($PATH+"check.svg") 3px 2px no-repeat;
+                    background: white url($PATH+"check.svg") 3px 2px no-repeat;
                     border: 1px solid #BC9CFF;
-                    &::before {
-                        background: none;
-                    }
                 }
             }
             label {
                 cursor: pointer;
-                padding: 0px;
-                margin: 0px;
                 display: -webkit-flex; 
                 display: flex;
-                width: 320px;
             }
             span {
-                vertical-align: top;
                 color: rgba(31, 32, 65, 0.5);
                 margin-bottom: 12px;
             }
@@ -59,8 +45,6 @@
                 margin-bottom: 14px;
                 &:last-child{margin-bottom: 0px;}
                 border-radius: 10px;
-                background: white;
-                border: 1px solid rgba(31, 32, 65, 0.25);
                 width: 40px;
                 transition: 0.5s;
                 &::before {
@@ -89,13 +73,9 @@
                 display: inline-block;
                 input {
                     border-radius: 10px;
-                    border: 1px solid rgba(31, 32, 65, 0.25);
                     width: 40px;
-                    background: white;
                     margin-right: 0px;
                     &::before {
-                        padding-left: 0px;
-                        border-radius: 10px;
                         width: 10px;
                         height: 10px;
                         margin: 3px;
@@ -126,14 +106,12 @@
                         }
                         &::after {
                             content: "12";
-                            vertical-align: top;
                         }
                     }
                 }
             }
         }
         &__rich {
-            display: inline-block;
             max-width: 223px;
             margin-bottom: 9px;
             p > span {
@@ -147,7 +125,7 @@
             p {
                 line-height: 14px;
                 &:first-child {
-                    margin-top: 1px;
+                    margin-top: 0px;
                     margin-bottom: 6px
                 }
             }

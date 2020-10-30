@@ -332,8 +332,8 @@ class Date_cal {
         return name_month
     }
     // Функция добавления ячейки для числа
-    addCell(cal, iter_date, current) {
-        $(cal).append("<div data-date='"+iter_date.getDate()+"' data-month='"+iter_date.getMonth()+"' data-year='"+iter_date.getFullYear()+"' class='date__cell'><div class='date__number"+current+"'><p>"+(iter_date.getDate())+"</p></div></div>");
+    addCell(cal, iter_date, current, other_month) {
+        $(cal).append("<div data-date='"+iter_date.getDate()+"' data-month='"+iter_date.getMonth()+"' data-year='"+iter_date.getFullYear()+"' class='date__cell'><div class='date__number"+other_month+current+"'><p>"+(iter_date.getDate())+"</p></div></div>");
     }
     // Функция создания месяца
     addMonth(iter_date){
@@ -350,7 +350,7 @@ class Date_cal {
                 if (prev_iter_date.getTime() == this.current_now_date.getTime()) {
                     current = " date__number_current"
                 }
-                $(this.id+".date__cal").prepend("<div data-date='"+prev_iter_date.getDate()+"' data-month='"+prev_iter_date.getMonth()+"' data-year='"+prev_iter_date.getFullYear()+"' class='date__cell'><div class='date__number"+current+"'><p>"+(prev_iter_date.getDate())+"</p></div></div>");
+                $(this.id+".date__cal").prepend("<div data-date='"+prev_iter_date.getDate()+"' data-month='"+prev_iter_date.getMonth()+"' data-year='"+prev_iter_date.getFullYear()+"' class='date__cell'><div class='date__number"+current+" date__number_other-month'><p>"+(prev_iter_date.getDate())+"</p></div></div>");
                 // Проверка: сегодняшняя ли дата (вторая проверка)
                 if (prev_iter_date.getTime() == this.current_now_date.getTime()) {
                     current = ""
@@ -367,7 +367,7 @@ class Date_cal {
             if (iter_date.getTime() == this.current_now_date.getTime()) {
                 current = " date__number_current"
             }
-            this.addCell(this.id+".date__cal", iter_date, current)
+            this.addCell(this.id+".date__cal", iter_date, current, "")
             // Проверка: сегодняшняя ли дата (вторая проверка)
             if (iter_date.getTime() == this.current_now_date.getTime()) {
                 current = ""
@@ -381,7 +381,7 @@ class Date_cal {
                 if (iter_date.getTime() == this.current_now_date.getTime()) {
                     current = " date__number_current"
                 }
-                this.addCell(this.id+".date__cal", iter_date, current)
+                this.addCell(this.id+".date__cal", iter_date, current, " date__number_other-month")
                 // Проверка: сегодняшняя ли дата (вторая проверка)
                 if (iter_date.getTime() == this.current_now_date.getTime()) {
                     current = ""
@@ -394,7 +394,7 @@ class Date_cal {
             if (iter_date.getTime() == this.current_now_date.getTime()) {
                 current = " date__number_current"
             }
-            this.addCell(this.id+".date__cal", iter_date, current)
+            this.addCell(this.id+".date__cal", iter_date, current, " date__number_other-month")
             // Проверка: сегодняшняя ли дата (вторая проверка)
             if (iter_date.getTime() == this.current_now_date.getTime()) {
                 current = ""

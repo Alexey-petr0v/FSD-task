@@ -1,23 +1,14 @@
 .colors {
-    display: -webkit-flex; 
-    display: flex; 
-    flex-direction: column;
-
     &__elem {
         margin-bottom: 20px;
         display: -webkit-flex; 
         display: flex; 
-        flex-direction: row;
     }
-
     &__column-left {
         min-width: 70px;
         min-height: 70px;
-        max-width: 70px;
-        max-height: 70px;
         border-radius: 6px;
         margin-right: 40px;
-
         &_color {
           &_0 {background: #1F2041;}
           &_1 {background: rgba(31, 32, 65, 0.75);}
@@ -28,20 +19,13 @@
           &_6 {background: #6FCF97;}
         }
     }
-
     &__column-right {
         h2 {
           font-family: 'Quicksand';
           font-style: normal;
           font-weight: normal;
-          vertical-align: middle;
           line-height: 29px;
-          b {
-            font-weight: bold;
-          }
         }
-
-        align-items: center;
         margin-top: 7px;
     }
 }
