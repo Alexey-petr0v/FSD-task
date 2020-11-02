@@ -1,22 +1,21 @@
 $PATH: '../project.blocks/header-nav/images/';
 
 .header-nav {
-    background: white;
-    display: -webkit-flex; 
-    display: flex;
-    position: fixed;
     z-index: 100;
-    width: 100%;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-    &_no-fixed { position: static }
+    &_no-fixed { .header-nav__box { position: static } }
     &__mobile-background { display: none }
     &__box {
-        justify-content: space-between;
-        align-items: center;
+        background: white;
+        position: fixed;
+        width: 100%;
+    }
+    &__center { max-width: 1160px; margin: 0px auto }
+    &__elements {
         display: -webkit-flex; 
         display: flex;
-        min-width: 1160px;
-        margin: 0px auto;
+        justify-content: space-between;
+        align-items: center;
     }
     &__logo {
         width: 106px;
@@ -35,63 +34,30 @@ $PATH: '../project.blocks/header-nav/images/';
 // Разрешение < 1160px
 @media (max-width: 1159px) {
     .header-nav {
-        &__box {
-            margin-left: 20px;
-            margin-right: 20px;
-            min-width: auto;
-            flex-grow: 2;
-        }
+        &__center { margin-right: 20px; margin-left: 20px }
         &__logo { margin-right: 20px }
     }
 }
 
 // Разрешение < 935px
 @media (max-width: 934px) {
-    .header-nav {
-        justify-content: flex-start;
-        &__logo { order: 1 }
-        &__box {
-            flex-grow: 2;
-            align-items: center;
-        }
-        &__nav { align-items: center }
-    }
+    .header-nav__logo { order: 1 }
 }
 
 // Разрешение < 510
 @media (max-width: 509px) {
-    .header-nav {
-        &__logo {
-            margin-right: 0px;
-            transform: scale(0.8);
-        }
-    }
+    .header-nav__logo { margin-right: 0px; transform: scale(0.8) }
 }
 
 // Разрешение < 465px
 @media (max-width: 464px) {
     .header-nav {
         &__nav { height: 35px }
-        &__box {
+        &__elements {
             height: 70px;
             flex-direction: column;
             align-items: flex-start;
         }
-        &__logo {
-            align-self: flex-end;
-            margin-right: 0px;
-            transform: scale(0.8);
-            order: 0;
-        }
-    }
-}
-
-// Разрешение < 360px
-@media (max-width: 359px) {
-    .header-nav {
-        &__box {
-            margin-left: 8px;
-            margin-right: 0px;
-        }
+        &__logo { align-self: flex-end; order: 0 }
     }
 }

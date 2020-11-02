@@ -3,15 +3,15 @@ mixin addRadio(items, num_elem)
         - for (var x = 0; x < items.length; x++)
             if items[x].rate
                 - var mod = "radio__input_rate"
+                - var title = "star_border"
+                - var label_class = "radio__label-rate material-icons md-24"
             else
                 - var mod = ""
+                - var title = items[x].title
+                - var label_class = ""
             if items[x].toggle
                 input(id="radio-"+num_elem+"-"+x, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio", checked="checked")
-                if items[x].title
-                    label(for="radio-"+num_elem+"-"+x)
-                        span= items[x].title
             else
                 input(id="radio-"+num_elem+"-"+x, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio")
-                if items[x].title
-                    label(for="radio-"+num_elem+"-"+x)
-                        span= items[x].title
+            label(for="radio-"+num_elem+"-"+x, class=label_class)
+                span= title

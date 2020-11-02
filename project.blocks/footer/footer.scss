@@ -3,9 +3,7 @@ $PATH: '../project.blocks/footer/images/';
 .footer {
     background: white;
     &:not(.footer_small) {
-        .footer__columns {
-            justify-content: center;
-        }
+        .footer__columns { justify-content: center }
     }
     &__logo { align-self: center; margin-bottom: 17px }
     &_small {
@@ -13,13 +11,11 @@ $PATH: '../project.blocks/footer/images/';
         .footer__top-box {
             background: white;
             max-width: 768px;
-            min-width: 768px;
             margin: auto auto;
             .footer__columns {
                 margin: 120px auto 120px;
                 flex-direction: column;
                 img { margin-bottom: 18px; }
-                p { text-align: center; }
                 .footer__social {
                     width: 100%;
                     justify-content: center;
@@ -37,7 +33,6 @@ $PATH: '../project.blocks/footer/images/';
     &__columns {
         display: -webkit-flex; 
         display: flex;
-        max-width: 1160px;
         margin: 100px auto 70px;
         flex-wrap: wrap;
     }
@@ -70,9 +65,8 @@ $PATH: '../project.blocks/footer/images/';
         margin-top: 25px;
         display: -webkit-flex; 
         display: flex;
-        justify-content: space-between;
         a {
-            margin-right: 22px;
+            margin-right: 20px;
             width: 24px;
             height: 24px;
             &:nth-child(1) {background: url($PATH+"twitter.svg") no-repeat}
@@ -93,23 +87,16 @@ $PATH: '../project.blocks/footer/images/';
 // Десктоп. Разрешение < 1200px
 @media (max-width: 1199px) {
     .footer:not(.footer_small) {
-        .footer__column {
-            margin-left: 20px;
-        }
-        .footer__social {
-            margin-right: 20px;
-        }
+        .footer__column { margin-left: 20px }
+        .footer__social { margin-right: 20px }
         p {
             margin-right: 20px;
             margin-left: 20px;
             margin-bottom: 20px;
         }
-        .footer__bottom-box {
-            height: auto;
-        }
+        .footer__bottom-box { height: auto }
     }
     .footer_small .footer__top-box {
-        min-width: auto;
         .footer__columns p {
             margin-left: 20px;
             margin-right: 20px;

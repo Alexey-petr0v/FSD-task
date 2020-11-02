@@ -1,7 +1,7 @@
 
 include ../dropdown/dropdown
 
-mixin addNavigator
+mixin addNavigator(first_bold)
     .navigator
         input.navigator__mobile-button(type="checkbox", id="header")
         label(for="header")
@@ -9,7 +9,7 @@ mixin addNavigator
         .navigator__mobile-background
         ul.navigator__ul
             li
-                p О нас
+                p(class=first_bold) О нас
             li
                 +addDropdown('Услуги', {name: "list-1", dropdown_elem_small: "dropdown__elem_elastic", dropdown_elem_no_border: "dropdown__elem_no-border", type_units: "separately"}, false, services)
             li

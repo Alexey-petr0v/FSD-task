@@ -1,19 +1,12 @@
 .form-registration {
     &__element {
-        &:nth-child(1) {
-            margin-top: 1px;
-            margin-bottom: 20px
-        }
-        &:nth-child(2) {margin-bottom: 10px}
-        &:nth-child(3) {margin-bottom: 9px}
-        &:nth-child(4) {
-            margin-bottom: 21px;
-            span {line-height: 23px}
-        }
-        &:nth-child(5) {margin-bottom: 20px}
-        &:nth-child(6) {margin-bottom: 10px}
-        &:nth-child(7) {margin-bottom: 10px}
-        &:nth-child(8) {margin-bottom: 10px}
+        &:nth-child(1) { margin-top: 1px; margin-bottom: 20px }
+        &:nth-child(2) { margin-bottom: 10px }
+        &:nth-child(3) { margin-bottom: 9px }
+        &:nth-child(4) { margin-bottom: 21px }
+        &:nth-child(4) span { line-height: 23px }
+        &:nth-child(5) { margin-bottom: 20px }
+        &:nth-child(6), &:nth-child(7),  &:nth-child(8) { margin-bottom: 10px }
         &:nth-child(9) {
             margin-bottom: 30px;
             height: 44px;
@@ -32,7 +25,5 @@
             }
         }
     }
-    &__column {
-        &:nth-child(1) {align-self: center}
-    }
+    &__column:nth-child(1) { align-self: center }
 }

@@ -23,9 +23,19 @@ mixin addHeaderNav(no_fixed, attr)
     else
         - var no_fixed = ''
     - var logged = attr.logged
+    if attr.logged
+        - var logged = attr.logged
+    else
+        - var logged = ''
+    if attr.first_bold
+        - var first_bold = attr.first_bold
+    else
+        - var first_bold = ''
     header.header-nav(class=no_fixed)
         .header-nav__box
-            .header-nav__logo
-            .header-nav__nav
-                +addNavigator
-                +addUserPanel(attr.logged)
+            .header-nav__center
+                .header-nav__elements
+                    .header-nav__logo
+                    .header-nav__nav
+                        +addNavigator(first_bold)
+                        +addUserPanel(logged)

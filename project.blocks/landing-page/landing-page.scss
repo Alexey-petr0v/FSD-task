@@ -1,16 +1,17 @@
 $PATH: '../project.blocks/landing-page/images/';
 
 .landing-page {
-    &_background-1 { background: url($PATH+"landing-page-1.png"); background-size: cover; }
     &_background-2 {
-        background: url($PATH+"landing-page-2.png");
-        background-size: cover; 
         .landing-page__text {
             box-shadow: 10px 0 0px rgba(210,210,210,0.8);
             background: rgba(255,255,255,0.8);
         }
     }
-    &_background-3 { background: url($PATH+"landing-page-3.png"); background-size: cover; }
+    &_background-{
+        @for $i from 1 through 3 {
+            &#{$i} { background: url($PATH+"landing-page-"+$i+".png"); background-size: cover }
+        }
+    }
     background-size: cover;
     &__box {
         height: 900px;
@@ -34,35 +35,21 @@ $PATH: '../project.blocks/landing-page/images/';
 
 // Десктоп. Разрешение > 1550px
 @media (min-width: 1441px) {
-    .landing-page {
-        &_background-1 { background: url($PATH+"landing-page-1.png"); background-size: cover; }
-        &_background-2 { background: url($PATH+"landing-page-2.png"); background-size: cover; }
-        &_background-3 { background: url($PATH+"landing-page-3.png"); background-size: cover; }
-        
-    }
     .landing-page__text {
         box-shadow: 10px 0 0px rgba(210,210,210,0.8);
         background: rgba(255,255,255,0.8);
     }
 }
 
-// Десктоп. Разрешение < 1991px
-@media (max-width: 1920px) {
-    .landing-page__box {
-        min-width: 960px;
-    }
-}
-
 // Планшеты. Разрешение < 993px
 @media (max-width: 992px) {
-    .landing-page__box {
-        height: 600px;
-        min-width: auto;
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-    .landing-page__box .landing-page__text {
-        margin-right: 0px;
+    .landing-page {
+        &__box {
+            height: 600px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        &__box &__text { margin-right: 0px }
     }
 }
 
@@ -70,13 +57,9 @@ $PATH: '../project.blocks/landing-page/images/';
 @media (max-width: 767px) {
     .landing-page__box {
         max-width: none;
-        padding-right: 0px;
         flex-direction: column;
         align-items: center;
-        .landing-page__form {
-            margin-top: 140px;
-            margin-left: 0px;
-        }
+        .landing-page__form { margin-left: 0px }
     }
 }
 
@@ -84,8 +67,7 @@ $PATH: '../project.blocks/landing-page/images/';
 @media (max-width: 374px) {
     .landing-page_background-2 {
         .landing-page__text {
-            box-shadow: none;
-            background: none;
+            box-shadow: none; background: none;
         }
     }
     .landing-page__box {
@@ -93,13 +75,7 @@ $PATH: '../project.blocks/landing-page/images/';
         background: white;
         margin-left: 0px;
         margin-right: 0px;
-        align-items: center;
-        .landing-page__form {
-            margin-top: 70px;
-        }
-        .landing-page__text {
-            margin-top: 10px;
-            align-self: center;
-        }
+        .landing-page__form { margin-top: 70px }
+        .landing-page__text { margin-top: 10px; align-self: center }
     }
 }
