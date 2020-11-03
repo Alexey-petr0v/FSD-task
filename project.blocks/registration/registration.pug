@@ -1,6 +1,18 @@
 include ../form-registration/form-registration
 
+-
+    var radio_buttons = [
+        {title: "Мужчина", name: "pol", value: "muzhchina", toggle: true},
+        {title: "Женщина", name: "pol", value: "zhenshina", toggle: false}
+    ]
+- var radio_num = 1
+
+-
+    var toggle_buttons = [
+        {title: "Получать спецпредложения", name: "poluchat_specpredlozheniya", value : false, toggle: true}
+    ]
+
 main.registration
     .main-container
         .registration__box
-            +addFormRegistration()
+            +addFormRegistration(radio_buttons, radio_num, toggle_buttons)

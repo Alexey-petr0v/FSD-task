@@ -8,6 +8,7 @@ mixin addRangeSlider(title)
                     <span class='range-slider__output_1'>5 000</span>₽ - <span class='range-slider__output_2'>10 000</span>₽
         .range-slider__slider
             input(name='range-slider', data-output1='5 000', data-output2='10 000', value='{output1: "5 000", output2: "10 000"}', type='hidden')
+            .range-slider__line
             .range-slider__limit.range-slider__limit_left
                 .range-slider__point(class="range-slider__point_1")
             .range-slider__accent

@@ -67,7 +67,7 @@ main.search-room
                         +addDropdown('Дополнительные удобства', attributes[3], {checkbox: true}, expandable_checkbox_list)
             .search-room__column
                 h1 Номера, которые мы для вас подобрали
-                .search-room__numbers
+                .search-room__numbers(id="search-room-numbers")
                     +addNumberCard(1, 5, 888, "9 990", 145, true)
                     +addNumberCard(2, 4, 840, "9 900", 65)
                     +addNumberCard(3, 3, 980, "8 500", 35, true)
@@ -80,11 +80,9 @@ main.search-room
                     +addNumberCard(10, 5, 666, "5 000", 25)
                     +addNumberCard(11, 3, 444, "5 000", 15)
                     +addNumberCard(12, 3, 352, "5 000", 55)
+
+                    +addNumberCard(13, 3, 351, "4 500", 30)
+                    +addNumberCard(14, 3, 354, "4 000", 35)
+                    +addNumberCard(15, 3, 353, "4 000", 66)
                 .search-room__paginator
                     +addPaginator
-
-
-
-            
-            //- .form-elements__element_6
-            //-     +addDropdown('filter date dropdown', attributes[2], {date: true})

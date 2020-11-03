@@ -6,13 +6,25 @@ include ../date/date
 include ../number-card/number-card
 
 
+
+-
+    var radio_buttons = [
+        {title: "Мужчина", name: "pol", value: "muzhchina", toggle: true},
+        {title: "Женщина", name: "pol", value: "zhenshina", toggle: false}
+    ]
+
+-
+    var toggle_buttons = [
+        {title: "Получать спецпредложения", name: "poluchat_specpredlozheniya", value : false, toggle: true}
+    ]
+
 .cards
     .cards__columns
         .cards__column
             .cards__element
                 +addFormRoomSearch()
             .cards__element
-                +addFormRegistration()
+                +addFormRegistration(radio_buttons, radio_num, toggle_buttons)
         .cards__column
             .cards__element
                 +addFormReservation()

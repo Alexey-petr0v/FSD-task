@@ -7,15 +7,12 @@
         &:nth-child(4) span { line-height: 23px }
         &:nth-child(5) { margin-bottom: 20px }
         &:nth-child(6), &:nth-child(7),  &:nth-child(8) { margin-bottom: 10px }
+        &:nth-child(9), &:nth-child(10) { display: -webkit-flex; display: flex }
         &:nth-child(9) {
             margin-bottom: 30px;
             height: 44px;
-            display: -webkit-flex; 
-            display: flex
         }
         &:nth-child(10) {
-            display: -webkit-flex; 
-            display: flex;
             justify-content: space-between;
             padding-right: 30px;
             height: 44px;

@@ -5,18 +5,9 @@ include ../radio/radio
 include ../checkbox/checkbox
 include ../button/button
 
--
-    var radio_buttons = [
-        {title: "Мужчина", name: "pol", value: "muzhchina", toggle: true},
-        {title: "Женщина", name: "pol", value: "zhenshina", toggle: false}
-    ]
 
--
-    var toggle_buttons = [
-        {title: "Получать спецпредложения", name: "poluchat_specpredlozheniya", value : false, toggle: true}
-    ]
 
-mixin addFormRegistration
+mixin addFormRegistration(radio_buttons, radio_num, toggle_buttons)
     .form-registration
         +addForm
             .form-registration__element
@@ -26,7 +17,7 @@ mixin addFormRegistration
             .form-registration__element
                 +addTextField('Фамилия')
             .form-registration__element
-                +addRadio(radio_buttons, 1)
+                +addRadio(radio_buttons, radio_num)
             .form-registration__element
                 +addTextField('ДД.ММ.ГГГГ', 'дата рождения', '', 'text-field__elem_masked')
             .form-registration__element

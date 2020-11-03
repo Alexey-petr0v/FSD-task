@@ -6,15 +6,23 @@ mixin addRadio(items, num_elem)
                 - var title = "star_border"
                 - var title_2 = "star_rate"
                 - var label_class = "radio__label-rate material-icons md-24"
+                - var id = "radio-rate-" +num_elem+"-"+x
             else
                 - var mod = ""
                 - var title = items[x].title
                 - var label_class = ""
+                - var id = "radio-"+ num_elem+"-"+x
             if items[x].toggle
-                input(id="radio-"+num_elem+"-"+x, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio", checked="checked")
+                if items[x].rate
+                    input(id=id, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio", checked="checked", disabled="disabled")
+                else
+                    input(id=id, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio", checked="checked")
             else
-                input(id="radio-"+num_elem+"-"+x, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio")
-            label(for="radio-"+num_elem+"-"+x, class=label_class)
+                if items[x].rate
+                    input(id=id, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio", disabled="disabled")
+                else
+                    input(id=id, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio")
+            label(for=id, class=label_class)
                 span= title
                 if items[x].rate
                     span= title_2

@@ -11,7 +11,7 @@
         user-select: none;
         align-items: center;
         label, &__input { cursor: pointer }
-        label { margin-right: 20px }
+        &__input ~ label { margin-right: 20px }
         label > span { color: rgba(31, 32, 65, 0.5) }
         &__input {
             -webkit-appearance: none;
@@ -40,7 +40,7 @@
             }
             &_rate {
                 display: none;
-                &~ label { margin-right: 2px }
+                &~ label.radio__label-rate { margin-right: 2px; cursor: auto }
                 &~ label span {
                     display: inline-block;
                     width: 22px;

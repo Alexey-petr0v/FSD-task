@@ -37,34 +37,11 @@
         &_18 { margin-bottom: 256px }
         &_19 { margin-bottom: 223px }
         &_19 > h3 { margin-bottom: 16px }
-        &_21 { margin-bottom: 44px }
-        &_22 {
-            margin-bottom: 30px;
-            &>h3 {margin-bottom: 16px}
-            .form-elements__td {
-                height: 44px;
-                display: -webkit-flex; 
-                display: flex;
-            }
-        }
-        &_23 {
-            margin-bottom: 16px;
-            .form-elements__td {
-                height: 44px;
-                display: -webkit-flex; 
-                display: flex;
-            }
-        }
-        &_24 {
-            margin-bottom: 16px;
-            .form-elements__td {
-                height: 44px;
-                display: -webkit-flex; 
-                display: flex;
-            }
-        }
-        &_25 {
-            margin-bottom: 40px;
+        &_21 { margin-bottom: 38px }
+        &_22 { margin-bottom: 30px }
+        &_23, &_24, &_22 > h3 { margin-bottom: 16px }
+        &_25 { margin-bottom: 40px }
+        &_22, &_23, &_24, &_25 {
             .form-elements__td {
                 height: 44px;
                 display: -webkit-flex; 
@@ -84,10 +61,7 @@
         margin-top: 3px;
     }
     &__column {
-        &_first {
-            min-width: 320px;
-            margin-right: 127px;
-        }
+        &_first { min-width: 320px; margin-right: 127px }
         &_second {
             min-width: 320px;
             margin-right: 73px;
