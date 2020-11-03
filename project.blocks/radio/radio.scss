@@ -9,11 +9,10 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-        
+        align-items: center;
         label, &__input { cursor: pointer }
-        label { 
-            display: -webkit-flex; 
-            display: flex;align-items: center; margin-right: 21px }
+        label { margin-right: 20px }
+        label > span { color: rgba(31, 32, 65, 0.5) }
         &__input {
             -webkit-appearance: none;
             -moz-appearance: none;
@@ -37,81 +36,36 @@
                     margin: 3px;
                     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
                 }
+                &+ label > span { color: rgba(31, 32, 65, 0.75) }
             }
             &_rate {
-                background: brown;
-                margin-right: 4px;
-                border-radius: 0px;
-                border: 0px;
-                width: 20px; height: 20px;
-                &~ label > span::before {
-                    content: "star_rate";
-                    display: none;
-                    position: absolute;
+                display: none;
+                &~ label { margin-right: 2px }
+                &~ label span {
+                    display: inline-block;
+                    width: 22px;
+                    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    color: #a7a7f1;
                 }
-                &:checked {
-                    &~ label > span {
-                        &::before {
-                            display: inline-block
-                        }
+                &+ .radio__label-rate > span {
+                    &:nth-child(1) { display: inline-block }
+                    &:nth-child(2) { display: none }
+                }
+                &:checked, &:first-child, &:first-child ~ .radio__input_rate {
+                    &+ .radio__label-rate > span {
+                        &:nth-child(1) { display: none }
+                        &:nth-child(2) { display: inline-block }
                     }
-                    // background: url($PATH+"star.svg") no-repeat;
-                    // background: pink;
-                    // border: 0px;
-                    // &::before { background: none; border: 0px }
                 }
-                &:first-child ~ .radio__input_rate:not(.radio__input_rate:checked ~ .radio__input_rate){
-                    // background: pink;
-                    // background: url($PATH+"star.svg") no-repeat;
-                }
-                &:checked ~ .radio__input_rate{
-                    // background: powderblue;
-                    // background: url($PATH+"star_border.svg") no-repeat;
-                }
-            }
-/*
-            &_rate {
-                margin-right: 4px;
-                border-radius: 0px;
-                border: 0px;
-                width: 20px; height: 20px;
-                &::before { background: none }
-                &:checked {
-                    // background: url($PATH+"star.svg") no-repeat;
-                    background: pink;
-                    border: 0px;
-                    &::before { background: none; border: 0px }
-                }
-                &:first-child {
-                    background: pink;
-                    // background: url($PATH+"star.svg") no-repeat;
-                }
-                &:first-child ~ .radio__input_rate:not(.radio__input_rate:checked ~ .radio__input_rate){
-                    background: pink;
-                    // background: url($PATH+"star.svg") no-repeat;
-                }
-                &:checked ~ .radio__input_rate{
-                    background: powderblue;
-                    // background: url($PATH+"star_border.svg") no-repeat;
-                }
-            }
-            */
-        }
-        span {
-            vertical-align: top;
-            color: rgba(31, 32, 65, 0.5);
-        }
-        &__input_rate {
-            display: none;
-            &~ label span { display: inline-block; width: 20px; }
-            &:first-child {
-                .radio__input_rate {
-                    &+span {
-                        content: "star_rate";
+                &:checked ~ .radio__input_rate {
+                    &+ .radio__label-rate > span {
+                        &:nth-child(1) { display: inline-block }
+                        &:nth-child(2) { display: none }
                     }
                 }
             }
         }
-        .radio__label-rate { margin-right: 4px }
     }
 }
