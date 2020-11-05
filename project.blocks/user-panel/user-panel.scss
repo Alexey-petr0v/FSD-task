@@ -1,12 +1,12 @@
 .user-panel {
     color: rgba(31, 32, 65, 0.5);
     &__box {
-        display: -webkit-flex; 
+        display: -webkit-flex;
         display: flex;
         align-items: center;
     }
     &__buttons {
-        display: -webkit-flex; 
+        display: -webkit-flex;
         display: flex;
         height: 34px;
         &> * {
@@ -15,8 +15,7 @@
         }
     }
     &__line {
-        width: 1px;
-        height: 30px;
+        width: 1px; height: 30px;
         background: rgba(31, 32, 65, 0.1);
         margin-right: 20px;
     }
@@ -24,30 +23,24 @@
 
 // Разрешение < 935px
 @media (max-width: 934px) {
-    .user-panel {
-        &__box { margin-left: 20px }
-    }
+    .user-panel__box { margin-left: 20px }
 }
 
 // Разрешение < 510
 @media (max-width: 509px) {
-    .user-panel {
-        &__box {
-            height: 35px;
-            transform: scale(0.8); 
-            align-items: flex-end;
-        }
+    .user-panel__box {
+        height: 35px;
+        transform: scale(0.8); 
+        align-items: flex-end
     }
 }
 
 // Разрешение < 465px
 @media (max-width: 464px) {
-    .user-panel {
-        &__box {
-            height: 35px;
-            transform: scale(0.8); 
-            align-items: flex-end;
-        }
+    .user-panel__box {
+        height: 35px;
+        transform: scale(0.8); 
+        align-items: flex-end
     }
 }
 
