@@ -1,117 +1,117 @@
 .form-elements {
-    &__cells {
+  &__cells {
+    display: -webkit-flex; 
+    display: flex;
+  }
+  &__td {
+    display: inline-block;
+    margin-right: 20px;
+    &:last-child { margin-right: 0px }
+    &_no-indent { margin-bottom: 0px }
+  }
+  &__element {
+    &_1, &_2 { margin-bottom: 20px }
+    &_3 { margin-bottom: 22.56px }
+    &_4 { margin-bottom: 40px }
+    &_5, &_6 { margin-bottom: 41px }
+    &_7 { margin-bottom: 100px }
+    &_8 { margin-bottom: 20px }
+    &_9 { margin-bottom: 160px }
+    &_10 { margin-bottom: 22px }
+    &_11 { margin-bottom: 276px }
+    &_13 { max-width: 222px; margin-bottom: 30px }
+    &_13 > h3 { margin-bottom: 16.56px }
+    &_14 { margin-bottom: 39px }
+    &_14 > h3 { margin-bottom: 14px }
+    &_15 { margin-bottom: 30px }
+    &_16 { margin-bottom: 28px }
+    &_15, &_16 { & > h3{ margin-bottom: 16px } }
+    &_17 {
+      margin-bottom: 189px;
+      &> h3 { margin-bottom: 16px }
+      &> .form-elements__td {
+        margin-right: 16px;
+        &:last-child { margin-right: 0px }
+      }
+    }
+    &_18 { margin-bottom: 256px }
+    &_19 { margin-bottom: 223px }
+    &_19 > h3 { margin-bottom: 16px }
+    &_21 { margin-bottom: 38px }
+    &_22 { margin-bottom: 30px }
+    &_23, &_24, &_22 > h3 { margin-bottom: 16px }
+    &_25 { margin-bottom: 40px }
+    &_22, &_23, &_24, &_25 {
+      .form-elements__td {
+        height: 44px;
         display: -webkit-flex; 
         display: flex;
+      }
     }
-    &__td {
-        display: inline-block;
-        margin-right: 20px;
-        &:last-child { margin-right: 0px }
-        &_no-indent { margin-bottom: 0px }
+    &_27 { margin-bottom: 233px }
+    &_27 > h3 { margin-bottom: 16.44px }
+    &_28 { margin-bottom: 256px }
+    &_29 > h3 { margin-bottom: 13px }
+  }
+  &__columns {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 3px;
+  }
+  &__column {
+    &_first { min-width: 320px; margin-right: 127px }
+    &_second {
+      min-width: 320px;
+      margin-right: 73px;
+      &> div:last-child {
+        position: absolute;
+        max-width: 711px;
+        &.field__input { max-width: 711px }
+      }
     }
-    &__element {
-        &_1, &_2 { margin-bottom: 20px }
-        &_3 { margin-bottom: 22.56px }
-        &_4 { margin-bottom: 40px }
-        &_5, &_6 { margin-bottom: 41px }
-        &_7 { margin-bottom: 100px }
-        &_8 { margin-bottom: 20px }
-        &_9 { margin-bottom: 160px }
-        &_10 { margin-bottom: 22px }
-        &_11 { margin-bottom: 276px }
-        &_13 { max-width: 222px; margin-bottom: 30px }
-        &_13 > h3 { margin-bottom: 16.56px }
-        &_14 { margin-bottom: 39px }
-        &_14 > h3 { margin-bottom: 14px }
-        &_15 { margin-bottom: 30px }
-        &_16 { margin-bottom: 28px }
-        &_15, &_16 { & > h3{ margin-bottom: 16px } }
-        &_17 {
-            margin-bottom: 189px;
-            &> h3 { margin-bottom: 16px }
-            &> .form-elements__td {
-                margin-right: 16px;
-                &:last-child { margin-right: 0px }
-            }
-        }
-        &_18 { margin-bottom: 256px }
-        &_19 { margin-bottom: 223px }
-        &_19 > h3 { margin-bottom: 16px }
-        &_21 { margin-bottom: 38px }
-        &_22 { margin-bottom: 30px }
-        &_23, &_24, &_22 > h3 { margin-bottom: 16px }
-        &_25 { margin-bottom: 40px }
-        &_22, &_23, &_24, &_25 {
-            .form-elements__td {
-                height: 44px;
-                display: -webkit-flex; 
-                display: flex;
-            }
-        }
-        &_27 { margin-bottom: 233px }
-        &_27 > h3 { margin-bottom: 16.44px }
-        &_28 { margin-bottom: 256px }
-        &_29 > h3 { margin-bottom: 13px }
-    }
-    &__columns {
-        display: -webkit-flex;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        margin-top: 3px;
-    }
-    &__column {
-        &_first { min-width: 320px; margin-right: 127px }
-        &_second {
-            min-width: 320px;
-            margin-right: 73px;
-            &> div:last-child {
-                position: absolute;
-                max-width: 711px;
-                &.field__input { max-width: 711px }
-            }
-        }
-        &_third { min-width: 320px }
-    }
+    &_third { min-width: 320px }
+  }
 }
 
 // Десктоп. Разрешение < 1443px
 @media (max-width: 1442px) {
-    .form-elements {
-        &__columns { justify-content: center }
-        &__column_first { margin-bottom: 50px }
-    }
+  .form-elements {
+    &__columns { justify-content: center }
+    &__column_first { margin-bottom: 50px }
+  }
 }
 
 // Десктоп. Разрешение < 1160px
 @media (max-width: 1159px) {
-    .form-elements {
-        &__columns { margin-left: 10px; margin-right: 10px }
-    }
+  .form-elements {
+    &__columns { margin-left: 10px; margin-right: 10px }
+  }
 }
 
 // Планшет. Разрешение < 904px
 @media (max-width: 903px) {
-    .form-elements__column {
-        &_first, &_second, &_third { margin-right: 30px }
-        &_second {
-            &> div:last-child {
-                position: static;
-                max-width: auto;
-                max-width: 320px;
-                margin-bottom: 50px;
-                &.field .field__input { max-width: 320px }
-            }
-        }
+  .form-elements__column {
+    &_first, &_second, &_third { margin-right: 30px }
+    &_second {
+      &> div:last-child {
+        position: static;
+        max-width: auto;
+        max-width: 320px;
+        margin-bottom: 50px;
+        &.field .field__input { max-width: 320px }
+      }
     }
+  }
 }
 
 // Смартфон. Разрешение < 375px
 @media (max-width: 374px) {
-    .form-elements {
-        &__columns { margin-left: 0px; margin-right: 0px }
-        &__column {
-            &_first, &_second, &_third { margin-right: 0px }
-        }
+  .form-elements {
+    &__columns { margin-left: 0px; margin-right: 0px }
+    &__column {
+      &_first, &_second, &_third { margin-right: 0px }
     }
+  }
 }

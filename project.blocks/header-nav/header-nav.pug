@@ -2,40 +2,40 @@ include ../navigator/navigator
 include ../user-panel/user-panel
 
 -
-    var services = [
-        {title: "Услуга 1", link: "https://yandex.ru/"},
-        {title: "Услуга 2", link: "https://yandex.ru/"},
-        {title: "Услуга 3", link: "https://yandex.ru/"},
-        {title: "Услуга 4", link: "https://yandex.ru/"}
-    ]
+  var services = [
+    {title: "Услуга 1", link: "https://yandex.ru/"},
+    {title: "Услуга 2", link: "https://yandex.ru/"},
+    {title: "Услуга 3", link: "https://yandex.ru/"},
+    {title: "Услуга 4", link: "https://yandex.ru/"}
+  ]
 
 -
-    var agreements = [
-        {title: "Соглашение 1", link: "https://yandex.ru/"},
-        {title: "Соглашение 2", link: "https://yandex.ru/"},
-        {title: "Соглашение 3", link: "https://yandex.ru/"},
-        {title: "Соглашение 4", link: "https://yandex.ru/"}
-    ]
+  var agreements = [
+    {title: "Соглашение 1", link: "https://yandex.ru/"},
+    {title: "Соглашение 2", link: "https://yandex.ru/"},
+    {title: "Соглашение 3", link: "https://yandex.ru/"},
+    {title: "Соглашение 4", link: "https://yandex.ru/"}
+  ]
 
 mixin addHeaderNav(no_fixed, attr)
-    if no_fixed
-        - var no_fixed = 'header-nav_no-fixed'
-    else
-        - var no_fixed = ''
+  if no_fixed
+    - var no_fixed = 'header-nav_no-fixed'
+  else
+    - var no_fixed = ''
+  - var logged = attr.logged
+  if attr.logged
     - var logged = attr.logged
-    if attr.logged
-        - var logged = attr.logged
-    else
-        - var logged = ''
-    if attr.first_bold
-        - var first_bold = attr.first_bold
-    else
-        - var first_bold = ''
-    header.header-nav(class=no_fixed)
-        .header-nav__box
-            .header-nav__center
-                .header-nav__elements
-                    .header-nav__logo
-                    .header-nav__nav
-                        +addNavigator(first_bold)
-                        +addUserPanel(logged)
+  else
+    - var logged = ''
+  if attr.first_bold
+    - var first_bold = attr.first_bold
+  else
+    - var first_bold = ''
+  header.header-nav(class=no_fixed)
+    .header-nav__box
+      .header-nav__center
+        .header-nav__elements
+          .header-nav__logo
+          .header-nav__nav
+            +addNavigator(first_bold)
+            +addUserPanel(logged)

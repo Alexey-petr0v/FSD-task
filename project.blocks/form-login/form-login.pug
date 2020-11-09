@@ -3,18 +3,18 @@ include ../button/button
 include ../text-field/text-field
 
 mixin addLogin
-    .form-login
-        +addForm
-            .form-login__element
-                h2 Войти
-            .form-login__element
-                +addTextField('Email')
-            .form-login__element
-                +addTextField('Пароль')
-            .form-login__element
-                +addButton("войти", "id-but-1", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white")
-            .form-login__element
-                .form-login__column
-                    p Нет аккаунта на Toxin?
-                .form-login__column
-                    +addButton("создать", "id-but-3", "button__elem_opaque-border", "button__content_padding", "purple_text")
+  .form-login
+    +addForm
+      .form-login__element
+        h2 Войти
+      .form-login__element
+        +addTextField('Email')
+      .form-login__element
+        +addTextField('Пароль')
+      .form-login__element
+        +addButton("войти", "id-but-1", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white")
+      .form-login__element
+        .form-login__column
+          p Нет аккаунта на Toxin?
+        .form-login__column
+          +addButton("создать", "id-but-3", "button__elem_opaque-border", "button__content_padding", "purple_text")

@@ -8,7 +8,6 @@ $('.range-slider').map(function sumOfClasses() {
   numberOfClasses++
   });
 
-
 // Массив идентификатов всех элементов с классами range-slider
 let uniqueIDTop = new Array(numberOfClasses);
 
@@ -199,5 +198,3 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
-
-

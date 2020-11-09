@@ -1,72 +1,72 @@
 @supports(-webkit-appearance: none) or (-moz-appearance: none) {
-    $PATH: '../project.blocks/radio/images/';
-    .radio {
-        display: -webkit-flex; 
-        display: flex;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        align-items: center;
-        label, &__input { cursor: pointer }
-        &__input ~ label { margin-right: 20px }
-        label > span { color: rgba(31, 32, 65, 0.5) }
-        &__input {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            height: 20px;
-            outline: none;
-            margin-right: 10px;
-            background: white;
-            &:last-child { margin-right: 0px }
-            border: 1px solid rgba(31, 32, 65, 0.25);
-            border-radius: 50%;
-            &::before {
-                content: '';
-                border-radius: 50%;
-                display: inline-block;
-                width: 18px; height: 18px;
-            }
-            &:checked {
-                border: 1px solid #BC9CFF;
-                &::before {
-                    width: 12px; height: 12px;
-                    margin: 3px;
-                    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-                }
-                &+ label > span { color: rgba(31, 32, 65, 0.75) }
-            }
-            &_rate {
-                display: none;
-                &~ label.radio__label-rate { margin-right: 2px; cursor: auto }
-                &~ label span {
-                    display: inline-block;
-                    width: 22px;
-                    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    color: #a7a7f1;
-                }
-                &+ .radio__label-rate > span {
-                    &:nth-child(1) { display: inline-block }
-                    &:nth-child(2) { display: none }
-                }
-                &:checked, &:first-child, &:first-child ~ .radio__input_rate {
-                    &+ .radio__label-rate > span {
-                        &:nth-child(1) { display: none }
-                        &:nth-child(2) { display: inline-block }
-                    }
-                }
-                &:checked ~ .radio__input_rate {
-                    &+ .radio__label-rate > span {
-                        &:nth-child(1) { display: inline-block }
-                        &:nth-child(2) { display: none }
-                    }
-                }
-            }
+  $PATH: '../project.blocks/radio/images/';
+  .radio {
+    display: -webkit-flex; 
+    display: flex;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    align-items: center;
+    label, &__input { cursor: pointer }
+    &__input ~ label { margin-right: 20px }
+    label > span { color: rgba(31, 32, 65, 0.5) }
+    &__input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      height: 20px;
+      outline: none;
+      margin-right: 10px;
+      background: white;
+      &:last-child { margin-right: 0px }
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      border-radius: 50%;
+      &::before {
+        content: '';
+        border-radius: 50%;
+        display: inline-block;
+        width: 18px; height: 18px;
+      }
+      &:checked {
+        border: 1px solid #BC9CFF;
+        &::before {
+          width: 12px; height: 12px;
+          margin: 3px;
+          background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
         }
+        &+ label > span { color: rgba(31, 32, 65, 0.75) }
+      }
+      &_rate {
+        display: none;
+        &~ label.radio__label-rate { margin-right: 2px; cursor: auto }
+        &~ label span {
+          display: inline-block;
+          width: 22px;
+          background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          color: #a7a7f1;
+        }
+        &+ .radio__label-rate > span {
+          &:nth-child(1) { display: inline-block }
+          &:nth-child(2) { display: none }
+        }
+        &:checked, &:first-child, &:first-child ~ .radio__input_rate {
+          &+ .radio__label-rate > span {
+            &:nth-child(1) { display: none }
+            &:nth-child(2) { display: inline-block }
+          }
+        }
+        &:checked ~ .radio__input_rate {
+          &+ .radio__label-rate > span {
+            &:nth-child(1) { display: inline-block }
+            &:nth-child(2) { display: none }
+          }
+        }
+      }
     }
+  }
 }

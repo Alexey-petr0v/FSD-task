@@ -1,64 +1,64 @@
 include ../text-field/text-field
 
 -
-    var footer_links_1 = [
-        {link: "https://yandex.ru/", text: "О нас"},
-        {link: "https://yandex.ru/", text: "Новости"},
-        {link: "https://yandex.ru/", text: "Служба поддержки"},
-        {link: "https://yandex.ru/", text: "Услуги"}
-    ]
+  var footer_links_1 = [
+    {link: "https://yandex.ru/", text: "О нас"},
+    {link: "https://yandex.ru/", text: "Новости"},
+    {link: "https://yandex.ru/", text: "Служба поддержки"},
+    {link: "https://yandex.ru/", text: "Услуги"}
+  ]
 
 -
-    var footer_links_2 = [
-        {link: "https://yandex.ru/", text: "О сервисе"},
-        {link: "https://yandex.ru/", text: "Наша команда"},
-        {link: "https://yandex.ru/", text: "Вакансии"},
-        {link: "https://yandex.ru/", text: "Инвесторы"}
-    ]
+  var footer_links_2 = [
+    {link: "https://yandex.ru/", text: "О сервисе"},
+    {link: "https://yandex.ru/", text: "Наша команда"},
+    {link: "https://yandex.ru/", text: "Вакансии"},
+    {link: "https://yandex.ru/", text: "Инвесторы"}
+  ]
 
 -
-    var footer_links_3 = [
-        {link: "https://yandex.ru/", text: "Соглашения"},
-        {link: "https://yandex.ru/", text: "Сообщества"},
-        {link: "https://yandex.ru/", text: "Связь с нами"}
-    ]
+  var footer_links_3 = [
+    {link: "https://yandex.ru/", text: "Соглашения"},
+    {link: "https://yandex.ru/", text: "Сообщества"},
+    {link: "https://yandex.ru/", text: "Связь с нами"}
+  ]
 
 
 mixin addFooterColumn(title, footer_links)
-    .footer__column
-        h3= title
-        - for(var x = 0; x < footer_links.length; x++)
-            p
-                a(href=footer_links[x].link, target="_blank")= footer_links[x].text
+  .footer__column
+    h3= title
+    - for(var x = 0; x < footer_links.length; x++)
+      p
+        a(href=footer_links[x].link, target="_blank")= footer_links[x].text
 
 mixin addFooter(small)
-        if small
-            footer.footer.footer_small
-                .footer__top-box
-                    .footer__columns
-                        .footer__logo
-                        p Copyright © 2018 Toxin отель. Все права зачищены.
-                        .footer__social
-                            a(href="https://yandex.ru/", target="_blank")
-                            a(href="https://yandex.ru/", target="_blank")
-                            a(href="https://yandex.ru/", target="_blank")
-        else
-            footer.footer
-                .footer__top-box
-                    .footer__columns
-                        .footer__column
-                            .footer__logo
-                            p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-                        +addFooterColumn("навигация", footer_links_1)
-                        +addFooterColumn("о нас", footer_links_2)
-                        +addFooterColumn("Служба поддержки", footer_links_3)
-                        .footer__column
-                            h3 Подписка
-                            p Получайте специальные предложения и новости сервиса
-                            +addTextField('Email', '', 'field__elem_small', '', 'text-field__box_arrow-forward purple_text')
-                .footer__bottom-box
-                    p Copyright © 2018 Toxin отель. Все права зачищены.
-                    .footer__social
-                        a(href="https://yandex.ru/", target="_blank")
-                        a(href="https://yandex.ru/", target="_blank")
-                        a(href="https://yandex.ru/", target="_blank")
+  if small
+    footer.footer.footer_small
+      .footer__top-box
+        .footer__columns
+          .footer__logo
+          p Copyright © 2018 Toxin отель. Все права зачищены.
+          .footer__social
+            a(href="https://yandex.ru/", target="_blank")
+            a(href="https://yandex.ru/", target="_blank")
+            a(href="https://yandex.ru/", target="_blank")
+  else
+    footer.footer
+      .footer__top-box
+        .footer__columns
+          .footer__column
+            .footer__logo
+            p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+          +addFooterColumn("навигация", footer_links_1)
+          +addFooterColumn("о нас", footer_links_2)
+          +addFooterColumn("Служба поддержки", footer_links_3)
+          .footer__column
+            h3 Подписка
+            p Получайте специальные предложения и новости сервиса
+            +addTextField('Email', '', 'field__elem_small', '', 'text-field__box_arrow-forward purple_text')
+      .footer__bottom-box
+        p Copyright © 2018 Toxin отель. Все права зачищены.
+        .footer__social
+          a(href="https://yandex.ru/", target="_blank")
+          a(href="https://yandex.ru/", target="_blank")
+          a(href="https://yandex.ru/", target="_blank")

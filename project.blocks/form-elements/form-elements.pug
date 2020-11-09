@@ -9,209 +9,209 @@ include ../paginator/paginator
 include ../bullet-list/bullet-list
 
 -
-    var attributes = [
-        {name: "list-1", input_title: "Сколько гостей", type_units: "together"},
-        {name: "date-1", title_1: "date Dropdown", title_2: "date Dropdown", date_two_fields: "date_two-fields", dropdown_elem_no_border: "dropdown__elem_no-border",
-        dropdown_top_no_arrow: "dropdown__top_no_arrow"},
-        {name: "date-2", title_1: "filter date dropdown", dropdown_elem_small: "dropdown__elem_small-top", dropdown_elem_no_border: "dropdown__elem_no-border"},
-        {name: "list-2", input_title: "Удобства", dropdown_elem_small: "dropdown__elem_small", type_units: "separately"},
-        {name: "list-3", input_title: "Удобства", dropdown_elem_small: "dropdown__elem_small", type_units: "separately"},
-        {dropdown_elem_small: "dropdown__elem_small", dropdown_elem_no_border: "dropdown__elem_no-border", dropdown_elem_no_absolute: "dropdown__elem_no-absolute", dropdown_elem_toggle_arrow: "dropdown__elem_toggle_arrow"},
-        {name: "list-4", input_title: "Сколько гостей", type_units: "together"},
-        {name: "list-5", input_title: "Сколько гостей", type_units: "together"}
-    ]
+  var attributes = [
+    {name: "list-1", input_title: "Сколько гостей", type_units: "together"},
+    {name: "date-1", title_1: "date Dropdown", title_2: "date Dropdown", date_two_fields: "date_two-fields", dropdown_elem_no_border: "dropdown__elem_no-border",
+    dropdown_top_no_arrow: "dropdown__top_no_arrow"},
+    {name: "date-2", title_1: "filter date dropdown", dropdown_elem_small: "dropdown__elem_small-top", dropdown_elem_no_border: "dropdown__elem_no-border"},
+    {name: "list-2", input_title: "Удобства", dropdown_elem_small: "dropdown__elem_small", type_units: "separately"},
+    {name: "list-3", input_title: "Удобства", dropdown_elem_small: "dropdown__elem_small", type_units: "separately"},
+    {dropdown_elem_small: "dropdown__elem_small", dropdown_elem_no_border: "dropdown__elem_no-border", dropdown_elem_no_absolute: "dropdown__elem_no-absolute", dropdown_elem_toggle_arrow: "dropdown__elem_toggle_arrow"},
+    {name: "list-4", input_title: "Сколько гостей", type_units: "together"},
+    {name: "list-5", input_title: "Сколько гостей", type_units: "together"}
+  ]
 
 -
-    var list_people = [
-        {title: "взрослые", value : "0", name: "adults" },
-        {title: "дети", value : "0", name: "children" },
-        {title: "младенцы", value : "0", name: "babies" }
-    ]
+  var list_people = [
+    {title: "взрослые", value : "0", name: "adults" },
+    {title: "дети", value : "0", name: "children" },
+    {title: "младенцы", value : "0", name: "babies" }
+  ]
 
 -
-    var list_furniture = [
-        {title: "спальни", value: "0", name: "bedrooms" },
-        {title: "кровати", value: "0", name: "the-beds" },
-        {title: "ванные комнаты", value: "0", name: "bathrooms" }
-    ]
+  var list_furniture = [
+    {title: "спальни", value: "0", name: "bedrooms" },
+    {title: "кровати", value: "0", name: "the-beds" },
+    {title: "ванные комнаты", value: "0", name: "bathrooms" }
+  ]
 
 -
-    var expandable_checkbox_list = [
-        {title: "Завтрак", name: "zavtrak", value : false},
-        {title: "Письменный стол", name: "pismenniy_stol", value : true},
-        {title: "Стул для кормления", name: "stul_dlya_kormleniya", value : true},
-        {title: "Кроватка", name: "krovatka", value : true},
-        {title: "Телевизор", name: "televizor", value : false},
-        {title: "Шампунь", name: "shampun", value : false}
-    ]
+  var expandable_checkbox_list = [
+    {title: "Завтрак", name: "zavtrak", value : false},
+    {title: "Письменный стол", name: "pismenniy_stol", value : true},
+    {title: "Стул для кормления", name: "stul_dlya_kormleniya", value : true},
+    {title: "Кроватка", name: "krovatka", value : true},
+    {title: "Телевизор", name: "televizor", value : false},
+    {title: "Шампунь", name: "shampun", value : false}
+  ]
 
 -
-    var advantages = [
-        {image: "./images/insert_emoticon.svg", title: "Комфорт", text: "Шумопоглощающие стены", line: true},
-        {image: "./images/location_city.svg", title: "Удобство", text: "Окно в каждой из спален", line: true}
-    ]
+  var advantages = [
+    {image: "./images/insert_emoticon.svg", title: "Комфорт", text: "Шумопоглощающие стены", line: true},
+    {image: "./images/location_city.svg", title: "Удобство", text: "Окно в каждой из спален", line: true}
+  ]
 
 -
-    var checkbox_buttons = [
-        {title: "Можно курить", name: "mozhno_kurit", value : false},
-        {title: "Можно с питомцами", name: "mozhno_s_pitomcami", value : true},
-        {title: "Можно пригласить гостей (до 10 человек)", name: "mozhno_priglasit_gostej", value : true}
-    ]
+  var checkbox_buttons = [
+    {title: "Можно курить", name: "mozhno_kurit", value : false},
+    {title: "Можно с питомцами", name: "mozhno_s_pitomcami", value : true},
+    {title: "Можно пригласить гостей (до 10 человек)", name: "mozhno_priglasit_gostej", value : true}
+  ]
 
 -
-    var radio_buttons = [
-        {title: "Мужчина", name: "pol", value: "muzhchina", toggle: true},
-        {title: "Женщина", name: "pol", value: "zhenshina", toggle: false}
-    ]
+  var radio_buttons = [
+    {title: "Мужчина", name: "pol", value: "muzhchina", toggle: true},
+    {title: "Женщина", name: "pol", value: "zhenshina", toggle: false}
+  ]
 
 -
-    var toggle_buttons = [
-        {title: "Получать спецпредложения", name: "poluchat_specpredlozheniya", value : true, toggle: true},
-        {title: "Получать спецпредложения", name: "poluchat_specpredlozheniya", value : false, toggle: true}
-    ]
+  var toggle_buttons = [
+    {title: "Получать спецпредложения", name: "poluchat_specpredlozheniya", value : true, toggle: true},
+    {title: "Получать спецпредложения", name: "poluchat_specpredlozheniya", value : false, toggle: true}
+  ]
 
 -
-    var like_buttons = [
-        {name: "like_1", value : false, like: true},
-        {name: "like_2", value : true, like: true}
-    ]
+  var like_buttons = [
+    {name: "like_1", value : false, like: true},
+    {name: "like_2", value : true, like: true}
+  ]
 
 -
-    var rate_buttons_1 = [
-        {name: "rate_1", value: "1", toggle: false, rate: true},
-        {name: "rate_1", value: "2", toggle: false, rate: true},
-        {name: "rate_1", value: "3", toggle: false, rate: true},
-        {name: "rate_1", value: "4", toggle: true, rate: true},
-        {name: "rate_1", value: "5", toggle: false, rate: true}
-    ]
+  var rate_buttons_1 = [
+    {name: "rate_1", value: "1", toggle: false, rate: true},
+    {name: "rate_1", value: "2", toggle: false, rate: true},
+    {name: "rate_1", value: "3", toggle: false, rate: true},
+    {name: "rate_1", value: "4", toggle: true, rate: true},
+    {name: "rate_1", value: "5", toggle: false, rate: true}
+  ]
 
 -
-    var rate_buttons_2 = [
-        {name: "rate_2", value: "1", toggle: false, rate: true},
-        {name: "rate_2", value: "2", toggle: false, rate: true},
-        {name: "rate_2", value: "3", toggle: false, rate: true},
-        {name: "rate_2", value: "4", toggle: false, rate: true},
-        {name: "rate_2", value: "5", toggle: true, rate: true}
-    ]
+  var rate_buttons_2 = [
+    {name: "rate_2", value: "1", toggle: false, rate: true},
+    {name: "rate_2", value: "2", toggle: false, rate: true},
+    {name: "rate_2", value: "3", toggle: false, rate: true},
+    {name: "rate_2", value: "4", toggle: false, rate: true},
+    {name: "rate_2", value: "5", toggle: true, rate: true}
+  ]
 
 -
-    var rich_checkbox_buttons = [
-        {title: "Широкий коридор", text: "Ширина коридоров в номере не менее 91 см.", name: "shirokij_koridor", value : false},
-        {title: "Помощник для инвалидов", text: "На 1 этаже вас встретит специалист и проводит до номера.", name: "pomoshchnik_dlya_invalidov", value : false}
-    ]
+  var rich_checkbox_buttons = [
+    {title: "Широкий коридор", text: "Ширина коридоров в номере не менее 91 см.", name: "shirokij_koridor", value : false},
+    {title: "Помощник для инвалидов", text: "На 1 этаже вас встретит специалист и проводит до номера.", name: "pomoshchnik_dlya_invalidov", value : false}
+  ]
 
 -
-    var like_button = [
-        {name: "like_3", value : true, like: true}
-    ]
+  var like_button = [
+    {name: "like_3", value : true, like: true}
+  ]
 
 -
-    var otziv_part1 = [
-        {image: "./images/murat_sarafanov.png", title: "Мурад Сарафанов", text: "5 дней назад"}
-    ]
+  var otziv_part1 = [
+    {image: "./images/murat_sarafanov.png", title: "Мурад Сарафанов", text: "5 дней назад"}
+  ]
 
 -
-    var otziv_part2 = [
-        {text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."}
-    ]
+  var otziv_part2 = [
+    {text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."}
+  ]
 
 -
-    var bullet_list = [
-        {text: "Нельзя с питомцами"},
-        {text: "Без вечеринок и мероприятий"},
-        {text: "Время прибытия — после 13:00, а выезд до 12:00"}
-    ]
+  var bullet_list = [
+    {text: "Нельзя с питомцами"},
+    {text: "Без вечеринок и мероприятий"},
+    {text: "Время прибытия — после 13:00, а выезд до 12:00"}
+  ]
 
 .form-elements
-    .form-elements__columns
-        .form-elements__column_first
-            .form-elements__element_1
-                +addTextField('Email', 'Text Field')
-            .form-elements__element_2
-                +addTextField('This is pretty awesome', 'Text Field')
-            .form-elements__element_3
-                +addDropdown('Dropdown', attributes[0], {list: true}, list_people)
-            .form-elements__element_4
-                +addTextField('ДД.ММ.ГГГГ', 'masked text field', '', 'text-field__elem_masked')
-            .form-elements__element_5
-                +addDropdown('date Dropdown', attributes[1], {date: true})
-            .form-elements__element_6
-                +addDropdown('filter date dropdown', attributes[2], {date: true})
-            .form-elements__element_7
-                +addTextField('Email', 'subscription text field', 'field__elem_small', '', 'text-field__box_arrow-forward purple_text')
-            .form-elements__element_8
-                +addDropdown('Dropdown', attributes[3], {list: true}, list_furniture)
-            .form-elements__element_9
-                +addDropdown('Dropdown', attributes[4], {list: true}, list_furniture)
-            .form-elements__element_10
-                +addDropdown('expandable checkbox list', attributes[5], {checkbox: true}, expandable_checkbox_list)
-            .form-elements__element_11
-                +addDropdown('expandable checkbox list', attributes[5], {checkbox: true}, expandable_checkbox_list)
-            .form-elements__element_12
-                +addTwoElements({image_and_text: true}, {image_and_text : true}, advantages)
+  .form-elements__columns
+    .form-elements__column_first
+      .form-elements__element_1
+        +addTextField('Email', 'Text Field')
+      .form-elements__element_2
+        +addTextField('This is pretty awesome', 'Text Field')
+      .form-elements__element_3
+        +addDropdown('Dropdown', attributes[0], {list: true}, list_people)
+      .form-elements__element_4
+        +addTextField('ДД.ММ.ГГГГ', 'masked text field', '', 'text-field__elem_masked')
+      .form-elements__element_5
+        +addDropdown('date Dropdown', attributes[1], {date: true})
+      .form-elements__element_6
+        +addDropdown('filter date dropdown', attributes[2], {date: true})
+      .form-elements__element_7
+        +addTextField('Email', 'subscription text field', 'field__elem_small', '', 'text-field__box_arrow-forward purple_text')
+      .form-elements__element_8
+        +addDropdown('Dropdown', attributes[3], {list: true}, list_furniture)
+      .form-elements__element_9
+        +addDropdown('Dropdown', attributes[4], {list: true}, list_furniture)
+      .form-elements__element_10
+        +addDropdown('expandable checkbox list', attributes[5], {checkbox: true}, expandable_checkbox_list)
+      .form-elements__element_11
+        +addDropdown('expandable checkbox list', attributes[5], {checkbox: true}, expandable_checkbox_list)
+      .form-elements__element_12
+        +addTwoElements({image_and_text: true}, {image_and_text : true}, advantages)
 
-        .form-elements__column_second
-            .form-elements__element_13
-                h3 CHECKBOX BUTTONS
-                .checkbox
-                    +addCheckbox(checkbox_buttons)
-            .form-elements__element_14
-                h3 RADIO BUTTONS
-                +addRadio(radio_buttons, 1)
-            .form-elements__element_15
-                h3 TOGGLE
-                .checkbox
-                    +addCheckbox(toggle_buttons)
-            .form-elements__element_16
-                h3 LIKE BUTTON
-                .checkbox
-                    +addCheckbox(like_buttons)
-            .form-elements__element_17
-                h3 RATE BUTTON
-                .form-elements__td
-                    +addRadio(rate_buttons_1, 2)
-                .form-elements__td
-                    +addRadio(rate_buttons_2, 3)
-            .form-elements__element_18
-                +addDropdown('Dropdown', attributes[6], {list: true}, list_people)
-            .form-elements__element_19
-                h3 RICH CHECKBOX BUTTONS
-                .checkbox
-                    +addCheckbox(rich_checkbox_buttons)
-            .form-elements__element_20
-                +addTwoElements({image_and_text: true}, {image_and_text : true}, otziv_part1)
-                +addTwoElements({but_and_text: true}, {but_and_text : true}, otziv_part2, like_button)
-        .form-elements__column_third
-            .form-elements__element_21
-                +addRangeSlider("RANGE SLIDER")
-            .form-elements__element_22
-                h3 BUTTONS
-                .form-elements__cells
-                    .form-elements__td
-                        +addButton("CLICK ME", "id-but-1", "button__elem_opaque-background", "button__content_padding", "button__text_white")
-                    .form-elements__td
-                        +addButton("CLICK ME", "id-but-2", "button__elem_transparent-background", "button__content_padding", "button__text_white")
-            .form-elements__element_23
-                .form-elements__cells
-                    .form-elements__td.form-elements__td_no-indent
-                        +addButton("CLICK ME", "id-but-3", "button__elem_opaque-border", "button__content_padding", "purple_text")
-                    .form-elements__td.form-elements__td_no-indent
-                        +addButton("CLICK ME", "id-but-4", "button__elem_transparent-border", "button__content_padding", "purple_text")
-            .form-elements__element_24
-                .form-elements__cells
-                    .form-elements__td
-                        +addButton("CLICK ME", "id-but-5", "", "", "purple_text")
-                    .form-elements__td
-                        +addButton("CLICK ME", "id-but-6", "", "", "button__text_grey")
-            .form-elements__element_25
-                    .form-elements__td
-                        +addButton("перейти к оплате", "id-but-7", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white", "", "arrow_forward")
-            .form-elements__element_26(id="element_24")
-            .form-elements__element_27
-                h3 pagination
-                +addPaginator
-            .form-elements__element_28
-                +addDropdown('Dropdown', attributes[7], {list: true}, list_people)
-            .form-elements__element_29
-                h3 BULLET LIST
-                +addBulletList(bullet_list)
+    .form-elements__column_second
+      .form-elements__element_13
+        h3 CHECKBOX BUTTONS
+        .checkbox
+          +addCheckbox(checkbox_buttons)
+      .form-elements__element_14
+        h3 RADIO BUTTONS
+        +addRadio(radio_buttons, 1)
+      .form-elements__element_15
+        h3 TOGGLE
+        .checkbox
+          +addCheckbox(toggle_buttons)
+      .form-elements__element_16
+        h3 LIKE BUTTON
+        .checkbox
+          +addCheckbox(like_buttons)
+      .form-elements__element_17
+        h3 RATE BUTTON
+        .form-elements__td
+          +addRadio(rate_buttons_1, 2)
+        .form-elements__td
+          +addRadio(rate_buttons_2, 3)
+      .form-elements__element_18
+        +addDropdown('Dropdown', attributes[6], {list: true}, list_people)
+      .form-elements__element_19
+        h3 RICH CHECKBOX BUTTONS
+        .checkbox
+          +addCheckbox(rich_checkbox_buttons)
+      .form-elements__element_20
+        +addTwoElements({image_and_text: true}, {image_and_text : true}, otziv_part1)
+        +addTwoElements({but_and_text: true}, {but_and_text : true}, otziv_part2, like_button)
+    .form-elements__column_third
+      .form-elements__element_21
+        +addRangeSlider("RANGE SLIDER")
+      .form-elements__element_22
+        h3 BUTTONS
+        .form-elements__cells
+          .form-elements__td
+            +addButton("CLICK ME", "id-but-1", "button__elem_opaque-background", "button__content_padding", "button__text_white")
+          .form-elements__td
+            +addButton("CLICK ME", "id-but-2", "button__elem_transparent-background", "button__content_padding", "button__text_white")
+      .form-elements__element_23
+        .form-elements__cells
+          .form-elements__td.form-elements__td_no-indent
+            +addButton("CLICK ME", "id-but-3", "button__elem_opaque-border", "button__content_padding", "purple_text")
+          .form-elements__td.form-elements__td_no-indent
+            +addButton("CLICK ME", "id-but-4", "button__elem_transparent-border", "button__content_padding", "purple_text")
+      .form-elements__element_24
+        .form-elements__cells
+          .form-elements__td
+            +addButton("CLICK ME", "id-but-5", "", "", "purple_text")
+          .form-elements__td
+            +addButton("CLICK ME", "id-but-6", "", "", "button__text_grey")
+      .form-elements__element_25
+          .form-elements__td
+            +addButton("перейти к оплате", "id-but-7", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white", "", "arrow_forward")
+      .form-elements__element_26(id="element_24")
+      .form-elements__element_27
+        h3 pagination
+        +addPaginator
+      .form-elements__element_28
+        +addDropdown('Dropdown', attributes[7], {list: true}, list_people)
+      .form-elements__element_29
+        h3 BULLET LIST
+        +addBulletList(bullet_list)

@@ -5,36 +5,34 @@ include ../form-login/form-login
 include ../date/date
 include ../number-card/number-card
 
-
+-
+  var radio_buttons = [
+    {title: "Мужчина", name: "pol", value: "muzhchina", toggle: true},
+    {title: "Женщина", name: "pol", value: "zhenshina", toggle: false}
+  ]
 
 -
-    var radio_buttons = [
-        {title: "Мужчина", name: "pol", value: "muzhchina", toggle: true},
-        {title: "Женщина", name: "pol", value: "zhenshina", toggle: false}
-    ]
-
--
-    var toggle_buttons = [
-        {title: "Получать спецпредложения", name: "poluchat_specpredlozheniya", value : false, toggle: true}
-    ]
+  var toggle_buttons = [
+    {title: "Получать спецпредложения", name: "poluchat_specpredlozheniya", value : false, toggle: true}
+  ]
 
 .cards
-    .cards__columns
-        .cards__column
-            .cards__element
-                +addFormRoomSearch()
-            .cards__element
-                +addFormRegistration(radio_buttons, radio_num, toggle_buttons)
-        .cards__column
-            .cards__element
-                +addFormReservation()
-            .cards__element
-                +addLogin()
-        .cards__column
-            .cards__element
-                .date
-                    +addDateBottom
-            .cards__element
-                +addNumberCard(1, 5, 888, "9 990", 145, true)
-            .cards__element
-                +addNumberCard(2, 4, 840, "9 900", 65)
+  .cards__columns
+    .cards__column
+      .cards__element
+        +addFormRoomSearch()
+      .cards__element
+        +addFormRegistration(radio_buttons, radio_num, toggle_buttons)
+    .cards__column
+      .cards__element
+        +addFormReservation()
+      .cards__element
+        +addLogin()
+    .cards__column
+      .cards__element
+        .date
+          +addDateBottom
+      .cards__element
+        +addNumberCard(1, 5, 888, "9 990", 145, true)
+      .cards__element
+        +addNumberCard(2, 4, 840, "9 900", 65)

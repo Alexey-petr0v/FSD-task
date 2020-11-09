@@ -2,17 +2,17 @@ include ../header-nav/header-nav
 include ../footer/footer
 
 -
-    var attr = [
-        {logged: null, first_bold: "navigator__bold"},
-        {logged: true, first_bold: "navigator__bold"}
-    ]
+  var attr = [
+    {logged: null, first_bold: "navigator__bold"},
+    {logged: true, first_bold: "navigator__bold"}
+  ]
 
 .headers-and-footers
-    .headers-and-footers__element
-        +addHeaderNav("no-fixed", attr[0])
-    .headers-and-footers__element
-        +addHeaderNav("no-fixed", attr[1])
-    .headers-and-footers__element
-        +addFooter
-    .headers-and-footers__element
-        +addFooter("small")
+  .headers-and-footers__element
+    +addHeaderNav("no-fixed", attr[0])
+  .headers-and-footers__element
+    +addHeaderNav("no-fixed", attr[1])
+  .headers-and-footers__element
+    +addFooter
+  .headers-and-footers__element
+    +addFooter("small")

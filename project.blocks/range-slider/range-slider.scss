@@ -1,47 +1,43 @@
 .range-slider {
-    &__title {
-        display: -webkit-flex; 
-        display: flex;
-        justify-content: space-between;
-        width: 266px;
-        margin-bottom: 19px;
+  &__title {
+    display: -webkit-flex; 
+    display: flex;
+    justify-content: space-between;
+    width: 266px;
+    margin-bottom: 19px;
+  }
+  &__values { font-weight: normal }
+  &__slider {
+    display: -webkit-flex; 
+    display: flex;
+    align-items: center;
+    width: 266px; height: 16px;
+  }
+  &__line {
+    position: absolute;
+    border: 1px solid #c7c7d0;;
+    border-radius: 3px;
+    background: #FFFFFF;
+    width: 266px; height: 4px;
+    z-index: 0;
+  }
+  &__limit {
+    &_left { margin-left: 76px }
+    &_right { margin-left: 161px }
+    &_left, &_right { position: absolute; z-index: 2 }
+  }
+  &__point {
+    &_1, &_2 {
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+      border-radius: 50%;
+      height: 12px; width: 12px;
+      border: 2px solid #FFFFFF
     }
-    &__values { font-weight: normal }
-    &__slider {
-        display: -webkit-flex; 
-        display: flex;
-        align-items: center;
-        width: 266px;
-        height: 16px;
-    }
-    &__line {
-        position: absolute;
-        border: 1px solid #c7c7d0;;
-        border-radius: 3px;
-        background: #FFFFFF;
-        width: 266px;
-        height: 4px;
-        z-index: 0;
-    }
-    &__limit {
-        &_left { margin-left: 76px }
-        &_right { margin-left: 161px }
-        &_left, &_right { position: absolute; z-index: 2 }
-    }
-    &__point {
-        &_1, &_2 {
-            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-            border-radius: 50%;
-            height: 12px;
-            width: 12px;
-            border: 2px solid #FFFFFF
-        }
-    }
-    &__accent {
-        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-        height: 4px;
-        width: 85px;
-        margin-left: 82px;
-        z-index: 1;
-    }
+  }
+  &__accent {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    height: 4px; width: 85px;
+    margin-left: 82px;
+    z-index: 1;
+  }
 }

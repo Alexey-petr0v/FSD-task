@@ -1,129 +1,125 @@
 $PATH: '../project.blocks/room-details/images/';
 
 .room-details {
-    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
-    &__images {
-        display: -webkit-flex; 
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 70px;
+  border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+  &__images {
+    display: -webkit-flex; 
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 70px;
+  }
+  &__img-col {
+    display: -webkit-flex; 
+    display: flex;
+    flex-wrap: wrap;
+    &:first-child { width: 68.125% }
+    &:last-child { width: 31.875% }
+  }
+  &__box {
+    margin-top: 70px;
+    display: -webkit-flex; 
+    display: flex;
+    justify-content: center;
+    margin-bottom: 43px;
+    .room-details__columns {
+      display: -webkit-flex; 
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
-    &__img-col {
-        display: -webkit-flex; 
-        display: flex;
-        flex-wrap: wrap;
-        &:first-child { width: 68.125% }
-        &:last-child { width: 31.875% }
+    .room-details__column {
+      display: -webkit-flex; 
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 711px;
+      &:first-child {margin-right: 70px;}
     }
-    &__box {
-        margin-top: 70px;
-        display: -webkit-flex; 
-        display: flex;
-        justify-content: center;
-        margin-bottom: 43px;
-        .room-details__columns {
-            display: -webkit-flex; 
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-        .room-details__column {
-            display: -webkit-flex; 
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 711px;
-            &:first-child {margin-right: 70px;}
-        }
-        .room-details__element {
-            &:nth-child(1) {
-                h2 {margin-bottom: 20px}
-                margin-right: 81px;
-                margin-bottom: 21px;
-            }
-            &:nth-child(2) {
-                h2 {margin-bottom: 21px}
-                margin-bottom: 30px;
-            }
-            &:nth-child(3) {
-                h2 {margin-bottom: 19px}
-                max-width: 711px;
-                margin-bottom: 16px;
-            }
-            &:nth-child(4) {
-                max-width: 711px;
-                margin-bottom: 27px;
-            }
-            &:nth-child(5) {
-                h2 {margin-bottom: 16px; margin-left: 20px}
-                margin-right: 69px;
-                margin-bottom: 20px;
-            }
-            &:nth-child(6) {
-                h2 {margin-bottom: 16px}
-                max-width: 341px;
-                margin-bottom: 30px;
-            }
-        }
+    .room-details__element {
+      &:nth-child(1) {
+        h2 {margin-bottom: 20px}
+        margin-right: 81px;
+        margin-bottom: 21px;
+      }
+      &:nth-child(2) {
+        h2 {margin-bottom: 21px}
+        margin-bottom: 30px;
+      }
+      &:nth-child(3) {
+        h2 {margin-bottom: 19px}
+        max-width: 711px;
+        margin-bottom: 16px;
+      }
+      &:nth-child(4) {
+        max-width: 711px;
+        margin-bottom: 27px;
+      }
+      &:nth-child(5) {
+        h2 {margin-bottom: 16px; margin-left: 20px}
+        margin-right: 69px;
+        margin-bottom: 20px;
+      }
+      &:nth-child(6) {
+        h2 {margin-bottom: 16px}
+        max-width: 341px;
+        margin-bottom: 30px;
+      }
     }
+  }
 }
 
 // Смартфоны. Разрешение < 768px
 @media (max-width: 767px) {
-    .room-details__box .room-details__element:nth-child(1) {
-        margin-left: 20px;
-        margin-right: 20px;
+  .room-details__box .room-details__element:nth-child(1) {
+    margin-left: 20px; margin-right: 20px;
+  }
+  .room-details__box .room-details__element:nth-child(3) {
+    margin-left: 20px; margin-right: 20px;
+  }
+  .room-details__box .room-details__element:nth-child(4) {
+    margin-left: 20px; margin-right: 20px;
+  }
+  .room-details__img-col {
+    &:first-child { width: 100% }
+    &:last-child {
+      width: 100%;
+      display: -webkit-flex; 
+      display: flex;
+      img { width: 50%; }
     }
-    .room-details__box .room-details__element:nth-child(3) {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-    .room-details__box .room-details__element:nth-child(4) {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-    .room-details__img-col {
-        &:first-child { width: 100% }
-        &:last-child {
-            width: 100%;
-            display: -webkit-flex; 
-            display: flex;
-            img { width: 50%; }
-        }
-    }
+  }
 }
 
 // Смартфоны. Разрешение < 1162px
 @media (max-width: 1161px) {
-    .room-details__element:nth-child(3) {
-        margin-left: 20px;
+  .room-details__element:nth-child(3) {
+    margin-left: 20px; margin-right: 20px;
+  }
+  .room-details__box .room-details__column:first-child {
+    justify-content: center;
+    margin-right: 0px;
+  }
+  .room-details__box .room-details__column:last-child {
+    margin-bottom: 20px;
+  }
+  .room-details__box .room-details__columns {
+    justify-content: center;
+  }
+  .room-details__element:nth-child(3) {
+    .room-details__columns {
+      .room-details__column:first-child {
         margin-right: 20px;
+      }
     }
-    .room-details__box .room-details__column:first-child {
-        justify-content: center;
-        margin-right: 0px;
-    }
-    .room-details__box .room-details__column:last-child {
-        margin-bottom: 20px;
-    }
-    .room-details__box .room-details__columns {
-        justify-content: center;
-    }
-    .room-details__element:nth-child(3) {
-        .room-details__columns {
-            .room-details__column:first-child {
-                margin-right: 20px;
-            }
-        }
-    }
+  }
 }
 
 // Смартфоны. Разрешение < 360px
 @media (max-width: 359px) {
-    .room-details__column .room-details__element {
-        &:nth-child(5) {
-            margin-right: 0px;
-            max-width: 300px;
-        }
-        &:nth-child(6) { max-width: 300px }
+  .room-details__column .room-details__element {
+    &:nth-child(5) {
+      margin-right: 0px;
+      max-width: 300px;
     }
+    &:nth-child(6) { max-width: 300px }
+  }
 }

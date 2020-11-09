@@ -4,85 +4,85 @@ include ../range-slider/range-slider
 include ../checkbox/checkbox
 
 -
-    var attributes = [
-        {name: "date-1", title_1: "Даты пребывания в отеле", dropdown_elem_small: "dropdown__elem_small-top", dropdown_elem_no_border: "dropdown__elem_no-border"},
-        {name: "list-1", input_title: "Список гостей", dropdown_elem_small: "dropdown__elem_small", type_units: "separately"},
-        {name: "list-1", input_title: "Удобства", dropdown_elem_small: "dropdown__elem_small", type_units: "separately"},
-        {dropdown_elem_small: "dropdown__elem_small", dropdown_elem_no_border: "dropdown__elem_no-border", dropdown_elem_no_absolute: "dropdown__elem_no-absolute", dropdown_elem_toggle_arrow: "dropdown__elem_toggle_arrow"}
-    ]
+  var attributes = [
+    {name: "date-1", title_1: "Даты пребывания в отеле", dropdown_elem_small: "dropdown__elem_small-top", dropdown_elem_no_border: "dropdown__elem_no-border"},
+    {name: "list-1", input_title: "Список гостей", dropdown_elem_small: "dropdown__elem_small", type_units: "separately"},
+    {name: "list-1", input_title: "Удобства", dropdown_elem_small: "dropdown__elem_small", type_units: "separately"},
+    {dropdown_elem_small: "dropdown__elem_small", dropdown_elem_no_border: "dropdown__elem_no-border", dropdown_elem_no_absolute: "dropdown__elem_no-absolute", dropdown_elem_toggle_arrow: "dropdown__elem_toggle_arrow"}
+  ]
 
 -
-    var list_people = [
-        {title: "гости", value : "0", name: "the-guests"},
-        {title: "младенцы", value : "0", name: "babies"}
-    ]
+  var list_people = [
+    {title: "гости", value : "0", name: "the-guests"},
+    {title: "младенцы", value : "0", name: "babies"}
+  ]
 
 -
-    var list_furniture = [
-        {title: "спальни", value: "0", name: "bedrooms" },
-        {title: "кровати", value: "0", name: "the-beds" },
-        {title: "ванные комнаты", value: "0", name: "bathrooms" }
-    ]
+  var list_furniture = [
+    {title: "спальни", value: "0", name: "bedrooms" },
+    {title: "кровати", value: "0", name: "the-beds" },
+    {title: "ванные комнаты", value: "0", name: "bathrooms" }
+  ]
 
 -
-    var checkbox_buttons = [
-        {title: "Можно курить", name: "mozhno_kurit", value : false},
-        {title: "Можно с питомцами", name: "mozhno_s_pitomcami", value : true},
-        {title: "Можно пригласить гостей (до 10 человек)", name: "mozhno_priglasit_gostej", value : true}
-    ]
+  var checkbox_buttons = [
+    {title: "Можно курить", name: "mozhno_kurit", value : false},
+    {title: "Можно с питомцами", name: "mozhno_s_pitomcami", value : true},
+    {title: "Можно пригласить гостей (до 10 человек)", name: "mozhno_priglasit_gostej", value : true}
+  ]
 
 -
-    var rich_checkbox_buttons = [
-        {title: "Широкий коридор", text: "Ширина коридоров в номере не менее 91 см.", name: "shirokij_koridor", value : false},
-        {title: "Помощник для инвалидов", text: "На 1 этаже вас встретит специалист и проводит до номера.", name: "pomoshchnik_dlya_invalidov", value : false}
-    ]
+  var rich_checkbox_buttons = [
+    {title: "Широкий коридор", text: "Ширина коридоров в номере не менее 91 см.", name: "shirokij_koridor", value : false},
+    {title: "Помощник для инвалидов", text: "На 1 этаже вас встретит специалист и проводит до номера.", name: "pomoshchnik_dlya_invalidov", value : false}
+  ]
 
 -
-    var expandable_checkbox_list = [
-        {title: "Завтрак", name: "zavtrak", value : false},
-        {title: "Письменный стол", name: "pismenniy_stol", value : true},
-        {title: "Стул для кормления", name: "stul_dlya_kormleniya", value : true},
-        {title: "Кроватка", name: "krovatka", value : true},
-        {title: "Телевизор", name: "televizor", value : false},
-        {title: "Шампунь", name: "shampun", value : false}
-    ]
+  var expandable_checkbox_list = [
+    {title: "Завтрак", name: "zavtrak", value : false},
+    {title: "Письменный стол", name: "pismenniy_stol", value : true},
+    {title: "Стул для кормления", name: "stul_dlya_kormleniya", value : true},
+    {title: "Кроватка", name: "krovatka", value : true},
+    {title: "Телевизор", name: "televizor", value : false},
+    {title: "Шампунь", name: "shampun", value : false}
+  ]
 
 main.search-room
-    .main-container
-        .search-room__columns
-            .search-room__column
-                .search-room__filter
-                    .search-room__preference
-                        +addDropdown('Даты пребывания в отеле', attributes[0], {date: true})
-                        +addDropdown('Гости', attributes[1], {list: true}, list_people)
-                        +addRangeSlider("Диапазон цены")
-                        p Стоимость за сутки пребывания в номере
-                        h3 ПРАВИЛА ДОМА
-                        .checkbox
-                            +addCheckbox(checkbox_buttons)
-                        h3 ДОСТУПНОСТЬ
-                        .checkbox
-                            +addCheckbox(rich_checkbox_buttons)
-                        +addDropdown('Удобства номера', attributes[2], {list: true}, list_furniture)
-                        +addDropdown('Дополнительные удобства', attributes[3], {checkbox: true}, expandable_checkbox_list)
-            .search-room__column
-                h1 Номера, которые мы для вас подобрали
-                .search-room__numbers(id="search-room-numbers")
-                    +addNumberCard(1, 5, 888, "9 990", 145, true)
-                    +addNumberCard(2, 4, 840, "9 900", 65)
-                    +addNumberCard(3, 3, 980, "8 500", 35, true)
-                    +addNumberCard(4, 5, 856, "7 300", 19)
-                    +addNumberCard(5, 4, 740, "6 000", 44)
-                    +addNumberCard(6, 3, 982, "5 800", 56)
-                    +addNumberCard(7, 5, 678, "5 500", 45)
-                    +addNumberCard(8, 4, 450, "5 300", 39)
-                    +addNumberCard(9, 3, 350, "5 000", 77)
-                    +addNumberCard(10, 5, 666, "5 000", 25)
-                    +addNumberCard(11, 3, 444, "5 000", 15)
-                    +addNumberCard(12, 3, 352, "5 000", 55)
+  .main-container
+    .search-room__columns
+      .search-room__column
+        .search-room__filter
+          .search-room__preference
+            +addDropdown('Даты пребывания в отеле', attributes[0], {date: true})
+            +addDropdown('Гости', attributes[1], {list: true}, list_people)
+            +addRangeSlider("Диапазон цены")
+            p Стоимость за сутки пребывания в номере
+            h3 ПРАВИЛА ДОМА
+            .checkbox
+              +addCheckbox(checkbox_buttons)
+            h3 ДОСТУПНОСТЬ
+            .checkbox
+              +addCheckbox(rich_checkbox_buttons)
+            +addDropdown('Удобства номера', attributes[2], {list: true}, list_furniture)
+            +addDropdown('Дополнительные удобства', attributes[3], {checkbox: true}, expandable_checkbox_list)
+      .search-room__column
+        h1 Номера, которые мы для вас подобрали
+        .search-room__numbers(id="search-room-numbers")
+          +addNumberCard(1, 5, 888, "9 990", 145, true)
+          +addNumberCard(2, 4, 840, "9 900", 65)
+          +addNumberCard(3, 3, 980, "8 500", 35, true)
+          +addNumberCard(4, 5, 856, "7 300", 19)
+          +addNumberCard(5, 4, 740, "6 000", 44)
+          +addNumberCard(6, 3, 982, "5 800", 56)
+          +addNumberCard(7, 5, 678, "5 500", 45)
+          +addNumberCard(8, 4, 450, "5 300", 39)
+          +addNumberCard(9, 3, 350, "5 000", 77)
+          +addNumberCard(10, 5, 666, "5 000", 25)
+          +addNumberCard(11, 3, 444, "5 000", 15)
+          +addNumberCard(12, 3, 352, "5 000", 55)
 
-                    +addNumberCard(13, 3, 351, "4 500", 30)
-                    +addNumberCard(14, 3, 354, "4 000", 35)
-                    +addNumberCard(15, 3, 353, "4 000", 66)
-                .search-room__paginator
-                    +addPaginator
+          +addNumberCard(13, 3, 351, "4 500", 30)
+          +addNumberCard(14, 3, 354, "4 000", 35)
+          +addNumberCard(15, 3, 353, "4 000", 66)
+        .search-room__paginator
+          +addPaginator

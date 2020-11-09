@@ -4,67 +4,67 @@ include ../date/date
 include ../checkbox/checkbox
 
 mixin addDefaultItemsDropdown(items)
-    - for (var x = 0; x < items.length; x++)
-        p
-            a(href=items[x].link, target="_blank")= items[x].title
+  - for (var x = 0; x < items.length; x++)
+    p
+      a(href=items[x].link, target="_blank")= items[x].title
 
 
 mixin addDropdown(title, attrib, dropdownType, additionalContent, check_status)
-    - var dropdown_elem_mod = ""
-    - var dropdown_top_mod = ""
-    - var hide_buttons_mod = ""
-    if attrib.dropdown_elem_small
-        - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_small + " "
-        - var hide_buttons_mod = "list-counter__bottom_hide"
-    if attrib.dropdown_elem_no_border
-        - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_no_border + " "
-    if attrib.dropdown_top_no_arrow
-        - var dropdown_top_mod = dropdown_top_mod + attrib.dropdown_top_no_arrow + " "
-    if attrib.date_two_fields
-        - var date_mod = attrib.date_two_fields + " "
-        - var two_title_flag = true
-    if attrib.dropdown_elem_toggle_arrow
-        - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_toggle_arrow + " "
-    if attrib.dropdown_elem_no_absolute
-        - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_no_absolute + " "
-    if attrib.dropdown_elem_elastic
-        - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_elastic + " "
-    if dropdownType.list
-        +addField(title, fieldMod)
-            .dropdown
-                .dropdown__elem(class=dropdown_elem_mod)
-                    .list-counter(data-type_units=attrib.type_units)
-                        .dropdown__top.material-icons.md-24
-                            +addListCounterTop(attrib.input_title)
-                        .dropdown__bottom
-                            +addListCounterBottom(additionalContent, attrib.name, hide_buttons_mod)
-    else if dropdownType.date
-        +addField('', fieldMod)
-            .dropdown
-                .dropdown__elem(class=dropdown_elem_mod)
-                    .date(class=date_mod)
-                        .dropdown__title
-                            if (two_title_flag == true)
-                                h3= attrib.title_1
-                                h3= attrib.title_2
-                            else
-                                h3= attrib.title_1
-                        .dropdown__top(class=dropdown_top_mod).material-icons.md-24
-                            +addDateTop(two_title_flag)
-                        .dropdown__bottom
-                            +addDateBottom
-    else if dropdownType.checkbox
-        .dropdown
-            .dropdown__elem(class=dropdown_elem_mod)
-                .checkbox
-                    .dropdown__top.material-icons.md-24
-                        h3= title
-                    .dropdown__bottom
-                        +addCheckbox(additionalContent)
-    else
-        .dropdown
-            .dropdown__elem(class=dropdown_elem_mod)
-                .dropdown__top(class=dropdown_top_mod).material-icons.md-24
-                    p= title
-                .dropdown__bottom
-                    +addDefaultItemsDropdown(additionalContent)
+  - var dropdown_elem_mod = ""
+  - var dropdown_top_mod = ""
+  - var hide_buttons_mod = ""
+  if attrib.dropdown_elem_small
+    - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_small + " "
+    - var hide_buttons_mod = "list-counter__bottom_hide"
+  if attrib.dropdown_elem_no_border
+    - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_no_border + " "
+  if attrib.dropdown_top_no_arrow
+    - var dropdown_top_mod = dropdown_top_mod + attrib.dropdown_top_no_arrow + " "
+  if attrib.date_two_fields
+    - var date_mod = attrib.date_two_fields + " "
+    - var two_title_flag = true
+  if attrib.dropdown_elem_toggle_arrow
+    - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_toggle_arrow + " "
+  if attrib.dropdown_elem_no_absolute
+    - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_no_absolute + " "
+  if attrib.dropdown_elem_elastic
+    - var dropdown_elem_mod = dropdown_elem_mod + attrib.dropdown_elem_elastic + " "
+  if dropdownType.list
+    +addField(title, fieldMod)
+      .dropdown
+        .dropdown__elem(class=dropdown_elem_mod)
+          .list-counter(data-type_units=attrib.type_units)
+            .dropdown__top.material-icons.md-24
+              +addListCounterTop(attrib.input_title)
+            .dropdown__bottom
+              +addListCounterBottom(additionalContent, attrib.name, hide_buttons_mod)
+  else if dropdownType.date
+    +addField('', fieldMod)
+      .dropdown
+        .dropdown__elem(class=dropdown_elem_mod)
+          .date(class=date_mod)
+            .dropdown__title
+              if (two_title_flag == true)
+                h3= attrib.title_1
+                h3= attrib.title_2
+              else
+                h3= attrib.title_1
+            .dropdown__top(class=dropdown_top_mod).material-icons.md-24
+              +addDateTop(two_title_flag)
+            .dropdown__bottom
+              +addDateBottom
+  else if dropdownType.checkbox
+    .dropdown
+      .dropdown__elem(class=dropdown_elem_mod)
+        .checkbox
+          .dropdown__top.material-icons.md-24
+            h3= title
+          .dropdown__bottom
+            +addCheckbox(additionalContent)
+  else
+    .dropdown
+      .dropdown__elem(class=dropdown_elem_mod)
+        .dropdown__top(class=dropdown_top_mod).material-icons.md-24
+          p= title
+        .dropdown__bottom
+          +addDefaultItemsDropdown(additionalContent)

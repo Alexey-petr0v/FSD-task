@@ -1,52 +1,50 @@
 
 $PATH: '../project.blocks/text-field/images/';
 
-
 /* TEXT FIELD */
 .text-field {
-    &__box {
-        &_arrow-forward {
-            &::before {
-                content: 'arrow_forward';
-                font-family: 'Material Icons';
-                font-weight: normal;
-                font-style: normal;
-                font-size: 24px;
-                position: absolute;
-                margin-top: 10px;
-                margin-left: 233px;
-            }
-        }
+  &__box {
+    &_arrow-forward {
+      &::before {
+        content: 'arrow_forward';
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        position: absolute;
+        margin-top: 10px; margin-left: 233px;
+      }
     }
-    &__elem {
-        font-family: "Montserrat";
+  }
+  &__elem {
+    font-family: "Montserrat";
+    color: rgba(31, 32, 65, 0.75);
+    font-size: 14px;
+    line-height: 24px;
+    padding-left: 14px;
+    min-width: calc(100% - 2px - 14px);
+    min-height: 42px;
+    background: #ffffff;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 4px;
+    outline: none;
+    &:hover,
+    &:focus {
+      border: 1px solid rgba(31, 32, 65, 0.5);
+      &::-webkit-input-placeholder,
+      &::-moz-placeholder, &:-ms-input-placeholder,
+      &::-ms-input-placeholder, &::placeholder {
         color: rgba(31, 32, 65, 0.75);
-        font-size: 14px;
-        line-height: 24px;
-        padding-left: 14px;
-        min-width: calc(100% - 2px - 14px);
-        min-height: 42px;
-        background: #ffffff;
-        border: 1px solid rgba(31, 32, 65, 0.25);
-        border-radius: 4px;
-        outline: none;
-        &:hover,
-        &:focus {
-            border: 1px solid rgba(31, 32, 65, 0.5);
-            &::-webkit-input-placeholder,
-            &::-moz-placeholder, &:-ms-input-placeholder,
-            &::-ms-input-placeholder, &::placeholder {
-                color: rgba(31, 32, 65, 0.75);
-            }
-        }
-        &::-webkit-input-placeholder,
-        &::-moz-placeholder, &:-ms-input-placeholder,
-        &::-ms-input-placeholder, &::placeholder {
-            font-family: Montserrat;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 14px;
-            color: rgba(31, 32, 65, 0.25);
-        }
+      }
     }
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder, &:-ms-input-placeholder,
+    &::-ms-input-placeholder, &::placeholder {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      color: rgba(31, 32, 65, 0.25);
+    }
+  }
 }

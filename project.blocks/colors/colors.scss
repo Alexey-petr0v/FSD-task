@@ -1,31 +1,31 @@
 .colors {
-    &__elem {
-        margin-bottom: 20px;
-        display: -webkit-flex; 
-        display: flex; 
+  &__elem {
+    margin-bottom: 20px;
+    display: -webkit-flex; 
+    display: flex; 
+  }
+  &__column-left {
+    min-width: 70px;
+    min-height: 70px;
+    border-radius: 6px;
+    margin-right: 40px;
+    &_color {
+      &_0 {background: #1F2041;}
+      &_1 {background: rgba(31, 32, 65, 0.75);}
+      &_2 {background: rgba(31, 32, 65, 0.50);}
+      &_3 {background: rgba(31, 32, 65, 0.25);}
+      &_4 {background: rgba(31, 32, 65, 0.05);}
+      &_5 {background: #BC9CFF;}
+      &_6 {background: #6FCF97;}
     }
-    &__column-left {
-        min-width: 70px;
-        min-height: 70px;
-        border-radius: 6px;
-        margin-right: 40px;
-        &_color {
-          &_0 {background: #1F2041;}
-          &_1 {background: rgba(31, 32, 65, 0.75);}
-          &_2 {background: rgba(31, 32, 65, 0.50);}
-          &_3 {background: rgba(31, 32, 65, 0.25);}
-          &_4 {background: rgba(31, 32, 65, 0.05);}
-          &_5 {background: #BC9CFF;}
-          &_6 {background: #6FCF97;}
-        }
+  }
+  &__column-right {
+    h2 {
+      font-family: 'Quicksand';
+      font-style: normal;
+      font-weight: normal;
+      line-height: 29px;
     }
-    &__column-right {
-        h2 {
-          font-family: 'Quicksand';
-          font-style: normal;
-          font-weight: normal;
-          line-height: 29px;
-        }
-        margin-top: 7px;
-    }
+    margin-top: 7px;
+  }
 }

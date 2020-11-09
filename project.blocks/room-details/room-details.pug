@@ -5,91 +5,89 @@ include ../form-reservation/form-reservation
 include ../statistics/statistics
 
 -
-    var advantages = [
-        {image: "./images/insert_emoticon.svg", title: "Комфорт", text: "Шумопоглощающие стены", line: true},
-        {image: "./images/location_city.svg", title: "Удобство", text: "Окно в каждой из спален", line: true},
-        {image: "./images/whatshot.svg", title: "Уют", text: "Номер оснащён камином", line: false}
-    ]
+  var advantages = [
+    {image: "./images/insert_emoticon.svg", title: "Комфорт", text: "Шумопоглощающие стены", line: true},
+    {image: "./images/location_city.svg", title: "Удобство", text: "Окно в каждой из спален", line: true},
+    {image: "./images/whatshot.svg", title: "Уют", text: "Номер оснащён камином", line: false}
+  ]
 
 -
-    var like1_button = [
-        {name: "like_1", value : true, like: true}
-    ]
+  var like1_button = [
+    {name: "like_1", value : true, like: true}
+  ]
 
 -
-    var like2_button = [
-        {name: "like_2", value : false, like: true}
-    ]
+  var like2_button = [
+    {name: "like_2", value : false, like: true}
+  ]
 
 -
-    var otziv1_part1 = [
-        {image: "./images/murat_sarafanov.png", title: "Мурад Сарафанов", text: "5 дней назад"}
-    ]
+  var otziv1_part1 = [
+    {image: "./images/murat_sarafanov.png", title: "Мурад Сарафанов", text: "5 дней назад"}
+  ]
 
 -
-    var otziv1_part2 = [
-        {text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."}
-    ]
+  var otziv1_part2 = [
+    {text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."}
+  ]
 
 -
-    var otziv2_part1 = [
-        {image: "./images/patrisiya_stektishkova.png", title: "Патрисия Стёклышкова", text: "Неделю назад"}
-    ]
+  var otziv2_part1 = [
+    {image: "./images/patrisiya_stektishkova.png", title: "Патрисия Стёклышкова", text: "Неделю назад"}
+  ]
 
 -
-    var otziv2_part2 = [
-        {text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"}
-    ]
+  var otziv2_part2 = [
+    {text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"}
+  ]
 
 -
-    var bullet_list = [
-        {text: "Нельзя с питомцами"},
-        {text: "Без вечеринок и мероприятий"},
-        {text: "Время прибытия — после 13:00, а выезд до 12:00"}
-    ]
+  var bullet_list = [
+    {text: "Нельзя с питомцами"},
+    {text: "Без вечеринок и мероприятий"},
+    {text: "Время прибытия — после 13:00, а выезд до 12:00"}
+  ]
 
 -
-    var precent_items = [
-        {percent: 50, color_1: "#FFE39C", color_2: "#FFBA9C", name_color: "orange", name: "Великолепно"}, //orange
-        {percent: 25, color_1: "#6FCF97", color_2: "#66D2EA", name_color: "green", name: "Хорошо"}, //green
-        {percent: 25, color_1: "#BC9CFF", color_2: "#8BA4F9", name_color: "purple", name: "Удовлетворительно"}, //purple
-        {percent: 0, color_1: "#919191", color_2: "#3D4975", name_color: "black", name: "Разочарован"} //black
-    ]
-
-
+  var precent_items = [
+    {percent: 50, color_1: "#FFE39C", color_2: "#FFBA9C", name_color: "orange", name: "Великолепно"}, //orange
+    {percent: 25, color_1: "#6FCF97", color_2: "#66D2EA", name_color: "green", name: "Хорошо"}, //green
+    {percent: 25, color_1: "#BC9CFF", color_2: "#8BA4F9", name_color: "purple", name: "Удовлетворительно"}, //purple
+    {percent: 0, color_1: "#919191", color_2: "#3D4975", name_color: "black", name: "Разочарован"} //black
+  ]
 
 main.room-details
-    .main-container
-        .room-details__images
-            .room-details__img-col
-                img(src="./images/room-details__image_1-1.png")
-            .room-details__img-col
-                img(src="./images/room-details__image_1-2.png")
-                img(src="./images/room-details__image_1-3.png")
-        .room-details__box
+  .main-container
+    .room-details__images
+      .room-details__img-col
+        img(src="./images/room-details__image_1-1.png")
+      .room-details__img-col
+        img(src="./images/room-details__image_1-2.png")
+        img(src="./images/room-details__image_1-3.png")
+    .room-details__box
+      .room-details__columns
+        .room-details__column
+          .room-details__element
+            h2 Сведения о номере
+            +addTwoElements({image_and_text: true}, {image_and_text : true}, advantages)
+          .room-details__element
+            +addStatistics("Впечатления от номера", "260", precent_items)
+          .room-details__element
             .room-details__columns
-                .room-details__column
-                    .room-details__element
-                        h2 Сведения о номере
-                        +addTwoElements({image_and_text: true}, {image_and_text : true}, advantages)
-                    .room-details__element
-                        +addStatistics("Впечатления от номера", "260", precent_items)
-                    .room-details__element
-                        .room-details__columns
-                            .room-details__column
-                                h2 Отзывы посетителей номера
-                            .room-details__column
-                                p 2 отзыва
-                        +addTwoElements({image_and_text: true}, {image_and_text : true}, otziv1_part1)
-                        +addTwoElements({but_and_text: true}, {but_and_text : true}, otziv1_part2, like1_button)
-                    .room-details__element
-                        +addTwoElements({image_and_text: true}, {image_and_text : true}, otziv2_part1)
-                        +addTwoElements({but_and_text: true}, {but_and_text : true}, otziv2_part2, like2_button)
-                    .room-details__element
-                        h2 Правила
-                        +addBulletList(bullet_list)
-                    .room-details__element
-                        h2 Отмена
-                        p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-                .room-details__column
-                    +addFormReservation()
+              .room-details__column
+                h2 Отзывы посетителей номера
+              .room-details__column
+                p 2 отзыва
+            +addTwoElements({image_and_text: true}, {image_and_text : true}, otziv1_part1)
+            +addTwoElements({but_and_text: true}, {but_and_text : true}, otziv1_part2, like1_button)
+          .room-details__element
+            +addTwoElements({image_and_text: true}, {image_and_text : true}, otziv2_part1)
+            +addTwoElements({but_and_text: true}, {but_and_text : true}, otziv2_part2, like2_button)
+          .room-details__element
+            h2 Правила
+            +addBulletList(bullet_list)
+          .room-details__element
+            h2 Отмена
+            p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+        .room-details__column
+          +addFormReservation()

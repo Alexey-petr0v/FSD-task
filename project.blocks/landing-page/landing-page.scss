@@ -1,81 +1,77 @@
 $PATH: '../project.blocks/landing-page/images/';
 
 .landing-page {
-    &_background-2 {
-        .landing-page__text {
-            box-shadow: 10px 0 0px rgba(210,210,210,0.8);
-            background: rgba(255,255,255,0.8);
-        }
+  &_background-2 {
+    .landing-page__text {
+      box-shadow: 10px 0 0px rgba(210,210,210,0.8);
+      background: rgba(255,255,255,0.8);
     }
-    &_background-{
-        @for $i from 1 through 3 {
-            &#{$i} { background: url($PATH+"landing-page-"+$i+".png"); background-size: cover }
-        }
+  }
+  &_background-{
+    @for $i from 1 through 3 {
+      &#{$i} { background: url($PATH+"landing-page-"+$i+".png"); background-size: cover }
     }
-    background-size: cover;
-    &__box {
-        height: 900px;
-        display: -webkit-flex; 
-        display: flex;
-        justify-content: space-between;
-        .landing-page__form {
-            margin-top: 140px;
-            margin-left: 140px;
-        }
-        .landing-page__text {
-            align-self: flex-end;
-            text-align: right;
-            margin-right: 134px;
-            margin-bottom: 20px;
-            max-width: 267px;
-        }
+  }
+  background-size: cover;
+  &__box {
+    height: 900px;
+    display: -webkit-flex; 
+    display: flex;
+    justify-content: space-between;
+    .landing-page__form {
+      margin-top: 140px; margin-left: 140px;
     }
+    .landing-page__text {
+      align-self: flex-end;
+      text-align: right;
+      margin-right: 134px; margin-bottom: 20px;
+      max-width: 267px;
+    }
+  }
 }
 
 
 // Десктоп. Разрешение > 1550px
 @media (min-width: 1441px) {
-    .landing-page__text {
-        box-shadow: 10px 0 0px rgba(210,210,210,0.8);
-        background: rgba(255,255,255,0.8);
-    }
+  .landing-page__text {
+    box-shadow: 10px 0 0px rgba(210,210,210,0.8);
+    background: rgba(255,255,255,0.8);
+  }
 }
 
 // Планшеты. Разрешение < 993px
 @media (max-width: 992px) {
-    .landing-page {
-        &__box {
-            height: 600px;
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-        &__box &__text { margin-right: 0px }
+  .landing-page {
+    &__box {
+      height: 600px;
+      margin-left: 20px; margin-right: 20px;
     }
+    &__box &__text { margin-right: 0px }
+  }
 }
 
 // Смартфоны. Разрешение < 768px
 @media (max-width: 767px) {
-    .landing-page__box {
-        max-width: none;
-        flex-direction: column;
-        align-items: center;
-        .landing-page__form { margin-left: 0px }
-    }
+  .landing-page__box {
+    max-width: none;
+    flex-direction: column;
+    align-items: center;
+    .landing-page__form { margin-left: 0px }
+  }
 }
 
 // Десктоп. Разрешение < 375px
 @media (max-width: 374px) {
-    .landing-page_background-2 {
-        .landing-page__text {
-            box-shadow: none; background: none;
-        }
+  .landing-page_background-2 {
+    .landing-page__text {
+      box-shadow: none; background: none;
     }
-    .landing-page__box {
-        height: auto;
-        background: white;
-        margin-left: 0px;
-        margin-right: 0px;
-        .landing-page__form { margin-top: 70px }
-        .landing-page__text { margin-top: 10px; align-self: center }
-    }
+  }
+  .landing-page__box {
+    height: auto;
+    background: white;
+    margin-left: 0px; margin-right: 0px;
+    .landing-page__form { margin-top: 70px }
+    .landing-page__text { margin-top: 10px; align-self: center }
+  }
 }

@@ -6,10 +6,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const $ = require("jquery");
 
 const PATHS = {
-    pages: path.resolve(__dirname, "pages"),
-    docs: path.resolve(__dirname, "docs"),
-    projBlocks: path.resolve(__dirname, "project.blocks"),
-    libBlocks: path.resolve(__dirname, "library.blocks"),
+  pages: path.resolve(__dirname, "pages"),
+  docs: path.resolve(__dirname, "docs"),
+  projBlocks: path.resolve(__dirname, "project.blocks"),
+  libBlocks: path.resolve(__dirname, "library.blocks"),
 }
 
 module.exports = {
@@ -33,43 +33,43 @@ module.exports = {
        {from: PATHS.projBlocks + '/**/fonts/*', to:'fonts', flatten: true}
      ]),
     new HtmlWebpackPlugin({
-        template: PATHS.pages + '/index.pug',
-        filename: 'index.html'
+      template: PATHS.pages + '/index.pug',
+      filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
-        template: PATHS.pages + '/colors-and-type.pug',
-        filename: 'colors-and-type.html'
+      template: PATHS.pages + '/colors-and-type.pug',
+      filename: 'colors-and-type.html'
     }),
     new HtmlWebpackPlugin({
-        template: PATHS.pages + '/form-elements.pug',
-        filename: 'form-elements.html'
+      template: PATHS.pages + '/form-elements.pug',
+      filename: 'form-elements.html'
     }),
     new HtmlWebpackPlugin({
-        template: PATHS.pages + '/cards.pug',
-        filename: 'cards.html'
+      template: PATHS.pages + '/cards.pug',
+      filename: 'cards.html'
     }),
     new HtmlWebpackPlugin({
-        template: PATHS.pages + '/headers-and-footers.pug',
-        filename: 'headers-and-footers.html'
+      template: PATHS.pages + '/headers-and-footers.pug',
+      filename: 'headers-and-footers.html'
     }),
     new HtmlWebpackPlugin({
-        template: PATHS.pages + '/search-room.pug',
-        filename: 'search-room.html'
+      template: PATHS.pages + '/search-room.pug',
+      filename: 'search-room.html'
     }),
     new HtmlWebpackPlugin({
-        template: PATHS.pages + '/room-details.pug',
-        filename: 'room-details.html'
+      template: PATHS.pages + '/room-details.pug',
+      filename: 'room-details.html'
     }),
     new HtmlWebpackPlugin({
-        template: PATHS.pages + '/registration.pug',
-        filename: 'registration.html'
+      template: PATHS.pages + '/registration.pug',
+      filename: 'registration.html'
     }),
     new HtmlWebpackPlugin({
-        template: PATHS.pages + '/sign-in.pug',
-        filename: 'sign-in.html'
+      template: PATHS.pages + '/sign-in.pug',
+      filename: 'sign-in.html'
     }),
     new MiniCssExtractPlugin({
-        filename: '[name].css',
+      filename: '[name].css',
     })
   ],
   module: {
@@ -117,18 +117,18 @@ module.exports = {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         include: path.resolve(__dirname, 'project.blocks/fonts/'),
         use: [
-                 {
-                     loader: 'file-loader?name=fonts/[name].[ext]'
-                 }
+                {
+                  loader: 'file-loader?name=fonts/[name].[ext]'
+                }
              ]
       },
       {
         test: /\.(jpg|png|svg)$/,
         exclude: path.resolve(__dirname, 'project.blocks/fonts/'),
         use: [
-                 {
-                     loader: 'file-loader?name=images/[name].[ext]'
-                 }
+                {
+                  loader: 'file-loader?name=images/[name].[ext]'
+                }
              ]
       }
     ]

@@ -1,22 +1,22 @@
 mixin addTypeText(textColumn1, textColumn2)
-    if textColumn2
-        - var text = textColumn2
-    else
-        - var text = textColumn1
-    if (textColumn1 == 'H1')
-        h1= text
-    else if (textColumn1 == 'H2')
-        h2= text
-    else if (textColumn1 == 'H3')
-        h3= text
-    else
-        p= text
+  if textColumn2
+    - var text = textColumn2
+  else
+    - var text = textColumn1
+  if (textColumn1 == 'H1')
+    h1= text
+  else if (textColumn1 == 'H2')
+    h2= text
+  else if (textColumn1 == 'H3')
+    h3= text
+  else
+    p= text
 
 mixin addType(type)
-    - for(var i = 0; i < type.length; i++)
-        .type
-            .type__elem
-                .type__column-left(class='type__column-left_' + type[i].modColumn1)
-                    +addTypeText(type[i].textColumn1)
-                .type__column-right(class='type__column-right_' + type[i].modColumn2)
-                    +addTypeText(type[i].textColumn1, type[i].textColumn2)
+  - for(var i = 0; i < type.length; i++)
+    .type
+      .type__elem
+        .type__column-left(class='type__column-left_' + type[i].modColumn1)
+          +addTypeText(type[i].textColumn1)
+        .type__column-right(class='type__column-right_' + type[i].modColumn2)
+          +addTypeText(type[i].textColumn1, type[i].textColumn2)

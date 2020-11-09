@@ -1,128 +1,127 @@
 $PATH: '../project.blocks/fonts/';
 
-
 @font-face {
-	font-family: 'Montserrat';
-	src: url($PATH + 'Montserrat-Bold.eot');
-	src: local('☺'), url($PATH + 'Montserrat-Bold.woff') format('woff'), url($PATH + 'Montserrat-Bold.ttf') format('truetype'), url($PATH + 'Montserrat-Bold.svg') format('svg');
-	font-weight: bold;
-	font-style: normal;
+  font-family: 'Montserrat';
+  src: url($PATH + 'Montserrat-Bold.eot');
+  src: local('☺'), url($PATH + 'Montserrat-Bold.woff') format('woff'), url($PATH + 'Montserrat-Bold.ttf') format('truetype'), url($PATH + 'Montserrat-Bold.svg') format('svg');
+  font-weight: bold;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'Montserrat';
-	src: url($PATH + 'Montserrat-Regular.eot');
-	src: local('☺'), url($PATH + 'Montserrat-Regular.woff') format('woff'), url($PATH + 'Montserrat-Regular.ttf') format('truetype'), url($PATH + 'Montserrat-Regular.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'Montserrat';
+  src: url($PATH + 'Montserrat-Regular.eot');
+  src: local('☺'), url($PATH + 'Montserrat-Regular.woff') format('woff'), url($PATH + 'Montserrat-Regular.ttf') format('truetype'), url($PATH + 'Montserrat-Regular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'Quicksand';
-	src: url($PATH + 'Quicksand-Bold.eot');
-	src: local('☺'), url($PATH + 'Quicksand-Bold.woff') format('woff'), url($PATH + 'Quicksand-Bold.ttf') format('truetype'), url($PATH + 'Quicksand-Bold.svg') format('svg');
-	font-weight: bold;
-	font-style: normal;
+  font-family: 'Quicksand';
+  src: url($PATH + 'Quicksand-Bold.eot');
+  src: local('☺'), url($PATH + 'Quicksand-Bold.woff') format('woff'), url($PATH + 'Quicksand-Bold.ttf') format('truetype'), url($PATH + 'Quicksand-Bold.svg') format('svg');
+  font-weight: bold;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'Quicksand';
-	src: url($PATH + 'Quicksand-Regular.eot');
-	src: local('☺'), url($PATH + 'Quicksand-Regular.woff') format('woff'), url($PATH + 'Quicksand-Regular.ttf') format('truetype'), url($PATH + 'Quicksand-Regular.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'Quicksand';
+  src: url($PATH + 'Quicksand-Regular.eot');
+  src: local('☺'), url($PATH + 'Quicksand-Regular.woff') format('woff'), url($PATH + 'Quicksand-Regular.ttf') format('truetype'), url($PATH + 'Quicksand-Regular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'Open Sans';
-	src: url($PATH + 'OpenSans-Bold.eot');
-	src: local('☺'), url($PATH + 'OpenSans-Bold.woff') format('woff'), url($PATH + 'OpenSans-Bold.ttf') format('truetype'), url($PATH + 'OpenSans-Bold.svg') format('svg');
-	font-weight: bold;
-	font-style: normal;
+  font-family: 'Open Sans';
+  src: url($PATH + 'OpenSans-Bold.eot');
+  src: local('☺'), url($PATH + 'OpenSans-Bold.woff') format('woff'), url($PATH + 'OpenSans-Bold.ttf') format('truetype'), url($PATH + 'OpenSans-Bold.svg') format('svg');
+  font-weight: bold;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'Open Sans Regular';
-	src: url($PATH + 'OpenSans-Regular.eot');
-	src: url($PATH + 'OpenSans-Regular.eot?#iefix') format('embedded-opentype'), url($PATH + 'OpenSans-Regular.woff') format('woff'), url($PATH + 'OpenSans-Regular.ttf') format('truetype'), url($PATH + 'OpenSans-Regular.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'Open Sans Regular';
+  src: url($PATH + 'OpenSans-Regular.eot');
+  src: url($PATH + 'OpenSans-Regular.eot?#iefix') format('embedded-opentype'), url($PATH + 'OpenSans-Regular.woff') format('woff'), url($PATH + 'OpenSans-Regular.ttf') format('truetype'), url($PATH + 'OpenSans-Regular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'Material Icons';
-	src: url($PATH + 'MaterialIcons-Regular.eot');
-	src: local('Material Icons'), local('MaterialIcons-Regular'), url($PATH + 'MaterialIcons-Regular.woff') format('woff'), url($PATH + 'MaterialIcons-Regular.ttf') format('truetype'), url($PATH + 'MaterialIcons-Regular.svg') format('svg');
-	font-weight: 400;
-	font-style: normal;
+  font-family: 'Material Icons';
+  src: url($PATH + 'MaterialIcons-Regular.eot');
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url($PATH + 'MaterialIcons-Regular.woff') format('woff'), url($PATH + 'MaterialIcons-Regular.ttf') format('truetype'), url($PATH + 'MaterialIcons-Regular.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
 }
   
 .material-icons {
-	font-family: 'Material Icons';
-	font-weight: normal;
-	font-style: normal;
-	font-size: 24px;  /* Preferred icon size */
-	display: inline-block;
-	line-height: 1;
-	text-transform: none;
-	letter-spacing: normal;
-	word-wrap: normal;
-	white-space: nowrap;
-	direction: ltr;
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
 
-	/* Support for all WebKit browsers. */
-	-webkit-font-smoothing: antialiased;
-	/* Support for Safari and Chrome. */
-	text-rendering: optimizeLegibility;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
 
-	/* Support for Firefox. */
-	-moz-osx-font-smoothing: grayscale;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
 
-	/* Support for IE. */
-	font-feature-settings: 'liga';
+  /* Support for IE. */
+  font-feature-settings: 'liga';
 }
 
 body {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
-    color: rgba(31, 32, 65, 0.75);
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
 }
 
 a, a:link, a:visited, a:focus, a:hover, a:active {
-	color: rgba(31, 32, 65, 0.5);
-	outline: none;
-	text-decoration: none;
+  color: rgba(31, 32, 65, 0.5);
+  outline: none;
+  text-decoration: none;
 }
 
 h3 {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-	text-transform: uppercase;
-	color: #1F2041;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #1F2041;
 }
 
 .purple_text { color: #BC9CFF }
 
 h2 {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 19px;
-    line-height: 24px;
-	color: #1F2041;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  color: #1F2041;
 }
 
 h1 {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-	line-height: 30px;
-	color: #1F2041;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  color: #1F2041;
 }

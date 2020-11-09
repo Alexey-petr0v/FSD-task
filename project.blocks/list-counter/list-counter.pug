@@ -1,22 +1,22 @@
 include ../button/button
 
 mixin addItems(items)
-    - for (var x = 0; x < items.length; x++)
-        .list-counter__item(data-name=items[x].name)
-            h3= items[x].title
-            .list-counter__minusAndPlus
-                p.list-counter__circle.list-counter__minus -
-                h3= items[x].value
-                p.list-counter__circle.list-counter__plus +
+  - for (var x = 0; x < items.length; x++)
+    .list-counter__item(data-name=items[x].name)
+      h3= items[x].title
+      .list-counter__minusAndPlus
+        p.list-counter__circle.list-counter__minus -
+        h3= items[x].value
+        p.list-counter__circle.list-counter__plus +
 
 mixin addListCounterTop(title)
-    .list-counter__top
-        p= title
+  .list-counter__top
+    p= title
 
 mixin addListCounterBottom(items, name, hide_buttons_mod)
-    .list-counter__bottom
-        input(name=name, type='hidden', value=val)
-        +addItems(items)
-        .list-counter__buttons(class=hide_buttons_mod)
-            +addButton("очистить", "id-but-list-1", "", "list-counter__clear", "purple_text")
-            +addButton("применить", "id-but-list-2", "", "list-counter__apply dropdown__apply", "purple_text")
+  .list-counter__bottom
+    input(name=name, type='hidden', value=val)
+    +addItems(items)
+    .list-counter__buttons(class=hide_buttons_mod)
+      +addButton("очистить", "id-but-list-1", "", "list-counter__clear", "purple_text")
+      +addButton("применить", "id-but-list-2", "", "list-counter__apply dropdown__apply", "purple_text")

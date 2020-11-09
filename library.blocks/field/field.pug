@@ -1,18 +1,18 @@
 mixin addField(title, classMod)
-    .field
-        case classMod
-            when NULL
-                .field__elem
-                    h3= title
-                    .field__input
-                        block
-            when 0
-                .field__elem
-                    h3= title
-                    .field__input
-                        block
-            default
-                .field__elem(class=classMod)
-                    h3= title
-                    .field__input
-                        block
+  .field
+    case classMod
+      when NULL
+        .field__elem
+          h3= title
+          .field__input
+            block
+      when 0
+        .field__elem
+          h3= title
+          .field__input
+            block
+      default
+        .field__elem(class=classMod)
+          h3= title
+          .field__input
+            block

@@ -1,28 +1,28 @@
 mixin addRadio(items, num_elem)
-    .radio
-        - for (var x = 0; x < items.length; x++)
-            if items[x].rate
-                - var mod = "radio__input_rate"
-                - var title = "star_border"
-                - var title_2 = "star_rate"
-                - var label_class = "radio__label-rate material-icons md-24"
-                - var id = "radio-rate-" +num_elem+"-"+x
-            else
-                - var mod = ""
-                - var title = items[x].title
-                - var label_class = ""
-                - var id = "radio-"+ num_elem+"-"+x
-            if items[x].toggle
-                if items[x].rate
-                    input(id=id, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio", checked="checked", disabled="disabled")
-                else
-                    input(id=id, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio", checked="checked")
-            else
-                if items[x].rate
-                    input(id=id, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio", disabled="disabled")
-                else
-                    input(id=id, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio")
-            label(for=id, class=label_class)
-                span= title
-                if items[x].rate
-                    span= title_2
+  .radio
+    - for (var x = 0; x < items.length; x++)
+      if items[x].rate
+        - var mod = "radio__input_rate"
+        - var title = "star_border"
+        - var title_2 = "star_rate"
+        - var label_class = "radio__label-rate material-icons md-24"
+        - var id = "radio-rate-" +num_elem+"-"+x
+      else
+        - var mod = ""
+        - var title = items[x].title
+        - var label_class = ""
+        - var id = "radio-"+ num_elem+"-"+x
+      if items[x].toggle
+        if items[x].rate
+          input(id=id, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio", checked="checked", disabled="disabled")
+        else
+          input(id=id, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio", checked="checked")
+      else
+        if items[x].rate
+          input(id=id, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio", disabled="disabled")
+        else
+          input(id=id, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio")
+      label(for=id, class=label_class)
+        span= title
+        if items[x].rate
+          span= title_2

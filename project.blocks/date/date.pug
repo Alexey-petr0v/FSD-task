@@ -1,38 +1,38 @@
 include ../button/button
 
 mixin addDateTop(two_title_flag)
-    div(style="display: block; width: 320px")
-        if (two_title_flag == true)
-            .date__two-tops
-                .date__two-top
-                    p
-                        span='ДД.ММ.ГГГГ'
-                        span.material-icons.md-24='keyboard_arrow_down'
-                .date__two-top
-                    p
-                        span='ДД.ММ.ГГГГ'
-                        span.material-icons.md-24='keyboard_arrow_down'
-        else
-            .date__top
-                p= 'ДДММ - ДДММ'
+  div(style="display: block; width: 320px")
+    if (two_title_flag == true)
+      .date__two-tops
+        .date__two-top
+          p
+            span='ДД.ММ.ГГГГ'
+            span.material-icons.md-24='keyboard_arrow_down'
+        .date__two-top
+          p
+            span='ДД.ММ.ГГГГ'
+            span.material-icons.md-24='keyboard_arrow_down'
+    else
+      .date__top
+        p= 'ДДММ - ДДММ'
 mixin addDateBottom
-    .date__bottom
-        .date__buffer-value(data-value="")
-        input(name='date', value='{"full_date_1": "2000-0-1", "full_date_2": "2000-0-3"}', type='hidden')
-        .date__paginator
-            .date__button.date__button_left(id="date-but-prev").material-icons.md-24.purple_text
-                p
-                    span= "arrow_back"
-            .date__of-the-month
-            .date__button.date__button_right(id="date-but-next").material-icons.md-24.purple_text
-                p
-                    span= "arrow_forward"
-        .date__days.purple_text
-            - var days = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
-            - for (var i = 0; i < days.length; i++)
-                .date__day
-                    p= days[i]
-        .date__cal(id="element_200")
-        .date__buttons
-            +addButton("очистить", "id-but-date-1", "", "date__clear", "purple_text")
-            +addButton("применить", "id-but-date-2", "", "date__apply dropdown__apply", "purple_text")
+  .date__bottom
+    .date__buffer-value(data-value="")
+    input(name='date', value='{"full_date_1": "2000-0-1", "full_date_2": "2000-0-3"}', type='hidden')
+    .date__paginator
+      .date__button.date__button_left(id="date-but-prev").material-icons.md-24.purple_text
+        p
+          span= "arrow_back"
+      .date__of-the-month
+      .date__button.date__button_right(id="date-but-next").material-icons.md-24.purple_text
+        p
+          span= "arrow_forward"
+    .date__days.purple_text
+      - var days = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
+      - for (var i = 0; i < days.length; i++)
+        .date__day
+          p= days[i]
+    .date__cal(id="element_200")
+    .date__buttons
+      +addButton("очистить", "id-but-date-1", "", "date__clear", "purple_text")
+      +addButton("применить", "id-but-date-2", "", "date__apply dropdown__apply", "purple_text")

@@ -2,27 +2,27 @@ include ../colors/colors
 include ../type/type
 
 -
-    var colors = [
-        {text_1: "Dark Shade  100%", text_2: "#1F2041"},
-        {text_1: "Dark Shade 75%", text_2: "#1F2041"},
-        {text_1: "Dark Shade 50%", text_2: "#1F2041"},
-        {text_1: "Dark Shade 25%", text_2: "#1F2041"},
-        {text_1: "Dark Shade 5%", text_2: "#1F2041"},
-        {text_1: "Purple", text_2: "#BC9CFF"},
-        {text_1: "Green", text_2: "#6FCF97"}
-    ]
+  var colors = [
+    {text_1: "Dark Shade  100%", text_2: "#1F2041"},
+    {text_1: "Dark Shade 75%", text_2: "#1F2041"},
+    {text_1: "Dark Shade 50%", text_2: "#1F2041"},
+    {text_1: "Dark Shade 25%", text_2: "#1F2041"},
+    {text_1: "Dark Shade 5%", text_2: "#1F2041"},
+    {text_1: "Purple", text_2: "#BC9CFF"},
+    {text_1: "Green", text_2: "#6FCF97"}
+  ]
 
 -
-    var type = [
-        {modColumn1: "l-font-1", modColumn2: "r-font-1", textColumn1: "H1", textColumn2: "This one is the sub-section or widget title"},
-        {modColumn1: "l-font-2", modColumn2: "r-font-2", textColumn1: "H2", textColumn2: "Next one is the item title inside widgets"},
-        {modColumn1: "l-font-3", modColumn2: "r-font-3", textColumn1: "H3", textColumn2: "This is a label or CTA text"},
-        {modColumn1: "l-font-4", modColumn2: "r-font-4", textColumn1: "Body", textColumn2: "This is the body text which is used for most of the design, like paragraphs, lists, etc."}
-    ]
+  var type = [
+    {modColumn1: "l-font-1", modColumn2: "r-font-1", textColumn1: "H1", textColumn2: "This one is the sub-section or widget title"},
+    {modColumn1: "l-font-2", modColumn2: "r-font-2", textColumn1: "H2", textColumn2: "Next one is the item title inside widgets"},
+    {modColumn1: "l-font-3", modColumn2: "r-font-3", textColumn1: "H3", textColumn2: "This is a label or CTA text"},
+    {modColumn1: "l-font-4", modColumn2: "r-font-4", textColumn1: "Body", textColumn2: "This is the body text which is used for most of the design, like paragraphs, lists, etc."}
+  ]
 
 .colors-and-type
-    .colors-and-type__box
-        .colors-and-type__column
-            +addColors(colors)
-        .colors-and-type__column
-            +addType(type)
+  .colors-and-type__box
+    .colors-and-type__column
+      +addColors(colors)
+    .colors-and-type__column
+      +addType(type)

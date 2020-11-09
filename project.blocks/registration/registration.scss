@@ -1,23 +1,23 @@
 $PATH: '../project.blocks/registration/images/';
 
 .registration {
-    background: url($PATH+"reg.png");
-    background-size: cover;
-    &__box {
-        display: -webkit-flex; 
-        display: flex;
-        justify-content: center;
-        margin-top: 89px;
-        margin-left: 6px;
-        margin-bottom: 19px;
-    }
+  background: url($PATH+"reg.png");
+  background-size: cover;
+  &__box {
+    display: -webkit-flex; 
+    display: flex;
+    justify-content: center;
+    margin-top: 89px;
+    margin-left: 6px;
+    margin-bottom: 19px;
+  }
 }
 
 // Десктоп. Разрешение < 375px
 @media (max-width: 374px) {
-    .registration__box {
-        margin-top: 70px;
-        margin-bottom: 0px;
-        margin-left: 0px;
-    }
+  .registration__box {
+    margin-top: 70px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+  }
 }

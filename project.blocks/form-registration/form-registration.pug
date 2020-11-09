@@ -5,31 +5,29 @@ include ../radio/radio
 include ../checkbox/checkbox
 include ../button/button
 
-
-
 mixin addFormRegistration(radio_buttons, radio_num, toggle_buttons)
-    .form-registration
-        +addForm
-            .form-registration__element
-                h1 Регистрация аккаунта
-            .form-registration__element
-                +addTextField('Имя')
-            .form-registration__element
-                +addTextField('Фамилия')
-            .form-registration__element
-                +addRadio(radio_buttons, radio_num)
-            .form-registration__element
-                +addTextField('ДД.ММ.ГГГГ', 'дата рождения', '', 'text-field__elem_masked')
-            .form-registration__element
-                +addTextField('Email', 'данные для входа в сервис')
-            .form-registration__element
-                +addTextField('Пароль')
-            .form-registration__element
-                +addCheckbox(toggle_buttons)
-            .form-registration__element
-                +addButton("перейти к оплате", "id-but-7", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white")
-            .form-registration__element
-                .form-registration__column
-                    p Уже есть аккаунт на Toxin
-                .form-registration__column
-                    +addButton("войти", "id-but-3", "button__elem_opaque-border", "button__content_padding", "purple_text")
+  .form-registration
+    +addForm
+      .form-registration__element
+        h1 Регистрация аккаунта
+      .form-registration__element
+        +addTextField('Имя')
+      .form-registration__element
+        +addTextField('Фамилия')
+      .form-registration__element
+        +addRadio(radio_buttons, radio_num)
+      .form-registration__element
+        +addTextField('ДД.ММ.ГГГГ', 'дата рождения', '', 'text-field__elem_masked')
+      .form-registration__element
+        +addTextField('Email', 'данные для входа в сервис')
+      .form-registration__element
+        +addTextField('Пароль')
+      .form-registration__element
+        +addCheckbox(toggle_buttons)
+      .form-registration__element
+        +addButton("перейти к оплате", "id-but-7", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white")
+      .form-registration__element
+        .form-registration__column
+          p Уже есть аккаунт на Toxin
+        .form-registration__column
+          +addButton("войти", "id-but-3", "button__elem_opaque-border", "button__content_padding", "purple_text")

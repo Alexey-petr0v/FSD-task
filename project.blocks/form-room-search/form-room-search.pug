@@ -3,28 +3,28 @@ include ../dropdown/dropdown
 include ../button/button
 
 -
-    var attributes = [
-        {name: "date-1", title_1: "прибытие", title_2: "выезд", date_two_fields: "date_two-fields", dropdown_elem_no_border: "dropdown__elem_no-border", dropdown_elem_small: false},
-        {name: "list-1", input_title: "Сколько гостей", type_units: "together", dropdown_elem_small: false},
-    ]
+  var attributes = [
+    {name: "date-1", title_1: "прибытие", title_2: "выезд", date_two_fields: "date_two-fields", dropdown_elem_no_border: "dropdown__elem_no-border", dropdown_elem_small: false},
+    {name: "list-1", input_title: "Сколько гостей", type_units: "together", dropdown_elem_small: false},
+  ]
 
 -
-    var list_people = [
-        {title: "взрослые", value : "0", name: "adults" },
-        {title: "дети", value : "0", name: "children" },
-        {title: "младенцы", value : "0", name: "babies" }
-    ]
+  var list_people = [
+    {title: "взрослые", value : "0", name: "adults" },
+    {title: "дети", value : "0", name: "children" },
+    {title: "младенцы", value : "0", name: "babies" }
+  ]
 - var attributes_0 = attributes[0]
 - var attributes_1 = attributes[1]
 
 mixin addFormRoomSearch
-    .form-room-search
-        +addForm
-            .form-room-search__element
-                h1 Найдём номера под ваши пожелания
-            .form-room-search__element
-                +addDropdown('date Dropdown', attributes_0, {date: true})
-            .form-room-search__element
-                +addDropdown('гости', attributes_1, {list: true}, list_people)
-            .form-room-search__element
-                +addButton("подобрать номер", "id-but-1", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white")
+  .form-room-search
+    +addForm
+      .form-room-search__element
+        h1 Найдём номера под ваши пожелания
+      .form-room-search__element
+        +addDropdown('date Dropdown', attributes_0, {date: true})
+      .form-room-search__element
+        +addDropdown('гости', attributes_1, {list: true}, list_people)
+      .form-room-search__element
+        +addButton("подобрать номер", "id-but-1", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white")

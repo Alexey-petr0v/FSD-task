@@ -1,16 +1,16 @@
 .bullet-list {
-    &__items { width: 292px }
-    &__item {
-        display: -webkit-flex; 
-        display: flex;
-        margin-bottom: 10px;
-    }
-    &__circle {
-        min-width: 10.43px;
-        height: 10px;
-        background: rgba(31, 32, 65, 0.25);
-        border-radius: 50%;
-        margin-right: 10.43px;
-        margin-top: 7px;
-    }
+  &__items { width: 292px }
+  &__item {
+    display: -webkit-flex; 
+    display: flex;
+    margin-bottom: 10px;
+  }
+  &__circle {
+    min-width: 10.43px;
+    height: 10px;
+    background: rgba(31, 32, 65, 0.25);
+    border-radius: 50%;
+    margin-right: 10.43px;
+    margin-top: 7px;
+  }
 }
