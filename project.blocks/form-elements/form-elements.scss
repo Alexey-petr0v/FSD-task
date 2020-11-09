@@ -4,7 +4,6 @@
     display: flex;
   }
   &__td {
-    display: inline-block;
     margin-right: 20px;
     &:last-child { margin-right: 0px }
     &_no-indent { margin-bottom: 0px }
@@ -41,12 +40,9 @@
     &_22 { margin-bottom: 30px }
     &_23, &_24, &_22 > h3 { margin-bottom: 16px }
     &_25 { margin-bottom: 40px }
-    &_22, &_23, &_24, &_25 {
-      .form-elements__td {
-        height: 44px;
-        display: -webkit-flex; 
-        display: flex;
-      }
+    &_22, &_23 {
+      .form-elements__cells { max-width: 217px }
+      .form-elements__td { flex-grow: 1 }
     }
     &_27 { margin-bottom: 233px }
     &_27 > h3 { margin-bottom: 16.44px }

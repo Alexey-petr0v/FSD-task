@@ -10,6 +10,7 @@ $PATH: '../project.blocks/button/images/';
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
     cursor: pointer;
     &_padding {
       height: calc(100% - 4px);
@@ -21,6 +22,8 @@ $PATH: '../project.blocks/button/images/';
     display: -webkit-flex; 
     display: flex;
     align-items: center;
+    flex-grow: 1;
+    min-height: 44px;
     border-radius: 22px;
     &_opaque-background {
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -47,12 +50,17 @@ $PATH: '../project.blocks/button/images/';
       }
     }
     &_big {
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      max-width: 320px;
       .button__content { justify-content: flex-end }
-      .button__text { min-width: 320px }
+      .button__text {
+      }
     }
   }
-  &__text { font-weight: bold; text-align: center }
+  &__text {
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+  }
   &__arrow {
     position: absolute;
     color: #FFFFFF;
