@@ -2,14 +2,17 @@ mixin addCheckbox(items)
     - for (var x = 0; x < items.length; x++)
         if items[x].toggle
             - var mod = "checkbox__item_toggle"
+            - var input_mod = ""
         else if items[x].like
             - var mod = "checkbox__item_like purple_text"
+            - var input_mod = "material-icons-outlined md-24"
         else
             - var mod = ""
+            - var input_mod = ""
         .checkbox__item(class=mod)
             label
                 if items[x].value
-                    input(name=items[x].name, class="checkbox__input", type="checkbox", checked)
+                    input(name=items[x].name, class="checkbox__input "+input_mod, type="checkbox", checked)
                     if items[x].text
                         .checkbox__rich
                             p
@@ -21,7 +24,7 @@ mixin addCheckbox(items)
                     else if items[x].title
                         span= items[x].title
                 else
-                    input(name=items[x].name, class="checkbox__input", type="checkbox")
+                    input(name=items[x].name, class="checkbox__input "+input_mod, type="checkbox")
                     if items[x].text
                         .checkbox__rich
                             p

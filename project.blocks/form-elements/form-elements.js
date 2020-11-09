@@ -34,7 +34,6 @@ if ($(".form-elements").length) {
     
     // expandable checkbox list
     $('.dropdown__elem_no-border .dropdown__top').eq(3).trigger( "click" );
-    $('.dropdown__elem_no-border .dropdown__top').eq(3).css('background', 'url("images/to_close.svg") calc(100% - 13px) 50% no-repeat #ffffff');
     
     // Dropdown
     $( ".list-counter__top" ).eq(3).trigger( "click" );

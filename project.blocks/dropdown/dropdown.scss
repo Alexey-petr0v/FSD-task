@@ -44,33 +44,78 @@ $PATH: '../project.blocks/dropdown/images/';
     }
     &__elem {
         .dropdown__top {
+            font-family: 'Montserrat';
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
             width: 318px;
             &:not(.dropdown__top_no-arrow) {
-                background: url($PATH+"expand_more.svg") calc(100% - 16px) 50% no-repeat
+                &::before {
+                    content: 'keyboard_arrow_down';
+                    font-family: 'Material Icons Outlined';
+                    font-weight: normal;
+                    font-style: normal;
+                    font-size: 24px;
+                    color: rgba(31, 32, 65, 0.5);
+                    position: absolute;
+                    margin-top: 10px;
+                    margin-left: 286px;
+                }
             }
         }
         .dropdown__bottom { width: 304px }
         &_small {
-            .dropdown__top { width: 264px }
+            .dropdown__top {
+                width: 264px;
+                &:not(.dropdown__top_no-arrow) {
+                    &::before {
+                        content: 'keyboard_arrow_down';
+                        margin-top: 11px;
+                        margin-left: 233px;
+                    }
+                }
+            }
             .dropdown__bottom { width: 250px }
         }
         &_small-top {
             .dropdown__top {
                 width: 262px;
                 &:not(.dropdown__top_no-arrow) {
-                    background: url($PATH+"expand_more.svg") calc(100% - 13px) 50% no-repeat
+                    &::before {
+                        content: 'keyboard_arrow_down';
+                        margin-top: 11px;
+                        margin-left: 233px;
+                    }
                 }
             }
         }
         &_no-border {
-            .dropdown__top { border: 0px }
+            .dropdown__top {
+                border: 0px;
+                &.dropdown__top_arrow-up {
+                    &::before {
+                        content: 'keyboard_arrow_up';
+                    }
+                }
+            }
             .dropdown__bottom {
                 border: 0px;
                 padding-left: 0px;
             }
         }
         &_elastic {
-            .dropdown__top { width: calc(100% + 34px) }
+            .dropdown__top {
+                width: calc(100% + 34px);
+                &:not(.dropdown__top_no-arrow) {
+                    &::before {
+                        content: 'keyboard_arrow_down';
+                        margin-left: 0px;
+                        position: static;
+                        order: 1;
+                    }
+                }
+            }
             .dropdown__bottom {
                 width: auto;
                 padding-left: 10px;
@@ -83,6 +128,9 @@ $PATH: '../project.blocks/dropdown/images/';
                 width: 264px;
                 padding-top: 4px;
             }
+        }
+        .dropdown__top.dropdown__top_no_arrow {
+            &::before { content: '' }
         }
     }
 }

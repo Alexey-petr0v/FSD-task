@@ -40,15 +40,15 @@ for (let x = 0; x < numberOfClasses; x++) {
         $(e.data.bottom).slideToggle()
     });
 }
-
+-
 // Смена визуальной стрелки на стрелку вверх/вниз
 $("body").on("click", dropdown_mod + " " + dropdown_top, {}, function(e){
     let height_bottom_px = $(this).parents(dropdown_mod).find(dropdown_bottom).css("height"),
         height_bottom = height_bottom_px.replace(/[\p\x]/g, '');
     if (height_bottom > 1) {
-        $(this).css('background', 'url("images/expand_more.svg") calc(100% - 13px) 50% no-repeat #ffffff')
+        $(this).toggleClass("dropdown__top_arrow-up")
     }
     else {
-        $(this).css('background', 'url("images/to_close.svg") calc(100% - 13px) 50% no-repeat #ffffff')
+        $(this).toggleClass("dropdown__top_arrow-up")
     }
 })

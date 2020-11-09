@@ -5,9 +5,13 @@ mixin addDateTop(two_title_flag)
         if (two_title_flag == true)
             .date__two-tops
                 .date__two-top
-                    p= 'ДД.ММ.ГГГГ'
+                    p
+                        span='ДД.ММ.ГГГГ'
+                        span.material-icons.md-24='keyboard_arrow_down'
                 .date__two-top
-                    p= 'ДД.ММ.ГГГГ'
+                    p
+                        span='ДД.ММ.ГГГГ'
+                        span.material-icons.md-24='keyboard_arrow_down'
         else
             .date__top
                 p= 'ДДММ - ДДММ'

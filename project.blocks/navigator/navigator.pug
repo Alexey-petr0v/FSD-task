@@ -11,10 +11,10 @@ mixin addNavigator(first_bold)
             li
                 p(class=first_bold) О нас
             li
-                +addDropdown('Услуги', {name: "list-1", dropdown_elem_small: "dropdown__elem_elastic", dropdown_elem_no_border: "dropdown__elem_no-border", type_units: "separately"}, false, services)
+                +addDropdown('Услуги', {name: "list-1", dropdown_elem_small: "dropdown__elem_elastic", dropdown_elem_no_border: "dropdown__elem_no-border", type_units: "separately"/*, dropdown_top_no_arrow: "dropdown__top_no_arrow"*/}, false, services)
             li
                 p Вакансии
             li
                 p Новости
             li
-                +addDropdown('Соглашения', {name: "list-2", dropdown_elem_small: "dropdown__elem_elastic", dropdown_elem_no_border: "dropdown__elem_no-border", type_units: "separately"}, false, agreements)
+                +addDropdown('Соглашения', {name: "list-2", dropdown_elem_small: "dropdown__elem_elastic", dropdown_elem_no_border: "dropdown__elem_no-border", type_units: "separately"/*, dropdown_top_no_arrow: "dropdown__top_no_arrow"*/}, false, agreements)
