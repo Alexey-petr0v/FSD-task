@@ -19,6 +19,12 @@
     background: rgba(31, 32, 65, 0.1);
     margin-right: 20px;
   }
+  &__button-sign-in {
+    width: 87px;
+  }
+  &__button-sign-up {
+    width: 196px;
+  }
 }
 
 // Разрешение < 935px

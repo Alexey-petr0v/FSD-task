@@ -1,8 +1,7 @@
 $PATH: '../project.blocks/button/images/';
 
 .button {
-  display: -webkit-flex; 
-  display: flex;
+  display: block;
   &__content {
     .button__text_grey:not(.purple_text) { color: rgba(31, 32, 65, 0.5) }
     .button__text_white:not(.purple_text) { color: #FFFFFF }
@@ -12,18 +11,14 @@ $PATH: '../project.blocks/button/images/';
     align-items: center;
     flex-grow: 1;
     cursor: pointer;
-    &_padding {
-      height: calc(100% - 4px);
-      min-width: 99px;
-      border-radius: 22px
-    }
+    &_padding { border-radius: 22px }
   }
   &__elem {
     display: -webkit-flex; 
     display: flex;
-    align-items: center;
-    flex-grow: 1;
-    min-height: 44px;
+    align-items: stretch;
+    justify-content: stretch;
+    height: 44px;
     border-radius: 22px;
     &_opaque-background {
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -38,7 +33,6 @@ $PATH: '../project.blocks/button/images/';
       .button__content {
         margin: 2px;
         background: white;
-        min-width: 95px;
       }
     }
     &_transparent-border {
@@ -46,15 +40,13 @@ $PATH: '../project.blocks/button/images/';
       .button__content {
         margin: 2px;
         background: white;
-        min-width: 95px;
       }
     }
     &_big {
       max-width: 320px;
       .button__content { justify-content: flex-end }
-      .button__text {
-      }
     }
+    &_small-height { height: 34px }
   }
   &__text {
     font-weight: bold;
@@ -62,8 +54,11 @@ $PATH: '../project.blocks/button/images/';
     flex-grow: 1;
   }
   &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    color: #FFFFFF;
     margin-right: 10px;
+    &> * { color: #FFFFFF }
   }
 }

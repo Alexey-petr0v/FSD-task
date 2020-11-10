@@ -168,10 +168,11 @@ include ../bullet-list/bullet-list
           +addCheckbox(like_buttons)
       .form-elements__element_17
         h3 RATE BUTTON
-        .form-elements__td
-          +addRadio(rate_buttons_1, 2)
-        .form-elements__td
-          +addRadio(rate_buttons_2, 3)
+        .form-elements__cells
+          .form-elements__td
+            +addRadio(rate_buttons_1, 2)
+          .form-elements__td
+            +addRadio(rate_buttons_2, 3)
       .form-elements__element_18
         +addDropdown('Dropdown', attributes[6], {list: true}, list_people)
       .form-elements__element_19
@@ -205,7 +206,7 @@ include ../bullet-list/bullet-list
             +addButton("CLICK ME", "id-but-6", "", "", "button__text_grey")
       .form-elements__element_25
           .form-elements__td
-            +addButton("перейти к оплате", "id-but-7", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white", "", "arrow_forward")
+            +addButton("перейти к оплате", "id-but-7", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white", "arrow_forward")
       .form-elements__element_26(id="element_24")
       .form-elements__element_27
         h3 pagination

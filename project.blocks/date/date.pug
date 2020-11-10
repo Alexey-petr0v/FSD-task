@@ -1,20 +1,19 @@
 include ../button/button
 
 mixin addDateTop(two_title_flag)
-  div(style="display: block; width: 320px")
-    if (two_title_flag == true)
-      .date__two-tops
-        .date__two-top
-          p
-            span='ДД.ММ.ГГГГ'
-            span.material-icons.md-24='keyboard_arrow_down'
-        .date__two-top
-          p
-            span='ДД.ММ.ГГГГ'
-            span.material-icons.md-24='keyboard_arrow_down'
-    else
-      .date__top
-        p= 'ДДММ - ДДММ'
+  if (two_title_flag == true)
+    .date__two-tops
+      .date__two-top
+        p
+          span='ДД.ММ.ГГГГ'
+          span.material-icons.md-24='keyboard_arrow_down'
+      .date__two-top
+        p
+          span='ДД.ММ.ГГГГ'
+          span.material-icons.md-24='keyboard_arrow_down'
+  else
+    .date__top
+      p= 'ДДММ - ДДММ'
 mixin addDateBottom
   .date__bottom
     .date__buffer-value(data-value="")

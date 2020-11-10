@@ -147,14 +147,15 @@ $PATH: '../project.blocks/number-card/images/';
   &__element-4 {
     display: -webkit-flex; 
     display: flex;
+    align-items: stretch;
     justify-content: space-between;
-    height: 40px;
     .number-card__table {
       display: -webkit-flex; 
       display: flex;
       align-items: center;
+      margin-top: 8px;
+      margin-bottom: 19px;
     }
-    margin-bottom: 11px;
   }
   &__table {
     p, h3 { font-size: 14px; }

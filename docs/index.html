@@ -64,17 +64,21 @@
                 <div class="user-panel">
                   <div class="user-panel__box" data-logged="false">
                     <div class="user-panel__buttons">
-                      <div class="button">
-                        <div class="button__elem button__elem_opaque-border">
-                          <div class="button__content button__content_padding" id="id-but-1" style="min-width: 83px">
-                            <h3 class="button__text purple_text">Войти</h3>
+                      <div class="user-panel__button-sign-in">
+                        <div class="button">
+                          <div class="button__elem button__elem_opaque-border button__elem_small-height">
+                            <div class="button__content button__content_padding" id="id-but-1">
+                              <h3 class="button__text purple_text">Войти</h3>
+                            </div>
                           </div>
                         </div>
                       </div>
-                      <div class="button">
-                        <div class="button__elem button__elem_opaque-background">
-                          <div class="button__content button__content_padding" id="id-but-2" style="width: 196px">
-                            <h3 class="button__text button__text_white">Зарегистрироваться</h3>
+                      <div class="user-panel__button-sign-up">
+                        <div class="button">
+                          <div class="button__elem button__elem_opaque-background button__elem_small-height">
+                            <div class="button__content button__content_padding" id="id-but-2">
+                              <h3 class="button__text button__text_white">Зарегистрироваться</h3>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -108,15 +112,13 @@
                                                             <h3>прибытие</h3>
                                                             <h3>выезд</h3>
                                                           </div>
-                                                          <div class="dropdown__top material-icons md-24">
-                                                                  <div style="display: block; width: 320px">
-                                                                    <div class="date__two-tops">
-                                                                      <div class="date__two-top">
-                                                                        <p><span>ДД.ММ.ГГГГ</span><span class="material-icons md-24">keyboard_arrow_down</span></p>
-                                                                      </div>
-                                                                      <div class="date__two-top">
-                                                                        <p><span>ДД.ММ.ГГГГ</span><span class="material-icons md-24">keyboard_arrow_down</span></p>
-                                                                      </div>
+                                                          <div class="dropdown__top dropdown__top_no_arrow  material-icons md-24">
+                                                                  <div class="date__two-tops">
+                                                                    <div class="date__two-top">
+                                                                      <p><span>ДД.ММ.ГГГГ</span><span class="material-icons md-24">keyboard_arrow_down</span></p>
+                                                                    </div>
+                                                                    <div class="date__two-top">
+                                                                      <p><span>ДД.ММ.ГГГГ</span><span class="material-icons md-24">keyboard_arrow_down</span></p>
                                                                     </div>
                                                                   </div>
                                                           </div>
@@ -224,14 +226,14 @@
                                                                           </div>
                                                                     <div class="list-counter__buttons">
                                                                             <div class="button">
-                                                                              <div class="button__elem">
+                                                                              <div class="button__elem button__elem_small-height">
                                                                                 <div class="button__content list-counter__clear" id="id-but-list-1">
                                                                                   <h3 class="button__text purple_text">очистить</h3>
                                                                                 </div>
                                                                               </div>
                                                                             </div>
                                                                             <div class="button">
-                                                                              <div class="button__elem">
+                                                                              <div class="button__elem button__elem_small-height">
                                                                                 <div class="button__content list-counter__apply dropdown__apply" id="id-but-list-2">
                                                                                   <h3 class="button__text purple_text">применить</h3>
                                                                                 </div>
@@ -252,6 +254,9 @@
                                           <div class="button__elem button__elem_opaque-background button__elem_big">
                                             <div class="button__content button__content_padding" id="id-but-1">
                                               <h3 class="button__text button__text_white">подобрать номер</h3>
+                                              <div class="button__arrow">
+                                                <h3 class="material-icons md-24">arrow_forward</h3>
+                                              </div>
                                             </div>
                                           </div>
                                         </div>

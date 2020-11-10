@@ -1,7 +1,8 @@
-mixin addButton(text, id, elem_mods, content_mods, text_mods, content_style, arrow_forward)
+mixin addButton(text, id, elem_mods, content_mods, text_mods, arrow_forward)
   .button
     .button__elem(class=elem_mods)
-      .button__content(class=content_mods, id=id, style=content_style)
+      .button__content(class=content_mods, id=id)
         h3.button__text(class=text_mods)= text
         if arrow_forward
-          h3.button__arrow.material-icons.md-24= "arrow_forward"
+          .button__arrow
+            h3.material-icons.md-24= "arrow_forward"
