@@ -12,7 +12,7 @@
     align-items: center;
     label, &__input { cursor: pointer }
     &__input ~ label { margin-right: 20px }
-    label > span { color: rgba(31, 32, 65, 0.5) }
+    label > .radio__title { color: rgba(31, 32, 65, 0.5) }
     &__input {
       -webkit-appearance: none;
       -moz-appearance: none;
@@ -36,12 +36,12 @@
           margin: 3px;
           background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
         }
-        &+ label > span { color: rgba(31, 32, 65, 0.75) }
+        &+ label > .radio__title { color: rgba(31, 32, 65, 0.75) }
       }
       &_rate {
         display: none;
         &~ label.radio__label-rate { margin-right: 2px; cursor: auto }
-        &~ label span {
+        &~ label .radio__title {
           display: inline-block;
           width: 22px;
           background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -50,18 +50,18 @@
           -webkit-text-fill-color: transparent;
           color: #a7a7f1;
         }
-        &+ .radio__label-rate > span {
+        &+ .radio__label-rate > .radio__title {
           &:nth-child(1) { display: inline-block }
           &:nth-child(2) { display: none }
         }
         &:checked, &:first-child, &:first-child ~ .radio__input_rate {
-          &+ .radio__label-rate > span {
+          &+ .radio__label-rate > .radio__title {
             &:nth-child(1) { display: none }
             &:nth-child(2) { display: inline-block }
           }
         }
         &:checked ~ .radio__input_rate {
-          &+ .radio__label-rate > span {
+          &+ .radio__label-rate > .radio__title {
             &:nth-child(1) { display: inline-block }
             &:nth-child(2) { display: none }
           }

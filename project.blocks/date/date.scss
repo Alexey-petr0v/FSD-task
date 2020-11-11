@@ -14,8 +14,7 @@ $PATH: '../project.blocks/date/images/';
     margin-bottom: 8px;
   }
   &__month {
-    width: 215px;
-    height: 40px;
+    width: 215px; height: 40px;
     justify-content: center;
     display: -webkit-flex; 
     display: flex;
@@ -29,18 +28,13 @@ $PATH: '../project.blocks/date/images/';
   }
   &__button {
     text-align: center;
-    width: 40px;
-    height: 40px;
+    width: 40px; height: 40px;
     justify-content: center;
     display: -webkit-flex; 
     display: flex;
     align-items: center;
     cursor: pointer;
-    &_left, &_right {
-      p { padding-top: 0.9px; }
-    }
   }
-  &__text p { text-align: center }
   &__buttons {
     padding-right: 13px;
     display: -webkit-flex; 
@@ -73,18 +67,18 @@ $PATH: '../project.blocks/date/images/';
     width: 150px;
     padding-left: 14px;
     margin-right: 20px;
-    p {
+    .date__title {
       display: -webkit-flex;
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-right: 8px;
-      span:nth-child(2) {
+      .date__arrow-down {
         margin-top: 3px;
         color: rgba(31, 32, 65, 0.5);
       }
     }
-    &:last-child{margin-right: 0px;}
+    &:last-child { margin-right: 0px }
   }
   &__bottom {
     padding-top: 11px;
@@ -114,8 +108,7 @@ $PATH: '../project.blocks/date/images/';
     padding-top: 13px;
   }
   &__day {
-    width: 39.88px;
-    height: 40px;
+    width: 39.88px; height: 40px;
     display: -webkit-flex; 
     display: flex; 
     align-items: center;
@@ -135,16 +128,13 @@ $PATH: '../project.blocks/date/images/';
   }
   &__number {
     border-radius: 50%;
-    width: 39.88px;
-    height: 40px;
+    width: 39.88px; height: 40px;
     display: -webkit-flex; 
     display: flex; 
     align-items: center;
     justify-content: center;
     color: rgba(31, 32, 65, 0.5);
-    &_other-month {
-      color: rgba(31, 32, 65, 0.25);
-    }
+    &_other-month { color: rgba(31, 32, 65, 0.25) }
     &_current {
       background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
       font-weight: bold;

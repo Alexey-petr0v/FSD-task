@@ -6,7 +6,11 @@
     width: 266px;
     margin-bottom: 19px;
   }
-  &__values { font-weight: normal }
+  &__values {
+    font-weight: normal;
+    color: rgba(31, 32, 65, 0.5);
+
+  }
   &__slider {
     display: -webkit-flex; 
     display: flex;

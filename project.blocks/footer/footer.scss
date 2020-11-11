@@ -2,9 +2,6 @@ $PATH: '../project.blocks/footer/images/';
 
 .footer {
   background: white;
-  &:not(.footer_small) {
-    .footer__columns { justify-content: center }
-  }
   &__logo { align-self: center; margin-bottom: 17px }
   &_small {
     background: none;
@@ -15,14 +12,16 @@ $PATH: '../project.blocks/footer/images/';
       .footer__columns {
         margin: 120px auto 120px;
         flex-direction: column;
-        img { margin-bottom: 18px; }
-        .footer__social {
+        .footer__socials {
           width: 100%;
           justify-content: center;
           margin-top: 23px;
         }
       }
     }
+  }
+  &:not(.footer_small) {
+    .footer__columns { justify-content: center }
   }
   &__top-box {
     display: -webkit-flex; 
@@ -38,39 +37,36 @@ $PATH: '../project.blocks/footer/images/';
   &__column {
     max-width: 260px;
     margin-bottom: 30px;
-    h3 { margin-top: 4px; margin-bottom: 21px }
-    img { margin-bottom: 10px}
-    p { margin-bottom: 20px; &:last-child { margin-bottom: 0px } }
+    .footer__title { margin-top: 4px; margin-bottom: 21px }
+    &> .footer__item { margin-bottom: 20px; &:last-child { margin-bottom: 0px } }
     &:nth-child(1) { margin-right: 40px; line-height: 24px; }
     &:nth-child(2) { margin-right: 58px; line-height: 18px; }
     &:nth-child(3) { margin-right: 93px; line-height: 18px; }
     &:nth-child(4) { margin-right: 51px; line-height: 18px; }
     &:nth-child(5) {
       line-height: 24px;
-      h3 { margin-bottom: 18px }
-      p { margin-bottom: 23px}
+      .footer__title { margin-bottom: 18px }
+      &> .footer__text { margin-bottom: 23px}
     }
   }
   &__bottom-box {
-    max-width: 1160px;
-    height: 70px;
+    max-width: 1160px; height: 70px;
     margin: 0px auto;
     display: -webkit-flex; 
     display: flex;
     justify-content: space-between;
     p { margin-top: 23px }
   }
-  &__social {
+  &__socials {
     margin-top: 25px;
     display: -webkit-flex; 
     display: flex;
-    a {
+    .footer__social-button {
       margin-right: 20px;
-      width: 24px;
-      height: 24px;
-      &:nth-child(1) {background: url($PATH+"twitter.svg") no-repeat}
-      &:nth-child(2) {background: url($PATH+"facebook.svg") no-repeat}
-      &:last-child {
+      width: 24px; height: 24px;
+      &_twitter {background: url($PATH+"twitter.svg") no-repeat}
+      &_facebook {background: url($PATH+"facebook.svg") no-repeat}
+      &_instagram {
         background: url($PATH+"instagram.svg") no-repeat;
         margin-right: 0px
       }
@@ -86,18 +82,24 @@ $PATH: '../project.blocks/footer/images/';
 @media (max-width: 1199px) {
   .footer:not(.footer_small) {
     .footer__column { margin-left: 20px }
-    .footer__social { margin-right: 20px }
-    p {
+    .footer__socials { margin-right: 20px }
+    .footer__social-button {
       margin-right: 20px;
       margin-left: 20px;
       margin-bottom: 20px;
     }
-    .footer__bottom-box { height: auto }
+    .footer__bottom-box {
+      height: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
   .footer_small .footer__top-box {
-    .footer__columns p {
-      margin-left: 20px;
-      margin-right: 20px;
+    .footer__columns .footer__text {
+      margin-left: 20px; margin-right: 20px;
     }
+  }
+  .footer__copyrights {
+    margin-left: 20px; margin-right: 20px;
   }
 }

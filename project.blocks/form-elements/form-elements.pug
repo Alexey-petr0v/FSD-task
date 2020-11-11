@@ -152,22 +152,22 @@ include ../bullet-list/bullet-list
 
     .form-elements__column_second
       .form-elements__element_13
-        h3 CHECKBOX BUTTONS
+        h3.form-elements__title CHECKBOX BUTTONS
         .checkbox
           +addCheckbox(checkbox_buttons)
       .form-elements__element_14
-        h3 RADIO BUTTONS
+        h3.form-elements__title RADIO BUTTONS
         +addRadio(radio_buttons, 1)
       .form-elements__element_15
-        h3 TOGGLE
+        h3.form-elements__title TOGGLE
         .checkbox
           +addCheckbox(toggle_buttons)
       .form-elements__element_16
-        h3 LIKE BUTTON
+        h3.form-elements__title LIKE BUTTON
         .checkbox
           +addCheckbox(like_buttons)
       .form-elements__element_17
-        h3 RATE BUTTON
+        h3.form-elements__title RATE BUTTON
         .form-elements__cells
           .form-elements__td
             +addRadio(rate_buttons_1, 2)
@@ -176,7 +176,7 @@ include ../bullet-list/bullet-list
       .form-elements__element_18
         +addDropdown('Dropdown', attributes[6], {list: true}, list_people)
       .form-elements__element_19
-        h3 RICH CHECKBOX BUTTONS
+        h3.form-elements__title RICH CHECKBOX BUTTONS
         .checkbox
           +addCheckbox(rich_checkbox_buttons)
       .form-elements__element_20
@@ -186,7 +186,7 @@ include ../bullet-list/bullet-list
       .form-elements__element_21
         +addRangeSlider("RANGE SLIDER")
       .form-elements__element_22
-        h3 BUTTONS
+        h3.form-elements__title BUTTONS
         .form-elements__cells
           .form-elements__td
             +addButton("CLICK ME", "id-but-1", "button__elem_opaque-background", "button__content_padding", "button__text_white")
@@ -209,10 +209,10 @@ include ../bullet-list/bullet-list
             +addButton("перейти к оплате", "id-but-7", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white", "arrow_forward")
       .form-elements__element_26(id="element_24")
       .form-elements__element_27
-        h3 pagination
+        h3.form-elements__title pagination
         +addPaginator
       .form-elements__element_28
         +addDropdown('Dropdown', attributes[7], {list: true}, list_people)
       .form-elements__element_29
-        h3 BULLET LIST
+        h3.form-elements__title BULLET LIST
         +addBulletList(bullet_list)

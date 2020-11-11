@@ -5,8 +5,8 @@ include ../checkbox/checkbox
 
 mixin addDefaultItemsDropdown(items)
   - for (var x = 0; x < items.length; x++)
-    p
-      a(href=items[x].link, target="_blank")= items[x].title
+    p.dropdown__item
+      a.dropdown__link(href=items[x].link, target="_blank")= items[x].title
 
 
 mixin addDropdown(title, attrib, dropdownType, additionalContent, check_status)
@@ -43,12 +43,12 @@ mixin addDropdown(title, attrib, dropdownType, additionalContent, check_status)
       .dropdown
         .dropdown__elem(class=dropdown_elem_mod)
           .date(class=date_mod)
-            .dropdown__title
+            .dropdown__titles
               if (two_title_flag == true)
-                h3= attrib.title_1
-                h3= attrib.title_2
+                h3.dropdown__title= attrib.title_1
+                h3.dropdown__title= attrib.title_2
               else
-                h3= attrib.title_1
+                h3.dropdown__title= attrib.title_1
             .dropdown__top(class=dropdown_top_mod).material-icons.md-24
               +addDateTop(two_title_flag)
             .dropdown__bottom
@@ -58,13 +58,13 @@ mixin addDropdown(title, attrib, dropdownType, additionalContent, check_status)
       .dropdown__elem(class=dropdown_elem_mod)
         .checkbox
           .dropdown__top.material-icons.md-24
-            h3= title
+            h3.dropdown__title= title
           .dropdown__bottom
             +addCheckbox(additionalContent)
   else
     .dropdown
       .dropdown__elem(class=dropdown_elem_mod)
         .dropdown__top(class=dropdown_top_mod).material-icons.md-24
-          p= title
+          p.dropdown__title= title
         .dropdown__bottom
           +addDefaultItemsDropdown(additionalContent)

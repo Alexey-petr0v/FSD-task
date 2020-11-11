@@ -23,6 +23,6 @@ mixin addRadio(items, num_elem)
         else
           input(id=id, name=items[x].name, value=items[x].value, class="radio__input", class=mod, type="radio")
       label(for=id, class=label_class)
-        span= title
+        span.radio__title= title
         if items[x].rate
-          span= title_2
+          span.radio__title= title_2

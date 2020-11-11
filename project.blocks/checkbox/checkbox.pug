@@ -1,3 +1,10 @@
+mixin addCheckboxElem(title, text)
+  if text
+    .checkbox__rich
+      p.checkbox__title= title
+      p.checkbox__text= text
+  else if title
+    p.checkbox__title= title
 
 mixin addCheckbox(items)
   - for (var x = 0; x < items.length; x++)
@@ -14,25 +21,7 @@ mixin addCheckbox(items)
       label
         if items[x].value
           input(name=items[x].name, class="checkbox__input "+input_mod, type="checkbox", checked)
-          if items[x].text
-            .checkbox__rich
-              p
-                b
-                  span= items[x].title
-                  br
-              p
-                span= items[x].text
-          else if items[x].title
-            span= items[x].title
+          +addCheckboxElem(items[x].title, items[x].text)
         else
           input(name=items[x].name, class="checkbox__input "+input_mod, type="checkbox")
-          if items[x].text
-            .checkbox__rich
-              p
-                b
-                  span= items[x].title
-                  br
-              p
-                span= items[x].text
-          else if items[x].title
-            span= items[x].title
+          +addCheckboxElem(items[x].title, items[x].text)

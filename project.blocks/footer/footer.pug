@@ -23,13 +23,28 @@ include ../text-field/text-field
     {link: "https://yandex.ru/", text: "Связь с нами"}
   ]
 
+- var copyrights = "Copyright © 2018 Toxin отель. Все права зачищены."
+
+-
+  var social_links = [
+    {link: "https://yandex.ru/", class: "footer__social-button_twitter"},
+    {link: "https://yandex.ru/", class: "footer__social-button_facebook"},
+    {link: "https://yandex.ru/", class: "footer__social-button_instagram"}
+  ]
+
 
 mixin addFooterColumn(title, footer_links)
   .footer__column
-    h3= title
+    h3.footer__title= title
     - for(var x = 0; x < footer_links.length; x++)
-      p
-        a(href=footer_links[x].link, target="_blank")= footer_links[x].text
+      p.footer__item
+        a.footer__link(href=footer_links[x].link, target="_blank")= footer_links[x].text
+
+mixin addFooterCopyrightsAndSocials(copyrights_text, links)
+  p.footer__copyrights= copyrights_text
+  .footer__socials
+    - for(var x = 0; x < links.length; x++)
+      a.footer__social-button(href=links[x].link, target="_blank", class=links[x].class)
 
 mixin addFooter(small)
   if small
@@ -37,28 +52,20 @@ mixin addFooter(small)
       .footer__top-box
         .footer__columns
           .footer__logo
-          p Copyright © 2018 Toxin отель. Все права зачищены.
-          .footer__social
-            a(href="https://yandex.ru/", target="_blank")
-            a(href="https://yandex.ru/", target="_blank")
-            a(href="https://yandex.ru/", target="_blank")
+          +addFooterCopyrightsAndSocials(copyrights, social_links)
   else
     footer.footer
       .footer__top-box
         .footer__columns
           .footer__column
             .footer__logo
-            p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+            p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
           +addFooterColumn("навигация", footer_links_1)
           +addFooterColumn("о нас", footer_links_2)
           +addFooterColumn("Служба поддержки", footer_links_3)
           .footer__column
-            h3 Подписка
-            p Получайте специальные предложения и новости сервиса
+            h3.footer__title Подписка
+            p.footer__text Получайте специальные предложения и новости сервиса
             +addTextField('Email', '', 'field__elem_small', '', 'text-field__box_arrow-forward purple_text')
       .footer__bottom-box
-        p Copyright © 2018 Toxin отель. Все права зачищены.
-        .footer__social
-          a(href="https://yandex.ru/", target="_blank")
-          a(href="https://yandex.ru/", target="_blank")
-          a(href="https://yandex.ru/", target="_blank")
+        +addFooterCopyrightsAndSocials(copyrights, social_links)

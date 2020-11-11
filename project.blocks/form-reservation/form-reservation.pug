@@ -37,29 +37,18 @@ mixin addFormReservation
         +addDropdown('гости', attributes_1, {list: true}, list_people)
       .form-reservation__element
         .form-reservation__table
-          .form-reservation__column
-            .form-reservation__td
-              p 9 990₽ х 4 суток
-            .form-reservation__td
-              p Сбор за услуги: скидка 2 179₽
-            .form-reservation__td
-              p Сбор за дополнительные услуги
-          .form-reservation__column
-            .form-reservation__td
-              p
-            .form-reservation__td.form-reservation__td_circle
-              p
-                span i
-            .form-reservation__td.form-reservation__td_circle
-              p
-                span i
-          .form-reservation__column
-            .form-reservation__td
-              p 39 960₽
-            .form-reservation__td
-              p 0₽
-            .form-reservation__td
-              p 300₽
+          .form-reservation__line
+            p.form-reservation__td-title 9 990₽ х 4 суток
+            p.form-reservation__td-info.form-reservation__td-info_hidden
+            p.form-reservation__td-price 39 960₽
+          .form-reservation__line
+            p.form-reservation__td-title Сбор за услуги: скидка 2 179₽
+            p.form-reservation__td-info i
+            p.form-reservation__td-price 0₽
+          .form-reservation__line
+            p.form-reservation__td-title Сбор за дополнительные услуги
+            p.form-reservation__td-info i
+            p.form-reservation__td-price 300₽
       .form-reservation__element
         h2 Итого
         h3

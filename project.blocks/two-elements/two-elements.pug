@@ -23,9 +23,8 @@ mixin addImage(image)
   img(src=image)
 
 mixin addTitleAndText(title, text)
-  p
-    b= title
-  p= text
+  p.two-elements__title= title
+  p.two-elements__text= text
 
 mixin addText(text)
-  span= text
+  p.two-elements__text= text
