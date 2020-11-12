@@ -2,21 +2,22 @@ include ../button/button
 
 mixin addItems(items)
   - for (var x = 0; x < items.length; x++)
-    .list-counter__item(data-name=items[x].name)
-      h3= items[x].title
+    .list-counter__item(data-name=items[x].name, class=".list-counter__item_"+(x+1))
+      h3.list-counter__name= items[x].title
       .list-counter__minusAndPlus
         p.list-counter__circle.list-counter__minus -
-        h3= items[x].value
+        h3.list-counter__numerals= items[x].value
         p.list-counter__circle.list-counter__plus +
 
 mixin addListCounterTop(title)
-  .list-counter__top
-    p= title
+  p.list-counter__top= title
 
 mixin addListCounterBottom(items, name, hide_buttons_mod)
   .list-counter__bottom
     input(name=name, type='hidden', value=val)
     +addItems(items)
     .list-counter__buttons(class=hide_buttons_mod)
-      +addButton("очистить", "id-but-list-1", "button__elem_small-height", "list-counter__clear", "purple_text")
-      +addButton("применить", "id-but-list-2", "button__elem_small-height", "list-counter__apply dropdown__apply", "purple_text")
+      .list-counter__button
+        +addButton("очистить", "id-but-list-1", "button__elem_small-height", "list-counter__clear", "purple_text")
+      .list-counter__button
+        +addButton("применить", "id-but-list-2", "button__elem_small-height", "list-counter__apply dropdown__apply", "purple_text")

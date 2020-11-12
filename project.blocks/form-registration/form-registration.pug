@@ -8,26 +8,26 @@ include ../button/button
 mixin addFormRegistration(radio_buttons, radio_num, toggle_buttons)
   .form-registration
     +addForm
-      .form-registration__element
-        h1 Регистрация аккаунта
-      .form-registration__element
+      .form-registration__element.form-registration__element_1
+        h1.form-registration__title Регистрация аккаунта
+      .form-registration__element.form-registration__element_2
         +addTextField('Имя')
-      .form-registration__element
+      .form-registration__element.form-registration__element_3
         +addTextField('Фамилия')
-      .form-registration__element
+      .form-registration__element.form-registration__element_4
         +addRadio(radio_buttons, radio_num)
-      .form-registration__element
+      .form-registration__element.form-registration__element_5
         +addTextField('ДД.ММ.ГГГГ', 'дата рождения', '', 'text-field__elem_masked')
-      .form-registration__element
+      .form-registration__element.form-registration__element_6
         +addTextField('Email', 'данные для входа в сервис')
-      .form-registration__element
+      .form-registration__element.form-registration__element_7
         +addTextField('Пароль')
-      .form-registration__element
+      .form-registration__element.form-registration__element_8
         +addCheckbox(toggle_buttons)
-      .form-registration__element
+      .form-registration__element.form-registration__element_9
         +addButton("перейти к оплате", "id-but-7", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white", "arrow_forward")
-      .form-registration__element
-        .form-registration__column
-          p Уже есть аккаунт на Toxin
-        .form-registration__column
+      .form-registration__element.form-registration__element_10
+        .form-registration__column.form-registration__column_1
+          p.form-registration__text Уже есть аккаунт на Toxin
+        .form-registration__column.form-registration__column_2
           +addButton("войти", "id-but-3", "button__elem_opaque-border", "button__content_padding", "purple_text")

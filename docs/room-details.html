@@ -235,20 +235,20 @@
                       <div class="form-reservation">
                               <div class="form">
                                 <div class="form__container">
-                                  <div class="form-reservation__element">
+                                  <div class="form-reservation__element form-reservation__element_1">
                                     <div class="form-reservation__two-columns">
                                       <div class="form-reservation__number">
-                                        <p>№</p>
-                                        <h2>888</h2>
-                                        <h3 class="purple_text">люкс</h3>
+                                        <p class="form-reservation__n">№</p>
+                                        <h2 class="form-reservation__numerals">888</h2>
+                                        <h3 class="form-reservation__lux purple_text">люкс</h3>
                                       </div>
                                       <div class="form-reservation__price">
-                                        <h3>9 990₽</h3>
-                                        <p>в сутки</p>
+                                        <h3 class="form-reservation__money">9 990₽</h3>
+                                        <p class="form-reservation__per-day">в сутки</p>
                                       </div>
                                     </div>
                                   </div>
-                                  <div class="form-reservation__element">
+                                  <div class="form-reservation__element form-reservation__element_2">
                                                 <div class="field">
                                                   <div class="field__elem">
                                                     <h3 class="field__title"></h3>
@@ -314,7 +314,7 @@
                                                   </div>
                                                 </div>
                                   </div>
-                                  <div class="form-reservation__element">
+                                  <div class="form-reservation__element form-reservation__element_3">
                                                 <div class="field">
                                                   <div class="field__elem">
                                                     <h3 class="field__title">гости</h3>
@@ -323,52 +323,54 @@
                                                         <div class="dropdown__elem">
                                                           <div class="list-counter" data-type_units="together">
                                                             <div class="dropdown__top material-icons md-24">
-                                                                    <div class="list-counter__top">
-                                                                      <p>Сколько гостей</p>
-                                                                    </div>
+                                                                    <p class="list-counter__top">Сколько гостей</p>
                                                             </div>
                                                             <div class="dropdown__bottom">
                                                                     <div class="list-counter__bottom">
                                                                       <input name="list-1" type="hidden">
-                                                                            <div class="list-counter__item" data-name="adults">
-                                                                              <h3>взрослые</h3>
+                                                                            <div class="list-counter__item .list-counter__item_1" data-name="adults">
+                                                                              <h3 class="list-counter__name">взрослые</h3>
                                                                               <div class="list-counter__minusAndPlus">
                                                                                 <p class="list-counter__circle list-counter__minus">-</p>
-                                                                                <h3>0</h3>
+                                                                                <h3 class="list-counter__numerals">0</h3>
                                                                                 <p class="list-counter__circle list-counter__plus">+</p>
                                                                               </div>
                                                                             </div>
-                                                                            <div class="list-counter__item" data-name="children">
-                                                                              <h3>дети</h3>
+                                                                            <div class="list-counter__item .list-counter__item_2" data-name="children">
+                                                                              <h3 class="list-counter__name">дети</h3>
                                                                               <div class="list-counter__minusAndPlus">
                                                                                 <p class="list-counter__circle list-counter__minus">-</p>
-                                                                                <h3>0</h3>
+                                                                                <h3 class="list-counter__numerals">0</h3>
                                                                                 <p class="list-counter__circle list-counter__plus">+</p>
                                                                               </div>
                                                                             </div>
-                                                                            <div class="list-counter__item" data-name="babies">
-                                                                              <h3>младенцы</h3>
+                                                                            <div class="list-counter__item .list-counter__item_3" data-name="babies">
+                                                                              <h3 class="list-counter__name">младенцы</h3>
                                                                               <div class="list-counter__minusAndPlus">
                                                                                 <p class="list-counter__circle list-counter__minus">-</p>
-                                                                                <h3>0</h3>
+                                                                                <h3 class="list-counter__numerals">0</h3>
                                                                                 <p class="list-counter__circle list-counter__plus">+</p>
                                                                               </div>
                                                                             </div>
                                                                       <div class="list-counter__buttons">
-                                                                              <div class="button">
-                                                                                <div class="button__elem button__elem_small-height">
-                                                                                  <div class="button__content list-counter__clear" id="id-but-list-1">
-                                                                                    <h3 class="button__text purple_text">очистить</h3>
+                                                                        <div class="list-counter__button">
+                                                                                <div class="button">
+                                                                                  <div class="button__elem button__elem_small-height">
+                                                                                    <div class="button__content list-counter__clear" id="id-but-list-1">
+                                                                                      <h3 class="button__text purple_text">очистить</h3>
+                                                                                    </div>
                                                                                   </div>
                                                                                 </div>
-                                                                              </div>
-                                                                              <div class="button">
-                                                                                <div class="button__elem button__elem_small-height">
-                                                                                  <div class="button__content list-counter__apply dropdown__apply" id="id-but-list-2">
-                                                                                    <h3 class="button__text purple_text">применить</h3>
+                                                                        </div>
+                                                                        <div class="list-counter__button">
+                                                                                <div class="button">
+                                                                                  <div class="button__elem button__elem_small-height">
+                                                                                    <div class="button__content list-counter__apply dropdown__apply" id="id-but-list-2">
+                                                                                      <h3 class="button__text purple_text">применить</h3>
+                                                                                    </div>
                                                                                   </div>
                                                                                 </div>
-                                                                              </div>
+                                                                        </div>
                                                                       </div>
                                                                     </div>
                                                             </div>
@@ -379,7 +381,7 @@
                                                   </div>
                                                 </div>
                                   </div>
-                                  <div class="form-reservation__element">
+                                  <div class="form-reservation__element form-reservation__element_4">
                                     <div class="form-reservation__table">
                                       <div class="form-reservation__line">
                                         <p class="form-reservation__td-title">9 990₽ х 4 суток</p>
@@ -398,12 +400,12 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <div class="form-reservation__element">
-                                    <h2>Итого</h2>
-                                    <h3></h3>
-                                    <h2>38 081₽</h2>
+                                  <div class="form-reservation__element form-reservation__element_5">
+                                    <h2 class="form-reservation__result">Итого</h2>
+                                    <h3 class="form-reservation__line"></h3>
+                                    <h2 class="form-reservation__result">38 081₽</h2>
                                   </div>
-                                  <div class="form-reservation__element">
+                                  <div class="form-reservation__element form-reservation__element_6">
                                           <div class="button">
                                             <div class="button__elem button__elem_opaque-background button__elem_big">
                                               <div class="button__content button__content_padding" id="id-but-1">

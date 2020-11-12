@@ -22,20 +22,20 @@ include ../button/button
 mixin addFormReservation
   .form-reservation
     +addForm
-      .form-reservation__element
+      .form-reservation__element.form-reservation__element_1
         .form-reservation__two-columns
           .form-reservation__number
-            p №
-            h2 888
-            h3.purple_text люкс
+            p.form-reservation__n №
+            h2.form-reservation__numerals 888
+            h3.form-reservation__lux.purple_text люкс
           .form-reservation__price
-            h3 9 990₽
-            p в сутки
-      .form-reservation__element
+            h3.form-reservation__money 9 990₽
+            p.form-reservation__per-day в сутки
+      .form-reservation__element.form-reservation__element_2
         +addDropdown('date Dropdown', attributes_0, {date: true})
-      .form-reservation__element
+      .form-reservation__element.form-reservation__element_3
         +addDropdown('гости', attributes_1, {list: true}, list_people)
-      .form-reservation__element
+      .form-reservation__element.form-reservation__element_4
         .form-reservation__table
           .form-reservation__line
             p.form-reservation__td-title 9 990₽ х 4 суток
@@ -49,9 +49,9 @@ mixin addFormReservation
             p.form-reservation__td-title Сбор за дополнительные услуги
             p.form-reservation__td-info i
             p.form-reservation__td-price 300₽
-      .form-reservation__element
-        h2 Итого
-        h3
-        h2 38 081₽
-      .form-reservation__element
+      .form-reservation__element.form-reservation__element_5
+        h2.form-reservation__result Итого
+        h3.form-reservation__line
+        h2.form-reservation__result 38 081₽
+      .form-reservation__element.form-reservation__element_6
         +addButton("забронировать", "id-but-1", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white", "arrow_forward")

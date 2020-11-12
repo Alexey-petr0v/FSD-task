@@ -5,16 +5,16 @@ include ../text-field/text-field
 mixin addLogin
   .form-login
     +addForm
-      .form-login__element
-        h2 Войти
-      .form-login__element
+      .form-login__element.form-login__element_1
+        h2.form-login__title Войти
+      .form-login__element.form-login__element_2
         +addTextField('Email')
-      .form-login__element
+      .form-login__element.form-login__element_3
         +addTextField('Пароль')
-      .form-login__element
+      .form-login__element.form-login__element_4
         +addButton("войти", "id-but-1", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white", "arrow_forward")
-      .form-login__element
-        .form-login__column
-          p Нет аккаунта на Toxin?
-        .form-login__column
+      .form-login__element.form-login__element_5
+        .form-login__column.form-login__column_1
+          p.form-login__text Нет аккаунта на Toxin?
+        .form-login__column.form-login__column_2
           +addButton("создать", "id-but-3", "button__elem_opaque-border", "button__content_padding", "purple_text")

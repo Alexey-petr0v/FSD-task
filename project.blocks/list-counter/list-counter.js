@@ -131,13 +131,13 @@ function totalAmount(This) {
 
   if ($(block).data("type_units") == "together") {
     let totalAmount = totalAmountNum(ID, clear);
-    $('.list-counter[id="'+ID+'"] .list-counter__top > p').text(function() {
+    $('.list-counter[id="'+ID+'"] .list-counter__top').text(function() {
       let units = generateUnits(totalAmount, "the-guests");
       return totalAmount + units;
     })
   }
   else if ($(block).data("type_units") == "separately"){
-    $('.list-counter[id="'+ID+'"] .list-counter__top > p').text(function() {
+    $('.list-counter[id="'+ID+'"] .list-counter__top').text(function() {
       let result = "";
       let i = 0;
       $(block).find(".list-counter__item").map(function() {

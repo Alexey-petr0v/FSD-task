@@ -1,19 +1,21 @@
 .form-registration {
   &__element {
-    &:nth-child(1) { margin-top: 1px; margin-bottom: 20px }
-    &:nth-child(2) { margin-bottom: 10px }
-    &:nth-child(3) { margin-bottom: 9px }
-    &:nth-child(4) { margin-bottom: 21px }
-    &:nth-child(5) { margin-bottom: 20px }
-    &:nth-child(6), &:nth-child(7),  &:nth-child(8) { margin-bottom: 10px }
-    &:nth-child(9) { margin-bottom: 30px; height: 44px }
-    &:nth-child(10) {
+    &_1 { margin-top: 1px; margin-bottom: 20px }
+    &_2 { margin-bottom: 10px }
+    &_3 { margin-bottom: 9px }
+    &_4 { margin-bottom: 21px }
+    &_5 { margin-bottom: 20px }
+    &_6, &_7,  &_8 { margin-bottom: 10px }
+    &_9 { margin-bottom: 30px; height: 44px }
+    &_10 {
       display: -webkit-flex;
       display: flex;
       justify-content: space-between;
       padding-right: 30px;
-      .form-registration__column:last-child { width: 99px }
+      .form-registration__column {
+        &_1 { align-self: center }
+        &_2 { width: 99px }
+      }
     }
   }
-  &__column:nth-child(1) { align-self: center }
 }

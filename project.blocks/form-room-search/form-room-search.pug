@@ -20,11 +20,11 @@ include ../button/button
 mixin addFormRoomSearch
   .form-room-search
     +addForm
-      .form-room-search__element
-        h1 Найдём номера под ваши пожелания
-      .form-room-search__element
+      .form-room-search__element.form-room-search__element_1
+        h1.form-room-search__title Найдём номера под ваши пожелания
+      .form-room-search__element.form-room-search__element_2
         +addDropdown('date Dropdown', attributes_0, {date: true})
-      .form-room-search__element
+      .form-room-search__element.form-room-search__element_3
         +addDropdown('гости', attributes_1, {list: true}, list_people)
-      .form-room-search__element
+      .form-room-search__element.form-room-search__element_4
         +addButton("подобрать номер", "id-but-1", "button__elem_opaque-background button__elem_big", "button__content_padding", "button__text_white", "arrow_forward")
