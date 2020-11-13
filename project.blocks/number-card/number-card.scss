@@ -12,9 +12,7 @@ $PATH: '../project.blocks/number-card/images/';
   -ms-user-select: none;
   user-select: none;
   &:hover{
-    .number-card__left, .number-card__right {
-      p { visibility: visible }
-    }
+    .number-card__left, .number-card__right { visibility: visible }
     .number-card__left {
       border-top-left-radius: 4px;
       background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
@@ -23,12 +21,6 @@ $PATH: '../project.blocks/number-card/images/';
       border-top-right-radius: 4px;
       background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
     }
-  }
-  &__num-and-price {
-    display: -webkit-flex; 
-    display: flex;
-    justify-content: space-between;
-    margin-right: 30px; margin-bottom: 20px;
   }
   &__image {
     &_{
@@ -63,7 +55,8 @@ $PATH: '../project.blocks/number-card/images/';
     justify-content: center;
     align-items: center;
     width: 42px; height: 151px;
-    p { cursor: pointer; visibility: hidden }
+    cursor: pointer;
+    visibility: hidden
   }
   &__left:hover { background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%) }
   &__right:hover { background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%) }
@@ -103,29 +96,42 @@ $PATH: '../project.blocks/number-card/images/';
     border-top-right-radius: 4px;
     background-size: cover;
   }
-  &__two-columns {
+  &__num-and-price {
     width: 233px;
-    display: -webkit-flex; 
-    display: flex;
-    justify-content: space-between;
+    margin-right: 30px;
     margin-left: 20px; margin-top: 22px;
-    align-items: flex-end;
     .number-card__number, .number-card__price {
       display: -webkit-flex; 
       display: flex;
       align-items: flex-end;
-      p { font-size: 14px }
-      h3 { font-size: 12px  }
-      p, h2, h3 { line-height: 15px }
     }
     .number-card__number {
-      p, h2 { margin-right: 6px }
-      h2 { font-size: 19px; line-height: 19px }
+      .number-card__n {
+        line-height: 17px;
+        margin-right: 6px;
+      }
+      .number-card__numerals {
+        line-height: 19px;
+        font-size: 19px;
+        margin-right: 6px;
+      }
+      .number-card__lux {
+        line-height: 15px;
+        font-size: 12px;
+      }
     }
     .number-card__price {
-      h3, p { color: rgba(31, 32, 65, 0.5) }
-      h3 { margin-right: 4px; font-size: 14px }
-      p { font-size: 12px }
+      .number-card__money {
+        line-height: 14px;
+        font-size: 14px;
+        color: rgba(31, 32, 65, 0.5);
+        margin-right: 4px;
+      }
+      .number-card__per-day {
+        line-height: 14px;
+        font-size: 12px;
+        color: rgba(31, 32, 65, 0.5);
+      }
     }
   }
   &__description {

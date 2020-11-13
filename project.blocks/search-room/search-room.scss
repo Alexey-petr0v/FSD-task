@@ -40,7 +40,8 @@
       line-height: 14px;
     }
     &> *:nth-child(5) { margin-bottom: 16.40px }
-    &> *:nth-child(6), &> *:nth-child(8) { margin-bottom: 21px }
+    &> *:nth-child(6) { margin-bottom: 21px }
+    &> *:nth-child(8) { margin-bottom: 20px }
     &> *:nth-child(7), &> *:nth-child(9) { margin-bottom: 16px }
   }
 }

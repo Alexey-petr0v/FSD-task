@@ -3,18 +3,18 @@ include ../dropdown/dropdown
 
 mixin addNavigator(first_bold)
   .navigator
-    input.navigator__mobile-button(type="checkbox", id="header")
-    label(for="header")
-      h1 ≡
+    input.navigator__mobile-button(type="checkbox", id="navigator")
+    label(for="navigator")
+      h1.navigator__menu-button ≡
     .navigator__mobile-background
     ul.navigator__ul
-      li
-        p(class=first_bold) О нас
-      li
-        +addDropdown('Услуги', {name: "list-1", dropdown_elem_small: "dropdown__elem_elastic", dropdown_elem_no_border: "dropdown__elem_no-border", type_units: "separately"/*, dropdown_top_no_arrow: "dropdown__top_no_arrow"*/}, false, services)
-      li
-        p Вакансии
-      li
-        p Новости
-      li
-        +addDropdown('Соглашения', {name: "list-2", dropdown_elem_small: "dropdown__elem_elastic", dropdown_elem_no_border: "dropdown__elem_no-border", type_units: "separately"/*, dropdown_top_no_arrow: "dropdown__top_no_arrow"*/}, false, agreements)
+      li.navigator__li
+        p.navigator__text(class=first_bold) О нас
+      li.navigator__li
+        +addDropdown('Услуги', {name: "list-1", dropdown_elem_small: "dropdown__elem_elastic", dropdown_elem_no_border: "dropdown__elem_no-border", type_units: "separately"}, false, services)
+      li.navigator__li
+        p.navigator__text Вакансии
+      li.navigator__li
+        p.navigator__text Новости
+      li.navigator__li
+        +addDropdown('Соглашения', {name: "list-2", dropdown_elem_small: "dropdown__elem_elastic", dropdown_elem_no_border: "dropdown__elem_no-border", type_units: "separately"}, false, agreements)

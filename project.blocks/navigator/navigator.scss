@@ -1,21 +1,25 @@
 .navigator {
   color: rgba(31, 32, 65, 0.5);
   &__mobile-button { display: none; cursor: pointer }
-  ul {
+  .navigator__text {
+    &_bold {
+      font-weight: bold;
+      color: rgba(31, 32, 65, 0.75)
+    }
+  }
+  .navigator__ul {
     display: -webkit-flex; 
     display: flex;
     align-items: center;
-    li {
+    .navigator__li {
       display: -webkit-flex; 
       display: flex;
       list-style: none;
       margin-right: 20.5px;
-      img { margin-left: 6px; margin-right: 6.5px }
       &:nth-child(2), &:last-child { margin-right: 21px }
-      .navigator__bold { font-weight: bold; color: rgba(31, 32, 65, 0.75) }
     }
   }
-  label[for="header"] {
+  label[for="navigator"] {
     display: none;
     /* Запрет выделения текста */
     -webkit-touch-callout: none; /* iOS Safari */
@@ -30,15 +34,15 @@
 // Планшеты. Разрешение < 935px
 @media (max-width: 934px) {
   .navigator {
-    ul { display: none }
-    label[for="header"] {
+    .navigator__ul { display: none }
+    label[for="navigator"] {
       z-index: 102;
       display: -webkit-flex; 
       display: flex;
       cursor: pointer;
     }
     &__mobile-button:checked {
-      &~ ul {
+      &~ .navigator__ul {
         background: #f3f4f6;
         margin-top: 40px;
         display: -webkit-flex; 

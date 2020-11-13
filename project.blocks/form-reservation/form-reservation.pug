@@ -1,6 +1,7 @@
 include ../form/form
 include ../dropdown/dropdown
 include ../button/button
+include ../number-and-price/number-and-price
 
 -
   var attributes = [
@@ -19,18 +20,11 @@ include ../button/button
 - var attributes_0 = attributes[0]
 - var attributes_1 = attributes[1]
 
-mixin addFormReservation
+mixin addFormReservation(number, price, lux, mod)
   .form-reservation
     +addForm
       .form-reservation__element.form-reservation__element_1
-        .form-reservation__two-columns
-          .form-reservation__number
-            p.form-reservation__n №
-            h2.form-reservation__numerals 888
-            h3.form-reservation__lux.purple_text люкс
-          .form-reservation__price
-            h3.form-reservation__money 9 990₽
-            p.form-reservation__per-day в сутки
+        +addNumberAndPrice(number, price, lux, mod)
       .form-reservation__element.form-reservation__element_2
         +addDropdown('date Dropdown', attributes_0, {date: true})
       .form-reservation__element.form-reservation__element_3

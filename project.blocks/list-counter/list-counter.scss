@@ -19,6 +19,7 @@
     .list-counter__clear { visibility: hidden }
   }
   &__item {
+    .list-counter__name { padding-top: 6px }
     padding-bottom: 7px;
     display: -webkit-flex;
     display: flex;

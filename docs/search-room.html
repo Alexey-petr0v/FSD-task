@@ -14,16 +14,16 @@
               <div class="header-nav__logo"></div>
               <div class="header-nav__nav">
                 <div class="navigator">
-                  <input class="navigator__mobile-button" type="checkbox" id="header">
-                  <label for="header">
-                    <h1>≡</h1>
+                  <input class="navigator__mobile-button" type="checkbox" id="navigator">
+                  <label for="navigator">
+                    <h1 class="navigator__menu-button">≡</h1>
                   </label>
                   <div class="navigator__mobile-background"></div>
                   <ul class="navigator__ul">
-                    <li>
-                      <p>О нас</p>
+                    <li class="navigator__li">
+                      <p class="navigator__text">О нас</p>
                     </li>
-                    <li>
+                    <li class="navigator__li">
                       <div class="dropdown">
                         <div class="dropdown__elem dropdown__elem_elastic dropdown__elem_no-border ">
                           <div class="dropdown__top material-icons md-24">
@@ -38,13 +38,13 @@
                         </div>
                       </div>
                     </li>
-                    <li>
-                      <p>Вакансии</p>
+                    <li class="navigator__li">
+                      <p class="navigator__text">Вакансии</p>
                     </li>
-                    <li>
-                      <p>Новости</p>
+                    <li class="navigator__li">
+                      <p class="navigator__text">Новости</p>
                     </li>
-                    <li>
+                    <li class="navigator__li">
                       <div class="dropdown">
                         <div class="dropdown__elem dropdown__elem_elastic dropdown__elem_no-border ">
                           <div class="dropdown__top material-icons md-24">
@@ -167,7 +167,7 @@
                               <div class="dropdown__bottom">
                                 <div class="list-counter__bottom">
                                   <input name="list-1" type="hidden">
-                                  <div class="list-counter__item .list-counter__item_1" data-name="the-guests">
+                                  <div class="list-counter__item list-counter__item_1" data-name="the-guests">
                                     <h3 class="list-counter__name">гости</h3>
                                     <div class="list-counter__minusAndPlus">
                                       <p class="list-counter__circle list-counter__minus">-</p>
@@ -175,7 +175,7 @@
                                       <p class="list-counter__circle list-counter__plus">+</p>
                                     </div>
                                   </div>
-                                  <div class="list-counter__item .list-counter__item_2" data-name="babies">
+                                  <div class="list-counter__item list-counter__item_2" data-name="babies">
                                     <h3 class="list-counter__name">младенцы</h3>
                                     <div class="list-counter__minusAndPlus">
                                       <p class="list-counter__circle list-counter__minus">-</p>
@@ -288,7 +288,7 @@
                               <div class="dropdown__bottom">
                                 <div class="list-counter__bottom">
                                   <input name="list-1" type="hidden">
-                                  <div class="list-counter__item .list-counter__item_1" data-name="bedrooms">
+                                  <div class="list-counter__item list-counter__item_1" data-name="bedrooms">
                                     <h3 class="list-counter__name">спальни</h3>
                                     <div class="list-counter__minusAndPlus">
                                       <p class="list-counter__circle list-counter__minus">-</p>
@@ -296,7 +296,7 @@
                                       <p class="list-counter__circle list-counter__plus">+</p>
                                     </div>
                                   </div>
-                                  <div class="list-counter__item .list-counter__item_2" data-name="the-beds">
+                                  <div class="list-counter__item list-counter__item_2" data-name="the-beds">
                                     <h3 class="list-counter__name">кровати</h3>
                                     <div class="list-counter__minusAndPlus">
                                       <p class="list-counter__circle list-counter__minus">-</p>
@@ -304,7 +304,7 @@
                                       <p class="list-counter__circle list-counter__plus">+</p>
                                     </div>
                                   </div>
-                                  <div class="list-counter__item .list-counter__item_3" data-name="bathrooms">
+                                  <div class="list-counter__item list-counter__item_3" data-name="bathrooms">
                                     <h3 class="list-counter__name">ванные комнаты</h3>
                                     <div class="list-counter__minusAndPlus">
                                       <p class="list-counter__circle list-counter__minus">-</p>
@@ -400,27 +400,27 @@
                           <input class="number-card__input" name="number-card-1" type="radio">
                           <input class="number-card__input" name="number-card-1" type="radio">
                           <div class="number-card__buttons material-icons md-24">
-                            <div class="number-card__left">
-                              <p>keyboard_arrow_left</p>
-                            </div>
-                            <div class="number-card__right">
-                              <p>keyboard_arrow_right</p>
-                            </div>
+                            <p class="number-card__left">keyboard_arrow_left</p>
+                            <p class="number-card__right">keyboard_arrow_right</p>
                           </div>
                           <div class="number-card__background"></div>
                         </div>
                         <div class="number-card__description">
                           <div class="number-card__element-2">
-                            <div class="number-card__two-columns">
-                              <div class="number-card__number">
-                                <p>№</p>
-                                <h2>888</h2>
-                                <h3 class="purple_text">люкс</h3>
-                              </div>
-                              <div class="number-card__price">
-                                <h3>9 990₽</h3>
-                                <p>в сутки</p>
-                              </div>
+                            <div class="number-card__num-and-price">
+                                    <div class="number-and-price">
+                                      <div class="number-and-price__box">
+                                        <div class="number-and-price__number">
+                                          <p class="number-and-price__n">№</p>
+                                          <h2 class="number-and-price__numerals">888</h2>
+                                          <h3 class="number-and-price__lux purple_text">люкс</h3>
+                                        </div>
+                                        <div class="number-and-price__price">
+                                          <h3 class="number-and-price__money">9 990₽</h3>
+                                          <p class="number-and-price__per-day">в сутки</p>
+                                        </div>
+                                      </div>
+                                    </div>
                             </div>
                           </div>
                           <div class="number-card__element-3">
@@ -460,27 +460,27 @@
                           <input class="number-card__input" name="number-card-2" type="radio">
                           <input class="number-card__input" name="number-card-2" type="radio">
                           <div class="number-card__buttons material-icons md-24">
-                            <div class="number-card__left">
-                              <p>keyboard_arrow_left</p>
-                            </div>
-                            <div class="number-card__right">
-                              <p>keyboard_arrow_right</p>
-                            </div>
+                            <p class="number-card__left">keyboard_arrow_left</p>
+                            <p class="number-card__right">keyboard_arrow_right</p>
                           </div>
                           <div class="number-card__background"></div>
                         </div>
                         <div class="number-card__description">
                           <div class="number-card__element-2">
-                            <div class="number-card__two-columns">
-                              <div class="number-card__number">
-                                <p>№</p>
-                                <h2>840</h2>
-                                <h3> </h3>
-                              </div>
-                              <div class="number-card__price">
-                                <h3>9 900₽</h3>
-                                <p>в сутки</p>
-                              </div>
+                            <div class="number-card__num-and-price">
+                                    <div class="number-and-price">
+                                      <div class="number-and-price__box">
+                                        <div class="number-and-price__number">
+                                          <p class="number-and-price__n">№</p>
+                                          <h2 class="number-and-price__numerals">840</h2>
+                                          <h3 class="number-and-price__lux purple_text"></h3>
+                                        </div>
+                                        <div class="number-and-price__price">
+                                          <h3 class="number-and-price__money">9 900₽</h3>
+                                          <p class="number-and-price__per-day">в сутки</p>
+                                        </div>
+                                      </div>
+                                    </div>
                             </div>
                           </div>
                           <div class="number-card__element-3">
@@ -520,27 +520,27 @@
                           <input class="number-card__input" name="number-card-3" type="radio">
                           <input class="number-card__input" name="number-card-3" type="radio">
                           <div class="number-card__buttons material-icons md-24">
-                            <div class="number-card__left">
-                              <p>keyboard_arrow_left</p>
-                            </div>
-                            <div class="number-card__right">
-                              <p>keyboard_arrow_right</p>
-                            </div>
+                            <p class="number-card__left">keyboard_arrow_left</p>
+                            <p class="number-card__right">keyboard_arrow_right</p>
                           </div>
                           <div class="number-card__background"></div>
                         </div>
                         <div class="number-card__description">
                           <div class="number-card__element-2">
-                            <div class="number-card__two-columns">
-                              <div class="number-card__number">
-                                <p>№</p>
-                                <h2>980</h2>
-                                <h3 class="purple_text">люкс</h3>
-                              </div>
-                              <div class="number-card__price">
-                                <h3>8 500₽</h3>
-                                <p>в сутки</p>
-                              </div>
+                            <div class="number-card__num-and-price">
+                                    <div class="number-and-price">
+                                      <div class="number-and-price__box">
+                                        <div class="number-and-price__number">
+                                          <p class="number-and-price__n">№</p>
+                                          <h2 class="number-and-price__numerals">980</h2>
+                                          <h3 class="number-and-price__lux purple_text">люкс</h3>
+                                        </div>
+                                        <div class="number-and-price__price">
+                                          <h3 class="number-and-price__money">8 500₽</h3>
+                                          <p class="number-and-price__per-day">в сутки</p>
+                                        </div>
+                                      </div>
+                                    </div>
                             </div>
                           </div>
                           <div class="number-card__element-3">
@@ -580,27 +580,27 @@
                           <input class="number-card__input" name="number-card-4" type="radio">
                           <input class="number-card__input" name="number-card-4" type="radio">
                           <div class="number-card__buttons material-icons md-24">
-                            <div class="number-card__left">
-                              <p>keyboard_arrow_left</p>
-                            </div>
-                            <div class="number-card__right">
-                              <p>keyboard_arrow_right</p>
-                            </div>
+                            <p class="number-card__left">keyboard_arrow_left</p>
+                            <p class="number-card__right">keyboard_arrow_right</p>
                           </div>
                           <div class="number-card__background"></div>
                         </div>
                         <div class="number-card__description">
                           <div class="number-card__element-2">
-                            <div class="number-card__two-columns">
-                              <div class="number-card__number">
-                                <p>№</p>
-                                <h2>856</h2>
-                                <h3> </h3>
-                              </div>
-                              <div class="number-card__price">
-                                <h3>7 300₽</h3>
-                                <p>в сутки</p>
-                              </div>
+                            <div class="number-card__num-and-price">
+                                    <div class="number-and-price">
+                                      <div class="number-and-price__box">
+                                        <div class="number-and-price__number">
+                                          <p class="number-and-price__n">№</p>
+                                          <h2 class="number-and-price__numerals">856</h2>
+                                          <h3 class="number-and-price__lux purple_text"></h3>
+                                        </div>
+                                        <div class="number-and-price__price">
+                                          <h3 class="number-and-price__money">7 300₽</h3>
+                                          <p class="number-and-price__per-day">в сутки</p>
+                                        </div>
+                                      </div>
+                                    </div>
                             </div>
                           </div>
                           <div class="number-card__element-3">
@@ -640,27 +640,27 @@
                           <input class="number-card__input" name="number-card-5" type="radio">
                           <input class="number-card__input" name="number-card-5" type="radio">
                           <div class="number-card__buttons material-icons md-24">
-                            <div class="number-card__left">
-                              <p>keyboard_arrow_left</p>
-                            </div>
-                            <div class="number-card__right">
-                              <p>keyboard_arrow_right</p>
-                            </div>
+                            <p class="number-card__left">keyboard_arrow_left</p>
+                            <p class="number-card__right">keyboard_arrow_right</p>
                           </div>
                           <div class="number-card__background"></div>
                         </div>
                         <div class="number-card__description">
                           <div class="number-card__element-2">
-                            <div class="number-card__two-columns">
-                              <div class="number-card__number">
-                                <p>№</p>
-                                <h2>740</h2>
-                                <h3> </h3>
-                              </div>
-                              <div class="number-card__price">
-                                <h3>6 000₽</h3>
-                                <p>в сутки</p>
-                              </div>
+                            <div class="number-card__num-and-price">
+                                    <div class="number-and-price">
+                                      <div class="number-and-price__box">
+                                        <div class="number-and-price__number">
+                                          <p class="number-and-price__n">№</p>
+                                          <h2 class="number-and-price__numerals">740</h2>
+                                          <h3 class="number-and-price__lux purple_text"></h3>
+                                        </div>
+                                        <div class="number-and-price__price">
+                                          <h3 class="number-and-price__money">6 000₽</h3>
+                                          <p class="number-and-price__per-day">в сутки</p>
+                                        </div>
+                                      </div>
+                                    </div>
                             </div>
                           </div>
                           <div class="number-card__element-3">
@@ -700,27 +700,27 @@
                           <input class="number-card__input" name="number-card-6" type="radio">
                           <input class="number-card__input" name="number-card-6" type="radio">
                           <div class="number-card__buttons material-icons md-24">
-                            <div class="number-card__left">
-                              <p>keyboard_arrow_left</p>
-                            </div>
-                            <div class="number-card__right">
-                              <p>keyboard_arrow_right</p>
-                            </div>
+                            <p class="number-card__left">keyboard_arrow_left</p>
+                            <p class="number-card__right">keyboard_arrow_right</p>
                           </div>
                           <div class="number-card__background"></div>
                         </div>
                         <div class="number-card__description">
                           <div class="number-card__element-2">
-                            <div class="number-card__two-columns">
-                              <div class="number-card__number">
-                                <p>№</p>
-                                <h2>982</h2>
-                                <h3> </h3>
-                              </div>
-                              <div class="number-card__price">
-                                <h3>5 800₽</h3>
-                                <p>в сутки</p>
-                              </div>
+                            <div class="number-card__num-and-price">
+                                    <div class="number-and-price">
+                                      <div class="number-and-price__box">
+                                        <div class="number-and-price__number">
+                                          <p class="number-and-price__n">№</p>
+                                          <h2 class="number-and-price__numerals">982</h2>
+                                          <h3 class="number-and-price__lux purple_text"></h3>
+                                        </div>
+                                        <div class="number-and-price__price">
+                                          <h3 class="number-and-price__money">5 800₽</h3>
+                                          <p class="number-and-price__per-day">в сутки</p>
+                                        </div>
+                                      </div>
+                                    </div>
                             </div>
                           </div>
                           <div class="number-card__element-3">
@@ -760,27 +760,27 @@
                           <input class="number-card__input" name="number-card-7" type="radio">
                           <input class="number-card__input" name="number-card-7" type="radio">
                           <div class="number-card__buttons material-icons md-24">
-                            <div class="number-card__left">
-                              <p>keyboard_arrow_left</p>
-                            </div>
-                            <div class="number-card__right">
-                              <p>keyboard_arrow_right</p>
-                            </div>
+                            <p class="number-card__left">keyboard_arrow_left</p>
+                            <p class="number-card__right">keyboard_arrow_right</p>
                           </div>
                           <div class="number-card__background"></div>
                         </div>
                         <div class="number-card__description">
                           <div class="number-card__element-2">
-                            <div class="number-card__two-columns">
-                              <div class="number-card__number">
-                                <p>№</p>
-                                <h2>678</h2>
-                                <h3> </h3>
-                              </div>
-                              <div class="number-card__price">
-                                <h3>5 500₽</h3>
-                                <p>в сутки</p>
-                              </div>
+                            <div class="number-card__num-and-price">
+                                    <div class="number-and-price">
+                                      <div class="number-and-price__box">
+                                        <div class="number-and-price__number">
+                                          <p class="number-and-price__n">№</p>
+                                          <h2 class="number-and-price__numerals">678</h2>
+                                          <h3 class="number-and-price__lux purple_text"></h3>
+                                        </div>
+                                        <div class="number-and-price__price">
+                                          <h3 class="number-and-price__money">5 500₽</h3>
+                                          <p class="number-and-price__per-day">в сутки</p>
+                                        </div>
+                                      </div>
+                                    </div>
                             </div>
                           </div>
                           <div class="number-card__element-3">
@@ -820,27 +820,27 @@
                           <input class="number-card__input" name="number-card-8" type="radio">
                           <input class="number-card__input" name="number-card-8" type="radio">
                           <div class="number-card__buttons material-icons md-24">
-                            <div class="number-card__left">
-                              <p>keyboard_arrow_left</p>
-                            </div>
-                            <div class="number-card__right">
-                              <p>keyboard_arrow_right</p>
-                            </div>
+                            <p class="number-card__left">keyboard_arrow_left</p>
+                            <p class="number-card__right">keyboard_arrow_right</p>
                           </div>
                           <div class="number-card__background"></div>
                         </div>
                         <div class="number-card__description">
                           <div class="number-card__element-2">
-                            <div class="number-card__two-columns">
-                              <div class="number-card__number">
-                                <p>№</p>
-                                <h2>450</h2>
-                                <h3> </h3>
-                              </div>
-                              <div class="number-card__price">
-                                <h3>5 300₽</h3>
-                                <p>в сутки</p>
-                              </div>
+                            <div class="number-card__num-and-price">
+                                    <div class="number-and-price">
+                                      <div class="number-and-price__box">
+                                        <div class="number-and-price__number">
+                                          <p class="number-and-price__n">№</p>
+                                          <h2 class="number-and-price__numerals">450</h2>
+                                          <h3 class="number-and-price__lux purple_text"></h3>
+                                        </div>
+                                        <div class="number-and-price__price">
+                                          <h3 class="number-and-price__money">5 300₽</h3>
+                                          <p class="number-and-price__per-day">в сутки</p>
+                                        </div>
+                                      </div>
+                                    </div>
                             </div>
                           </div>
                           <div class="number-card__element-3">
@@ -880,27 +880,27 @@
                           <input class="number-card__input" name="number-card-9" type="radio">
                           <input class="number-card__input" name="number-card-9" type="radio">
                           <div class="number-card__buttons material-icons md-24">
-                            <div class="number-card__left">
-                              <p>keyboard_arrow_left</p>
-                            </div>
-                            <div class="number-card__right">
-                              <p>keyboard_arrow_right</p>
-                            </div>
+                            <p class="number-card__left">keyboard_arrow_left</p>
+                            <p class="number-card__right">keyboard_arrow_right</p>
                           </div>
                           <div class="number-card__background"></div>
                         </div>
                         <div class="number-card__description">
                           <div class="number-card__element-2">
-                            <div class="number-card__two-columns">
-                              <div class="number-card__number">
-                                <p>№</p>
-                                <h2>350</h2>
-                                <h3> </h3>
-                              </div>
-                              <div class="number-card__price">
-                                <h3>5 000₽</h3>
-                                <p>в сутки</p>
-                              </div>
+                            <div class="number-card__num-and-price">
+                                    <div class="number-and-price">
+                                      <div class="number-and-price__box">
+                                        <div class="number-and-price__number">
+                                          <p class="number-and-price__n">№</p>
+                                          <h2 class="number-and-price__numerals">350</h2>
+                                          <h3 class="number-and-price__lux purple_text"></h3>
+                                        </div>
+                                        <div class="number-and-price__price">
+                                          <h3 class="number-and-price__money">5 000₽</h3>
+                                          <p class="number-and-price__per-day">в сутки</p>
+                                        </div>
+                                      </div>
+                                    </div>
                             </div>
                           </div>
                           <div class="number-card__element-3">
@@ -940,27 +940,27 @@
                           <input class="number-card__input" name="number-card-10" type="radio">
                           <input class="number-card__input" name="number-card-10" type="radio">
                           <div class="number-card__buttons material-icons md-24">
-                            <div class="number-card__left">
-                              <p>keyboard_arrow_left</p>
-                            </div>
-                            <div class="number-card__right">
-                              <p>keyboard_arrow_right</p>
-                            </div>
+                            <p class="number-card__left">keyboard_arrow_left</p>
+                            <p class="number-card__right">keyboard_arrow_right</p>
                           </div>
                           <div class="number-card__background"></div>
                         </div>
                         <div class="number-card__description">
                           <div class="number-card__element-2">
-                            <div class="number-card__two-columns">
-                              <div class="number-card__number">
-                                <p>№</p>
-                                <h2>666</h2>
-                                <h3> </h3>
-                              </div>
-                              <div class="number-card__price">
-                                <h3>5 000₽</h3>
-                                <p>в сутки</p>
-                              </div>
+                            <div class="number-card__num-and-price">
+                                    <div class="number-and-price">
+                                      <div class="number-and-price__box">
+                                        <div class="number-and-price__number">
+                                          <p class="number-and-price__n">№</p>
+                                          <h2 class="number-and-price__numerals">666</h2>
+                                          <h3 class="number-and-price__lux purple_text"></h3>
+                                        </div>
+                                        <div class="number-and-price__price">
+                                          <h3 class="number-and-price__money">5 000₽</h3>
+                                          <p class="number-and-price__per-day">в сутки</p>
+                                        </div>
+                                      </div>
+                                    </div>
                             </div>
                           </div>
                           <div class="number-card__element-3">
@@ -1000,27 +1000,27 @@
                           <input class="number-card__input" name="number-card-11" type="radio">
                           <input class="number-card__input" name="number-card-11" type="radio">
                           <div class="number-card__buttons material-icons md-24">
-                            <div class="number-card__left">
-                              <p>keyboard_arrow_left</p>
-                            </div>
-                            <div class="number-card__right">
-                              <p>keyboard_arrow_right</p>
-                            </div>
+                            <p class="number-card__left">keyboard_arrow_left</p>
+                            <p class="number-card__right">keyboard_arrow_right</p>
                           </div>
                           <div class="number-card__background"></div>
                         </div>
                         <div class="number-card__description">
                           <div class="number-card__element-2">
-                            <div class="number-card__two-columns">
-                              <div class="number-card__number">
-                                <p>№</p>
-                                <h2>444</h2>
-                                <h3> </h3>
-                              </div>
-                              <div class="number-card__price">
-                                <h3>5 000₽</h3>
-                                <p>в сутки</p>
-                              </div>
+                            <div class="number-card__num-and-price">
+                                    <div class="number-and-price">
+                                      <div class="number-and-price__box">
+                                        <div class="number-and-price__number">
+                                          <p class="number-and-price__n">№</p>
+                                          <h2 class="number-and-price__numerals">444</h2>
+                                          <h3 class="number-and-price__lux purple_text"></h3>
+                                        </div>
+                                        <div class="number-and-price__price">
+                                          <h3 class="number-and-price__money">5 000₽</h3>
+                                          <p class="number-and-price__per-day">в сутки</p>
+                                        </div>
+                                      </div>
+                                    </div>
                             </div>
                           </div>
                           <div class="number-card__element-3">
@@ -1060,27 +1060,27 @@
                           <input class="number-card__input" name="number-card-12" type="radio">
                           <input class="number-card__input" name="number-card-12" type="radio">
                           <div class="number-card__buttons material-icons md-24">
-                            <div class="number-card__left">
-                              <p>keyboard_arrow_left</p>
-                            </div>
-                            <div class="number-card__right">
-                              <p>keyboard_arrow_right</p>
-                            </div>
+                            <p class="number-card__left">keyboard_arrow_left</p>
+                            <p class="number-card__right">keyboard_arrow_right</p>
                           </div>
                           <div class="number-card__background"></div>
                         </div>
                         <div class="number-card__description">
                           <div class="number-card__element-2">
-                            <div class="number-card__two-columns">
-                              <div class="number-card__number">
-                                <p>№</p>
-                                <h2>352</h2>
-                                <h3> </h3>
-                              </div>
-                              <div class="number-card__price">
-                                <h3>5 000₽</h3>
-                                <p>в сутки</p>
-                              </div>
+                            <div class="number-card__num-and-price">
+                                    <div class="number-and-price">
+                                      <div class="number-and-price__box">
+                                        <div class="number-and-price__number">
+                                          <p class="number-and-price__n">№</p>
+                                          <h2 class="number-and-price__numerals">352</h2>
+                                          <h3 class="number-and-price__lux purple_text"></h3>
+                                        </div>
+                                        <div class="number-and-price__price">
+                                          <h3 class="number-and-price__money">5 000₽</h3>
+                                          <p class="number-and-price__per-day">в сутки</p>
+                                        </div>
+                                      </div>
+                                    </div>
                             </div>
                           </div>
                           <div class="number-card__element-3">
@@ -1120,27 +1120,27 @@
                           <input class="number-card__input" name="number-card-13" type="radio">
                           <input class="number-card__input" name="number-card-13" type="radio">
                           <div class="number-card__buttons material-icons md-24">
-                            <div class="number-card__left">
-                              <p>keyboard_arrow_left</p>
-                            </div>
-                            <div class="number-card__right">
-                              <p>keyboard_arrow_right</p>
-                            </div>
+                            <p class="number-card__left">keyboard_arrow_left</p>
+                            <p class="number-card__right">keyboard_arrow_right</p>
                           </div>
                           <div class="number-card__background"></div>
                         </div>
                         <div class="number-card__description">
                           <div class="number-card__element-2">
-                            <div class="number-card__two-columns">
-                              <div class="number-card__number">
-                                <p>№</p>
-                                <h2>351</h2>
-                                <h3> </h3>
-                              </div>
-                              <div class="number-card__price">
-                                <h3>4 500₽</h3>
-                                <p>в сутки</p>
-                              </div>
+                            <div class="number-card__num-and-price">
+                                    <div class="number-and-price">
+                                      <div class="number-and-price__box">
+                                        <div class="number-and-price__number">
+                                          <p class="number-and-price__n">№</p>
+                                          <h2 class="number-and-price__numerals">351</h2>
+                                          <h3 class="number-and-price__lux purple_text"></h3>
+                                        </div>
+                                        <div class="number-and-price__price">
+                                          <h3 class="number-and-price__money">4 500₽</h3>
+                                          <p class="number-and-price__per-day">в сутки</p>
+                                        </div>
+                                      </div>
+                                    </div>
                             </div>
                           </div>
                           <div class="number-card__element-3">
@@ -1180,27 +1180,27 @@
                           <input class="number-card__input" name="number-card-14" type="radio">
                           <input class="number-card__input" name="number-card-14" type="radio">
                           <div class="number-card__buttons material-icons md-24">
-                            <div class="number-card__left">
-                              <p>keyboard_arrow_left</p>
-                            </div>
-                            <div class="number-card__right">
-                              <p>keyboard_arrow_right</p>
-                            </div>
+                            <p class="number-card__left">keyboard_arrow_left</p>
+                            <p class="number-card__right">keyboard_arrow_right</p>
                           </div>
                           <div class="number-card__background"></div>
                         </div>
                         <div class="number-card__description">
                           <div class="number-card__element-2">
-                            <div class="number-card__two-columns">
-                              <div class="number-card__number">
-                                <p>№</p>
-                                <h2>354</h2>
-                                <h3> </h3>
-                              </div>
-                              <div class="number-card__price">
-                                <h3>4 000₽</h3>
-                                <p>в сутки</p>
-                              </div>
+                            <div class="number-card__num-and-price">
+                                    <div class="number-and-price">
+                                      <div class="number-and-price__box">
+                                        <div class="number-and-price__number">
+                                          <p class="number-and-price__n">№</p>
+                                          <h2 class="number-and-price__numerals">354</h2>
+                                          <h3 class="number-and-price__lux purple_text"></h3>
+                                        </div>
+                                        <div class="number-and-price__price">
+                                          <h3 class="number-and-price__money">4 000₽</h3>
+                                          <p class="number-and-price__per-day">в сутки</p>
+                                        </div>
+                                      </div>
+                                    </div>
                             </div>
                           </div>
                           <div class="number-card__element-3">
@@ -1240,27 +1240,27 @@
                           <input class="number-card__input" name="number-card-15" type="radio">
                           <input class="number-card__input" name="number-card-15" type="radio">
                           <div class="number-card__buttons material-icons md-24">
-                            <div class="number-card__left">
-                              <p>keyboard_arrow_left</p>
-                            </div>
-                            <div class="number-card__right">
-                              <p>keyboard_arrow_right</p>
-                            </div>
+                            <p class="number-card__left">keyboard_arrow_left</p>
+                            <p class="number-card__right">keyboard_arrow_right</p>
                           </div>
                           <div class="number-card__background"></div>
                         </div>
                         <div class="number-card__description">
                           <div class="number-card__element-2">
-                            <div class="number-card__two-columns">
-                              <div class="number-card__number">
-                                <p>№</p>
-                                <h2>353</h2>
-                                <h3> </h3>
-                              </div>
-                              <div class="number-card__price">
-                                <h3>4 000₽</h3>
-                                <p>в сутки</p>
-                              </div>
+                            <div class="number-card__num-and-price">
+                                    <div class="number-and-price">
+                                      <div class="number-and-price__box">
+                                        <div class="number-and-price__number">
+                                          <p class="number-and-price__n">№</p>
+                                          <h2 class="number-and-price__numerals">353</h2>
+                                          <h3 class="number-and-price__lux purple_text"></h3>
+                                        </div>
+                                        <div class="number-and-price__price">
+                                          <h3 class="number-and-price__money">4 000₽</h3>
+                                          <p class="number-and-price__per-day">в сутки</p>
+                                        </div>
+                                      </div>
+                                    </div>
                             </div>
                           </div>
                           <div class="number-card__element-3">

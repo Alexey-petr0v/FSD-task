@@ -16,6 +16,18 @@ include ../number-card/number-card
     {title: "Получать спецпредложения", name: "poluchat_specpredlozheniya", value : false, toggle: true}
   ]
 
+-
+  var reservation = [
+    { number: "888", price: "9 990₽", lux: "люкс", mod: "number-and-price__numerals_big" }
+  ]
+
+-
+  var number_card = [
+    { number: "888", price: "9 990₽", lux: "люкс", mod: "number-and-price__numerals_big" }
+  ]
+
+
+
 .cards
   .cards__columns
     .cards__column
@@ -25,7 +37,7 @@ include ../number-card/number-card
         +addFormRegistration(radio_buttons, radio_num, toggle_buttons)
     .cards__column
       .cards__element
-        +addFormReservation()
+        +addFormReservation(reservation[0].number, reservation[0].price, reservation[0].lux, reservation[0].mod)
       .cards__element
         +addLogin()
     .cards__column
@@ -33,6 +45,6 @@ include ../number-card/number-card
         .date
           +addDateBottom
       .cards__element
-        +addNumberCard(1, 5, 888, "9 990", 145, true)
+        +addNumberCard(1, 5, 888, "9 990₽", 145, "люкс")
       .cards__element
-        +addNumberCard(2, 4, 840, "9 900", 65)
+        +addNumberCard(2, 4, 840, "9 900₽", 65, "")

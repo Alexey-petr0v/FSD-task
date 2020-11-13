@@ -2,7 +2,7 @@ include ../button/button
 
 mixin addItems(items)
   - for (var x = 0; x < items.length; x++)
-    .list-counter__item(data-name=items[x].name, class=".list-counter__item_"+(x+1))
+    .list-counter__item(data-name=items[x].name, class="list-counter__item_"+(x+1))
       h3.list-counter__name= items[x].title
       .list-counter__minusAndPlus
         p.list-counter__circle.list-counter__minus -

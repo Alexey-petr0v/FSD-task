@@ -106,7 +106,7 @@
                                                                               <div class="dropdown__bottom">
                                                                                           <div class="list-counter__bottom">
                                                                                             <input name="list-1" type="hidden">
-                                                                                                      <div class="list-counter__item .list-counter__item_1" data-name="adults">
+                                                                                                      <div class="list-counter__item list-counter__item_1" data-name="adults">
                                                                                                         <h3 class="list-counter__name">взрослые</h3>
                                                                                                         <div class="list-counter__minusAndPlus">
                                                                                                           <p class="list-counter__circle list-counter__minus">-</p>
@@ -114,7 +114,7 @@
                                                                                                           <p class="list-counter__circle list-counter__plus">+</p>
                                                                                                         </div>
                                                                                                       </div>
-                                                                                                      <div class="list-counter__item .list-counter__item_2" data-name="children">
+                                                                                                      <div class="list-counter__item list-counter__item_2" data-name="children">
                                                                                                         <h3 class="list-counter__name">дети</h3>
                                                                                                         <div class="list-counter__minusAndPlus">
                                                                                                           <p class="list-counter__circle list-counter__minus">-</p>
@@ -122,7 +122,7 @@
                                                                                                           <p class="list-counter__circle list-counter__plus">+</p>
                                                                                                         </div>
                                                                                                       </div>
-                                                                                                      <div class="list-counter__item .list-counter__item_3" data-name="babies">
+                                                                                                      <div class="list-counter__item list-counter__item_3" data-name="babies">
                                                                                                         <h3 class="list-counter__name">младенцы</h3>
                                                                                                         <div class="list-counter__minusAndPlus">
                                                                                                           <p class="list-counter__circle list-counter__minus">-</p>
@@ -307,17 +307,19 @@
                                         <div class="form">
                                           <div class="form__container">
                                             <div class="form-reservation__element form-reservation__element_1">
-                                              <div class="form-reservation__two-columns">
-                                                <div class="form-reservation__number">
-                                                  <p class="form-reservation__n">№</p>
-                                                  <h2 class="form-reservation__numerals">888</h2>
-                                                  <h3 class="form-reservation__lux purple_text">люкс</h3>
-                                                </div>
-                                                <div class="form-reservation__price">
-                                                  <h3 class="form-reservation__money">9 990₽</h3>
-                                                  <p class="form-reservation__per-day">в сутки</p>
-                                                </div>
-                                              </div>
+                                                        <div class="number-and-price">
+                                                          <div class="number-and-price__box">
+                                                            <div class="number-and-price__number">
+                                                              <p class="number-and-price__n">№</p>
+                                                              <h2 class="number-and-price__numerals number-and-price__numerals_big">888</h2>
+                                                              <h3 class="number-and-price__lux purple_text">люкс</h3>
+                                                            </div>
+                                                            <div class="number-and-price__price">
+                                                              <h3 class="number-and-price__money">9 990₽</h3>
+                                                              <p class="number-and-price__per-day">в сутки</p>
+                                                            </div>
+                                                          </div>
+                                                        </div>
                                             </div>
                                             <div class="form-reservation__element form-reservation__element_2">
                                                                   <div class="field">
@@ -399,7 +401,7 @@
                                                                               <div class="dropdown__bottom">
                                                                                           <div class="list-counter__bottom">
                                                                                             <input name="list-1" type="hidden">
-                                                                                                      <div class="list-counter__item .list-counter__item_1" data-name="adults">
+                                                                                                      <div class="list-counter__item list-counter__item_1" data-name="adults">
                                                                                                         <h3 class="list-counter__name">взрослые</h3>
                                                                                                         <div class="list-counter__minusAndPlus">
                                                                                                           <p class="list-counter__circle list-counter__minus">-</p>
@@ -407,7 +409,7 @@
                                                                                                           <p class="list-counter__circle list-counter__plus">+</p>
                                                                                                         </div>
                                                                                                       </div>
-                                                                                                      <div class="list-counter__item .list-counter__item_2" data-name="children">
+                                                                                                      <div class="list-counter__item list-counter__item_2" data-name="children">
                                                                                                         <h3 class="list-counter__name">дети</h3>
                                                                                                         <div class="list-counter__minusAndPlus">
                                                                                                           <p class="list-counter__circle list-counter__minus">-</p>
@@ -415,7 +417,7 @@
                                                                                                           <p class="list-counter__circle list-counter__plus">+</p>
                                                                                                         </div>
                                                                                                       </div>
-                                                                                                      <div class="list-counter__item .list-counter__item_3" data-name="babies">
+                                                                                                      <div class="list-counter__item list-counter__item_3" data-name="babies">
                                                                                                         <h3 class="list-counter__name">младенцы</h3>
                                                                                                         <div class="list-counter__minusAndPlus">
                                                                                                           <p class="list-counter__circle list-counter__minus">-</p>
@@ -606,27 +608,27 @@
                                 <input class="number-card__input" name="number-card-1" type="radio">
                                 <input class="number-card__input" name="number-card-1" type="radio">
                                 <div class="number-card__buttons material-icons md-24">
-                                  <div class="number-card__left">
-                                    <p>keyboard_arrow_left</p>
-                                  </div>
-                                  <div class="number-card__right">
-                                    <p>keyboard_arrow_right</p>
-                                  </div>
+                                  <p class="number-card__left">keyboard_arrow_left</p>
+                                  <p class="number-card__right">keyboard_arrow_right</p>
                                 </div>
                                 <div class="number-card__background"></div>
                               </div>
                               <div class="number-card__description">
                                 <div class="number-card__element-2">
-                                  <div class="number-card__two-columns">
-                                    <div class="number-card__number">
-                                      <p>№</p>
-                                      <h2>888</h2>
-                                      <h3 class="purple_text">люкс</h3>
-                                    </div>
-                                    <div class="number-card__price">
-                                      <h3>9 990₽</h3>
-                                      <p>в сутки</p>
-                                    </div>
+                                  <div class="number-card__num-and-price">
+                                              <div class="number-and-price">
+                                                <div class="number-and-price__box">
+                                                  <div class="number-and-price__number">
+                                                    <p class="number-and-price__n">№</p>
+                                                    <h2 class="number-and-price__numerals">888</h2>
+                                                    <h3 class="number-and-price__lux purple_text">люкс</h3>
+                                                  </div>
+                                                  <div class="number-and-price__price">
+                                                    <h3 class="number-and-price__money">9 990₽</h3>
+                                                    <p class="number-and-price__per-day">в сутки</p>
+                                                  </div>
+                                                </div>
+                                              </div>
                                   </div>
                                 </div>
                                 <div class="number-card__element-3">
@@ -668,27 +670,27 @@
                                 <input class="number-card__input" name="number-card-2" type="radio">
                                 <input class="number-card__input" name="number-card-2" type="radio">
                                 <div class="number-card__buttons material-icons md-24">
-                                  <div class="number-card__left">
-                                    <p>keyboard_arrow_left</p>
-                                  </div>
-                                  <div class="number-card__right">
-                                    <p>keyboard_arrow_right</p>
-                                  </div>
+                                  <p class="number-card__left">keyboard_arrow_left</p>
+                                  <p class="number-card__right">keyboard_arrow_right</p>
                                 </div>
                                 <div class="number-card__background"></div>
                               </div>
                               <div class="number-card__description">
                                 <div class="number-card__element-2">
-                                  <div class="number-card__two-columns">
-                                    <div class="number-card__number">
-                                      <p>№</p>
-                                      <h2>840</h2>
-                                      <h3> </h3>
-                                    </div>
-                                    <div class="number-card__price">
-                                      <h3>9 900₽</h3>
-                                      <p>в сутки</p>
-                                    </div>
+                                  <div class="number-card__num-and-price">
+                                              <div class="number-and-price">
+                                                <div class="number-and-price__box">
+                                                  <div class="number-and-price__number">
+                                                    <p class="number-and-price__n">№</p>
+                                                    <h2 class="number-and-price__numerals">840</h2>
+                                                    <h3 class="number-and-price__lux purple_text"></h3>
+                                                  </div>
+                                                  <div class="number-and-price__price">
+                                                    <h3 class="number-and-price__money">9 900₽</h3>
+                                                    <p class="number-and-price__per-day">в сутки</p>
+                                                  </div>
+                                                </div>
+                                              </div>
                                   </div>
                                 </div>
                                 <div class="number-card__element-3">

@@ -56,6 +56,11 @@ include ../statistics/statistics
     {percent: 0, color_1: "#919191", color_2: "#3D4975", name_color: "black", name: "Разочарован"} //black
   ]
 
+-
+  var reservation = [
+    { number: "888", price: "9 990₽", lux: "люкс", mod: "number-and-price__numerals_big" }
+  ]
+
 main.room-details
   .main-container
     .room-details__images
@@ -90,4 +95,4 @@ main.room-details
             h2 Отмена
             p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
         .room-details__column
-          +addFormReservation()
+          +addFormReservation(reservation[0].number, reservation[0].price, reservation[0].lux, reservation[0].mod)
