@@ -16,7 +16,7 @@ mixin addUserPanel(logged)
     else
       .user-panel__box(data-logged="false")
         .user-panel__buttons
-          .user-panel__button-sign-in
+          .user-panel__button.user-panel__button_sign-in
             +addButton("Войти", "id-but-1", "button__elem_opaque-border button__elem_small-height", "button__content_padding", "purple_text")
-          .user-panel__button-sign-up
+          .user-panel__button.user-panel__button_sign-up
             +addButton("Зарегистрироваться", "id-but-2", "button__elem_opaque-background button__elem_small-height", "button__content_padding", "button__text_white")

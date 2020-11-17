@@ -52,37 +52,62 @@ main.search-room
     .search-room__columns
       .search-room__column
         .search-room__filter
-          .search-room__preference
-            +addDropdown('Даты пребывания в отеле', attributes[0], {date: true})
-            +addDropdown('Гости', attributes[1], {list: true}, list_people)
-            +addRangeSlider("Диапазон цены")
-            p Стоимость за сутки пребывания в номере
-            h3 ПРАВИЛА ДОМА
-            .checkbox
-              +addCheckbox(checkbox_buttons)
-            h3 ДОСТУПНОСТЬ
-            .checkbox
-              +addCheckbox(rich_checkbox_buttons)
-            +addDropdown('Удобства номера', attributes[2], {list: true}, list_furniture)
-            +addDropdown('Дополнительные удобства', attributes[3], {checkbox: true}, expandable_checkbox_list)
+          .search-room__preferences
+            .search-room__preference
+              +addDropdown('Даты пребывания в отеле', attributes[0], {date: true})
+            .search-room__preference
+              +addDropdown('Гости', attributes[1], {list: true}, list_people)
+            .search-room__preference
+              +addRangeSlider("Диапазон цены")
+            .search-room__preference
+              p.search-room__text-preference Стоимость за сутки пребывания в номере
+            .search-room__preference
+              h3.search-room__title-preference ПРАВИЛА ДОМА
+            .search-room__preference
+              .checkbox
+                +addCheckbox(checkbox_buttons)
+            .search-room__preference
+              h3.search-room__title-preference ДОСТУПНОСТЬ
+            .search-room__preference
+              .checkbox
+                +addCheckbox(rich_checkbox_buttons)
+            .search-room__preference
+              +addDropdown('Удобства номера', attributes[2], {list: true}, list_furniture)
+            .search-room__preference
+              +addDropdown('Дополнительные удобства', attributes[3], {checkbox: true}, expandable_checkbox_list)
       .search-room__column
-        h1 Номера, которые мы для вас подобрали
+        h1.search-room__title-numbers Номера, которые мы для вас подобрали
         .search-room__numbers(id="search-room-numbers")
-          +addNumberCard(1, 5, 888, "9 990₽", 145, "люкс")
-          +addNumberCard(2, 4, 840, "9 900₽", 65, "")
-          +addNumberCard(3, 3, 980, "8 500₽", 35, "люкс")
-          +addNumberCard(4, 5, 856, "7 300₽", 19, "")
-          +addNumberCard(5, 4, 740, "6 000₽", 44, "")
-          +addNumberCard(6, 3, 982, "5 800₽", 56, "")
-          +addNumberCard(7, 5, 678, "5 500₽", 45, "")
-          +addNumberCard(8, 4, 450, "5 300₽", 39, "")
-          +addNumberCard(9, 3, 350, "5 000₽", 77, "")
-          +addNumberCard(10, 5, 666, "5 000₽", 25, "")
-          +addNumberCard(11, 3, 444, "5 000₽", 15, "")
-          +addNumberCard(12, 3, 352, "5 000₽", 55, "")
+          .search-room__number
+            +addNumberCard(1, 5, 888, "9 990₽", 145, "люкс")
+          .search-room__number
+            +addNumberCard(2, 4, 840, "9 900₽", 65, "")
+          .search-room__number
+            +addNumberCard(3, 3, 980, "8 500₽", 35, "люкс")
+          .search-room__number
+            +addNumberCard(4, 5, 856, "7 300₽", 19, "")
+          .search-room__number
+            +addNumberCard(5, 4, 740, "6 000₽", 44, "")
+          .search-room__number
+            +addNumberCard(6, 3, 982, "5 800₽", 56, "")
+          .search-room__number
+            +addNumberCard(7, 5, 678, "5 500₽", 45, "")
+          .search-room__number
+            +addNumberCard(8, 4, 450, "5 300₽", 39, "")
+          .search-room__number
+            +addNumberCard(9, 3, 350, "5 000₽", 77, "")
+          .search-room__number
+            +addNumberCard(10, 5, 666, "5 000₽", 25, "")
+          .search-room__number
+            +addNumberCard(11, 3, 444, "5 000₽", 15, "")
+          .search-room__number
+            +addNumberCard(12, 3, 352, "5 000₽", 55, "")
 
-          +addNumberCard(13, 3, 351, "4 500₽", 30, "")
-          +addNumberCard(14, 3, 354, "4 000₽", 35, "")
-          +addNumberCard(15, 3, 353, "4 000₽", 66, "")
+          .search-room__number
+            +addNumberCard(13, 3, 351, "4 500₽", 30, "")
+          .search-room__number
+            +addNumberCard(14, 3, 354, "4 000₽", 35, "")
+          .search-room__number
+            +addNumberCard(15, 3, 353, "4 000₽", 66, "")
         .search-room__paginator
           +addPaginator

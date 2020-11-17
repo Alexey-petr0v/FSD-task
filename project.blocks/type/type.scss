@@ -6,7 +6,7 @@
   }
   &__column-left {
     width: 37px; margin-right: 30px;
-    * {
+    .type__text {
       text-align: right;
       color: rgba(31, 32, 65, 0.25);
       font-family: 'Montserrat';
@@ -22,7 +22,10 @@
     &_r-font-1 { width: 336px; min-height: 60px }
     &_r-font-2 { width: 282px; min-height: 48px }
     &_r-font-3 { width: 186px; min-height: 15px }
-    &_r-font-4 { width: 301px; min-height: 48px }
-    &_r-font-4  * { color: rgba(31, 32, 65, 0.75) }
+    &_r-font-4 {
+      width: 301px;
+      min-height: 48px;
+      .type__text { color: rgba(31, 32, 65, 0.75) }
+    }
   }
 }

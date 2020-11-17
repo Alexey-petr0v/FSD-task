@@ -20,7 +20,7 @@ mixin addTwoElements(leftType, rightType, items, additionalContent)
             +addText(items[x].text)
 
 mixin addImage(image)
-  img(src=image)
+  img.two-elements__img(src=image)
 
 mixin addTitleAndText(title, text)
   p.two-elements__title= title

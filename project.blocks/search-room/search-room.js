@@ -5,7 +5,7 @@ if ($(".search-room").length) {
   let id = "#search-room-numbers",
     amount_pages = 15,
     paginator = new Paginator(id, amount_pages, "#paginator-next"),
-    child = ".number-card";
+    child = ".search-room__number";
 
     for (let i = 0; i < $(child).length; i++) {
       $(child).css("display", "none")
@@ -20,7 +20,7 @@ if ($(".search-room").length) {
     console.log(data_pages)
     let h = data_pages * 12;
     for (let i = 0; i < $(child).length; i++) {
-      $(".number-card").eq(i).css("display", "none")
+      $(".search-room__number").eq(i).css("display", "none")
     }
     for (let i = 1+h; i < 13+h; i++) {
       $(child).eq(i-1).css("display", "block")

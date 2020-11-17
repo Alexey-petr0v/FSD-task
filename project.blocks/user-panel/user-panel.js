@@ -3,7 +3,7 @@
 class User_panel {
   constructor() {
     if ($(".user-panel__box").is("[data-logged='false']")) {
-      $(".user-panel .dropdown__top p").text("Юлий Цезарь")
+      $(".user-panel .dropdown__top .dropdown__title").text("Юлий Цезарь")
     }
   }
 }

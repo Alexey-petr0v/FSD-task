@@ -89,7 +89,7 @@ if ($(".statistics").length) {
     vote.svg_paths_white = vote.svg_paths_white + '<path d="M'+0+','+0+' A0,0 0 0,0 '+vote.x_white[x]+','+vote.y_white[x]+'" fill="none" stroke="white" stroke-width="2"/>'
   }
   
-  $('<svg viewBox="-62 -62 124 124" width="120" height="120" version="1.1" xmlns="http://www.w3.org/2000/svg">'+
+  $('<svg class="statistics__svg" viewBox="-62 -62 124 124" width="120" height="120" version="1.1" xmlns="http://www.w3.org/2000/svg">'+
   '<circle cx="0" cy="0" r="60" fill="white"/>'+
   '<defs>'+vote.svg_defs+'</defs>'+
   vote.svg_paths+

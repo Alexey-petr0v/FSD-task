@@ -4,13 +4,13 @@ mixin addTypeText(textColumn1, textColumn2)
   else
     - var text = textColumn1
   if (textColumn1 == 'H1')
-    h1= text
+    h1.type__text= text
   else if (textColumn1 == 'H2')
-    h2= text
+    h2.type__text= text
   else if (textColumn1 == 'H3')
-    h3= text
+    h3.type__text= text
   else
-    p= text
+    p.type__text= text
 
 mixin addType(type)
   - for(var i = 0; i < type.length; i++)
