@@ -38,11 +38,11 @@ class Date_cal {
   }
   // Функция распознания: есть ли на странице первый check
   firstHasClassCell() {
-    return $(this.id+".date__cell[data-date='"+this.first_date+"'][data-month='"+this.first_month+"'][data-year='"+this.first_year+"']").hasClass('date__cell')
+    return $(this.id+".date__cell.js-date__cell[data-date='"+this.first_date+"'][data-month='"+this.first_month+"'][data-year='"+this.first_year+"']").hasClass('js-date__cell')
   }
   // Функция распознания: есть ли на странице второй check
   lastHasClassCell() {
-    return $(this.id+".date__cell[data-date='"+this.last_date+"'][data-month='"+this.last_month+"'][data-year='"+this.last_year+"']").hasClass('date__cell')
+    return $(this.id+".date__cell.js-date__cell[data-date='"+this.last_date+"'][data-month='"+this.last_month+"'][data-year='"+this.last_year+"']").hasClass('js-date__cell')
   }
   // Функция расстановки флагов и установки выделения accent
   editFlagsAndAddAccent(id_button) {
@@ -61,7 +61,7 @@ class Date_cal {
     // или (разрешено выделение назад и нажата кнопка prev)
     else if (((!this.first_here_flag)&&(!this.last_here_flag)&&(((this.accent_next_flag)&&(id_button == '#date-but-next'))||((this.accent_prev_flag)&&(id_button == '#date-but-prev'))))) {
       this.editAccentFlags(true, true) // Шаг назад и шаг вперед: разрешено выделение
-      $(this.id+".date__cell").addClass("date__cell_accent")
+      $(this.id+".js-date__cell").addClass("date__cell_accent")
     }
     // Если установлены 1-й и 2-й флаги
     else if ((this.first_here_flag)&&(this.last_here_flag)) {
@@ -82,7 +82,7 @@ class Date_cal {
     // Если на странице обе отметки
     if (flag == "first-and-last") {
       $(this.id+".date__number_checked:eq(0)").parent().addClass("date__cell_accent") 
-      $(this.id+".date__number_checked:eq(0)").parent().nextAll(this.id+".date__cell:not(.date__cell_accent)").addClass("date__cell_accent") 
+      $(this.id+".date__number_checked:eq(0)").parent().nextAll(this.id+".js-date__cell:not(.date__cell_accent)").addClass("date__cell_accent") 
       $(this.id+".date__number_checked:eq(1)").parent().nextAll(this.id+".date__cell_accent").removeClass("date__cell_accent") 
       $(this.id+".date__number_checked:eq(0)").parent().addClass("date__cell_accent-first")  
       $(this.id+".date__number_checked:eq(1)").parent().addClass("date__cell_accent-last") 
@@ -90,13 +90,13 @@ class Date_cal {
     // Если на странице только первая отметка
     else if (flag == "first") {
       $(this.id+".date__number_checked").parent().addClass("date__cell_accent-first")  
-      $(this.id+".date__number_checked").parent().nextAll(this.id+".date__cell").addClass("date__cell_accent")
+      $(this.id+".date__number_checked").parent().nextAll(this.id+".js-date__cell").addClass("date__cell_accent")
     }
     // Если на странице только вторая отметка
     else if (flag == "last") {
-      $(this.id+".date__cell:eq(0)").addClass("date__cell_accent") 
+      $(this.id+".js-date__cell:eq(0)").addClass("date__cell_accent") 
       if (this.amount_checked_elements == 2) {
-        $(this.id+".date__cell:eq(0)").nextAll(this.id+".date__cell:not(.date__cell_accent)").addClass("date__cell_accent") 
+        $(this.id+".js-date__cell:eq(0)").nextAll(this.id+".js-date__cell:not(.date__cell_accent)").addClass("date__cell_accent") 
         $(this.id+".date__number_checked").parent().nextAll(this.id+".date__cell_accent").removeClass("date__cell_accent") 
         $(this.id+".date__number_checked").parent().addClass("date__cell_accent-last")
       }
@@ -333,7 +333,7 @@ class Date_cal {
   }
   // Функция добавления ячейки для числа
   addCell(cal, iter_date, current, other_month) {
-    $(cal).append("<div data-date='"+iter_date.getDate()+"' data-month='"+iter_date.getMonth()+"' data-year='"+iter_date.getFullYear()+"' class='date__cell'><div class='date__number"+other_month+current+"'><p>"+(iter_date.getDate())+"</p></div></div>");
+    $(cal).append("<div data-date='"+iter_date.getDate()+"' data-month='"+iter_date.getMonth()+"' data-year='"+iter_date.getFullYear()+"' class='date__cell js-date__cell'><div class='date__number"+other_month+current+"'><p>"+(iter_date.getDate())+"</p></div></div>");
   }
   // Функция создания месяца
   addMonth(iter_date){
@@ -350,7 +350,7 @@ class Date_cal {
         if (prev_iter_date.getTime() == this.current_now_date.getTime()) {
           current = " date__number_current"
         }
-        $(this.id+".date__cal").prepend("<div data-date='"+prev_iter_date.getDate()+"' data-month='"+prev_iter_date.getMonth()+"' data-year='"+prev_iter_date.getFullYear()+"' class='date__cell'><div class='date__number"+current+" date__number_other-month'><p>"+(prev_iter_date.getDate())+"</p></div></div>");
+        $(this.id+".date__cal").prepend("<div data-date='"+prev_iter_date.getDate()+"' data-month='"+prev_iter_date.getMonth()+"' data-year='"+prev_iter_date.getFullYear()+"' class='date__cell js-date__cell'><div class='date__number"+current+" date__number_other-month'><p>"+(prev_iter_date.getDate())+"</p></div></div>");
         // Проверка: сегодняшняя ли дата (вторая проверка)
         if (prev_iter_date.getTime() == this.current_now_date.getTime()) {
           current = ""
@@ -403,8 +403,8 @@ class Date_cal {
     }
     this.first_here_flag = this.firstHasClassCell()
     this.last_here_flag = this.lastHasClassCell()
-    let first_check = $(this.id+".date__cell[data-date='"+this.first_date+"'][data-month='"+this.first_month+"'][data-year='"+this.first_year+"']")
-    let last_check = $(this.id+".date__cell[data-date='"+this.last_date+"'][data-month='"+this.last_month+"'][data-year='"+this.last_year+"']")
+    let first_check = $(this.id+".date__cell.js-date__cell[data-date='"+this.first_date+"'][data-month='"+this.first_month+"'][data-year='"+this.first_year+"']")
+    let last_check = $(this.id+".date__cell.js-date__cell[data-date='"+this.last_date+"'][data-month='"+this.last_month+"'][data-year='"+this.last_year+"']")
     if ((this.first_here_flag)&&(this.last_here_flag)&&(this.amount_checked_elements == 2)) {
       $(first_check).children().addClass("date__number_checked")
       $(last_check).children().addClass("date__number_checked")
@@ -423,7 +423,7 @@ class Date_cal {
   }
   // Функция удаления месяца
   removeMonth() {
-    $(this.id+".date__cell").remove()
+    $(this.id+".js-date__cell").remove()
     $(this.id+".date__month").remove()
   }
 }

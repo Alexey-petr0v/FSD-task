@@ -107,9 +107,9 @@
                                 <div class="dropdown__titles">
                                   <h3 class="dropdown__title">Даты пребывания в отеле</h3>
                                 </div>
-                                <div class="dropdown__top material-icons md-24">
+                                <div class="dropdown__top dropdown__top_no-arrow  material-icons md-24">
                                   <div class="date__top">
-                                    <p class="date__text">ДДММ - ДДММ</p>
+                                    <p class="date__text">ДДММ - ДДММ</p><span class="date__arrow-down material-icons md-24">keyboard_arrow_down</span>
                                   </div>
                                 </div>
                                 <div class="dropdown__bottom">
@@ -132,17 +132,21 @@
                                     </div>
                                     <div class="date__cal" id="element_200"></div>
                                     <div class="date__buttons">
-                                      <div class="button">
-                                        <div class="button__elem">
-                                          <div class="button__content date__clear" id="id-but-date-1">
-                                            <h3 class="button__text purple_text">очистить</h3>
+                                      <div class="date__button">
+                                        <div class="button">
+                                          <div class="button__elem">
+                                            <div class="button__content date__clear" id="id-but-date-1">
+                                              <h3 class="button__text purple_text">очистить</h3>
+                                            </div>
                                           </div>
                                         </div>
                                       </div>
-                                      <div class="button">
-                                        <div class="button__elem">
-                                          <div class="button__content date__apply dropdown__apply" id="id-but-date-2">
-                                            <h3 class="button__text purple_text">применить</h3>
+                                      <div class="date__button">
+                                        <div class="button">
+                                          <div class="button__elem">
+                                            <div class="button__content date__apply dropdown__apply" id="id-but-date-2">
+                                              <h3 class="button__text purple_text">применить</h3>
+                                            </div>
                                           </div>
                                         </div>
                                       </div>
@@ -165,7 +169,8 @@
                             <div class="dropdown__elem dropdown__elem_small ">
                               <div class="list-counter" data-type_units="separately">
                                 <div class="dropdown__top material-icons md-24">
-                                  <p class="list-counter__top">Список гостей</p>
+                                  <div class="list-counter__top"></div>
+                                  <p class="list-counter__text">Список гостей</p>
                                 </div>
                                 <div class="dropdown__bottom">
                                   <div class="list-counter__bottom">
@@ -300,7 +305,8 @@
                             <div class="dropdown__elem dropdown__elem_small ">
                               <div class="list-counter" data-type_units="separately">
                                 <div class="dropdown__top material-icons md-24">
-                                  <p class="list-counter__top">Удобства</p>
+                                  <div class="list-counter__top"></div>
+                                  <p class="list-counter__text">Удобства</p>
                                 </div>
                                 <div class="dropdown__bottom">
                                   <div class="list-counter__bottom">
@@ -421,8 +427,8 @@
                             <input class="number-card__input" name="number-card-1" type="radio">
                             <input class="number-card__input" name="number-card-1" type="radio">
                             <div class="number-card__buttons material-icons md-24">
-                              <p class="number-card__left">keyboard_arrow_left</p>
-                              <p class="number-card__right">keyboard_arrow_right</p>
+                              <p class="number-card__arrow-left">keyboard_arrow_left</p>
+                              <p class="number-card__arrow-right">keyboard_arrow_right</p>
                             </div>
                             <div class="number-card__background"></div>
                           </div>
@@ -448,7 +454,7 @@
                               <div class="number-card__line"></div>
                             </div>
                             <div class="number-card__element-4">
-                              <div class="number-card__table">
+                              <div class="number-card__column">
                                       <div class="radio">
                                         <input class="radio__input radio__input_rate" id="radio-rate-1-0" name="rate_1" value="1" type="radio" disabled="disabled">
                                         <label class="radio__label-rate material-icons md-24" for="radio-rate-1-0"><span class="radio__title">star_border</span><span class="radio__title">star_rate</span>
@@ -467,9 +473,9 @@
                                         </label>
                                       </div>
                               </div>
-                              <div class="number-card__table">
-                                <h3>145</h3>
-                                <p>Отзывов</p>
+                              <div class="number-card__column">
+                                <h3 class="number-card__number-of-reviews">145</h3>
+                                <p class="number-card__text-of-reviews">Отзывов</p>
                               </div>
                             </div>
                           </div>
@@ -483,8 +489,8 @@
                             <input class="number-card__input" name="number-card-2" type="radio">
                             <input class="number-card__input" name="number-card-2" type="radio">
                             <div class="number-card__buttons material-icons md-24">
-                              <p class="number-card__left">keyboard_arrow_left</p>
-                              <p class="number-card__right">keyboard_arrow_right</p>
+                              <p class="number-card__arrow-left">keyboard_arrow_left</p>
+                              <p class="number-card__arrow-right">keyboard_arrow_right</p>
                             </div>
                             <div class="number-card__background"></div>
                           </div>
@@ -510,7 +516,7 @@
                               <div class="number-card__line"></div>
                             </div>
                             <div class="number-card__element-4">
-                              <div class="number-card__table">
+                              <div class="number-card__column">
                                       <div class="radio">
                                         <input class="radio__input radio__input_rate" id="radio-rate-2-0" name="rate_2" value="1" type="radio" disabled="disabled">
                                         <label class="radio__label-rate material-icons md-24" for="radio-rate-2-0"><span class="radio__title">star_border</span><span class="radio__title">star_rate</span>
@@ -529,9 +535,9 @@
                                         </label>
                                       </div>
                               </div>
-                              <div class="number-card__table">
-                                <h3>65</h3>
-                                <p>Отзывов</p>
+                              <div class="number-card__column">
+                                <h3 class="number-card__number-of-reviews">65</h3>
+                                <p class="number-card__text-of-reviews">Отзывов</p>
                               </div>
                             </div>
                           </div>
@@ -545,8 +551,8 @@
                             <input class="number-card__input" name="number-card-3" type="radio">
                             <input class="number-card__input" name="number-card-3" type="radio">
                             <div class="number-card__buttons material-icons md-24">
-                              <p class="number-card__left">keyboard_arrow_left</p>
-                              <p class="number-card__right">keyboard_arrow_right</p>
+                              <p class="number-card__arrow-left">keyboard_arrow_left</p>
+                              <p class="number-card__arrow-right">keyboard_arrow_right</p>
                             </div>
                             <div class="number-card__background"></div>
                           </div>
@@ -572,7 +578,7 @@
                               <div class="number-card__line"></div>
                             </div>
                             <div class="number-card__element-4">
-                              <div class="number-card__table">
+                              <div class="number-card__column">
                                       <div class="radio">
                                         <input class="radio__input radio__input_rate" id="radio-rate-3-0" name="rate_3" value="1" type="radio" disabled="disabled">
                                         <label class="radio__label-rate material-icons md-24" for="radio-rate-3-0"><span class="radio__title">star_border</span><span class="radio__title">star_rate</span>
@@ -591,9 +597,9 @@
                                         </label>
                                       </div>
                               </div>
-                              <div class="number-card__table">
-                                <h3>35</h3>
-                                <p>Отзывов</p>
+                              <div class="number-card__column">
+                                <h3 class="number-card__number-of-reviews">35</h3>
+                                <p class="number-card__text-of-reviews">Отзывов</p>
                               </div>
                             </div>
                           </div>
@@ -607,8 +613,8 @@
                             <input class="number-card__input" name="number-card-4" type="radio">
                             <input class="number-card__input" name="number-card-4" type="radio">
                             <div class="number-card__buttons material-icons md-24">
-                              <p class="number-card__left">keyboard_arrow_left</p>
-                              <p class="number-card__right">keyboard_arrow_right</p>
+                              <p class="number-card__arrow-left">keyboard_arrow_left</p>
+                              <p class="number-card__arrow-right">keyboard_arrow_right</p>
                             </div>
                             <div class="number-card__background"></div>
                           </div>
@@ -634,7 +640,7 @@
                               <div class="number-card__line"></div>
                             </div>
                             <div class="number-card__element-4">
-                              <div class="number-card__table">
+                              <div class="number-card__column">
                                       <div class="radio">
                                         <input class="radio__input radio__input_rate" id="radio-rate-4-0" name="rate_4" value="1" type="radio" disabled="disabled">
                                         <label class="radio__label-rate material-icons md-24" for="radio-rate-4-0"><span class="radio__title">star_border</span><span class="radio__title">star_rate</span>
@@ -653,9 +659,9 @@
                                         </label>
                                       </div>
                               </div>
-                              <div class="number-card__table">
-                                <h3>19</h3>
-                                <p>Отзывов</p>
+                              <div class="number-card__column">
+                                <h3 class="number-card__number-of-reviews">19</h3>
+                                <p class="number-card__text-of-reviews">Отзывов</p>
                               </div>
                             </div>
                           </div>
@@ -669,8 +675,8 @@
                             <input class="number-card__input" name="number-card-5" type="radio">
                             <input class="number-card__input" name="number-card-5" type="radio">
                             <div class="number-card__buttons material-icons md-24">
-                              <p class="number-card__left">keyboard_arrow_left</p>
-                              <p class="number-card__right">keyboard_arrow_right</p>
+                              <p class="number-card__arrow-left">keyboard_arrow_left</p>
+                              <p class="number-card__arrow-right">keyboard_arrow_right</p>
                             </div>
                             <div class="number-card__background"></div>
                           </div>
@@ -696,7 +702,7 @@
                               <div class="number-card__line"></div>
                             </div>
                             <div class="number-card__element-4">
-                              <div class="number-card__table">
+                              <div class="number-card__column">
                                       <div class="radio">
                                         <input class="radio__input radio__input_rate" id="radio-rate-5-0" name="rate_5" value="1" type="radio" disabled="disabled">
                                         <label class="radio__label-rate material-icons md-24" for="radio-rate-5-0"><span class="radio__title">star_border</span><span class="radio__title">star_rate</span>
@@ -715,9 +721,9 @@
                                         </label>
                                       </div>
                               </div>
-                              <div class="number-card__table">
-                                <h3>44</h3>
-                                <p>Отзывов</p>
+                              <div class="number-card__column">
+                                <h3 class="number-card__number-of-reviews">44</h3>
+                                <p class="number-card__text-of-reviews">Отзывов</p>
                               </div>
                             </div>
                           </div>
@@ -731,8 +737,8 @@
                             <input class="number-card__input" name="number-card-6" type="radio">
                             <input class="number-card__input" name="number-card-6" type="radio">
                             <div class="number-card__buttons material-icons md-24">
-                              <p class="number-card__left">keyboard_arrow_left</p>
-                              <p class="number-card__right">keyboard_arrow_right</p>
+                              <p class="number-card__arrow-left">keyboard_arrow_left</p>
+                              <p class="number-card__arrow-right">keyboard_arrow_right</p>
                             </div>
                             <div class="number-card__background"></div>
                           </div>
@@ -758,7 +764,7 @@
                               <div class="number-card__line"></div>
                             </div>
                             <div class="number-card__element-4">
-                              <div class="number-card__table">
+                              <div class="number-card__column">
                                       <div class="radio">
                                         <input class="radio__input radio__input_rate" id="radio-rate-6-0" name="rate_6" value="1" type="radio" disabled="disabled">
                                         <label class="radio__label-rate material-icons md-24" for="radio-rate-6-0"><span class="radio__title">star_border</span><span class="radio__title">star_rate</span>
@@ -777,9 +783,9 @@
                                         </label>
                                       </div>
                               </div>
-                              <div class="number-card__table">
-                                <h3>56</h3>
-                                <p>Отзывов</p>
+                              <div class="number-card__column">
+                                <h3 class="number-card__number-of-reviews">56</h3>
+                                <p class="number-card__text-of-reviews">Отзывов</p>
                               </div>
                             </div>
                           </div>
@@ -793,8 +799,8 @@
                             <input class="number-card__input" name="number-card-7" type="radio">
                             <input class="number-card__input" name="number-card-7" type="radio">
                             <div class="number-card__buttons material-icons md-24">
-                              <p class="number-card__left">keyboard_arrow_left</p>
-                              <p class="number-card__right">keyboard_arrow_right</p>
+                              <p class="number-card__arrow-left">keyboard_arrow_left</p>
+                              <p class="number-card__arrow-right">keyboard_arrow_right</p>
                             </div>
                             <div class="number-card__background"></div>
                           </div>
@@ -820,7 +826,7 @@
                               <div class="number-card__line"></div>
                             </div>
                             <div class="number-card__element-4">
-                              <div class="number-card__table">
+                              <div class="number-card__column">
                                       <div class="radio">
                                         <input class="radio__input radio__input_rate" id="radio-rate-7-0" name="rate_7" value="1" type="radio" disabled="disabled">
                                         <label class="radio__label-rate material-icons md-24" for="radio-rate-7-0"><span class="radio__title">star_border</span><span class="radio__title">star_rate</span>
@@ -839,9 +845,9 @@
                                         </label>
                                       </div>
                               </div>
-                              <div class="number-card__table">
-                                <h3>45</h3>
-                                <p>Отзывов</p>
+                              <div class="number-card__column">
+                                <h3 class="number-card__number-of-reviews">45</h3>
+                                <p class="number-card__text-of-reviews">Отзывов</p>
                               </div>
                             </div>
                           </div>
@@ -855,8 +861,8 @@
                             <input class="number-card__input" name="number-card-8" type="radio">
                             <input class="number-card__input" name="number-card-8" type="radio">
                             <div class="number-card__buttons material-icons md-24">
-                              <p class="number-card__left">keyboard_arrow_left</p>
-                              <p class="number-card__right">keyboard_arrow_right</p>
+                              <p class="number-card__arrow-left">keyboard_arrow_left</p>
+                              <p class="number-card__arrow-right">keyboard_arrow_right</p>
                             </div>
                             <div class="number-card__background"></div>
                           </div>
@@ -882,7 +888,7 @@
                               <div class="number-card__line"></div>
                             </div>
                             <div class="number-card__element-4">
-                              <div class="number-card__table">
+                              <div class="number-card__column">
                                       <div class="radio">
                                         <input class="radio__input radio__input_rate" id="radio-rate-8-0" name="rate_8" value="1" type="radio" disabled="disabled">
                                         <label class="radio__label-rate material-icons md-24" for="radio-rate-8-0"><span class="radio__title">star_border</span><span class="radio__title">star_rate</span>
@@ -901,9 +907,9 @@
                                         </label>
                                       </div>
                               </div>
-                              <div class="number-card__table">
-                                <h3>39</h3>
-                                <p>Отзывов</p>
+                              <div class="number-card__column">
+                                <h3 class="number-card__number-of-reviews">39</h3>
+                                <p class="number-card__text-of-reviews">Отзывов</p>
                               </div>
                             </div>
                           </div>
@@ -917,8 +923,8 @@
                             <input class="number-card__input" name="number-card-9" type="radio">
                             <input class="number-card__input" name="number-card-9" type="radio">
                             <div class="number-card__buttons material-icons md-24">
-                              <p class="number-card__left">keyboard_arrow_left</p>
-                              <p class="number-card__right">keyboard_arrow_right</p>
+                              <p class="number-card__arrow-left">keyboard_arrow_left</p>
+                              <p class="number-card__arrow-right">keyboard_arrow_right</p>
                             </div>
                             <div class="number-card__background"></div>
                           </div>
@@ -944,7 +950,7 @@
                               <div class="number-card__line"></div>
                             </div>
                             <div class="number-card__element-4">
-                              <div class="number-card__table">
+                              <div class="number-card__column">
                                       <div class="radio">
                                         <input class="radio__input radio__input_rate" id="radio-rate-9-0" name="rate_9" value="1" type="radio" disabled="disabled">
                                         <label class="radio__label-rate material-icons md-24" for="radio-rate-9-0"><span class="radio__title">star_border</span><span class="radio__title">star_rate</span>
@@ -963,9 +969,9 @@
                                         </label>
                                       </div>
                               </div>
-                              <div class="number-card__table">
-                                <h3>77</h3>
-                                <p>Отзывов</p>
+                              <div class="number-card__column">
+                                <h3 class="number-card__number-of-reviews">77</h3>
+                                <p class="number-card__text-of-reviews">Отзывов</p>
                               </div>
                             </div>
                           </div>
@@ -979,8 +985,8 @@
                             <input class="number-card__input" name="number-card-10" type="radio">
                             <input class="number-card__input" name="number-card-10" type="radio">
                             <div class="number-card__buttons material-icons md-24">
-                              <p class="number-card__left">keyboard_arrow_left</p>
-                              <p class="number-card__right">keyboard_arrow_right</p>
+                              <p class="number-card__arrow-left">keyboard_arrow_left</p>
+                              <p class="number-card__arrow-right">keyboard_arrow_right</p>
                             </div>
                             <div class="number-card__background"></div>
                           </div>
@@ -1006,7 +1012,7 @@
                               <div class="number-card__line"></div>
                             </div>
                             <div class="number-card__element-4">
-                              <div class="number-card__table">
+                              <div class="number-card__column">
                                       <div class="radio">
                                         <input class="radio__input radio__input_rate" id="radio-rate-10-0" name="rate_10" value="1" type="radio" disabled="disabled">
                                         <label class="radio__label-rate material-icons md-24" for="radio-rate-10-0"><span class="radio__title">star_border</span><span class="radio__title">star_rate</span>
@@ -1025,9 +1031,9 @@
                                         </label>
                                       </div>
                               </div>
-                              <div class="number-card__table">
-                                <h3>25</h3>
-                                <p>Отзывов</p>
+                              <div class="number-card__column">
+                                <h3 class="number-card__number-of-reviews">25</h3>
+                                <p class="number-card__text-of-reviews">Отзывов</p>
                               </div>
                             </div>
                           </div>
@@ -1041,8 +1047,8 @@
                             <input class="number-card__input" name="number-card-11" type="radio">
                             <input class="number-card__input" name="number-card-11" type="radio">
                             <div class="number-card__buttons material-icons md-24">
-                              <p class="number-card__left">keyboard_arrow_left</p>
-                              <p class="number-card__right">keyboard_arrow_right</p>
+                              <p class="number-card__arrow-left">keyboard_arrow_left</p>
+                              <p class="number-card__arrow-right">keyboard_arrow_right</p>
                             </div>
                             <div class="number-card__background"></div>
                           </div>
@@ -1068,7 +1074,7 @@
                               <div class="number-card__line"></div>
                             </div>
                             <div class="number-card__element-4">
-                              <div class="number-card__table">
+                              <div class="number-card__column">
                                       <div class="radio">
                                         <input class="radio__input radio__input_rate" id="radio-rate-11-0" name="rate_11" value="1" type="radio" disabled="disabled">
                                         <label class="radio__label-rate material-icons md-24" for="radio-rate-11-0"><span class="radio__title">star_border</span><span class="radio__title">star_rate</span>
@@ -1087,9 +1093,9 @@
                                         </label>
                                       </div>
                               </div>
-                              <div class="number-card__table">
-                                <h3>15</h3>
-                                <p>Отзывов</p>
+                              <div class="number-card__column">
+                                <h3 class="number-card__number-of-reviews">15</h3>
+                                <p class="number-card__text-of-reviews">Отзывов</p>
                               </div>
                             </div>
                           </div>
@@ -1103,8 +1109,8 @@
                             <input class="number-card__input" name="number-card-12" type="radio">
                             <input class="number-card__input" name="number-card-12" type="radio">
                             <div class="number-card__buttons material-icons md-24">
-                              <p class="number-card__left">keyboard_arrow_left</p>
-                              <p class="number-card__right">keyboard_arrow_right</p>
+                              <p class="number-card__arrow-left">keyboard_arrow_left</p>
+                              <p class="number-card__arrow-right">keyboard_arrow_right</p>
                             </div>
                             <div class="number-card__background"></div>
                           </div>
@@ -1130,7 +1136,7 @@
                               <div class="number-card__line"></div>
                             </div>
                             <div class="number-card__element-4">
-                              <div class="number-card__table">
+                              <div class="number-card__column">
                                       <div class="radio">
                                         <input class="radio__input radio__input_rate" id="radio-rate-12-0" name="rate_12" value="1" type="radio" disabled="disabled">
                                         <label class="radio__label-rate material-icons md-24" for="radio-rate-12-0"><span class="radio__title">star_border</span><span class="radio__title">star_rate</span>
@@ -1149,9 +1155,9 @@
                                         </label>
                                       </div>
                               </div>
-                              <div class="number-card__table">
-                                <h3>55</h3>
-                                <p>Отзывов</p>
+                              <div class="number-card__column">
+                                <h3 class="number-card__number-of-reviews">55</h3>
+                                <p class="number-card__text-of-reviews">Отзывов</p>
                               </div>
                             </div>
                           </div>
@@ -1165,8 +1171,8 @@
                             <input class="number-card__input" name="number-card-13" type="radio">
                             <input class="number-card__input" name="number-card-13" type="radio">
                             <div class="number-card__buttons material-icons md-24">
-                              <p class="number-card__left">keyboard_arrow_left</p>
-                              <p class="number-card__right">keyboard_arrow_right</p>
+                              <p class="number-card__arrow-left">keyboard_arrow_left</p>
+                              <p class="number-card__arrow-right">keyboard_arrow_right</p>
                             </div>
                             <div class="number-card__background"></div>
                           </div>
@@ -1192,7 +1198,7 @@
                               <div class="number-card__line"></div>
                             </div>
                             <div class="number-card__element-4">
-                              <div class="number-card__table">
+                              <div class="number-card__column">
                                       <div class="radio">
                                         <input class="radio__input radio__input_rate" id="radio-rate-13-0" name="rate_13" value="1" type="radio" disabled="disabled">
                                         <label class="radio__label-rate material-icons md-24" for="radio-rate-13-0"><span class="radio__title">star_border</span><span class="radio__title">star_rate</span>
@@ -1211,9 +1217,9 @@
                                         </label>
                                       </div>
                               </div>
-                              <div class="number-card__table">
-                                <h3>30</h3>
-                                <p>Отзывов</p>
+                              <div class="number-card__column">
+                                <h3 class="number-card__number-of-reviews">30</h3>
+                                <p class="number-card__text-of-reviews">Отзывов</p>
                               </div>
                             </div>
                           </div>
@@ -1227,8 +1233,8 @@
                             <input class="number-card__input" name="number-card-14" type="radio">
                             <input class="number-card__input" name="number-card-14" type="radio">
                             <div class="number-card__buttons material-icons md-24">
-                              <p class="number-card__left">keyboard_arrow_left</p>
-                              <p class="number-card__right">keyboard_arrow_right</p>
+                              <p class="number-card__arrow-left">keyboard_arrow_left</p>
+                              <p class="number-card__arrow-right">keyboard_arrow_right</p>
                             </div>
                             <div class="number-card__background"></div>
                           </div>
@@ -1254,7 +1260,7 @@
                               <div class="number-card__line"></div>
                             </div>
                             <div class="number-card__element-4">
-                              <div class="number-card__table">
+                              <div class="number-card__column">
                                       <div class="radio">
                                         <input class="radio__input radio__input_rate" id="radio-rate-14-0" name="rate_14" value="1" type="radio" disabled="disabled">
                                         <label class="radio__label-rate material-icons md-24" for="radio-rate-14-0"><span class="radio__title">star_border</span><span class="radio__title">star_rate</span>
@@ -1273,9 +1279,9 @@
                                         </label>
                                       </div>
                               </div>
-                              <div class="number-card__table">
-                                <h3>35</h3>
-                                <p>Отзывов</p>
+                              <div class="number-card__column">
+                                <h3 class="number-card__number-of-reviews">35</h3>
+                                <p class="number-card__text-of-reviews">Отзывов</p>
                               </div>
                             </div>
                           </div>
@@ -1289,8 +1295,8 @@
                             <input class="number-card__input" name="number-card-15" type="radio">
                             <input class="number-card__input" name="number-card-15" type="radio">
                             <div class="number-card__buttons material-icons md-24">
-                              <p class="number-card__left">keyboard_arrow_left</p>
-                              <p class="number-card__right">keyboard_arrow_right</p>
+                              <p class="number-card__arrow-left">keyboard_arrow_left</p>
+                              <p class="number-card__arrow-right">keyboard_arrow_right</p>
                             </div>
                             <div class="number-card__background"></div>
                           </div>
@@ -1316,7 +1322,7 @@
                               <div class="number-card__line"></div>
                             </div>
                             <div class="number-card__element-4">
-                              <div class="number-card__table">
+                              <div class="number-card__column">
                                       <div class="radio">
                                         <input class="radio__input radio__input_rate" id="radio-rate-15-0" name="rate_15" value="1" type="radio" disabled="disabled">
                                         <label class="radio__label-rate material-icons md-24" for="radio-rate-15-0"><span class="radio__title">star_border</span><span class="radio__title">star_rate</span>
@@ -1335,9 +1341,9 @@
                                         </label>
                                       </div>
                               </div>
-                              <div class="number-card__table">
-                                <h3>66</h3>
-                                <p>Отзывов</p>
+                              <div class="number-card__column">
+                                <h3 class="number-card__number-of-reviews">66</h3>
+                                <p class="number-card__text-of-reviews">Отзывов</p>
                               </div>
                             </div>
                           </div>
@@ -1350,12 +1356,10 @@
                           <div class="paginator__items">
                             <div class="paginator__numbers"></div>
                             <div class="paginator__button material-icons md-24" id="paginator-next">
-                              <p>arrow_forward</p>
+                              <p class="paginator__arrow">arrow_forward</p>
                             </div>
                           </div>
-                          <div class="paginator__text">
-                            <p>1 – 12 из 100+ вариантов аренды</p>
-                          </div>
+                          <p class="paginator__text">1 – 12 из 100+ вариантов аренды</p>
                         </div>
                       </div>
               </div>

@@ -14,6 +14,7 @@ mixin addDateTop(two_title_flag)
   else
     .date__top
       p.date__text= 'ДДММ - ДДММ'
+      span.date__arrow-down.material-icons.md-24='keyboard_arrow_down'
 mixin addDateBottom
   .date__bottom
     .date__buffer-value(data-value="")
@@ -28,5 +29,7 @@ mixin addDateBottom
         .date__day= days[i]
     .date__cal(id="element_200")
     .date__buttons
-      +addButton("очистить", "id-but-date-1", "", "date__clear", "purple_text")
-      +addButton("применить", "id-but-date-2", "", "date__apply dropdown__apply", "purple_text")
+      .date__button
+        +addButton("очистить", "id-but-date-1", "", "date__clear", "purple_text")
+      .date__button
+        +addButton("применить", "id-but-date-2", "", "date__apply dropdown__apply", "purple_text")

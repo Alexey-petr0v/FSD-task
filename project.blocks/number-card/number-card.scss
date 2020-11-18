@@ -12,12 +12,13 @@ $PATH: '../project.blocks/number-card/images/';
   -ms-user-select: none;
   user-select: none;
   &:hover{
-    .number-card__left, .number-card__right { visibility: visible }
-    .number-card__left {
+    .number-card__arrow-left,
+    .number-card__arrow-right { visibility: visible }
+    .number-card__arrow-left {
       border-top-left-radius: 4px;
       background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
     }
-    .number-card__right {
+    .number-card__arrow-right {
       border-top-right-radius: 4px;
       background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
     }
@@ -49,7 +50,7 @@ $PATH: '../project.blocks/number-card/images/';
     font-size: 24px;
     line-height: 24px;
   }
-  &__left, &__right {
+  &__arrow-left, &__arrow-right {
     display: -webkit-flex; 
     display: flex;
     justify-content: center;
@@ -58,8 +59,8 @@ $PATH: '../project.blocks/number-card/images/';
     cursor: pointer;
     visibility: hidden
   }
-  &__left:hover { background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%) }
-  &__right:hover { background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%) }
+  &__arrow-left:hover { background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%) }
+  &__arrow-right:hover { background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%) }
   label, &__input { cursor: pointer }
   label { margin-right: 20px }
   &__input {
@@ -100,39 +101,6 @@ $PATH: '../project.blocks/number-card/images/';
     width: 233px;
     margin-right: 30px;
     margin-left: 20px; margin-top: 22px;
-    .number-card__number, .number-card__price {
-      display: -webkit-flex; 
-      display: flex;
-      align-items: flex-end;
-    }
-    .number-card__number {
-      .number-card__n {
-        line-height: 17px;
-        margin-right: 6px;
-      }
-      .number-card__numerals {
-        line-height: 19px;
-        font-size: 19px;
-        margin-right: 6px;
-      }
-      .number-card__lux {
-        line-height: 15px;
-        font-size: 12px;
-      }
-    }
-    .number-card__price {
-      .number-card__money {
-        line-height: 14px;
-        font-size: 14px;
-        color: rgba(31, 32, 65, 0.5);
-        margin-right: 4px;
-      }
-      .number-card__per-day {
-        line-height: 14px;
-        font-size: 12px;
-        color: rgba(31, 32, 65, 0.5);
-      }
-    }
   }
   &__description {
     background: white;
@@ -151,7 +119,7 @@ $PATH: '../project.blocks/number-card/images/';
     display: flex;
     align-items: stretch;
     justify-content: space-between;
-    .number-card__table {
+    .number-card__column {
       display: -webkit-flex; 
       display: flex;
       align-items: center;
@@ -159,15 +127,20 @@ $PATH: '../project.blocks/number-card/images/';
       margin-bottom: 19px;
     }
   }
-  &__table {
-    p, h3 { font-size: 14px; }
+  &__column {
+    .number-card__text-of-reviews,
+    .number-card__number-of-reviews { font-size: 14px; }
     display: -webkit-flex; 
     display: flex;
     &:nth-child(1) { margin-left: 20.5px }
-    &:nth-child(2) { margin-right: 20px }
-    &:nth-child(2) { & h3, p { color: rgba(31, 32, 65, 0.5); line-height: 18px } }
-    &:nth-child(n) > * {
-      &:nth-child(2), &:nth-child(3) { margin-left: 5px }
+    &:nth-child(2) {
+      margin-right: 20px;
+      .number-card__text-of-reviews,
+      .number-card__number-of-reviews {
+        color: rgba(31, 32, 65, 0.5);
+        line-height: 18px;
+        margin-left: 5px
+      }
     }
   }
   &__line {

@@ -1,24 +1,27 @@
 include ../radio/radio
 include ../number-and-price/number-and-price
 
-
-
 mixin addNumberCard(number_images, checked_rate, number_room, price, number_of_reviews, lux)
-  - var toggle_1 = false
-  - var toggle_2 = false
-  - var toggle_3 = false
-  - var toggle_4 = false
-  - var toggle_5 = false
   - if (checked_rate == 1)
     - var toggle_1 = true
+  - else 
+    - var toggle_1 = false
   - if (checked_rate == 2)
     - var toggle_2 = true
+  - else 
+    - var toggle_2 = false
   - if (checked_rate == 3)
     - var toggle_3 = true
+  - else 
+    - var toggle_3 = false
   - if (checked_rate == 4)
     - var toggle_4 = true
+  - else 
+    - var toggle_4 = false
   - if (checked_rate == 5)
     - var toggle_5 = true
+  - else 
+    - var toggle_5 = false
   -
     var rate_buttons_1 = [
       {name: "rate_"+number_images, value: "1", toggle: toggle_1, rate: true},
@@ -34,8 +37,8 @@ mixin addNumberCard(number_images, checked_rate, number_room, price, number_of_r
       input(name="number-card-"+number_images, class="number-card__input", type="radio")
       input(name="number-card-"+number_images, class="number-card__input", type="radio")
       .number-card__buttons.material-icons.md-24
-        p.number-card__left= "keyboard_arrow_left"
-        p.number-card__right= "keyboard_arrow_right"
+        p.number-card__arrow-left= "keyboard_arrow_left"
+        p.number-card__arrow-right= "keyboard_arrow_right"
       .number-card__background
     .number-card__description
       .number-card__element-2
@@ -44,8 +47,8 @@ mixin addNumberCard(number_images, checked_rate, number_room, price, number_of_r
       .number-card__element-3
         .number-card__line
       .number-card__element-4
-        .number-card__table
+        .number-card__column
           +addRadio(rate_buttons_1, number_images)
-        .number-card__table
-          h3= number_of_reviews
-          p Отзывов
+        .number-card__column
+          h3.number-card__number-of-reviews= number_of_reviews
+          p.number-card__text-of-reviews Отзывов

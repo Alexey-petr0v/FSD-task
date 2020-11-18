@@ -1,9 +1,9 @@
 mixin addColors(colors)
   - for(var i = 0; i < colors.length; i++)
     +addColorsColumns('color_'+i)
-      h2
+      h2.colors__text
         b= colors[i].text_1
-      h2= colors[i].text_2
+      h2.colors__text= colors[i].text_2
 
 mixin addColorsColumnRight
   .colors__column-right

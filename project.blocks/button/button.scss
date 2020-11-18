@@ -3,8 +3,6 @@ $PATH: '../project.blocks/button/images/';
 .button {
   display: block;
   &__content {
-    .button__text_grey:not(.purple_text) { color: rgba(31, 32, 65, 0.5) }
-    .button__text_white:not(.purple_text) { color: #FFFFFF }
     display: -webkit-flex; 
     display: flex;
     justify-content: center;
@@ -52,6 +50,8 @@ $PATH: '../project.blocks/button/images/';
     font-weight: bold;
     text-align: center;
     flex-grow: 1;
+    &_grey:not(.purple_text) { color: rgba(31, 32, 65, 0.5) }
+    &_white:not(.purple_text) { color: #FFFFFF }
   }
   &__arrow {
     display: flex;
@@ -59,6 +59,6 @@ $PATH: '../project.blocks/button/images/';
     justify-content: center;
     position: absolute;
     margin-right: 10px;
-    &> * { color: #FFFFFF }
+    &> .button__arrow-char { color: #FFFFFF }
   }
 }

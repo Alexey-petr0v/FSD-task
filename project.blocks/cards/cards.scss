@@ -6,23 +6,16 @@
     justify-content: center;
   }
   &__column {
-    margin-right: 40px;
-    margin-top: 10px;
-    &:first-child {margin-left: 40px}
-    &:last-child {margin-right: 0px}
+    margin-right: 40px; margin-top: 10px;
+    &:first-child { margin-left: 40px }
+    &:last-child { margin-right: 0px }
   }
-  &__element {
-    &:nth-child(n) {margin-bottom: 40px}
-  }
+  &__element:nth-child(n) { margin-bottom: 40px }
 }
 
 // Десктоп. Разрешение < 1991px
 @media (max-width: 1920px) {
-  .cards {
-    &__column:first-child {
-      margin-left: 0px;
-    }
-  }
+  .cards__column:first-child { margin-left: 0px }
 }
 
 // Смартфоны. Разрешение < 768px
@@ -38,13 +31,9 @@
 // Смартфоны. Разрешение < 420px
 @media (max-width: 419px) {
   .cards {
-    &__columns {
-      margin-left: 0px;
-      margin-right: 0px;
-    }
+    &__columns { margin-left: 0px; margin-right: 0px }
     &__column {
-      margin-left: 0px;
-      margin-right: 0px;
+      margin-left: 0px; margin-right: 0px;
       &:first-child {margin-left: 0px}
     }
   }

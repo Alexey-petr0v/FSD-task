@@ -9,21 +9,23 @@
   -ms-user-select: none;
   user-select: none;
   &__buttons {
-    margin-top: 4px;
-    margin-bottom: 2px;
     display: -webkit-flex;
     display: flex;
     justify-content: space-between;
-    .list-counter__button { margin-top: 6px; margin-right: 6px; margin-bottom: 6px }
+    .list-counter__button {
+      margin-top: 4px;
+      margin-right: 6px;
+      margin-bottom: 3px
+    }
     .list-counter__clear, .list-counter__apply { cursor: pointer }
     .list-counter__clear { visibility: hidden }
   }
   &__item {
-    .list-counter__name { padding-top: 6px }
-    padding-bottom: 7px;
     display: -webkit-flex;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 7px;
+    .list-counter__name,
     .list-counter__numerals { margin-top: 6px }
     .list-counter__minusAndPlus {
       display: -webkit-flex; 
@@ -32,23 +34,28 @@
       width: 92px;
       margin-right: 6px;
       .list-counter__circle {
-        width: 28px; height: 28px;
-        border-radius: 50%;
-        border: 1px solid rgba(31, 32, 65, 0.25);
         display: -webkit-flex; 
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 28px; height: 28px;
+        border-radius: 50%;
+        border: 1px solid rgba(31, 32, 65, 0.25);
         cursor: pointer;
         &_not-active { opacity: 50% }
       }
     }
   }
   &__top {
+    position: absolute;
+    width: inherit; height: inherit;
+  }
+  &__text {
     padding-left: 14px;
     &_small { width: 252px }
   }
   &__bottom {
+    margin-top: 6px; margin-left: 14px;
     &_small { width: 234px }
     &_hide { display: none }
   }

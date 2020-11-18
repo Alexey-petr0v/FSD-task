@@ -10,7 +10,8 @@ mixin addItems(items)
         p.list-counter__circle.list-counter__plus +
 
 mixin addListCounterTop(title)
-  p.list-counter__top= title
+  .list-counter__top
+  p.list-counter__text= title
 
 mixin addListCounterBottom(items, name, hide_buttons_mod)
   .list-counter__bottom

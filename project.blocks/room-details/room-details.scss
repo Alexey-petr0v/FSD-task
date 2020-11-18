@@ -12,15 +12,14 @@ $PATH: '../project.blocks/room-details/images/';
     display: -webkit-flex; 
     display: flex;
     flex-wrap: wrap;
-    &:first-child { width: 68.125% }
-    &:last-child { width: 31.875% }
+    &:nth-child(1) { width: 68.125% }
+    &:nth-child(2) { width: 31.875% }
   }
-  &__box {
-    margin-top: 70px;
+  &__info {
     display: -webkit-flex; 
     display: flex;
     justify-content: center;
-    margin-bottom: 43px;
+    margin-top: 70px; margin-bottom: 43px;
     .room-details__columns {
       display: -webkit-flex; 
       display: flex;
@@ -32,20 +31,19 @@ $PATH: '../project.blocks/room-details/images/';
       display: flex;
       flex-wrap: wrap;
       max-width: 711px;
-      &:first-child {margin-right: 70px;}
+      &:nth-child(1) { margin-right: 70px }
     }
     .room-details__element {
       &:nth-child(1) {
-        h2 {margin-bottom: 20px}
-        margin-right: 81px;
-        margin-bottom: 21px;
+        .room-details__title { margin-bottom: 20px }
+        margin-right: 81px; margin-bottom: 21px;
       }
       &:nth-child(2) {
-        h2 {margin-bottom: 21px}
+        .room-details__title { margin-bottom: 21px }
         margin-bottom: 30px;
       }
       &:nth-child(3) {
-        h2 {margin-bottom: 19px}
+        .room-details__title { margin-bottom: 19px }
         max-width: 711px;
         margin-bottom: 16px;
       }
@@ -54,12 +52,11 @@ $PATH: '../project.blocks/room-details/images/';
         margin-bottom: 27px;
       }
       &:nth-child(5) {
-        h2 {margin-bottom: 16px; margin-left: 20px}
-        margin-right: 69px;
-        margin-bottom: 20px;
+        .room-details__title { margin-bottom: 16px; margin-left: 20px }
+        margin-right: 69px; margin-bottom: 20px;
       }
       &:nth-child(6) {
-        h2 {margin-bottom: 16px}
+        .room-details__title { margin-bottom: 16px }
         max-width: 341px;
         margin-bottom: 30px;
       }
@@ -69,22 +66,22 @@ $PATH: '../project.blocks/room-details/images/';
 
 // Смартфоны. Разрешение < 768px
 @media (max-width: 767px) {
-  .room-details__box .room-details__element:nth-child(1) {
+  .room-details__info .room-details__element:nth-child(1) {
     margin-left: 20px; margin-right: 20px;
   }
-  .room-details__box .room-details__element:nth-child(3) {
+  .room-details__info .room-details__element:nth-child(3) {
     margin-left: 20px; margin-right: 20px;
   }
-  .room-details__box .room-details__element:nth-child(4) {
+  .room-details__info .room-details__element:nth-child(4) {
     margin-left: 20px; margin-right: 20px;
   }
   .room-details__img-col {
-    &:first-child { width: 100% }
-    &:last-child {
+    &:nth-child(1) { width: 100% }
+    &:nth-child(2) {
       width: 100%;
       display: -webkit-flex; 
       display: flex;
-      img { width: 50%; }
+      .room-details__img { width: 50%; }
     }
   }
 }
@@ -94,21 +91,19 @@ $PATH: '../project.blocks/room-details/images/';
   .room-details__element:nth-child(3) {
     margin-left: 20px; margin-right: 20px;
   }
-  .room-details__box .room-details__column:first-child {
+  .room-details__info .room-details__column:first-child {
     justify-content: center;
     margin-right: 0px;
   }
-  .room-details__box .room-details__column:last-child {
+  .room-details__info .room-details__column:last-child {
     margin-bottom: 20px;
   }
-  .room-details__box .room-details__columns {
+  .room-details__info .room-details__columns {
     justify-content: center;
   }
   .room-details__element:nth-child(3) {
     .room-details__columns {
-      .room-details__column:first-child {
-        margin-right: 20px;
-      }
+      .room-details__column:first-child { margin-right: 20px }
     }
   }
 }

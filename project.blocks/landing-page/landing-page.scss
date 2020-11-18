@@ -7,7 +7,7 @@ $PATH: '../project.blocks/landing-page/images/';
       background: rgba(255,255,255,0.8);
     }
   }
-  &_background-{
+  &_background- {
     @for $i from 1 through 3 {
       &#{$i} { background: url($PATH+"landing-page-"+$i+".png"); background-size: cover }
     }
@@ -63,9 +63,7 @@ $PATH: '../project.blocks/landing-page/images/';
 // Десктоп. Разрешение < 375px
 @media (max-width: 374px) {
   .landing-page_background-2 {
-    .landing-page__text {
-      box-shadow: none; background: none;
-    }
+    .landing-page__text { box-shadow: none; background: none }
   }
   .landing-page__box {
     height: auto;

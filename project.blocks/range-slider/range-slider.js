@@ -4,9 +4,7 @@ let radnom_set = new Set();
 let numberOfClasses = 0;
 
 // Функция подсчета количества элементов с классом dropdown на странице
-$('.range-slider').map(function sumOfClasses() {
-  numberOfClasses++
-  });
+$('.range-slider').map(function sumOfClasses() { numberOfClasses++ });
 
 // Массив идентификатов всех элементов с классами range-slider
 let uniqueIDTop = new Array(numberOfClasses);
@@ -120,10 +118,7 @@ function dragElement(elmnt) {
           let margin_left = $(accent_id).css("margin-left");
               margin_left = margin_left.replace(/[\p\x]/g, '');
               margin_left = parseInt(margin_left)-pos1;
-          $(accent_id).css({
-            "margin-left" : margin_left,
-            "width" : width
-          });
+          $(accent_id).css({ "margin-left" : margin_left, "width" : width });
           mydiv_id_flag = false
         }
         let output1 = $("#"+parent_id).find(".range-slider__output_1");
@@ -160,10 +155,7 @@ function dragElement(elmnt) {
       let margin_left = $(accent_id).css("margin-left");
           margin_left = margin_left.replace(/[\p\x]/g, '');
           margin_left = parseInt(margin_left)+1;
-      $(accent_id).css({
-        "margin-left" : margin_left,
-        "width" : width
-      });
+      $(accent_id).css({ "margin-left" : margin_left, "width" : width });
       $("#"+elmnt.id).css("margin-left", margin_left_elmnt+1)
     }
 
