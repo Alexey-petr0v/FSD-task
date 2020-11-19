@@ -5,8 +5,8 @@ mixin addStatistics(title, vote, percent_items)
     .statistics__vote(data-percent_items=percent_items)
       .statistics__ellipse-border
         .statistics__ellipse-background
-          h1.statistics__ellipse-title.purple_text= vote
-          h3.statistics__ellipse-text.purple_text голосов
+          h1.statistics__ellipse-title.fonts__purple= vote
+          h3.statistics__ellipse-text.fonts__purple голосов
       ul.statistics__ul
         - for(var x = 0; x < percent_items.length; x++)
           li.statistics__li(data-num=x)= percent_items[x].name

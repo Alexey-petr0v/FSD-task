@@ -50,8 +50,8 @@ $PATH: '../project.blocks/button/images/';
     font-weight: bold;
     text-align: center;
     flex-grow: 1;
-    &_grey:not(.purple_text) { color: rgba(31, 32, 65, 0.5) }
-    &_white:not(.purple_text) { color: #FFFFFF }
+    &_grey:not(.fonts__purple) { color: rgba(31, 32, 65, 0.5) }
+    &_white:not(.fonts__purple) { color: #FFFFFF }
   }
   &__arrow {
     display: flex;
