@@ -68,6 +68,10 @@ module.exports = {
       template: PATHS.pages + '/sign-in.pug',
       filename: 'sign-in.html'
     }),
+    new HtmlWebpackPlugin({
+      template: PATHS.pages + '/sliders.pug',
+      filename: 'sliders.html'
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
     })
