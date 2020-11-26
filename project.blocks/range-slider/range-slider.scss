@@ -26,8 +26,6 @@
     z-index: 0;
   }
   &__limit {
-    &_left { margin-left: 76px }
-    &_right { margin-right: 31px }
     &_left, &_right { z-index: 2 }
   }
   &__point {
