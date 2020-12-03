@@ -1,4 +1,24 @@
 .range-slider {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  &__numbers {
+    display: -webkit-flex; 
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    margin-top: 30px;
+    text-align: center;
+    color: rgba(31, 32, 65, 0.25);
+    p {
+      cursor: pointer;
+      line-height: 10px;
+      font-size: 10px
+    }
+  }
   &__title {
     display: -webkit-flex; 
     display: flex;
@@ -19,7 +39,7 @@
   }
   &__line {
     position: absolute;
-    border: 1px solid #c7c7d0;;
+    border: 1px solid #c7c7d0;
     border-radius: 3px;
     background: #FFFFFF;
     width: 266px; height: 4px;
